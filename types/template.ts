@@ -1,11 +1,8 @@
 export const TEMPLATE_CATEGORIES = [
-  "agency",
-  "portfolio",
-  "product",
-  "architecture",
-  "fashion",
-  "gaming",
+  "cafe",
+  "restaurant",
   "ai",
+  "security",
   "automotive",
 ] as const;
 
@@ -23,7 +20,8 @@ export type SculptureKind =
   | "knot"
   | "orb"
   | "column"
-  | "shard";
+  | "shard"
+  | "cup";
 
 export type Template = {
   id: string;
@@ -33,7 +31,8 @@ export type Template = {
   previewImage: string;
   model: string;
   price: number;
-  tags: string[];
+  features: string[];
+  technologies: string[];
   featured?: boolean;
   published?: boolean;
   sculpture: SculptureKind;
@@ -41,12 +40,9 @@ export type Template = {
 };
 
 export const CATEGORY_LABELS: Record<TemplateCategory, string> = {
-  agency: "Agency",
-  portfolio: "Portfolio",
-  product: "Product",
-  architecture: "Architecture",
-  fashion: "Fashion",
-  gaming: "Gaming",
-  ai: "AI",
+  cafe: "Cafe",
+  restaurant: "Restaurant",
+  ai: "AI Services",
+  security: "Security & Crypto",
   automotive: "Automotive",
 };
