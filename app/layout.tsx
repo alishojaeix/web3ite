@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SmoothScroll } from "@/components/animations/SmoothScroll";
 
 const display = Inter({
   subsets: ["latin"],
@@ -37,7 +38,10 @@ export default function RootLayout({
       lang="en"
       className={cn(display.variable, body.variable, "font-sans")}
     >
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-[28px] tracking-[-0.03em] text-[#f6f1ea]">Web3ite</p>
           <p className="mt-3 max-w-sm text-[14px] leading-relaxed text-[#9a958c]">
-            Create, customize, and launch premium 3D websites. Catalog is data. Models swap without rewriting the floor.
+            Choose a finished 3D template, tune it in the studio, and launch. The catalog is data — models swap without rewriting the floor.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-12 text-[13px]">
