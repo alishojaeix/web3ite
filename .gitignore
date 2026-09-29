@@ -5,3 +5,4 @@ out
 *.log
 .env*.local
 .impeccable
+tsconfig.tsbuildinfo
