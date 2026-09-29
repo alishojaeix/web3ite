@@ -16,17 +16,17 @@ Web3ite is a Website-as-a-Service for premium 3D sites. Visitors pick a template
 
 ## Positioning
 
-The catalog is the product. Each template is a 3D object you can inspect, not a screenshot in a card grid. Templates are data (id, model, preview, price, tags) so they can later arrive from a database, CMS, or API.
+The catalog is the product. Each template is a 3D object you can inspect, not a screenshot in a card grid. Templates are data (id, model, preview, price, features, technologies) so they can later arrive from a database, CMS, or API.
 
 ## Operating Context
 
-Next.js 14 App Router, Tailwind, TypeScript, React Three Fiber, Drei, Three.js. Marketing site today; admin panel later. Demo templates are synthetic until real GLB and photography replace them.
+Next.js 14 App Router, Tailwind, TypeScript, React Three Fiber, Drei, Three.js. Marketing site today; admin panel later. The catalog is a business-vertical collection — Cafe, Restaurant, AI Services, Security & Crypto, Automotive — with one entry (Noir Café) in Phase 1; templates are procedural stand-ins until real GLB and photography replace them.
 
 ## Capabilities and Constraints
 
 - Confirmed: browse templates, preview in 3D, customize entry, featured catalog on the homepage.
 - Architecture must accept `.glb` / `.gltf`, interactive scenes, camera, lighting, animation.
-- Categories required: Agency, Portfolio, Product, Architecture, Fashion, Gaming, AI, Automotive.
+- Categories required: Cafe, Restaurant, AI Services, Security & Crypto, Automotive. Only Cafe has a template in Phase 1; the other categories exist so the rail renders without placeholders.
 - Not built yet: payments, real CMS, deploy pipeline, admin UI.
 - Undecided: live pricing, licensing, deployment provider.
 

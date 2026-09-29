@@ -35,10 +35,10 @@ module.exports = {
         },
 
         accent: {
-          DEFAULT: "#00d4ff",
-          hover: "#00e5ff",
-          muted: "rgba(0,212,255,0.12)",
-          ring: "rgba(0,212,255,0.35)",
+          DEFAULT: "#d4af7a",
+          hover: "#f0d9a8",
+          muted: "rgba(212,175,122,0.12)",
+          ring: "rgba(212,175,122,0.35)",
         },
 
         success: {
@@ -60,7 +60,7 @@ module.exports = {
           subtle: "rgba(255,255,255,0.04)",
           standard: "rgba(255,255,255,0.08)",
           strong: "rgba(255,255,255,0.14)",
-          accent: "rgba(0,212,255,0.4)",
+          accent: "rgba(212,175,122,0.4)",
         },
       },
 
@@ -251,7 +251,7 @@ module.exports = {
           "0 24px 64px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.05)",
 
         accent:
-          "0 0 0 1px rgba(0,212,255,0.35),0 8px 32px rgba(0,212,255,0.15)",
+          "0 0 0 1px rgba(212,175,122,0.35),0 8px 32px rgba(212,175,122,0.15)",
       },
 
       animation: {

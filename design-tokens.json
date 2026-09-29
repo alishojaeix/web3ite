@@ -1,23 +1,23 @@
 {
   "colors": {
     "bg": {
-      "void": "#050608",
-      "panel": "#0b0d10",
-      "card": "#111317",
+      "void": "#07080b",
+      "panel": "#0b0d11",
+      "card": "#111318",
       "hover": "#181b20",
       "input": "#0e1014"
     },
     "text": {
-      "primary": "#fafafa",
-      "secondary": "#b8bcc8",
-      "muted": "#7a808d",
+      "primary": "#f6f1ea",
+      "secondary": "#b8b3aa",
+      "muted": "#8a847c",
       "disabled": "#4a4f5a"
     },
     "accent": {
-      "primary": "#00d4ff",
-      "hover": "#00e5ff",
-      "muted": "rgba(0, 212, 255, 0.12)",
-      "ring": "rgba(0, 212, 255, 0.35)"
+      "primary": "#d4af7a",
+      "hover": "#f0d9a8",
+      "muted": "rgba(212, 175, 122, 0.12)",
+      "ring": "rgba(212, 175, 122, 0.35)"
     },
     "semantic": {
       "success": "#10b981",
@@ -28,7 +28,7 @@
       "subtle": "rgba(255,255,255,0.04)",
       "standard": "rgba(255,255,255,0.08)",
       "strong": "rgba(255,255,255,0.14)",
-      "accent": "rgba(0,212,255,0.4)"
+      "accent": "rgba(212,175,122,0.4)"
     }
   },
   "shadows": {
@@ -36,7 +36,7 @@
     "md": "0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03)",
     "lg": "0 12px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)",
     "xl": "0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)",
-    "accent": "0 0 0 1px rgba(0,212,255,0.35), 0 8px 32px rgba(0,212,255,0.15)"
+    "accent": "0 0 0 1px rgba(212,175,122,0.35), 0 8px 32px rgba(212,175,122,0.15)"
   },
   "radius": {
     "none": "0",
@@ -53,8 +53,9 @@
   },
   "typography": {
     "fontFamilies": {
-      "display": "'Geist Variable', system-ui, sans-serif",
-      "mono": "'Geist Mono Variable', ui-monospace, monospace"
+      "display": "'Inter', system-ui, sans-serif",
+      "body": "'Source Sans 3', system-ui, sans-serif",
+      "mono": "ui-monospace, monospace"
     },
     "sizes": {
       "hero": "64px",

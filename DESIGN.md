@@ -15,9 +15,9 @@
 
 **Core metaphor**: A dark-room gallery where 3D templates float as luminous objects. The UI recedes into near-invisibility — subtle, precise, high-contrast — letting the 3D content star.
 
-**Color posture**: Near-black canvas (`#050608`), cool neutrals, single brand accent (electric cyan `#00d4ff`). No gradients, no decorative color. Accent reserved *only* for interactive elements.
+**Color posture**: Warm near-black canvas (void `#07080b`, panel `#0b0d11`), warm neutrals, single brand accent (tungsten gold `#d4af7a`, hover `#f0d9a8`). Soft gradient scrims and glassmorphism are permitted where they frame the 3D scene, never replace it. Accent reserved *only* for interactive elements.
 
-**Typography**: Geist Variable (display) + Geist Mono (code/technical) — geometric, compressed tracking at display sizes, optical weight restraint.
+**Typography**: Inter (display) + Source Sans 3 (body) — geometric, compressed tracking at display sizes, optical weight restraint. Geist is the intended future display face once the project moves to Next 15 (`next/font/google` exposes it there); Inter is the working stand-in on Next 14.
 
 ---
 
@@ -26,27 +26,27 @@
 ### Primary Surfaces
 | Token | Value | Role |
 |-------|-------|------|
-| `--bg-void` | `#050608` | Page background, deepest canvas |
-| `--bg-panel` | `#0b0d10` | Panels, sidebars, elevated containers |
-| `--bg-card` | `#111317` | Cards, modals, interactive surfaces |
+| `--bg-void` | `#07080b` | Page background, deepest canvas |
+| `--bg-panel` | `#0b0d11` | Panels, sidebars, elevated containers |
+| `--bg-card` | `#111318` | Cards, modals, interactive surfaces |
 | `--bg-hover` | `#181b20` | Hover states on cards/rows |
 | `--bg-input` | `#0e1014` | Input backgrounds |
 
 ### Text & Content
 | Token | Value | Role |
 |-------|-------|------|
-| `--text-primary` | `#fafafa` | Headlines, high-emphasis text |
-| `--text-secondary` | `#b8bcc8` | Body text, descriptions |
-| `--text-muted` | `#7a808d` | Metadata, timestamps, placeholders |
+| `--text-primary` | `#f6f1ea` | Headlines, high-emphasis text |
+| `--text-secondary` | `#b8b3aa` | Body text, descriptions |
+| `--text-muted` | `#8a847c` | Metadata, timestamps, placeholders |
 | `--text-disabled` | `#4a4f5a` | Disabled states, subtle labels |
 
 ### Brand & Interactive
 | Token | Value | Role |
 |-------|-------|------|
-| `--accent` | `#00d4ff` | Primary CTA, links, focus rings, active states |
-| `--accent-hover` | `#00e5ff` | Hover on accent elements |
-| `--accent-muted` | `rgba(0, 212, 255, 0.12)` | Accent backgrounds, selection rings |
-| `--accent-ring` | `rgba(0, 212, 255, 0.35)` | Focus rings, glow shadows |
+| `--accent` | `#d4af7a` | Primary CTA, links, focus rings, active states |
+| `--accent-hover` | `#f0d9a8` | Hover on accent elements |
+| `--accent-muted` | `rgba(212, 175, 122, 0.12)` | Accent backgrounds, selection rings |
+| `--accent-ring` | `rgba(212, 175, 122, 0.35)` | Focus rings, glow shadows |
 
 ### Semantic
 | Token | Value | Role |
@@ -64,7 +64,7 @@
 | `--border-subtle` | `rgba(255, 255, 255, 0.04)` | Default card/container borders |
 | `--border-standard` | `rgba(255, 255, 255, 0.08)` | Input borders, stronger separation |
 | `--border-strong` | `rgba(255, 255, 255, 0.14)` | Active/selected borders |
-| `--border-accent` | `rgba(0, 212, 255, 0.4)` | Accent-focused borders |
+| `--border-accent` | `rgba(212, 175, 122, 0.4)` | Accent-focused borders |
 
 ### Shadows & Depth
 | Token | Value | Role |
@@ -73,37 +73,38 @@
 | `--shadow-md` | `0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03)` | Cards, dropdowns |
 | `--shadow-lg` | `0 12px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)` | Modals, popovers, previews |
 | `--shadow-xl` | `0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)` | Full-screen preview, major overlays |
-| `--shadow-accent` | `0 0 0 1px rgba(0,212,255,0.35), 0 8px 32px rgba(0,212,255,0.15)` | Accent-focused elevation |
+| `--shadow-accent` | `0 0 0 1px rgba(212,175,122,0.35), 0 8px 32px rgba(212,175,122,0.15)` | Accent-focused elevation |
 
 ---
 
 ## 3. Typography Rules
 
 ### Font Families
-- **Display/UI**: `Geist Variable` (weights 300–700) — geometric, compressed, engineered
-- **Mono**: `Geist Mono Variable` — code, technical labels, IDs
+- **Display/UI**: `Inter` via `next/font/google` as `--font-display` (weights 300–700) — geometric, compressed, engineered
+- **Body**: `Source Sans 3` via `next/font/google` as `--font-body`
+- **Mono**: system `ui-monospace` — code, technical labels, IDs
 - **Fallback**: `system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif`
 
 ### Hierarchy
 
 | Role | Font | Size | Weight | Line Height | Letter Spacing | Features |
 |------|------|------|--------|-------------|----------------|----------|
-| **Display Hero** | Geist Variable | 64px (4rem) | 300 | 1.02 | -0.04em | — |
-| **Display Large** | Geist Variable | 48px (3rem) | 300 | 1.05 | -0.03em | — |
-| **Display Medium** | Geist Variable | 36px (2.25rem) | 400 | 1.10 | -0.02em | — |
-| **Heading 1** | Geist Variable | 30px (1.875rem) | 400 | 1.15 | -0.015em | — |
-| **Heading 2** | Geist Variable | 24px (1.5rem) | 500 | 1.20 | -0.01em | — |
-| **Heading 3** | Geist Variable | 20px (1.25rem) | 500 | 1.30 | normal | — |
-| **Body Large** | Geist Variable | 18px (1.125rem) | 400 | 1.60 | normal | — |
-| **Body** | Geist Variable | 16px (1rem) | 400 | 1.55 | normal | — |
-| **Body Small** | Geist Variable | 14px (0.875rem) | 400 | 1.50 | normal | — |
-| **Caption** | Geist Variable | 13px (0.8125rem) | 400 | 1.45 | normal | — |
-| **Label** | Geist Variable | 12px (0.75rem) | 500 | 1.40 | 0.01em | uppercase |
-| **Micro** | Geist Variable | 11px (0.6875rem) | 400 | 1.35 | 0.02em | uppercase |
-| **Button** | Geist Variable | 14px (0.875rem) | 500 | 1.00 | normal | — |
-| **Button Large** | Geist Variable | 16px (1rem) | 500 | 1.00 | normal | — |
-| **Code** | Geist Mono Variable | 13px (0.8125rem) | 400 | 1.65 | normal | — |
-| **Code Label** | Geist Mono Variable | 11px (0.6875rem) | 500 | 1.40 | 0.02em | uppercase |
+| **Display Hero** | Inter | 64px (4rem) | 300 | 1.02 | -0.04em | — |
+| **Display Large** | Inter | 48px (3rem) | 300 | 1.05 | -0.03em | — |
+| **Display Medium** | Inter | 36px (2.25rem) | 400 | 1.10 | -0.02em | — |
+| **Heading 1** | Inter | 30px (1.875rem) | 400 | 1.15 | -0.015em | — |
+| **Heading 2** | Inter | 24px (1.5rem) | 500 | 1.20 | -0.01em | — |
+| **Heading 3** | Inter | 20px (1.25rem) | 500 | 1.30 | normal | — |
+| **Body Large** | Inter | 18px (1.125rem) | 400 | 1.60 | normal | — |
+| **Body** | Inter | 16px (1rem) | 400 | 1.55 | normal | — |
+| **Body Small** | Inter | 14px (0.875rem) | 400 | 1.50 | normal | — |
+| **Caption** | Inter | 13px (0.8125rem) | 400 | 1.45 | normal | — |
+| **Label** | Inter | 12px (0.75rem) | 500 | 1.40 | 0.01em | uppercase |
+| **Micro** | Inter | 11px (0.6875rem) | 400 | 1.35 | 0.02em | uppercase |
+| **Button** | Inter | 14px (0.875rem) | 500 | 1.00 | normal | — |
+| **Button Large** | Inter | 16px (1rem) | 500 | 1.00 | normal | — |
+| **Code** | ui-monospace | 13px (0.8125rem) | 400 | 1.65 | normal | — |
+| **Code Label** | ui-monospace | 11px (0.6875rem) | 500 | 1.40 | 0.02em | uppercase |
 
 ### Principles
 - **Weight 300 at display sizes** — whisper-weight authority (Apple/Stripe influence)
@@ -463,7 +464,7 @@ position: relative;
 
 ### CSS Strategy
 - **CSS Variables** for all tokens (defined in `:root`, overrideable via `[data-theme]`)
-- **Tailwind CSS v4** with `@theme` directive mapping tokens
+- **Tailwind CSS v3.4** with a JS config (`tailwind.config.js`) mapping tokens to utility classes
 - **CSS Modules** for component-scoped styles
 - **No CSS-in-JS** — zero runtime overhead
 
@@ -471,8 +472,10 @@ position: relative;
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Variable:wght@300;400;500;600;700&family=Geist+Mono+Variable:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 ```
+
+> In the app, fonts load through `next/font/google` (Inter as `--font-display`, Source Sans 3 as `--font-body`), not this stylesheet.
 
 ### 3D Integration
 - **React Three Fiber** + **Drei** for 3D canvas components
@@ -503,14 +506,14 @@ position: relative;
 - Use `var(--shadow-accent)` for focus/selection only
 - Let 3D content be the hero — UI is the frame
 - Stagger grid entrances (50ms/item)
-- Use `Geist Mono` for any technical data (IDs, prices, code)
+- Use the mono stack for any technical data (IDs, prices, code)
 
 ### Don't
 - Don't use pure black (`#000000`) — `--bg-void` has blue depth
 - Don't introduce secondary accent colors
-- Don't use weight 600+ on Geist Variable display text
+- Don't use weight 600+ on Inter display text
 - Don't use positive letter-spacing on headlines
-- Don't add decorative gradients, glows, or glassmorphism
+- Don't let glassmorphism or gradients compete with the 3D scene — they frame it, never replace it
 - Don't use borders heavier than `var(--border-standard)`
 - Don't animate layout properties (width, height, top, left)
 - Don't show 3D canvas without loading/error states
@@ -522,17 +525,17 @@ position: relative;
 ```json
 {
   "color": {
-    "bg": { "void": "#050608", "panel": "#0b0d10", "card": "#111317", "hover": "#181b20", "input": "#0e1014" },
-    "text": { "primary": "#fafafa", "secondary": "#b8bcc8", "muted": "#7a808d", "disabled": "#4a4f5a" },
-    "accent": { "primary": "#00d4ff", "hover": "#00e5ff", "muted": "rgba(0,212,255,0.12)", "ring": "rgba(0,212,255,0.35)" },
+    "bg": { "void": "#07080b", "panel": "#0b0d11", "card": "#111318", "hover": "#181b20", "input": "#0e1014" },
+    "text": { "primary": "#f6f1ea", "secondary": "#b8b3aa", "muted": "#8a847c", "disabled": "#4a4f5a" },
+    "accent": { "primary": "#d4af7a", "hover": "#f0d9a8", "muted": "rgba(212,175,122,0.12)", "ring": "rgba(212,175,122,0.35)" },
     "semantic": { "success": "#10b981", "warning": "#f59e0b", "danger": "#ef4444" },
-    "border": { "subtle": "rgba(255,255,255,0.04)", "standard": "rgba(255,255,255,0.08)", "strong": "rgba(255,255,255,0.14)", "accent": "rgba(0,212,255,0.4)" }
+    "border": { "subtle": "rgba(255,255,255,0.04)", "standard": "rgba(255,255,255,0.08)", "strong": "rgba(255,255,255,0.14)", "accent": "rgba(212,175,122,0.4)" }
   },
-  "shadow": { "sm": "0 1px 2px rgba(0,0,0,0.4)", "md": "0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03)", "lg": "0 12px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)", "xl": "0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)", "accent": "0 0 0 1px rgba(0,212,255,0.35), 0 8px 32px rgba(0,212,255,0.15)" },
+  "shadow": { "sm": "0 1px 2px rgba(0,0,0,0.4)", "md": "0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03)", "lg": "0 12px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)", "xl": "0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)", "accent": "0 0 0 1px rgba(212,175,122,0.35), 0 8px 32px rgba(212,175,122,0.15)" },
   "radius": { "none": "0", "xs": "4px", "sm": "6px", "md": "10px", "lg": "16px", "xl": "24px", "full": "9999px" },
   "spacing": { "base": "4px", "scale": [1,2,3,4,6,8,12,16,20,24,32,40,48,64,80,96,128] },
   "typography": {
-    "fontFamilies": { "display": "Geist Variable", "mono": "Geist Mono Variable" },
+    "fontFamilies": { "display": "Inter", "body": "Source Sans 3", "mono": "ui-monospace" },
     "sizes": { "hero": "64px", "displayLarge": "48px", "displayMedium": "36px", "h1": "30px", "h2": "24px", "h3": "20px", "bodyLarge": "18px", "body": "16px", "bodySmall": "14px", "caption": "13px", "label": "12px", "micro": "11px", "button": "14px", "buttonLarge": "16px", "code": "13px" },
     "weights": { "light": 300, "regular": 400, "medium": 500, "semibold": 600 },
     "lineHeights": { "tight": 1.02, "snug": 1.1, "normal": 1.3, "relaxed": 1.55, "loose": 1.65 },
