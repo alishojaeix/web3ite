@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/animations/Reveal";
 import { LazyModelCanvas } from "@/components/3d/LazyStage";
 import { CATEGORY_LABELS } from "@/types/template";
 import type { Template } from "@/types/template";
@@ -19,15 +19,12 @@ export function TemplateCard({ template, index = 0 }: { template: Template; inde
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, delay: Math.min(index * 0.06, 0.3), ease: [0.22, 1, 0.36, 1] }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group relative isolate overflow-hidden rounded-xl border border-white/[0.07] bg-[#0b0d11]/80 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-md"
-    >
+    <Reveal delay={Math.min(index * 0.06, 0.3)} className="h-full">
+      <article
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="group relative isolate flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.07] bg-[#0b0d11]/80 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-md"
+      >
       <div className="relative aspect-[4/5] overflow-hidden bg-void">
         <LazyModelCanvas
           model={template.model}
@@ -79,16 +76,17 @@ export function TemplateCard({ template, index = 0 }: { template: Template; inde
         </div>
         <p className="mt-3 line-clamp-2 text-[14px] leading-relaxed text-[#b8b3aa]">{template.description}</p>
         <ul className="mt-4 flex flex-wrap gap-1.5">
-          {template.tags.slice(0, 3).map((tag) => (
+          {template.features.slice(0, 3).map((feature) => (
             <li
-              key={tag}
+              key={feature}
               className="rounded-full border border-white/[0.06] px-2.5 py-1 text-[11px] text-[#9a958c]"
             >
-              {tag}
+              {feature}
             </li>
           ))}
         </ul>
       </div>
-    </motion.article>
+      </article>
+    </Reveal>
   );
 }

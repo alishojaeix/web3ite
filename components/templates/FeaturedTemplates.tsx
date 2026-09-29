@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Template, TemplateCategory } from "@/types/template";
 import { CATEGORY_LABELS, TEMPLATE_CATEGORIES } from "@/types/template";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { TemplateCard } from "./TemplateCard";
 
 export function FeaturedTemplates({ templates }: { templates: Template[] }) {
@@ -48,11 +49,13 @@ export function FeaturedTemplates({ templates }: { templates: Template[] }) {
         {visible.length === 0 ? (
           <p className="mt-16 text-[#8a847c]">No templates in this category yet.</p>
         ) : (
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {visible.map((template, index) => (
-              <TemplateCard key={template.id} template={template} index={index} />
+          <StaggerContainer className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {visible.map((template) => (
+              <StaggerItem key={template.id}>
+                <TemplateCard template={template} index={0} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         )}
       </div>
     </section>

@@ -17,7 +17,8 @@ export function TemplateGrid({ templates }: { templates: Template[] }) {
       return (
         t.title.toLowerCase().includes(q) ||
         t.description.toLowerCase().includes(q) ||
-        t.tags.some((tag) => tag.toLowerCase().includes(q))
+        t.features.some((f) => f.toLowerCase().includes(q)) ||
+        t.technologies.some((tech) => tech.toLowerCase().includes(q))
       );
     });
   }, [templates, query, category]);
