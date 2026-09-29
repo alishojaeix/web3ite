@@ -37,6 +37,8 @@ export function Sculpture({ kind, accent, hovered = false }: SculptureProps) {
       return <Column accent={accent} hovered={hovered} />;
     case "shard":
       return <Shard accent={accent} hovered={hovered} />;
+    case "cup":
+      return <Cup accent={accent} hovered={hovered} />;
     default:
       return <Orb accent={accent} hovered={hovered} />;
   }
@@ -279,6 +281,64 @@ function Shard({ accent, hovered }: { accent: string; hovered: boolean }) {
         <coneGeometry args={[0.28, 1.1, 4]} />
         {metal("#dfe4ea", { roughness: 0.16 })}
       </mesh>
+    </group>
+  );
+}
+
+function Cup({ accent, hovered }: { accent: string; hovered: boolean }) {
+  const ref = useSpin(hovered ? 0.35 : 0.12);
+  return (
+    <group ref={ref}>
+      {/* saucer */}
+      <mesh position={[0, -0.78, 0]}>
+        <cylinderGeometry args={[0.92, 0.98, 0.08, 48]} />
+        {metal("#e6e0d6", { roughness: 0.3, metalness: 0.25 })}
+      </mesh>
+      {/* cup body */}
+      <mesh position={[0, -0.28, 0]}>
+        <cylinderGeometry args={[0.56, 0.46, 0.66, 48]} />
+        {metal("#f2ece2", { roughness: 0.24, metalness: 0.15 })}
+      </mesh>
+      {/* espresso surface */}
+      <mesh position={[0, 0.07, 0]}>
+        <cylinderGeometry args={[0.5, 0.5, 0.04, 48]} />
+        {metal(accent, { roughness: 0.42, metalness: 0.1, emissive: accent, emissiveIntensity: 0.1 })}
+      </mesh>
+      {/* handle */}
+      <mesh position={[0.68, -0.26, 0]} rotation={[0, 0, Math.PI / 2]}>
+        <torusGeometry args={[0.22, 0.055, 16, 32]} />
+        {metal("#f2ece2", { roughness: 0.24, metalness: 0.15 })}
+      </mesh>
+      {/* steam */}
+      <Steam />
+    </group>
+  );
+}
+
+function Steam() {
+  const ref = useRef<THREE.Group>(null);
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const t = clock.elapsedTime;
+    ref.current.children.forEach((child, i) => {
+      child.position.y = 0.55 + i * 0.34 + Math.sin(t * 1.4 + i * 1.1) * 0.09;
+      child.rotation.z = Math.sin(t * 0.9 + i) * 0.22;
+    });
+  });
+  return (
+    <group ref={ref}>
+      {[0, 1, 2].map((i) => (
+        <mesh key={i} position={[0, 0.55 + i * 0.34, 0]}>
+          <sphereGeometry args={[0.055 - i * 0.008, 16, 16]} />
+          <meshPhysicalMaterial
+            color="#ffffff"
+            transparent
+            opacity={0.16 - i * 0.035}
+            roughness={1}
+            metalness={0}
+          />
+        </mesh>
+      ))}
     </group>
   );
 }
