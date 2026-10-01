@@ -8,7 +8,7 @@ import { getFeaturedTemplates, listTemplates } from "@/lib/templates";
 
 export default async function HomePage() {
   const featured = await getFeaturedTemplates();
-  const catalog = featured.length >= 8 ? featured : await listTemplates();
+  const catalog = featured.length > 0 ? featured : await listTemplates();
 
   return (
     <>

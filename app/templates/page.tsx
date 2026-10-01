@@ -15,7 +15,7 @@ export default async function TemplatesPage() {
             The floor
           </h1>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-[#b8b3aa]">
-            Twenty-four demo bodies across eight rooms. Replace a GLB in public/models and the card keeps its shape.
+            Five demo rooms — cafe, restaurant, AI, security, automotive. Every one is a finished 3D site with a GLB slot. Replace the model file and the card keeps its shape.
           </p>
           <div className="mt-12">
             <TemplateGrid templates={templates} />

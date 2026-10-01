@@ -21,7 +21,11 @@ export type SculptureKind =
   | "orb"
   | "column"
   | "shard"
-  | "cup";
+  | "cup"
+  | "plate"
+  | "chip"
+  | "shield"
+  | "car";
 
 export type Template = {
   id: string;

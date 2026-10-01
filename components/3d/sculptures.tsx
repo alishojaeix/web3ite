@@ -39,6 +39,14 @@ export function Sculpture({ kind, accent, hovered = false }: SculptureProps) {
       return <Shard accent={accent} hovered={hovered} />;
     case "cup":
       return <Cup accent={accent} hovered={hovered} />;
+    case "plate":
+      return <Plate accent={accent} hovered={hovered} />;
+    case "chip":
+      return <Chip accent={accent} hovered={hovered} />;
+    case "shield":
+      return <Shield accent={accent} hovered={hovered} />;
+    case "car":
+      return <Car accent={accent} hovered={hovered} />;
     default:
       return <Orb accent={accent} hovered={hovered} />;
   }
@@ -338,6 +346,163 @@ function Steam() {
             metalness={0}
           />
         </mesh>
+      ))}
+    </group>
+  );
+}
+
+function Plate({ accent, hovered }: { accent: string; hovered: boolean }) {
+  const ref = useSpin(hovered ? 0.3 : 0.1);
+  return (
+    <group ref={ref}>
+      {/* dinner plate */}
+      <mesh position={[0, -0.5, 0]}>
+        <cylinderGeometry args={[1.0, 1.12, 0.08, 64]} />
+        {metal("#f6f1ea", { roughness: 0.16, metalness: 0.08 })}
+      </mesh>
+      {/* cloche dome */}
+      <mesh position={[0, 0.02, 0]} scale={[1, 0.6, 1]}>
+        <sphereGeometry args={[0.8, 48, 24, 0, Math.PI * 2, 0, Math.PI / 2]} />
+        {metal("#ece7df", { roughness: 0.2, metalness: 0.75 })}
+      </mesh>
+      {/* finial knob */}
+      <mesh position={[0, 0.56, 0]}>
+        <sphereGeometry args={[0.09, 24, 24]} />
+        {metal(accent, { roughness: 0.28, emissive: accent, emissiveIntensity: 0.12 })}
+      </mesh>
+    </group>
+  );
+}
+
+function Chip({ accent, hovered }: { accent: string; hovered: boolean }) {
+  const ref = useSpin(hovered ? 0.34 : 0.12);
+  const pins = useMemo(() => {
+    const out: { pos: [number, number, number]; rot: [number, number, number] }[] = [];
+    [-0.42, -0.14, 0.14, 0.42].forEach((a) => {
+      // pins along the Z-facing edges
+      out.push({ pos: [a, -0.4, 0.4], rot: [0, 0, 0] });
+      out.push({ pos: [a, -0.4, -0.4], rot: [0, 0, 0] });
+      // pins along the X-facing edges
+      out.push({ pos: [0.4, -0.4, a], rot: [0, Math.PI / 2, 0] });
+      out.push({ pos: [-0.4, -0.4, a], rot: [0, Math.PI / 2, 0] });
+    });
+    return out;
+  }, []);
+
+  return (
+    <group ref={ref}>
+      {/* board */}
+      <mesh position={[0, -0.55, 0]}>
+        <boxGeometry args={[1.3, 0.1, 1.3]} />
+        {metal("#151a20", { roughness: 0.5, metalness: 0.3 })}
+      </mesh>
+      {/* pins */}
+      {pins.map((pin, i) => (
+        <mesh key={i} position={pin.pos} rotation={pin.rot}>
+          <boxGeometry args={[0.08, 0.06, 0.18]} />
+          {metal("#d8d2c6", { roughness: 0.3, metalness: 0.6 })}
+        </mesh>
+      ))}
+      {/* die */}
+      <mesh position={[0, -0.4, 0]}>
+        <boxGeometry args={[0.62, 0.2, 0.62]} />
+        {metal("#242a32", { roughness: 0.28, metalness: 0.5 })}
+      </mesh>
+      {/* glowing core */}
+      <mesh position={[0, -0.26, 0]}>
+        <boxGeometry args={[0.3, 0.05, 0.3]} />
+        {metal(accent, {
+          roughness: 0.25,
+          emissive: accent,
+          emissiveIntensity: 0.65,
+        })}
+      </mesh>
+    </group>
+  );
+}
+
+function Shield({ accent, hovered }: { accent: string; hovered: boolean }) {
+  const ref = useSpin(hovered ? 0.26 : 0.09);
+  return (
+    <group ref={ref}>
+      {/* accent border */}
+      <mesh position={[0, 0, -0.07]} scale={[0.88, 1.1, 0.24]}>
+        <octahedronGeometry args={[1, 0]} />
+        {metal(accent, { roughness: 0.3, metalness: 0.6, emissive: accent, emissiveIntensity: 0.08 })}
+      </mesh>
+      {/* shield face */}
+      <mesh position={[0, 0, 0]} scale={[0.8, 1.0, 0.18]}>
+        <octahedronGeometry args={[1, 0]} />
+        {metal("#ece7df", { roughness: 0.18, metalness: 0.5 })}
+      </mesh>
+      {/* shackle */}
+      <mesh position={[0, 0.2, 0.11]} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[0.12, 0.035, 16, 32]} />
+        {metal(accent, { roughness: 0.24 })}
+      </mesh>
+      {/* lock body */}
+      <mesh position={[0, -0.02, 0.13]}>
+        <boxGeometry args={[0.3, 0.26, 0.12]} />
+        {metal(accent, { roughness: 0.24 })}
+      </mesh>
+    </group>
+  );
+}
+
+function Car({ accent, hovered }: { accent: string; hovered: boolean }) {
+  const ref = useSpin(hovered ? 0.38 : 0.13);
+  const wheels: [number, number][] = [
+    [-0.62, -0.5],
+    [0.62, -0.5],
+    [-0.62, 0.5],
+    [0.62, 0.5],
+  ];
+  return (
+    <group ref={ref}>
+      {/* body */}
+      <mesh position={[0, -0.12, 0]}>
+        <boxGeometry args={[1.9, 0.4, 0.82]} />
+        {metal("#ece7df", { roughness: 0.2, metalness: 0.85 })}
+      </mesh>
+      {/* cabin */}
+      <mesh position={[-0.05, 0.16, 0]} rotation={[0, 0, -0.05]}>
+        <boxGeometry args={[1.0, 0.34, 0.7]} />
+        {metal("#1b1e24", { roughness: 0.1, metalness: 0.55, transmission: 0.15, transparent: true, opacity: 0.92 })}
+      </mesh>
+      {/* roof spine */}
+      <mesh position={[-0.05, 0.34, 0]} rotation={[0, 0, -0.05]}>
+        <boxGeometry args={[0.92, 0.05, 0.6]} />
+        {metal(accent, { roughness: 0.22, emissive: accent, emissiveIntensity: 0.08 })}
+      </mesh>
+      {/* head and tail lights */}
+      <mesh position={[0.92, -0.06, 0.26]}>
+        <boxGeometry args={[0.07, 0.13, 0.1]} />
+        {metal(accent, { roughness: 0.2, emissive: accent, emissiveIntensity: 0.8 })}
+      </mesh>
+      <mesh position={[0.92, -0.06, -0.26]}>
+        <boxGeometry args={[0.07, 0.13, 0.1]} />
+        {metal(accent, { roughness: 0.2, emissive: accent, emissiveIntensity: 0.8 })}
+      </mesh>
+      <mesh position={[-0.92, -0.06, 0.26]}>
+        <boxGeometry args={[0.07, 0.13, 0.1]} />
+        {metal("#c34a38", { roughness: 0.25, emissive: "#c34a38", emissiveIntensity: 0.5 })}
+      </mesh>
+      <mesh position={[-0.92, -0.06, -0.26]}>
+        <boxGeometry args={[0.07, 0.13, 0.1]} />
+        {metal("#c34a38", { roughness: 0.25, emissive: "#c34a38", emissiveIntensity: 0.5 })}
+      </mesh>
+      {/* wheels */}
+      {wheels.map(([x, z], i) => (
+        <group key={i} position={[x, -0.4, z]}>
+          <mesh rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.24, 0.24, 0.18, 24]} />
+            {metal("#14171c", { roughness: 0.6, metalness: 0.2 })}
+          </mesh>
+          <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+            <cylinderGeometry args={[0.13, 0.13, 0.2, 16]} />
+            {metal(accent, { roughness: 0.24, metalness: 0.7 })}
+          </mesh>
+        </group>
       ))}
     </group>
   );

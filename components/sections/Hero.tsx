@@ -32,7 +32,7 @@ export function Hero() {
               Browse templates
             </Link>
             <Link
-              href="/templates/orbital"
+              href="/templates/noir-cafe?view=customize"
               className="rounded-sm border border-white/20 bg-white/[0.04] px-5 py-3 text-center text-[14px] font-medium text-[#f6f1ea] hover:bg-white/[0.08]"
             >
               Open a live studio

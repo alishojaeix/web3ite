@@ -12,7 +12,7 @@ export function StudioStrip() {
         </div>
         <ol className="space-y-6 border-l border-white/10 pl-6">
           {[
-            ["Pick a body", "Agency, fashion, automotive — each template is a finished 3D site, not a layout kit."],
+            ["Pick a room", "Cafe, restaurant, AI, security, automotive — each template is a finished 3D site, not a layout kit."],
             ["Tune the room", "Accent, camera, and copy sit on a glass desk over the live scene."],
             ["Launch", "Deployment comes later. The catalog is already admin-shaped: data in, cards out."],
           ].map(([title, body]) => (
