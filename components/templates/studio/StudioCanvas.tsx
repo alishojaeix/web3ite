@@ -1,6 +1,7 @@
 "use client";
 
 import { ModelCanvas } from "@/components/3d/CanvasStage";
+import { HtmlPreview } from "./HtmlPreview";
 import type { SculptureKind } from "@/types/template";
 
 export function StudioCanvas({
@@ -8,12 +9,18 @@ export function StudioCanvas({
   sculpture,
   accent,
   autoRotate,
+  previewUrl,
 }: {
   model: string;
   sculpture: SculptureKind;
   accent: string;
   autoRotate: boolean;
+  previewUrl?: string;
 }) {
+  if (previewUrl) {
+    return <HtmlPreview url={previewUrl} />;
+  }
+
   return (
     <section className="relative min-h-[60vh] lg:min-h-screen">
       <ModelCanvas

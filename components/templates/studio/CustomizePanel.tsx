@@ -8,13 +8,34 @@ export function CustomizePanel({
   spin,
   onSpinChange,
   model,
+  previewUrl,
 }: {
   accent: string;
   onAccentChange: (accent: string) => void;
   spin: boolean;
   onSpinChange: (spin: boolean) => void;
   model: string;
+  previewUrl?: string;
 }) {
+  if (previewUrl) {
+    return (
+      <div className="mt-8 space-y-4">
+        <p className="text-[13px] leading-relaxed text-[#b8b3aa]">
+          This template ships as a self-contained static HTML document. Its
+          styling and motion are authored inside that file, so the accent and
+          rotation controls above the 3D stand-in do not apply to it.
+        </p>
+        <p className="text-[13px] leading-relaxed text-[#b8b3aa]">
+          Customizing it means editing that document directly. The source is at{" "}
+          <code className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]">
+            public/previews/aldane-voss/index.html
+          </code>
+          .
+        </p>
+      </div>
+    );
+  }
+
   const accents = [accent, ...DEFAULT_ACCENTS.filter((c) => c !== accent)];
 
   return (

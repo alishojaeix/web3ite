@@ -4,6 +4,7 @@ export const TEMPLATE_CATEGORIES = [
   "ai",
   "security",
   "automotive",
+  "catalogue",
 ] as const;
 
 export type TemplateCategory = (typeof TEMPLATE_CATEGORIES)[number];
@@ -41,6 +42,12 @@ export type Template = {
   published?: boolean;
   sculpture: SculptureKind;
   accent: string;
+  /**
+   * Path to a self-contained static HTML document that is the real published
+   * site, served verbatim from `public`. When set, the studio renders it in an
+   * isolated iframe instead of the procedural 3D sculpture.
+   */
+  previewUrl?: string;
 };
 
 export const CATEGORY_LABELS: Record<TemplateCategory, string> = {
@@ -49,4 +56,5 @@ export const CATEGORY_LABELS: Record<TemplateCategory, string> = {
   ai: "AI Services",
   security: "Security & Crypto",
   automotive: "Automotive",
+  catalogue: "Catalogue",
 };

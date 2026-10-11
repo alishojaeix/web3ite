@@ -30,6 +30,7 @@ export function TemplateStudio({
           sculpture={template.sculpture}
           accent={accent}
           autoRotate={spin}
+          previewUrl={template.previewUrl}
         />
 
         <aside className="border-t border-white/10 bg-[#0b0d11]/90 p-6 backdrop-blur-xl lg:border-l lg:border-t-0">
@@ -51,6 +52,7 @@ export function TemplateStudio({
               spin={spin}
               onSpinChange={setSpin}
               model={template.model}
+              previewUrl={template.previewUrl}
             />
           ) : null}
 

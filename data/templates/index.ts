@@ -4,6 +4,7 @@ import { restaurant } from "./restaurant";
 import { ai } from "./ai";
 import { security } from "./security";
 import { automotive } from "./automotive";
+import { aldaneVoss } from "./aldane-voss";
 
 /**
  * The catalog. Add one file per template, then one line here.
@@ -16,4 +17,5 @@ export const templates: Template[] = [
   ai,
   security,
   automotive,
+  aldaneVoss,
 ];

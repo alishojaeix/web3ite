@@ -1,0 +1,7 @@
+{
+  "name": "aldane-voss-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static single-file site. No build step. package.json only provides a local dev server.",
+  "scripts": { "start": "npx --yes serve . -l 3000" }
+}
