@@ -7,23 +7,37 @@
     --bg-void: #07080b;
     --bg-panel: #0b0d11;
     --bg-card: #111318;
+    --bg-hover: #181b20;
+    --bg-input: #0e1014;
+
     --text-primary: #f6f1ea;
     --text-secondary: #b8b3aa;
     --text-muted: #8a847c;
+    --text-disabled: #4a4f5a;
+
     --accent: #d4af7a;
-    --accent-cool: #7ee0ff;
+    --accent-hover: #f0d9a8;
+    --accent-muted: rgba(212, 175, 122, 0.12);
+    --accent-ring: rgba(212, 175, 122, 0.35);
+
     --border-subtle: rgba(255, 255, 255, 0.06);
     --border-standard: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast: 150ms;
+    --duration-standard: 250ms;
+    --duration-slow: 450ms;
   }
 
   * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
 
   html {
     scroll-behavior: smooth;
+    background: var(--bg-void);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -37,6 +51,15 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+
+    /* Entrance animations render an inline "opacity: 0" during SSR. When a
+       visitor requests reduced motion there is no entrance animation to reveal
+       it, so force those sections visible. */
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
   }
 
   body {
@@ -46,6 +69,16 @@
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.022;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.65'/></svg>");
   }
 
   ::selection {
@@ -71,8 +104,64 @@
   }
 }
 
+@layer components {
+  .display-face {
+    font-family: var(--font-display), "Inter", system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.045em;
+  }
+
+  .editorial-face {
+    font-family: var(--font-editorial), "Iowan Old Style", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .glass-panel {
+    background: rgba(11, 13, 17, 0.72);
+    border: 1px solid var(--border-standard);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(22px) saturate(120%);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.12) 18%,
+      rgba(255, 255, 255, 0.12) 82%,
+      transparent
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), "Bricolage Grotesk", sans-serif;
+    font-family: var(--font-display), "Inter", system-ui, sans-serif;
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial), "Iowan Old Style", Georgia, serif;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
 }

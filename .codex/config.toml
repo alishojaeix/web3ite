@@ -1,0 +1,5 @@
+[mcp_servers.motion]
+url = "https://mcp.motion.dev"
+
+[mcp_servers.motion-plus]
+url = "https://mcp.motion.dev/plus"

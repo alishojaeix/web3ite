@@ -1,21 +1,33 @@
 import type { Template } from "@/types/template";
-import { cafe } from "./cafe";
-import { restaurant } from "./restaurant";
-import { ai } from "./ai";
-import { security } from "./security";
-import { automotive } from "./automotive";
+import { atelierCoffee, noirCafe, obsidianRoastery } from "./cafe";
+import { emberKitchen, maisonDining, soraRestaurant } from "./restaurant";
+import { aiProductLaunch, neuralStudio, quantumSystems } from "./ai";
+import { cyberDefense, onchainStudio, vaultline } from "./security";
+import { apexMarque, electricMotion, velocityStudio } from "./automotive";
+import { cigarAtelier, modernTobacco } from "./tobacco";
 import { aldaneVoss } from "./aldane-voss";
 
 /**
- * The catalog. Add one file per template, then one line here.
- * `lib/templates/repository.ts` reads this array — swap that layer for a
- * CMS or API later without touching any component.
+ * The catalog. Add one definition, then one line here. The repository layer
+ * can be swapped for a CMS/API later without touching any UI component.
  */
 export const templates: Template[] = [
-  cafe,
-  restaurant,
-  ai,
-  security,
-  automotive,
+  noirCafe,
+  atelierCoffee,
+  obsidianRoastery,
+  maisonDining,
+  emberKitchen,
+  soraRestaurant,
+  neuralStudio,
+  quantumSystems,
+  aiProductLaunch,
+  vaultline,
+  onchainStudio,
+  cyberDefense,
+  apexMarque,
+  velocityStudio,
+  electricMotion,
   aldaneVoss,
+  cigarAtelier,
+  modernTobacco,
 ];

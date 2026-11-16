@@ -4,8 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Aldane &amp; Voss — Tobacco Catalogue</title>
+<meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;1,6..72,200&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Non-blocking font CSS. A slow font host must never delay the 18+ gate or
+     the page's own scripts; the system serif/sans fallbacks keep it readable
+     until (and if) the webfonts arrive. -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;1,6..72,200&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{--bg:#0d0c0b;--char:#1a1816;--warm:#8d867c;--ink:#ece6da;--ember:#b8794a;--line:rgba(236,230,218,.15);--serif:'Newsreader',Georgia,serif;--sans:'Instrument Sans',system-ui,sans-serif;--px:clamp(1.2rem,4vw,3.5rem);--ease:cubic-bezier(.2,.8,.1,1);box-sizing:border-box}
 *,*::before,*::after{box-sizing:inherit}
@@ -109,7 +114,47 @@ footer{background:var(--bg);padding:2rem var(--px) calc(2rem + env(safe-area-ins
 </style>
 </head>
 <body>
-<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><div><h2 id="gt">Are you 18 or older?</h2><p>This catalogue describes tobacco products and is intended for adult smokers only.</p><button id="yes">Yes, I am 18 or older</button><button class="no" id="no">No</button></div></div>
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><div><h2 id="gt">Are you 18 or older?</h2><p>This catalogue describes tobacco products and is intended for adult smokers only.</p><button id="yes">Yes, I am 18 or older</button><button class="no" id="no">No</button><noscript><p>JavaScript is required to confirm your age. Enable JavaScript and reload.</p></noscript></div></div>
+<script>
+/* Standalone 18+ controller. It runs before every external resource and the
+   catalogue script below, so a slow font, CDN or main script can never leave
+   the gate without working buttons. */
+(function () {
+  var gate = document.getElementById("gate");
+  if (!gate) return;
+  var yes = document.getElementById("yes");
+  var no = document.getElementById("no");
+  var confirmed = false;
+  try { confirmed = sessionStorage.getItem("age18") === "1"; } catch (e) {}
+
+  window.__aldaneGateConfirmed = confirmed;
+
+  function confirm() {
+    if (gate.dataset.confirmed === "true") return;
+    gate.dataset.confirmed = "true";
+    window.__aldaneGateConfirmed = true;
+    gate.classList.add("out");
+    gate.setAttribute("aria-hidden", "true");
+    try { sessionStorage.setItem("age18", "1"); } catch (e) {}
+    document.dispatchEvent(new Event("aldane:gate-confirmed"));
+  }
+
+  function restrict() {
+    var panel = gate.querySelector("div");
+    if (panel) {
+      panel.innerHTML = '<h2>Access restricted</h2><p>This catalogue is only available to adults.</p>';
+    }
+    gate.dataset.confirmed = "false";
+    window.__aldaneGateConfirmed = false;
+  }
+
+  if (yes) yes.addEventListener("click", confirm);
+  if (no) no.addEventListener("click", restrict);
+  gate.dataset.ready = "true";
+
+  if (confirmed) confirm();
+})();
+</script>
 <canvas id="gl" aria-hidden="true"></canvas><div class="vig"></div><div class="grain"></div>
 <header id="nav"><a class="logo" href="#top">Aldane &amp; Voss</a>
 <nav class="links" aria-label="Main"><a href="#collection">Collection</a><a href="#detail">Products</a><a href="#story">Story</a><a href="#info">Information</a></nav>
@@ -152,7 +197,7 @@ footer{background:var(--bg);padding:2rem var(--px) calc(2rem + env(safe-area-ins
 <footer class="layer">&copy; Aldane &amp; Voss. Fictional brand for design demonstration. Adults 18+ only.</footer>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous" defer></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -199,12 +244,22 @@ function go(h){const t=$(h);if(!t)return;lenis?lenis.scrollTo(t,{duration:1.6}):
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a){e.preventDefault();setMenu(false);setTimeout(()=>go(a.getAttribute('href')),50)}});
 function listProducts(q){$('#mprods').innerHTML='';P.map((p,i)=>[p,i]).filter(([p])=>(p.n+p.nm+p.cat+p.origin).toLowerCase().includes(q.toLowerCase())).forEach(([p,i])=>{const li=document.createElement('li'),a=document.createElement('a');a.tabIndex=0;a.textContent=`${p.n} ${p.nm}, ${p.cat}`;const f=()=>{choose(i);setMenu(false);setTimeout(()=>go('#detail'),50)};a.onclick=f;a.onkeydown=e=>{if(e.key==='Enter')f()};li.appendChild(a);$('#mprods').appendChild(li)})}
 $('#q').oninput=e=>listProducts(e.target.value);listProducts('');
-const gate=$('#gate');let started=false;
-function start(){if(started)return;started=true;if(window.Lenis&&!reduce){lenis=new Lenis({lerp:.1})}initGL()}
-let ok=false;try{ok=sessionStorage.getItem('age18')==='1'}catch(e){}
-if(ok){gate.classList.add('out');start()}
-$('#yes').onclick=()=>{gate.classList.add('out');try{sessionStorage.setItem('age18','1')}catch(e){}start()};
-$('#no').onclick=()=>{gate.querySelector('div').innerHTML='<h2>Access restricted</h2><p>This catalogue is only available to adults.</p>'};
+let started=false;
+function start(){
+ if(started)return;
+ started=true;
+ initLenis();
+ initGL();
+}
+function initLenis(){if(!lenis&&window.Lenis&&!reduce){lenis=new Lenis({lerp:.1})}}
+function startWhenReady(){
+ if(window.__aldaneGateConfirmed){
+  start();
+ }else{
+  document.addEventListener('aldane:gate-confirmed', start, {once:true});
+ }
+}
+addEventListener('load', initLenis);
 /* ---------- layout / scroll ---------- */
 const S={top:$('#top'),rev:$('#reveal'),col:$('#collection'),det:$('#detail'),vw:$('#viewer'),sto:$('#story'),inf:$('#info'),fin:$('#final')};
 const nav=$('#nav'),htx=$('#htx'),str=$('#str'),shots=$$('.shot'),rail=$('#rail'),cps=$$('.cp');
@@ -216,7 +271,23 @@ function prog(el,tall){const r=el.getBoundingClientRect();return tall?clamp(-r.t
 let R,cam,G,key,rim,smoke,pg,N=0,texF,texB,vis=true;
 const cur=[0,0,.3,.08,0,14,1,2.2],tgt=cur.slice();
 const drag={on:false,ry:0,rx:0,v:0,lx:0,ly:0};
-function initGL(){const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=buildGL;s.onerror=()=>{$('#gl').style.display='none'};document.head.appendChild(s)}
+function failGL(reason){const cv=$('#gl');if(cv){cv.dataset.glState='failed';cv.style.display='none';cv.style.opacity='0'}if(typeof console!=='undefined'&&console.warn)console.warn('Aldane 3D unavailable:',reason)}
+function initGL(){
+ const cv=$('#gl');
+ if(!cv||cv.dataset.glState)return;
+ cv.dataset.glState='loading';
+ try{
+  const probe=document.createElement('canvas');
+  if(!(probe.getContext('webgl')||probe.getContext('experimental-webgl'))){failGL(new Error('WebGL unsupported'));return}
+ }catch(e){failGL(e);return}
+ const s=document.createElement('script');
+ s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+ s.integrity='sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu';
+ s.crossOrigin='anonymous';
+ s.onload=function(){buildGL()};
+ s.onerror=function(){failGL(new Error('Three.js failed to load'))};
+ document.head.appendChild(s);
+}
 function mk(){const c=document.createElement('canvas');c.width=512;c.height=720;return c}
 function drawPack(){if(!texF)return;const p=P[sel],c=texF.image,x=c.getContext('2d');
  x.fillStyle='#14120f';x.fillRect(0,0,512,720);x.textAlign='center';x.fillStyle=p.tone;
@@ -224,8 +295,10 @@ function drawPack(){if(!texF)return;const p=P[sel],c=texF.image,x=c.getContext('
  x.fillRect(120,250,272,2);x.fillStyle='#ece6da';x.font='200 58px Newsreader,Georgia,serif';x.fillText(p.n,256,380);x.font='italic 200 84px Newsreader,Georgia,serif';x.fillText(p.nm,256,470);
  x.fillStyle='#8d867c';x.font='22px Newsreader,Georgia,serif';x.fillText('20 cigarettes',256,640);texF.needsUpdate=true;
  const b=texB.image.getContext('2d');b.fillStyle='#14120f';b.fillRect(0,0,512,720);b.strokeStyle='#ece6da';b.lineWidth=4;b.strokeRect(40,200,432,300);b.fillStyle='#ece6da';b.textAlign='center';b.font='300 40px Newsreader,Georgia,serif';b.fillText('Smoking kills.',256,330);b.font='26px Newsreader,Georgia,serif';b.fillText('Stop now.',256,390);texB.needsUpdate=true}
-function buildGL(){const T=THREE,cv=$('#gl');
- try{R=new T.WebGLRenderer({canvas:cv,antialias:!mq.matches,alpha:true,powerPreference:'high-performance'})}catch(e){cv.style.display='none';return}
+function buildGL(){try{buildGLInner()}catch(e){failGL(e)}}
+function buildGLInner(){const T=window.THREE,cv=$('#gl');
+ if(!T||!cv)throw new Error('Three.js or canvas missing');
+ try{R=new T.WebGLRenderer({canvas:cv,antialias:!mq.matches,alpha:true,powerPreference:'high-performance'})}catch(e){failGL(e);return}
  R.setPixelRatio(Math.min(devicePixelRatio,mq.matches?1.5:2));R.outputEncoding=T.sRGBEncoding;R.toneMapping=T.ACESFilmicToneMapping;
  const sc=new T.Scene();cam=new T.PerspectiveCamera(30,1,.1,60);cam.position.z=14;
  sc.add(new T.HemisphereLight(0x8d867c,0x0d0c0b,.4));key=new T.DirectionalLight(0xffe2c0,2.2);key.position.set(4,3,5);sc.add(key);
@@ -242,6 +315,7 @@ function buildGL(){const T=THREE,cv=$('#gl');
  const c2=document.createElement('canvas');c2.width=c2.height=64;const x=c2.getContext('2d'),g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,255,255,.5)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,64,64);
  smoke=new T.Points(pg,new T.PointsMaterial({size:.9,map:new T.CanvasTexture(c2),transparent:true,opacity:.1,depthWrite:false,color:0xc8c0b4}));smoke.frustumCulled=false;sc.add(smoke);R.sc=sc;
  drawPack();document.fonts&&document.fonts.ready.then(drawPack);rsz();addEventListener('resize',rsz);
+ cv.dataset.glState='ready';
 }
 function rsz(){if(!R)return;R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}
 document.addEventListener('visibilitychange',()=>vis=!document.hidden);
@@ -286,7 +360,7 @@ function frame(now){requestAnimationFrame(frame);const dt=Math.min(.05,(now-last
    if(N&&!reduce){const p=pg.attributes.position.array;for(let i=0;i<N;i++){const s=(i*.6180339)%1,u=(s*37+tm*(.03+s*.03))%1;p[i*3]=(s-.5)*9+Math.sin(u*6+s*20+tm*.3)*.8;p[i*3+1]=-4+u*8;p[i*3+2]=Math.cos(u*5+s*30)*2-1}pg.attributes.position.needsUpdate=true}
    R.render(R.sc,cam)}}
 }
-renderDetail();requestAnimationFrame(frame);
+renderDetail();startWhenReady();requestAnimationFrame(frame);
 })();
 </script>
 </body>
