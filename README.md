@@ -1,109 +1,322 @@
-# Web3ite
+# Web3ite — Premium 3D Website Experiences
 
-A catalogue of 18 industry-specific website templates. Each entry is a complete,
-independent demonstration website with its own visual identity, content,
-sections and responsive layout. The storefront adds a lightweight membership and
-purchase flow.
+<div align="center">
 
-This is a design and engineering demonstration. Every business, menu, address,
-price and claim inside a template website is fictional. Read `/legal` for the
-demo and age policy.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:09090B,50:27272A,100:52525B&height=220&section=header&text=WEB3ITE&fontSize=76&fontColor=FFFFFF&fontAlignY=38&desc=Beyond%20Ordinary%20Web%20Experiences&descAlignY=60&descSize=17&animation=fadeIn" width="100%" alt="Web3ite banner" />
 
-## Requirements
+<a href="https://web3ite.vercel.app">
+  <img src="https://img.shields.io/badge/LIVE%20DEMO-Visit%20Web3ite-FFFFFF?style=for-the-badge&logo=vercel&logoColor=000000" alt="Live Demo" />
+</a>
+<a href="https://github.com/alishojaeix/web3ite">
+  <img src="https://img.shields.io/badge/GITHUB-Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repository" />
+</a>
 
-- Node.js 20 or newer
+<br/>
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
+![Three.js](https://img.shields.io/badge/Three.js-3D-black?style=flat-square&logo=threedotjs)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=flat-square&logo=tailwindcss)
+![Vercel](https://img.shields.io/badge/Deployment-Vercel-black?style=flat-square&logo=vercel)
+
+**A creative platform for premium, interactive and immersive 3D websites.**
+
+[Explore Live Demo](https://web3ite.vercel.app) · [Explore Repository](https://github.com/alishojaeix/web3ite)
+
+</div>
+
+---
+
+## ✦ About Web3ite
+
+**Web3ite** is a collection and development platform for premium website experiences, bringing together modern web technologies, immersive 3D visuals, smooth motion design and carefully crafted digital interfaces.
+
+The project aims to transform traditional website templates into complete, independent, production-oriented website experiences.
+
+Rather than presenting isolated 3D objects, Web3ite focuses on building real websites with meaningful content, functional layouts, interactive elements and distinctive visual identities.
+
+### Our Vision
+
+- Premium website templates with unique visual identities.
+- Immersive 3D experiences that support the actual content.
+- Smooth scrolling and meaningful motion design.
+- Responsive layouts for desktop, tablet and mobile.
+- Independent website experiences organized through a template catalog.
+- Reusable architecture for developing and maintaining multiple websites.
+
+---
+
+## ✦ Live Preview
+
+<div align="center">
+
+**Explore Web3ite**
+
+<a href="https://web3ite.vercel.app">
+  <img src="https://img.shields.io/badge/OPEN%20WEB3ITE-Explore%20the%20Experience-FFFFFF?style=for-the-badge" alt="Open Web3ite" />
+</a>
+
+<br/><br/>
+
+Visit the live application to explore the homepage, template catalog and available website experiences.
+
+</div>
+
+---
+
+## ✦ Website Collection
+
+Web3ite is developed around a growing collection of independent website concepts.
+
+Each website is intended to have its own identity, content, layout, interactions and design system.
+
+### Featured Website Concepts
+
+| Website | Category | Experience |
+|---|---|---|
+| Noir Cafe | Café & Cigar | Atmospheric hospitality experience |
+| Maison Cloche | Luxury & Lifestyle | Editorial luxury aesthetic |
+| Axon Lab | Technology | Modern experimental digital identity |
+| Vaultline | Premium & Finance | Sophisticated business experience |
+| Apex Marque | Automotive | Premium automotive presentation |
+| Velocity Studio | Automotive & Engineering | Aerodynamic and performance-inspired experience |
+
+The collection is continuously evolving. Visit the live application to explore the currently available experiences.
+
+---
+
+## ✦ Technology Stack
+
+Web3ite uses a modern frontend stack designed for interactive interfaces and 3D web experiences.
+
+### Core Framework
+
+| Technology | Purpose |
+|---|---|
+| Next.js 14 | Application framework |
+| React 18 | Component-based UI |
+| TypeScript | Type safety |
+| Tailwind CSS | Utility-first styling |
+
+### 3D & Animation
+
+| Technology | Purpose |
+|---|---|
+| Three.js | 3D rendering |
+| React Three Fiber | React-based 3D scenes |
+| Drei | 3D helpers and abstractions |
+| GSAP | Advanced animation |
+| Framer Motion | Interface transitions |
+| Lenis | Smooth scrolling |
+
+### Additional Tools
+
+- Zustand — State management
+- Lucide React — Interface icons
+- Radix UI — Accessible UI primitives
+- PostCSS — CSS processing
+
+---
+
+## ✦ Project Architecture
+
+The repository is organized to support reusable components, independent website experiences and a growing template collection.
+
+```text
+web3ite/
+│
+├── app/                  # Application routes and pages
+│
+├── components/           # Shared UI and website components
+│
+├── data/
+│   └── templates/        # Template definitions and catalog data
+│
+├── hooks/                # Reusable React hooks
+│
+├── lib/                  # Utilities and shared logic
+│
+├── public/               # Static assets and media
+│
+├── types/                # TypeScript definitions
+│
+├── docs/                 # Project documentation
+│
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+└── tsconfig.json
+```
+
+---
+
+## ✦ Getting Started
+
+Follow these steps to run Web3ite locally.
+
+### Prerequisites
+
+- Node.js (compatible with Next.js 14)
 - npm
+- Git
 
-## Quick start
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/alishojaeix/web3ite.git
+```
+
+### 2. Enter the Project Directory
+
+```bash
+cd web3ite
+```
+
+### 3. Install Dependencies
 
 ```bash
 npm install
+```
+
+### 4. Start Development Server
+
+```bash
 npm run dev
 ```
 
-Open <http://localhost:3000>.
+### 5. Open in Browser
 
-```bash
-npm run build   # production build, includes type checking
-npm start       # serve the production build
-npx tsc --noEmit
+Visit:
+
+```text
+http://localhost:3000
 ```
 
-No ESLint configuration is committed; `next build` performs type validation and the
-project is checked with `npx tsc --noEmit`.
+---
 
-## Routes
+## ✦ Production Build
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Homepage, curated template selection and 3D showroom |
-| `/templates` | Full catalogue with category filtering and search |
-| `/templates/[id]` | Template detail, 3D studio, live website link and purchase CTA |
-| `/sites/[id]` | The 17 hand-built template websites (statically generated) |
-| `/previews/aldane-voss` | Self-contained static Aldane & Voss catalogue, age-gated |
-| `/register`, `/login`, `/account` | Membership and purchase history |
-| `/checkout/[id]`, `/checkout/success` | Checkout summary and verified Stripe result |
-| `/age-gate` | 18+ confirmation for tobacco demonstrations |
-| `/legal` | Demo, age, data and payment policy |
-| `/api/og?site=[id]` | Per-template Open Graph image |
+Create an optimized production build:
 
-## Architecture
+```bash
+npm run build
+```
 
-- `data/templates/` — catalogue records (price, features, category, theme).
-- `components/sites/<id>/` — the 17 hand-built template websites, each with its
-  own sections, artwork and scoped stylesheet.
-- `lib/sites/data.ts` — editorial content for the shared site engine.
-- `lib/sites/skins.ts` — per-site palettes, type system and layout language for
-  the engine.
-- `components/sites/engine/` — shared website renderer retained for the legacy
-  `/sites/aldane-voss` entry and any future template sites.
-- `components/sites/noir-cafe/` — the original hand-built café website.
-- `components/3d/` — lazy-loaded WebGL showroom and studio scenes. WebGL is an
-  enhancement; every template website works without it.
-- `lib/server/` — dependency-free JSON persistence, scrypt password hashing,
-  signed sessions, Stripe REST helpers and rate limiting.
-- `app/sites/site-engine.css` — scoped website styles, mobile-first and
-  reduced-motion aware.
+Start the production server:
 
-## Environment variables
+```bash
+npm run start
+```
 
-Copy `.env.example` to `.env.local` and fill in only what you need.
+---
 
-| Variable | Required | Purpose |
-| --- | --- | --- |
-| `AUTH_SECRET` | Production | At least 32 characters. Signs the HttpOnly session cookie. Without it, account endpoints return `503` in production. |
-| `WEB3ITE_DATA_DIR` | Production | Writable directory for `users.json`, `purchases.json`, `inquiries.json` and `waitlist.json`. Defaults to `data/runtime` locally. |
-| `NEXT_PUBLIC_SITE_URL` | Production | Canonical origin used for Stripe success/cancel URLs, for example `https://web3ite.vercel.app`. |
-| `STRIPE_SECRET_KEY` | Optional | Enables Stripe Checkout. Without it the checkout page shows an honest disabled state and no payment can be taken. |
-| `STRIPE_WEBHOOK_SECRET` | Optional | Verifies `checkout.session.completed` webhook signatures. |
-| `SITE_INBOX_WEBHOOK_URL` | Optional | If set, template contact forms forward inquiries to this webhook instead of local JSON storage. |
+## ✦ Development Philosophy
 
-Never commit `.env.local` or the contents of `data/runtime`.
+Web3ite follows a few important principles:
 
-## Deployment blockers and limits
+**1. Complete Websites, Not Just 3D Objects**
 
-- **Serverless filesystems are read-only.** The JSON store needs a writable
-  volume (`WEB3ITE_DATA_DIR`) or a real database before accounts, purchase
-  history or form submissions work in production. Write failures are surfaced to
-  the visitor as errors; they are never reported as success.
-- **Stripe is not configured in this working tree.** The checkout summary,
-  disabled fallback, success-page verification and webhook signature handling
-  are implemented, but no live payment has been tested. Set both Stripe
-  variables and register the webhook before enabling the CTA.
-- **Auth secret is not configured.** Local development falls back to a fixed
-  development secret. Production requires `AUTH_SECRET` of at least 32
-  characters.
-- **Purchase fulfilment is manual.** A verified purchase appears in the member
-  dashboard, but source files are not delivered automatically.
-- **Age confirmation is an acknowledgement, not identity verification.** It is a
-  first-party cookie lasting 30 days. Tobacco websites are `noindex`, excluded
-  from the sitemap and excluded from the homepage showroom.
-- **The Aldane static catalogue uses two version-pinned CDN scripts**
-  (Three.js r128 and Lenis 1.1.13) with SRI where the CDN supports it. If the
-  CDN is unavailable, the catalogue's 2D content and age gate still work.
+3D elements should enhance the website experience, not replace meaningful content or functionality.
 
-## Demo data
+**2. Performance Matters**
 
-`data/runtime/` is intentionally ignored by git. It is created on first write.
-To reset local accounts, purchases, inquiries and waitlist entries, stop the
-server and delete that directory.
+Animations, models and visual effects should be implemented with performance and usability in mind.
+
+**3. Mobile-First Thinking**
+
+Every website should provide a carefully considered experience across different screen sizes.
+
+**4. Independent Design Identities**
+
+Each template should feel like a distinct brand and product rather than a recolored copy of another template.
+
+**5. Maintainable Architecture**
+
+Shared foundations should make it easier to develop, improve and maintain individual websites.
+
+---
+
+## ✦ Roadmap
+
+- [x] Establish the core Web3ite project foundation.
+- [x] Implement the template architecture.
+- [x] Register the initial website templates.
+- [x] Establish reusable website components.
+- [ ] Expand the independent website collection.
+- [ ] Improve homepage-to-template preview consistency.
+- [ ] Add optimized desktop and mobile screenshots.
+- [ ] Add short GIF demonstrations of real interactions.
+- [ ] Continue performance and accessibility improvements.
+- [ ] Expand documentation and template customization guides.
+
+---
+
+## ✦ Screenshots & Demonstrations
+
+Visual demonstrations will be added as verified captures of the actual application.
+
+Planned documentation assets:
+
+```text
+docs/
+└── media/
+    ├── homepage-desktop.webp
+    ├── homepage-mobile.webp
+    ├── template-catalog.webp
+    ├── noir-cafe-desktop.webp
+    ├── noir-cafe-mobile.webp
+    └── interactions/
+        ├── homepage-preview.gif
+        └── website-interactions.gif
+```
+
+Only add these images after capturing the corresponding real application screens. Keep the README image references synchronized with the actual files.
+
+---
+
+## ✦ Deployment
+
+The project has a public Vercel deployment:
+
+**Live Website:** https://web3ite.vercel.app
+
+For deployment configuration and environment requirements, refer to the project configuration and your deployment provider.
+
+---
+
+## ✦ Contributing
+
+Ideas, suggestions and improvements are welcome.
+
+If you want to contribute:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Test the application.
+5. Submit a pull request with a clear description.
+
+Please keep changes focused and preserve the existing project architecture.
+
+---
+
+## ✦ License
+
+No license has been declared in this repository. All rights and permissions remain subject to the repository owner's terms until a license is added.
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:52525B,50:27272A,100:09090B&height=120&section=footer" width="100%" alt="Footer" />
+
+### WEB3ITE
+
+**Design Beyond the Ordinary.**
+
+Built for the next generation of immersive web experiences.
+
+[Website](https://web3ite.vercel.app) · [GitHub](https://github.com/alishojaeix/web3ite)
+
+</div>
