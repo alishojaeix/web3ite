@@ -51,7 +51,7 @@ export function RingAssembly() {
       className="qs-assembly"
       viewBox="0 0 1200 640"
       role="img"
-      aria-label="A technical drawing of a circular assembly with three arms, concentric rings and measurement callouts."
+      aria-label="نقشهٔ فنی یک مجموعه دایره‌ای با سه بازو، حلقه‌های هم‌مرکز و برچسب‌های اندازه‌گیری."
     >
       <defs>
         <radialGradient id="qs-plate-glow" cx="50%" cy="50%" r="52%">
@@ -143,25 +143,25 @@ export function RingAssembly() {
 
       <g fill="#9dabb3" fontFamily="var(--qs-mono), ui-monospace, monospace" fontSize="11" letterSpacing="2.2">
         <text x={CX} y="30" textAnchor="middle">
-          01 / CONTROL
+          ۰۱ / کنترل
         </text>
         <text x="1040" y="296">
-          02 / CALIBRATION
+          ۰۲ / کالیبراسیون
         </text>
         <text x="1040" y="316" fontSize="9" fill="#6f7f88">
-          REFERENCE STAGE
+          مرحلهٔ مرجع
         </text>
         <text x="284" y="574" textAnchor="end">
-          03 / READOUT
+          ۰۳ / خوانش
         </text>
         <text x="32" y="48">
-          ASSEMBLY 03
+          مجموعه ۰۳
         </text>
         <text x="32" y="66" fill="#6f7f88" fontSize="9">
-          OPTICAL STACK · REV C
+          پشتهٔ نوری · بازبینی C
         </text>
         <text x="1168" y="614" textAnchor="end" fill="#6f7f88" fontSize="9">
-          ILLUSTRATIVE · NOT TO SCALE
+          نمایشی · بدون مقیاس
         </text>
       </g>
 
@@ -199,7 +199,7 @@ export function SystemSchematic() {
       className="qs-schematic"
       viewBox="0 0 520 600"
       role="img"
-      aria-label="A schematic of three stacked modules: control plane, calibration cell and readout."
+      aria-label="شمایی از سه ماژول روی هم: صفحهٔ کنترل، سلول کالیبراسیون و خوانش."
     >
       <g fill="none" stroke="rgba(207,221,229,0.4)" strokeWidth="1">
         <rect x="40" y="30" width="440" height="140" />
@@ -217,17 +217,17 @@ export function SystemSchematic() {
       </g>
 
       <g fill="#9dabb3" fontFamily="var(--qs-mono), ui-monospace, monospace" fontSize="9.5" letterSpacing="1.6">
-        <text x="54" y="49">01 / CONTROL PLANE</text>
-        <text x="54" y="229">02 / CALIBRATION CELL</text>
-        <text x="54" y="419">03 / READOUT</text>
+        <text x="54" y="49">۰۱ / صفحهٔ کنترل</text>
+        <text x="54" y="229">۰۲ / سلول کالیبراسیون</text>
+        <text x="54" y="419">۰۳ / خوانش</text>
         <text x="470" y="49" textAnchor="end" fill="#6f7f88">
-          STATE
+          وضعیت
         </text>
         <text x="470" y="229" textAnchor="end" fill="#6f7f88">
-          REF
+          مرجع
         </text>
         <text x="470" y="419" textAnchor="end" fill="#6f7f88">
-          LIVE
+          زنده
         </text>
       </g>
 
@@ -299,7 +299,7 @@ export function SystemSchematic() {
         textAnchor="middle"
         transform="rotate(90 514 285)"
       >
-        MODULAR
+        ماژولار
       </text>
     </svg>
   );

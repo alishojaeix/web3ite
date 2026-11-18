@@ -6,205 +6,205 @@
  */
 
 export const launchNav = [
-  { label: "Product", href: "#showcase" },
-  { label: "Specs", href: "#specs" },
-  { label: "System", href: "#story" },
-  { label: "Reserve", href: "#contact" },
+  { label: "محصول", href: "#showcase" },
+  { label: "مشخصات", href: "#specs" },
+  { label: "سامانه", href: "#story" },
+  { label: "رزرو", href: "#contact" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Launch / A new compute layer",
-  headline: "Small object.",
-  headlineAccent: "Serious machine.",
+  eyebrow: "رونمایی / لایهٔ تازهٔ پردازش",
+  headline: "شیء‌ای کوچک",
+  headlineAccent: "ماشینی جدی",
   intro:
-    "A compact AI computer for the desk. Local inference, an open interface and a specification sheet with nothing hidden.",
-  primaryCta: "Meet the product",
-  secondaryCta: "Read the specs",
-  status: "First run · reservation open",
-  note: "Sample product concept · fictional device, no orders taken",
+    "یک رایانهٔ جمع‌وجور هوش مصنوعی برای میز کار. استنتاج محلی، رابطی باز و برگهٔ مشخصاتی که چیزی در آن پنهان نشده است.",
+  primaryCta: "با محصول آشنا شوید",
+  secondaryCta: "مشخصات را بخوانید",
+  status: "دستهٔ نخست · رزرو باز است",
+  note: "مفهوم نمایشی محصول · دستگاه خیالی، سفارشی ثبت نمی‌شود",
   caption: [
-    "Prism 01 — the compute core",
-    "Illustrative render · not a product photo",
+    "Prism 01 — هستهٔ پردازش",
+    "رندر نمایشی · نه عکس محصول",
   ],
-  footNote: "Compact AI · Local inference · Desk-ready",
+  footNote: "هوش مصنوعی جمع‌وجور · استنتاج محلی · آماده برای میز",
 } as const;
 
 export const heroMeta = [
-  { label: "Form", value: "Compact" },
-  { label: "Compute", value: "Local AI" },
-  { label: "Run", value: "First edition" },
+  { label: "شکل", value: "جمع‌وجور" },
+  { label: "پردازش", value: "هوش مصنوعی محلی" },
+  { label: "دوره", value: "ویراست نخست" },
 ] as const;
 
 export const strip = [
-  "Local inference",
-  "Open interface",
-  "Quiet enclosure",
-  "Serviceable",
-  "Desk-ready",
-  "First run",
+  "استنتاج محلی",
+  "رابط باز",
+  "محفظهٔ بی‌صدا",
+  "قابل تعمیر",
+  "آماده برای میز",
+  "دستهٔ نخست",
 ] as const;
 
 export const showcase = {
-  label: "01 / The object",
-  title: "A compact compute layer for the desk.",
+  label: "۰۱ / شیء",
+  title: "لایهٔ پردازشی جمع‌وجور برای میز",
   intro:
-    "One object, three decisions: where it sits, how it is cooled, and who can inspect it. The launch page answers each before it is asked.",
-  note: "Sample product story. The device is fictional and nothing is for sale.",
+    "یک شیء، سه تصمیم: کجا بنشیند، چطور خنک شود و چه کسی بتواند بازش کند. صفحهٔ رونمایی پیش از پرسیده‌شدن به هر کدام پاسخ می‌دهد.",
+  note: "داستان نمایشی محصول. دستگاه خیالی است و چیزی برای فروش نیست.",
   features: [
     {
       index: "01",
-      title: "Designed to sit close",
-      body: "A footprint small enough for a desk, quiet enough for a studio, and simple enough to move between rooms.",
-      detail: "Glass front · anodised base",
+      title: "طراحی‌شده برای نشستن نزدیک",
+      body: "ردپایی به‌اندازهٔ کافی کوچک برای میز، به‌اندازهٔ کافی آرام برای استودیو و به‌اندازهٔ کافی ساده برای جابه‌جایی میان اتاق‌ها.",
+      detail: "جلوی شیشه‌ای · پایهٔ آندی‌شده",
     },
     {
       index: "02",
-      title: "Local by default",
-      body: "Inference happens on the device. The interface is open, the state is visible and the network is optional.",
-      detail: "Open API · local first",
+      title: "محلی، به‌طور پیش‌فرض",
+      body: "استنتاج روی خود دستگاه انجام می‌شود. رابط باز است، وضعیت دیده می‌شود و شبکه اختیاری است.",
+      detail: "API باز · محلی در درجهٔ اول",
     },
     {
       index: "03",
-      title: "Built to be opened",
-      body: "A serviceable enclosure, documented ports and a specification sheet that labels what is illustrative.",
-      detail: "Serviceable · documented",
+      title: "ساخته‌شده برای باز شدن",
+      body: "محفظه‌ای قابل تعمیر، پورت‌های مستند و برگهٔ مشخصاتی که نشان می‌دهد کدام مقدارها نمایشی‌اند.",
+      detail: "قابل تعمیر · مستند",
     },
   ],
   quote: {
-    text: "One hero, one promise, one sheet. The product does the rest.",
-    note: "Launch principle · sample copy",
+    text: "یک قهرمان، یک وعده، یک برگ. بقیهٔ کار با محصول است.",
+    note: "اصول رونمایی · متن نمونه",
   },
 } as const;
 
 export const specs = {
-  label: "02 / Specifications",
-  title: "Nothing hidden.",
+  label: "۰۲ / مشخصات",
+  title: "چیزی پنهان نیست",
   intro:
-    "The sheet is written the way we would want to read one: grouped, labelled and honest about what is a demo value.",
-  note: "Illustrative specification. All values are sample data for this template — not a real product datasheet.",
+    "برگهٔ مشخصات آن‌طور نوشته شده که خودمان دوست داریم بخوانیم: گروه‌بندی‌شده، برچسب‌دار و صادق دربارهٔ آنچه مقدار نمایشی است.",
+  note: "مشخصات نمایشی. همهٔ مقدارها دادهٔ نمونه برای این قالب‌اند — نه برگهٔ دادهٔ یک محصول واقعی.",
   groups: [
     {
-      title: "Core",
+      title: "هسته",
       rows: [
-        { label: "Form factor", value: "Compact", note: "Desk or quiet rack" },
-        { label: "Compute", value: "AI accelerator", note: "Local inference" },
-        { label: "Memory", value: "64 GB", note: "Unified" },
-        { label: "Connectivity", value: "USB-C + Ethernet", note: "Open API" },
+        { label: "شکل", value: "جمع‌وجور", note: "میز یا رک بی‌صدا" },
+        { label: "پردازش", value: "شتاب‌دهندهٔ هوش مصنوعی", note: "استنتاج محلی" },
+        { label: "حافظه", value: "۶۴ گیگابایت", note: "یکپارچه" },
+        { label: "اتصال", value: "USB-C + اترنت", note: "API باز" },
       ],
     },
     {
-      title: "Physical",
+      title: "بدنه",
       rows: [
-        { label: "Enclosure", value: "Glass + anodised metal", note: "Serviceable" },
-        { label: "Power", value: "180 W", note: "Single supply" },
-        { label: "Deployment", value: "Desk / rack", note: "One object" },
-        { label: "Availability", value: "First run", note: "Reservation only" },
+        { label: "محفظه", value: "شیشه + فلز آندی‌شده", note: "قابل تعمیر" },
+        { label: "توان", value: "۱۸۰ وات", note: "یک منبع" },
+        { label: "استقرار", value: "میز / رک", note: "یک شیء" },
+        { label: "موجودی", value: "دستهٔ نخست", note: "فقط با رزرو" },
       ],
     },
     {
-      title: "Service",
+      title: "پشتیبانی",
       rows: [
-        { label: "Warranty", value: "2 years", note: "Sample value" },
-        { label: "Support", value: "Direct", note: "Named team" },
-        { label: "Ship", value: "Q3", note: "Sample window" },
+        { label: "گارانتی", value: "۲ سال", note: "مقدار نمونه" },
+        { label: "پشتیبانی", value: "مستقیم", note: "تیم نام‌بردار" },
+        { label: "ارسال", value: "Q3", note: "بازهٔ نمونه" },
       ],
     },
   ],
-  footnote: "Figures shown are illustrative and included to demonstrate layout. No performance is claimed.",
+  footnote: "عدد‌های نمایش‌داده‌شده نمایشی‌اند و برای نشان دادن چیدمان آمده‌اند. هیچ کارایی‌ای ادعا نمی‌شود.",
 } as const;
 
 export const story = {
-  label: "03 / The system",
-  title: "Small object. Serious machine.",
+  label: "۰۳ / سامانه",
+  title: "شیء‌ای کوچک. ماشینی جدی",
   intro:
-    "A launch story told in three beats: the object on the desk, the system underneath it, and the first run going out the door.",
+    "داستان رونمایی در سه پرده: شیء روی میز، سامانهٔ زیر آن و رفتن نخستین دسته از در.",
   beats: [
     {
       step: "01",
-      title: "The object",
-      body: "Designed around the desk, not the data centre. The prism sits in one place, tells you what it is doing and asks for very little.",
-      tag: "Form",
+      title: "شیء",
+      body: "طراحی‌شده گرد میز، نه گرد مرکز داده. Prism یک‌جا می‌نشیند، می‌گوید چه می‌کند و چیز بسیار کمی می‌خواهد.",
+      tag: "شکل",
     },
     {
       step: "02",
-      title: "The system",
-      body: "Local inference, an open interface and a state you can read. No account is required to see what the machine is doing.",
-      tag: "Compute",
+      title: "سامانه",
+      body: "استنتاج محلی، رابطی باز و وضعیتی که می‌شود خواند. برای دیدن آنچه ماشین می‌کند به حساب کاربری نیازی نیست.",
+      tag: "پردازش",
     },
     {
       step: "03",
-      title: "The first run",
-      body: "A single first edition, documented as it ships. Sample launch timeline; no orders or payments are taken here.",
-      tag: "Launch",
+      title: "دستهٔ نخست",
+      body: "یک ویراست نخستِ تنها، مستندشده همان‌طور که ارسال می‌شود. جدول زمانیِ نمونهٔ رونمایی؛ اینجا سفارش یا پرداختی گرفته نمی‌شود.",
+      tag: "رونمایی",
     },
   ],
-  note: "Illustrative launch narrative. No real availability, roadmap or delivery is promised.",
+  note: "روایت نمایشی رونمایی. هیچ موجودی، نقشهٔ راه یا تحویل واقعی وعده داده نمی‌شود.",
 } as const;
 
 export const materials = {
-  label: "04 / Materials",
-  title: "Three materials, one object.",
+  label: "۰۴ / متریال",
+  title: "سه متریال، یک شیء",
   intro:
-    "A glass prism, an anodised base and a single cinematic key light. The palette is the product story.",
-  note: "Material descriptions are illustrative. No supplier, certification or finish is represented.",
+    "یک منشور شیشه‌ای، یک پایهٔ آندی‌شده و یک نور کلیدی سینمایی. پالت، همان داستان محصول است.",
+  note: "توصیف متریال‌ها نمایشی است. هیچ تأمین‌کننده، گواهی یا پرداخت سطحی بازنمایی نمی‌شود.",
   items: [
     {
-      name: "Glass",
-      note: "The compute prism",
-      body: "A smoked glass front with a polished bevel. The light seam is the only indicator that stays on.",
+      name: "شیشه",
+      note: "منشور پردازش",
+      body: "جلوی شیشهٔ دودی با لبهٔ صیقلی. درز نور تنها نشانگری است که روشن می‌ماند.",
       swatch: "glass" as const,
     },
     {
-      name: "Anodised metal",
-      note: "A quiet enclosure",
-      body: "A warm-grey base that grounds the object. Matte, fingerprint-resistant, and easy to open with one tool.",
+      name: "فلز آندی‌شده",
+      note: "محفظه‌ای آرام",
+      body: "پایه‌ای خاکستری-گرم که شیء را به زمین وصل می‌کند. مات، مقاوم به اثر انگشت و با یک ابزار به‌راحتی باز می‌شود.",
       swatch: "metal" as const,
     },
     {
-      name: "Studio light",
-      note: "One cinematic key",
-      body: "A single warm key rakes across the prism. No coloured rim lights, no stage fog — just the object.",
+      name: "نور استودیو",
+      note: "یک نور کلیدی سینمایی",
+      body: "یک نور گرمِ تنها روی منشور می‌افتد. نه نور لبهٔ رنگی، نه مه صحنه — فقط شیء.",
       swatch: "light" as const,
     },
   ],
 } as const;
 
 export const reserve = {
-  label: "05 / Reserve",
-  title: "Reserve the first run.",
+  label: "۰۵ / رزرو",
+  title: "دستهٔ نخست را رزرو کنید",
   intro:
-    "A refundable reservation request. No payment is taken on this demo, and no device is reserved.",
+    "درخواست رزروی قابل استرداد. در این نسخهٔ نمایشی هیچ پرداختی گرفته نمی‌شود و دستگاهی رزرو نمی‌شود.",
   bullets: [
-    "One request per person",
-    "First-run configuration only",
-    "Email confirmation is simulated",
+    "برای هر نفر یک درخواست",
+    "فقط پیکربندی دستهٔ نخست",
+    "تأیید ایمیلی شبیه‌سازی می‌شود",
   ],
   facts: [
-    { label: "Edition", value: "First run" },
-    { label: "Reservation", value: "Refundable" },
-    { label: "Payment", value: "None on demo" },
-    { label: "Ship", value: "Sample Q3" },
+    { label: "ویراست", value: "دستهٔ نخست" },
+    { label: "رزرو", value: "قابل استرداد" },
+    { label: "پرداخت", value: "در نمایش هیچ" },
+    { label: "ارسال", value: "نمونه Q3" },
   ],
-  quote: "Tell us where it will sit. We will tell you what it needs.",
-  quoteNote: "Reservation note · sample copy",
+  quote: "بگویید کجا می‌نشیند. ما می‌گوییم چه لازم دارد.",
+  quoteNote: "یادداشت رزرو · متن نمونه",
   form: {
-    title: "Reservation request",
-    sub: "A place in the first run, not a checkout",
+    title: "درخواست رزرو",
+    sub: "جایی در دستهٔ نخست، نه یک پرداخت",
     editions: [
-      "Prism 01 — desk",
-      "Prism 01 — studio",
-      "Prism 01 — rack",
-      "Undecided",
+      "Prism 01 — میز",
+      "Prism 01 — استودیو",
+      "Prism 01 — رک",
+      "هنوز تصمیم نگرفته‌ام",
     ],
-    note: "Sample reservation form. Nothing is sent to a real company, no device is reserved and no payment is taken.",
+    note: "فرم رزرو نمونه. چیزی به شرکتی واقعی فرستاده نمی‌شود، دستگاهی رزرو نمی‌شود و پرداختی گرفته نمی‌شود.",
     confirmation:
-      "Your reservation request has been recorded for this demonstration. No payment is taken and no device is reserved.",
+      "درخواست رزرو شما برای این نمایش ثبت شد. هیچ پرداختی گرفته نمی‌شود و دستگاهی رزرو نمی‌شود.",
     fallback:
-      "The demo inbox is unavailable right now. Please use the email address on this page.",
+      "صندوق ورودی نمایشی اکنون در دسترس نیست. لطفاً از نشانی ایمیل روی همین صفحه استفاده کنید.",
   },
   email: "launch@prism-compute.demo",
   phone: "+44 20 7946 0003",
-  address: ["Prism Compute", "9 Studio Row", "London E2 7JY"],
-  hours: "Monday – Friday · 09:00 – 18:00",
-  contactNote: "Fictional company. Address, telephone number and details are illustrative.",
+  address: ["پریزم کامپیوت", "استودیو رو ۹", "لندن E2 7JY"],
+  hours: "دوشنبه – جمعه · 09:00 – 18:00",
+  contactNote: "شرکت خیالی. نشانی، شمارهٔ تلفن و جزئیات نمایشی‌اند.",
 } as const;

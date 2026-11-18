@@ -20,13 +20,13 @@ export function NeuralNav() {
   return (
     <header className="ns-nav">
       <div className="ns-wrap ns-nav-bar">
-        <a href="#top" className="ns-brand" aria-label="Neural Studio, back to top">
+        <a href="#top" className="ns-brand" aria-label="استودیوی نیورال، بازگشت به بالا">
           <Mark className="ns-brand-mark" />
-          <span className="ns-brand-word">Neural</span>
-          <span className="ns-brand-sub">Applied AI</span>
+          <span className="ns-brand-word">نیورال</span>
+          <span className="ns-brand-sub">هوش مصنوعی کاربردی</span>
         </a>
 
-        <nav aria-label="Primary" className="ns-nav-links">
+        <nav aria-label="پیمایش اصلی" className="ns-nav-links">
           {neuralNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function NeuralNav() {
 
         <div className="ns-nav-tail">
           <a href="#contact" className="ns-nav-cta">
-            Start a project
+            آغاز پروژه
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="ns-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="ns-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function NeuralNav() {
 
       {open ? (
         <div className="ns-mobile-wrap">
-          <nav id="ns-mobile-nav" aria-label="Mobile navigation" className="ns-mobile-nav">
+          <nav id="ns-mobile-nav" aria-label="پیمایش موبایل" className="ns-mobile-nav">
             {neuralNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function NeuralNav() {
               </a>
             ))}
             <a href="#contact" className="ns-mobile-cta" onClick={() => setOpen(false)}>
-              Start a project
+              آغاز پروژه
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="ns-mobile-note">
               4 Signal Yard, London E2
               <br />
-              Applied AI · Monday to Friday
+              هوش مصنوعی کاربردی · دوشنبه تا جمعه
             </p>
           </nav>
         </div>

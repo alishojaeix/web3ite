@@ -14,12 +14,8 @@ export function HearthHero() {
       role="img"
       aria-labelledby="ek-hero-art-title ek-hero-art-desc"
     >
-      <title id="ek-hero-art-title">The Ember Kitchen hearth, lit for service</title>
-      <desc id="ek-hero-art-desc">
-        A front view of a black steel hearth. Oak logs burn on an iron grate
-        beneath a tall hood, with embers rising into the dark. A stack of wood
-        and a shelf of iron pans sit either side.
-      </desc>
+      <title id="ek-hero-art-title">اجاق امبر کیچن، روشن برای سرویس</title>
+      <desc id="ek-hero-art-desc"> نمای روبه‌روی یک اجاق فولادی سیاه. هیزم بلوط روی گریل آهنی زیر هود بلندی می‌سوزد و اخگرها به تاریکی می‌روند. انبوهی چوب و قفسه‌ای از ماهیتابه‌های آهنی در دو سو دیده می‌شود. </desc>
       <defs>
         <linearGradient id="ek-hero-wall" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#0a0807" />
@@ -77,7 +73,7 @@ export function HearthHero() {
         fill="#d9c9b8"
         opacity="0.7"
       >
-        EMBER KITCHEN · KILN STREET
+        امبر کیچن · خیابان کیلن
       </text>
       <text
         x="672"
@@ -89,7 +85,7 @@ export function HearthHero() {
         fill="#d9c9b8"
         opacity="0.7"
       >
-        HEARTH 01
+        اجاق ۰۱
       </text>
 
       <path d="M150 0H570V690H150Z" fill="#0d0a08" stroke="#f4e6d4" strokeOpacity="0.07" />
@@ -180,7 +176,7 @@ export function HearthHero() {
         <path d="M556 620c26 0 42 14 60 14" strokeDasharray="2 5" />
       </g>
       <text x="594" y="586" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.4" fill="#b9a591">
-        WOOD STORE
+        انبار چوب
       </text>
       <g fill="#3d2716" stroke="#8a5a32" strokeOpacity="0.35">
         <circle cx="572" cy="644" r="15" />
@@ -200,8 +196,8 @@ export function HearthHero() {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.2" fill="#b9a591">
-        <text x="196" y="736">GRATE · IRON</text>
-        <text x="524" y="736" textAnchor="end">ASH PIT</text>
+        <text x="196" y="736">گریل · آهن</text>
+        <text x="524" y="736" textAnchor="end">محل خاکستر</text>
       </g>
       <g stroke="#8d7a68" strokeOpacity="0.4">
         <path d="M196 748h44M500 748h24" />
@@ -215,7 +211,7 @@ export function HearthHero() {
         letterSpacing="3.2"
         fill="#8f7e6d"
       >
-        OAK · ASH · IRON
+        بلوط · خاکستر · آهن
       </text>
       <text
         x="672"
@@ -226,7 +222,7 @@ export function HearthHero() {
         letterSpacing="3.2"
         fill="#8f7e6d"
       >
-        LIT AT 16:30
+        روشن در ۱۶:۳۰
       </text>
     </svg>
   );
@@ -243,11 +239,8 @@ export function HearthDiagram({ active }: { active: Zone }) {
       aria-labelledby="ek-hearth-art-title ek-hearth-art-desc"
       data-active={active}
     >
-      <title id="ek-hearth-art-title">Section drawing of the Ember Kitchen hearth</title>
-      <desc id="ek-hearth-art-desc">
-        A side section showing the chimney and flue, the coal bed, the iron
-        grill and the brick oven around one wood-fired hearth.
-      </desc>
+      <title id="ek-hearth-art-title">نقشهٔ برش اجاق امبر کیچن</title>
+      <desc id="ek-hearth-art-desc"> برشی جانبی که دودکش و مجرا، بستر زغال، گریل آهنی و تنور آجری پیرامون یک اجاق هیزمی را نشان می‌دهد. </desc>
       <defs>
         <radialGradient id="ek-diagram-glow" cx="0.44" cy="0.7" r="0.5">
           <stop offset="0" stopColor="#ffb05f" stopOpacity="0.55" />
@@ -272,8 +265,8 @@ export function HearthDiagram({ active }: { active: Zone }) {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="8" letterSpacing="2.6" fill="#a89582">
-        <text x="40" y="52">SECTION A–A · THE HEARTH</text>
-        <text x="1040" y="52" textAnchor="end">EMBER KITCHEN · KILN STREET</text>
+        <text x="40" y="52">برش A–A · اجاق</text>
+        <text x="1040" y="52" textAnchor="end">EMBER KITCHEN · خیابان کیلن</text>
       </g>
 
       <g className="ek-zone ek-zone--chimney">
@@ -286,7 +279,7 @@ export function HearthDiagram({ active }: { active: Zone }) {
         <path d="M452 214c22-20 38-20 58 0" fill="none" stroke="#e2672c" strokeOpacity="0.5" strokeDasharray="3 5" />
         <path d="M410 78c10-10 10-18 2-28M430 70c8-8 8-14 2-22" stroke="#a89582" strokeOpacity="0.45" fill="none" />
         <text x="374" y="252" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.4" fill="#ccb7a0">
-          CHIMNEY
+          دودکش
         </text>
       </g>
 
@@ -298,7 +291,7 @@ export function HearthDiagram({ active }: { active: Zone }) {
         <ellipse cx="802" cy="424" rx="42" ry="10" fill="#e2672c" opacity="0.2" />
         <path d="M760 330q18-14 36 0t36 0" fill="none" stroke="#a89582" strokeOpacity="0.35" />
         <text x="802" y="456" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.4" fill="#ccb7a0">
-          BRICK OVEN
+          تنور آجری
         </text>
         <path d="M926 300h44M926 300v-26" stroke="#a89582" strokeOpacity="0.4" fill="none" />
       </g>
@@ -311,7 +304,7 @@ export function HearthDiagram({ active }: { active: Zone }) {
           <path key={x} d={`M${x} 300V318`} stroke="#d9c5ae" strokeOpacity="0.55" strokeWidth="2.4" />
         ))}
         <text x="402" y="254" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.4" fill="#ccb7a0">
-          IRON GRILL
+          گریل آهنی
         </text>
         <path d="M568 296h58M626 296v-22" stroke="#a89582" strokeOpacity="0.4" fill="none" />
       </g>
@@ -332,7 +325,7 @@ export function HearthDiagram({ active }: { active: Zone }) {
         </g>
         <path d="M292 350c10 20 6 34 16 44M492 350c-8 22-4 36-14 46" stroke="#e2672c" strokeOpacity="0.4" fill="none" />
         <text x="400" y="582" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.4" fill="#e8c9a9">
-          COALS
+          زغال
         </text>
       </g>
 
@@ -343,11 +336,11 @@ export function HearthDiagram({ active }: { active: Zone }) {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.4" fill="#bda996">
-        <text x="226" y="364">FIREBOX</text>
+        <text x="226" y="364">محفظهٔ آتش</text>
         <path d="M226 374h32" stroke="#a89582" strokeOpacity="0.4" />
-        <text x="650" y="444" textAnchor="middle">ASH PIT</text>
+        <text x="650" y="444" textAnchor="middle">محل خاکستر</text>
         <path d="M622 462h56" stroke="#a89582" strokeOpacity="0.4" />
-        <text x="1040" y="580" textAnchor="end">ILLUSTRATIVE SECTION · NOT TO SCALE</text>
+        <text x="1040" y="580" textAnchor="end">برش نمایشی · بدون مقیاس</text>
       </g>
     </svg>
   );
@@ -361,12 +354,8 @@ export function RoomScene() {
       role="img"
       aria-labelledby="ek-room-art-title ek-room-art-desc"
     >
-      <title id="ek-room-art-title">The Ember Kitchen dining room before service</title>
-      <desc id="ek-room-art-desc">
-        A long charred-oak counter faces an open hearth at the back of a dark
-        room. Stools line the counter under low pendant lights, with an iron
-        pass and a shelf of bottles to the right.
-      </desc>
+      <title id="ek-room-art-title">اتاق غذاخوری امبر کیچن پیش از سرویس</title>
+      <desc id="ek-room-art-desc"> پیشخوانی بلند از بلوط سوخته رو به اجاقی باز در انتهای اتاقی تیره است. صندلی‌های کوتاه زیر آویزهای کم‌نور پیشخوان را دنبال می‌کنند و پاس آهنی و قفسهٔ بطری‌ها در سمت راست قرار دارد. </desc>
       <defs>
         <linearGradient id="ek-room-wall" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#0b0806" />
@@ -519,9 +508,9 @@ export function RoomScene() {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="8" letterSpacing="2.6" fill="#bca892">
-        <text x="48" y="666">COUNTER · 18</text>
-        <text x="1136" y="666" textAnchor="end">PASS · 6</text>
-        <text x="700" y="64" textAnchor="middle">HEARTH 01</text>
+        <text x="48" y="666">پیشخوان · ۱۸</text>
+        <text x="1136" y="666" textAnchor="end">پاس · ۶</text>
+        <text x="700" y="64" textAnchor="middle">اجاق ۰۱</text>
       </g>
       <g stroke="#a89582" strokeOpacity="0.35">
         <path d="M48 678h76M1272 678h-68M700 76v34" />
@@ -535,7 +524,7 @@ export function RoomScene() {
         letterSpacing="3.2"
         fill="#8f7e6d"
       >
-        EMBER KITCHEN · THE ROOM
+        امبر کیچن · اتاق
       </text>
       <text
         x="1352"
@@ -546,7 +535,7 @@ export function RoomScene() {
         letterSpacing="3.2"
         fill="#8f7e6d"
       >
-        17:20 · BEFORE SERVICE
+        ۱۷:۲۰ · پیش از سرویس
       </text>
       <text
         x="1352"
@@ -557,7 +546,7 @@ export function RoomScene() {
         letterSpacing="2.4"
         fill="#8f7e6d"
       >
-        ILLUSTRATIVE · NO SCALE
+        نمایشی · بدون مقیاس
       </text>
     </svg>
   );

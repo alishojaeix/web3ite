@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Accounts are not configured on this deployment. An AUTH_SECRET of at least 32 characters is required.",
+          "حساب‌ها در این استقرار پیکربندی نشده‌اند. وجود AUTH_SECRET با حداقل ۳۲ نویسه لازم است.",
       },
       { status: 503 }
     );
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   const limit = rateLimit(`login:${clientKey(request)}`, 15, 10 * 60 * 1000);
   if (!limit.allowed) {
     return NextResponse.json(
-      { error: "Too many attempts. Please try again shortly." },
+      { error: "تلاش‌های بیش از حد. لطفاً کمی بعد دوباره تلاش کنید." },
       { status: 429, headers: { "Retry-After": String(limit.retryAfter) } }
     );
   }
@@ -38,14 +38,14 @@ export async function POST(request: Request) {
   try {
     body = (await request.json()) as typeof body;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "بدنهٔ درخواست نامعتبر است." }, { status: 400 });
   }
 
   const email = normalizeEmail(body.email);
   const password = validatePassword(body.password);
   if (!email || !password) {
     return NextResponse.json(
-      { error: "Enter a valid email and password." },
+      { error: "ایمیل و گذرواژهٔ معتبر وارد کنید." },
       { status: 400 }
     );
   }
@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     );
     if (!user || !valid) {
       return NextResponse.json(
-        { error: "Email or password is incorrect." },
+        { error: "ایمیل یا گذرواژه نادرست است." },
         { status: 401 }
       );
     }
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     const token = createSessionToken(user.id);
     if (!token) {
       return NextResponse.json(
-        { error: "Accounts are not configured on this deployment." },
+        { error: "حساب‌ها در این استقرار پیکربندی نشده‌اند." },
         { status: 503 }
       );
     }
@@ -76,7 +76,7 @@ export async function POST(request: Request) {
     return response;
   } catch {
     return NextResponse.json(
-      { error: "Account storage is unavailable. Please try again later." },
+      { error: "فضای ذخیره‌سازی حساب در دسترس نیست. لطفاً بعداً تلاش کنید." },
       { status: 503 }
     );
   }

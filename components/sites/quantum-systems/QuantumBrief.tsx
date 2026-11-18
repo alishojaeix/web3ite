@@ -22,8 +22,8 @@ export function QuantumBrief() {
     const requirement = String(data.get("message") ?? "").trim();
 
     const brief = [
-      application ? `Application: ${application}` : "",
-      organisation ? `Organisation: ${organisation}` : "",
+      application ? `کاربرد: ${application}` : "",
+      organisation ? `سازمان: ${organisation}` : "",
       requirement,
     ]
       .filter(Boolean)
@@ -70,7 +70,7 @@ export function QuantumBrief() {
         <span className="qs-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="qs-success-title">Request recorded</p>
+        <p className="qs-success-title">درخواست ثبت شد</p>
         <p className="qs-success-body">{message}</p>
         <button
           type="button"
@@ -81,7 +81,7 @@ export function QuantumBrief() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
@@ -100,7 +100,7 @@ export function QuantumBrief() {
       <form className="qs-form" onSubmit={onSubmit}>
         <div className="qs-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -108,35 +108,35 @@ export function QuantumBrief() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@company.com"
+              placeholder="you@company.com" dir="ltr"
             />
           </label>
         </div>
 
         <div className="qs-form-row">
           <label>
-            <span>Organisation</span>
+            <span>سازمان</span>
             <input
               name="organisation"
               type="text"
               autoComplete="organization"
               maxLength={90}
-              placeholder="Optional"
+              placeholder="اختیاری"
             />
           </label>
           <label>
-            <span>Application</span>
+            <span>کاربرد</span>
             <select name="application" defaultValue={contact.form.applications[0]}>
               {contact.form.applications.map((option) => (
                 <option key={option} value={option}>
@@ -148,14 +148,14 @@ export function QuantumBrief() {
         </div>
 
         <label className="qs-field-full">
-          <span>The requirement</span>
+          <span>نیاز</span>
           <textarea
             name="message"
             rows={5}
             required
             minLength={5}
             maxLength={1500}
-            placeholder="The measurement, the environment and the constraint."
+            placeholder="اندازه‌گیری، محیط و محدودیت."
           />
         </label>
 
@@ -164,7 +164,7 @@ export function QuantumBrief() {
           className="qs-btn qs-btn--solid qs-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending request…" : "Send the request"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال درخواست"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

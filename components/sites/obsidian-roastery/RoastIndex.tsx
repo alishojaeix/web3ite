@@ -34,8 +34,8 @@ export function RoastIndex() {
   return (
     <div className="ob-roast-index">
       <div className="ob-roast-list">
-        <p className="ob-mini-label">The shelf · 3 coffees</p>
-        <div className="ob-roast-tabs" role="tablist" aria-label="Roasts" aria-orientation="vertical">
+        <p className="ob-mini-label">قفسه · ۳ قهوه</p>
+        <div className="ob-roast-tabs" role="tablist" aria-label="بو داده‌ها" aria-orientation="vertical">
           {roasts.map((roast, index) => (
             <button
               key={roast.id}
@@ -66,8 +66,8 @@ export function RoastIndex() {
           ))}
         </div>
         <p className="ob-roast-list-note">
-          The list changes on Thursdays. When a lot is gone, it is gone until the
-          next harvest.
+          فهرست پنجشنبه‌ها عوض می‌شود. وقتی دسته‌ای تمام شود، تا برداشت
+          بعدی تمام است.
         </p>
       </div>
 
@@ -104,7 +104,7 @@ export function RoastIndex() {
               </p>
               <p className="ob-roast-story">{roast.story}</p>
 
-              <ul className="ob-notes" aria-label="Tasting notes">
+              <ul className="ob-notes" aria-label="یادداشت‌های چشایی">
                 {roast.notes.map((note) => (
                   <li key={note}>{note}</li>
                 ))}
@@ -112,19 +112,19 @@ export function RoastIndex() {
 
               <dl className="ob-roast-specs">
                 <div>
-                  <dt>Varietal</dt>
+                  <dt>گونه</dt>
                   <dd>{roast.varietal}</dd>
                 </div>
                 <div>
-                  <dt>Altitude</dt>
+                  <dt>ارتفاع</dt>
                   <dd>{roast.altitude}</dd>
                 </div>
                 <div>
-                  <dt>Process</dt>
+                  <dt>فرآوری</dt>
                   <dd>{roast.process}</dd>
                 </div>
                 <div>
-                  <dt>Roast</dt>
+                  <dt>برشت</dt>
                   <dd>{roast.roast}</dd>
                 </div>
               </dl>
@@ -136,7 +136,7 @@ export function RoastIndex() {
                   <small>{roast.weight}</small>
                 </p>
                 <a href="#subscribe" className="ob-btn ob-btn--brass">
-                  Reserve this bag
+                  رزرو این بسته
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>

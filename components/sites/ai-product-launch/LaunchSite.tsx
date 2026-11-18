@@ -32,17 +32,17 @@ import {
 
 export function LaunchSite() {
   return (
-    <div className="la-site" id="top">
+    <div className="la-site" id="top" dir="rtl">
       <a className="la-skip" href="#la-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <LaunchNav />
 
-      <main id="la-main">
+      <main id="la-main" lang="fa" dir="rtl">
         <section className="la-hero" aria-labelledby="la-hero-title">
           <div className="la-wrap la-hero-top">
-            <p>9 Studio Row · London E2</p>
+            <p>استودیو رو ۹ · لندن E2</p>
             <p className="la-status">
               <span className="la-status-dot" aria-hidden="true" />
               {hero.status}
@@ -102,7 +102,7 @@ export function LaunchSite() {
 
           <div className="la-wrap la-hero-foot">
             <a className="la-scroll-cue" href="#showcase">
-              Meet the product
+              محصول را ببینید
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -178,7 +178,7 @@ export function LaunchSite() {
                 <div className="la-spec-panel" key={group.title}>
                   <div className="la-panel-head">
                     <span>{group.title}</span>
-                    <span aria-hidden="true">PRISM / 01</span>
+                    <span aria-hidden="true">PRISM / ۰۱</span>
                   </div>
                   <dl className="la-spec-dl">
                     {group.rows.map((row) => (
@@ -198,7 +198,7 @@ export function LaunchSite() {
             <div className="la-spec-foot">
               <p>{specs.note}</p>
               <p className="la-spec-stamp" aria-hidden="true">
-                DEMO VALUES · NOT A DATASHEET
+                مقادیر نمایشی · نه برگهٔ دادهٔ فنی
               </p>
             </div>
             <p className="la-spec-footnote">{specs.footnote}</p>
@@ -236,11 +236,11 @@ export function LaunchSite() {
 
             <figure className="la-stack-frame">
               <div className="la-panel-head">
-                <span>FIG. 02 / EXPLODED VIEW</span>
+                <span>شکل ۰۲ / نمای بازشده</span>
                 <span>A / B / C</span>
               </div>
               <SectionStack />
-              <figcaption>Illustrative section drawing · not an engineering file</figcaption>
+              <figcaption>نقشهٔ نمایشی · نه فایل مهندسی</figcaption>
             </figure>
           </div>
         </section>
@@ -351,21 +351,21 @@ export function LaunchSite() {
             <div className="la-footer-brand">
               <p className="la-footer-word">
                 <PrismMark className="la-footer-mark" />
-                Prism <span>Compute</span>
+                Prism <span>پردازش</span>
               </p>
               <p>
-                A compact compute layer for the desk. Local inference, an open
-                interface and nothing hidden.
+                یک لایهٔ پردازش جمع‌وجور برای میز کار. استنتاج محلی، رابطی باز و
+                هیچ چیز پنهان.
               </p>
               <a href="#top" className="la-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="la-footer-cols">
               <div>
-                <p className="la-footer-label">Studio</p>
+                <p className="la-footer-label">استودیو</p>
                 <address>
                   {reserve.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -378,32 +378,31 @@ export function LaunchSite() {
               </div>
 
               <div>
-                <p className="la-footer-label">Explore</p>
+                <p className="la-footer-label">کاوش</p>
                 {launchNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
                   </a>
                 ))}
-                <a href="#materials">Materials</a>
+                <a href="#materials">مواد</a>
               </div>
 
               <div>
-                <p className="la-footer-label">Template</p>
-                <Link href="/templates/ai-product-launch">Template details</Link>
-                <Link href="/checkout/ai-product-launch">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="la-footer-label">قالب</p>
+                <Link href="/templates/ai-product-launch">جزئیات قالب</Link>
+                <Link href="/checkout/ai-product-launch">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="la-footer-bottom">
             <p>
-              © 2026 Prism Compute (fictional). A demonstration website: the
-              product, specifications and availability are illustrative. No
-              device is sold and no payment is taken.
+              © ۲۰۲۶ پریزم کامپیوت (خیالی). یک وب‌سایت نمایشی: محصول، مشخصات و
+              موجودی نمایشی‌اند. هیچ دستگاهی فروخته نمی‌شود و پولی گرفته نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

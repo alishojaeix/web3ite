@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { VelocitySite } from "@/components/sites/velocity-studio/VelocitySite";
 import "./velocity.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Velocity Studio — Shape in motion.";
+const title = "استودیوی ویژوال — فرم در حرکت";
 const description =
-  "A sample performance-studio website: a layered aero contour study, an interactive pressure plan with three aero modes, a launch-film rail, an illustrative specification and a launch-request form. Fictional studio built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای استودیوی طراحی صنعتی: مطالعهٔ فرم در حرکت، برگهٔ تونل باد، متریال‌ها و فرم بریف. استودیوی خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=velocity-studio",
         width: 1200,
         height: 630,
-        alt: "Velocity Studio website preview",
+        alt: "پیش‌نمایش وب‌سایت استودیوی ویژوال",
       },
     ],
   },

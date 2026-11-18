@@ -26,11 +26,11 @@ export type TemplateCanvasProps = {
    */
   modelPath?: string;
   /**
-   * Framing hint. "stage-right" shifts the scene off-center so hero copy
-   * can sit beside it; the camera keeps its authored position so the
+   * Framing hint. "stage-right" / "stage-left" shifts the scene off-center so
+   * hero copy can sit beside it; the camera keeps its authored position so the
    * shift reads as composition, not a different scene.
    */
-  align?: "center" | "stage-right";
+  align?: "center" | "stage-right" | "stage-left";
   className?: string;
 };
 
@@ -89,7 +89,7 @@ function StageLayout({
   compact,
   children,
 }: {
-  align: "center" | "stage-right";
+  align: "center" | "stage-right" | "stage-left";
   cameraPosition: [number, number, number];
   fov: number;
   interactive: boolean;
@@ -104,7 +104,15 @@ function StageLayout({
 
   const narrow = size.width / size.height < 0.95;
   const offset: [number, number, number] =
-    align === "stage-right" ? (narrow ? [0, 0.55, 0] : [1.35, 0.05, 0]) : [0, 0, 0];
+    align === "stage-right"
+      ? narrow
+        ? [0, 0.55, 0]
+        : [1.35, 0.05, 0]
+      : align === "stage-left"
+        ? narrow
+          ? [0, 0.55, 0]
+          : [-1.35, 0.05, 0]
+        : [0, 0, 0];
 
   // Snap to the authored camera of the active scene. Keyed on values, not
   // identities, so per-render array literals do not retrigger it.

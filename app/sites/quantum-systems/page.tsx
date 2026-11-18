@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { QuantumSite } from "@/components/sites/quantum-systems/QuantumSite";
 import "./quantum.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Quantum Systems — Measured in microns";
+const title = "کوانتوم سیستمز — اندازه‌گیری با میکرون";
 const description =
-  "A sample precision-compute company website: an observable platform, a documented method, qualitative specifications, an illustrative research index and a working technical brief form. Fictional London company built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای شرکت پردازش دقیق: سامانه‌های اندازه‌گیری، مشخصات فنی و فرم درخواست مراجعه. شرکت خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=quantum-systems",
         width: 1200,
         height: 630,
-        alt: "Quantum Systems website preview",
+        alt: "پیش‌نمایش وب‌سایت کوانتوم سیستمز",
       },
     ],
   },

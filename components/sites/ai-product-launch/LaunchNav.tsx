@@ -20,13 +20,13 @@ export function LaunchNav() {
   return (
     <header className="la-nav">
       <div className="la-wrap la-nav-bar">
-        <a href="#top" className="la-brand" aria-label="Prism, back to top">
+        <a href="#top" className="la-brand" aria-label="پریزم، بازگشت به بالا">
           <PrismMark className="la-brand-mark" />
-          <span className="la-brand-word">Prism</span>
-          <span className="la-brand-sub">Compute layer</span>
+          <span className="la-brand-word">پریزم</span>
+          <span className="la-brand-sub">لایهٔ پردازش</span>
         </a>
 
-        <nav aria-label="Primary" className="la-nav-links">
+        <nav aria-label="پیمایش اصلی" className="la-nav-links">
           {launchNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function LaunchNav() {
 
         <div className="la-nav-tail">
           <a href="#contact" className="la-nav-cta">
-            Reserve the first run
+            درخواست نوبت نخست
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="la-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="la-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function LaunchNav() {
 
       {open ? (
         <div className="la-mobile-wrap">
-          <nav id="la-mobile-nav" aria-label="Mobile navigation" className="la-mobile-nav">
+          <nav id="la-mobile-nav" aria-label="پیمایش موبایل" className="la-mobile-nav">
             {launchNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function LaunchNav() {
               </a>
             ))}
             <a href="#contact" className="la-mobile-cta" onClick={() => setOpen(false)}>
-              Reserve the first run
+              درخواست نوبت نخست
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="la-mobile-note">
               9 Studio Row, London E2
               <br />
-              First run · Monday to Friday
+              نوبت نخست · دوشنبه تا جمعه
             </p>
           </nav>
         </div>

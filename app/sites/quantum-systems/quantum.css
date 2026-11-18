@@ -21,8 +21,8 @@
   --qs-line-strong: rgba(240, 244, 246, 0.24);
   --qs-display: var(--font-display), "Inter", system-ui, sans-serif;
   --qs-body: var(--font-body), "Source Sans 3", system-ui, sans-serif;
-  --qs-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Mono", ui-monospace,
-    monospace;
+  --qs-mono: var(--font-body), "SFMono-Regular", "JetBrains Mono",
+    "Cascadia Mono", ui-monospace, monospace;
   --qs-radius: 2px;
 
   min-height: 100vh;
@@ -108,7 +108,7 @@
 .qs-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 140;
   display: inline-flex;
   align-items: center;
@@ -119,9 +119,8 @@
   background: var(--qs-surface);
   color: var(--qs-ink);
   font-family: var(--qs-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -140,9 +139,8 @@
   gap: 8px;
   margin: 0;
   font-family: var(--qs-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--qs-accent);
 }
 
@@ -173,7 +171,6 @@
   font-size: 8.5px;
   line-height: 1.75;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -183,7 +180,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -212,7 +208,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -269,7 +264,7 @@
   font-size: clamp(2.1rem, 7.5vw, 3.8rem);
   font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
   text-wrap: balance;
 }
@@ -326,7 +321,7 @@
   font-family: var(--qs-display);
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   white-space: nowrap;
 }
 
@@ -337,12 +332,11 @@
 
 .qs-brand-sub {
   display: none;
-  padding-left: 9px;
-  border-left: 1px solid var(--qs-line-strong);
+  padding-inline-start: 9px;
+  border-inline-start: 1px solid var(--qs-line-strong);
   font-family: var(--qs-mono);
   font-size: 8px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
   white-space: nowrap;
 }
@@ -360,7 +354,6 @@
   font-family: var(--qs-mono);
   font-size: 9.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--qs-muted);
   transition: color 180ms ease;
 }
@@ -384,9 +377,8 @@
   border: 1px solid var(--qs-line-strong);
   border-radius: var(--qs-radius);
   font-family: var(--qs-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-ink);
   transition:
     border-color 180ms ease,
@@ -434,7 +426,6 @@
   font-family: var(--qs-mono);
   font-size: 10.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-ink-soft);
 }
 
@@ -464,7 +455,6 @@
   font-size: 8.5px;
   line-height: 1.8;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -514,7 +504,6 @@
   font-family: var(--qs-mono);
   font-size: 8.5px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -551,7 +540,7 @@
   font-size: clamp(3.1rem, 13vw, 7rem);
   font-weight: 600;
   line-height: 0.9;
-  letter-spacing: -0.055em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -583,14 +572,13 @@
 }
 
 .qs-hero-meta > div + div {
-  border-left: 1px solid var(--qs-line);
+  border-inline-start: 1px solid var(--qs-line);
 }
 
 .qs-hero-meta dt {
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -599,7 +587,7 @@
   font-family: var(--qs-display);
   font-size: 12.5px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink-soft);
 }
 
@@ -632,7 +620,7 @@
 .qs-plate-rev {
   position: absolute;
   top: 12px;
-  right: 12px;
+  inset-inline-end: 12px;
   z-index: 2;
   padding: 5px 8px;
   border: 1px solid var(--qs-line);
@@ -640,7 +628,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -654,7 +641,6 @@
   font-size: 7.5px;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -673,7 +659,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -731,7 +716,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -748,7 +732,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -767,7 +750,7 @@
 .qs-item-index {
   padding-top: 3px;
   font-family: var(--qs-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   color: var(--qs-accent-deep);
 }
@@ -776,7 +759,7 @@
   font-family: var(--qs-display);
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -798,7 +781,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -831,7 +813,6 @@
   font-family: var(--qs-mono);
   font-size: 8.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-ink-soft);
 }
 
@@ -871,7 +852,7 @@
   font-family: var(--qs-mono);
   font-size: 24px;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-accent-deep);
 }
 
@@ -885,7 +866,7 @@
 .qs-step-tick::after {
   content: "";
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   top: -2px;
   width: 5px;
   height: 5px;
@@ -898,7 +879,7 @@
   font-family: var(--qs-display);
   font-size: 22px;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -917,7 +898,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -950,7 +930,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-muted);
 }
 
@@ -975,7 +954,6 @@
   font-family: var(--qs-mono);
   font-size: 8px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -983,7 +961,7 @@
   font-family: var(--qs-display);
   font-size: 13px;
   font-weight: 500;
-  text-align: right;
+  text-align: end;
   color: var(--qs-ink-soft);
 }
 
@@ -1016,7 +994,7 @@
   height: 26px;
   border: 1px solid var(--qs-accent-deep);
   font-family: var(--qs-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   color: var(--qs-accent);
 }
 
@@ -1024,7 +1002,7 @@
   font-family: var(--qs-display);
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -1042,7 +1020,7 @@
   font-family: var(--qs-display);
   font-size: 18px;
   line-height: 1.35;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink-soft);
   text-wrap: balance;
 }
@@ -1054,7 +1032,6 @@
   font-size: 7.5px;
   font-style: normal;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -1087,7 +1064,7 @@
   align-items: center;
   gap: 12px;
   font-family: var(--qs-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   color: var(--qs-accent-deep);
 }
@@ -1101,7 +1078,7 @@
   font-size: 21px;
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -1126,7 +1103,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--qs-muted);
 }
 
@@ -1150,7 +1126,7 @@
   font-family: var(--qs-display);
   font-size: 26px;
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -1198,7 +1174,7 @@
   font-family: var(--qs-display);
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -1229,7 +1205,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -1257,7 +1232,6 @@
   font-family: var(--qs-mono);
   font-size: 7px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -1266,7 +1240,7 @@
   font-family: var(--qs-display);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -1303,7 +1277,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -1400,7 +1373,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -1428,7 +1400,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-accent);
 }
 
@@ -1441,7 +1412,7 @@
 .qs-form-code {
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: 0;
   font-family: var(--qs-mono);
   font-size: 7px;
   letter-spacing: 0.08em;
@@ -1469,7 +1440,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
   color: var(--qs-muted);
 }
 
@@ -1491,7 +1461,7 @@
 
 .qs-form select {
   appearance: none;
-  padding-right: 36px;
+  padding-inline-end: 36px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%239dabb3' stroke-width='1.2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
@@ -1542,7 +1512,6 @@
   font-size: 7px;
   line-height: 1.75;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 
@@ -1571,7 +1540,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-accent);
 }
 
@@ -1609,7 +1577,7 @@
   font-family: var(--qs-display);
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--qs-ink);
 }
 
@@ -1641,7 +1609,6 @@
   font-family: var(--qs-mono);
   font-size: 8.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--qs-accent);
 }
 
@@ -1667,7 +1634,6 @@
   font-family: var(--qs-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--qs-quiet);
 }
 

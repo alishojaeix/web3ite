@@ -41,7 +41,7 @@ export function PodArchHeroStage() {
       className="em-hero-svg"
       viewBox="0 0 920 500"
       role="img"
-      aria-label="Architectural illustration of the Electric Motion four-seat city pod parked beneath a semicircular mint-lit charging arch."
+      aria-label="تصویر معماری کپسول شهری چهارنفرهٔ الکتریک موشن پارک‌شده زیر طاق شارژ نیم‌دایره‌ای با نور نعنایی."
     >
       <defs>
         <linearGradient id="em-sky" x1="0" y1="0" x2="0" y2="1">
@@ -187,10 +187,10 @@ export function PodArchHeroStage() {
         fontSize="9"
         letterSpacing="1.6"
       >
-        <text x="52" y="52">ELECTRIC MOTION // POD 01 + CHARGE ARCH</text>
-        <text x="868" y="52" textAnchor="end">18 MIN DC STOP · 180 MI ILLUSTRATIVE</text>
+        <text x="52" y="52">الکتریک موشن // کپسول ۰۱ + طاق شارژ</text>
+        <text x="868" y="52" textAnchor="end">توقف ۱۸ دقیقه DC · ۱۸۰ مایل نمایشی</text>
         <text x="460" y="464" textAnchor="middle">
-          ← 3.1 M CITY FOOTPRINT · FLAT FLOOR FOR 4 ADULTS →
+          ردپای شهری ۳٫۱ متر · کف تخت برای ۴ بزرگسال
         </text>
       </g>
     </svg>
@@ -208,7 +208,7 @@ export function MaterialSwatch({
         className="em-swatch"
         viewBox="0 0 240 150"
         role="img"
-        aria-label="Illustration of wraparound daylight glazing with soft sage UV filtering."
+        aria-label="تصویر شیشهٔ پیوستهٔ نور روز با فیلتر ملایم ماورای بنفش مریم‌گلی."
       >
         <defs>
           <linearGradient id="em-sw-day" x1="0" y1="0" x2="1" y2="1">
@@ -233,7 +233,7 @@ export function MaterialSwatch({
           fontSize="8"
           letterSpacing="1.5"
         >
-          GLAZING // DAYLIGHT TINT
+          شیشه // تُن نور روز
         </text>
       </svg>
     );
@@ -245,7 +245,7 @@ export function MaterialSwatch({
         className="em-swatch"
         viewBox="0 0 240 150"
         role="img"
-        aria-label="Illustration of pebble-grey recycled woven cabin textile."
+        aria-label="تصویر منسوج بازیافتی بافته‌شدهٔ خاکستری سنگی برای کابین."
       >
         <rect width="240" height="150" fill="#e4ebe6" />
         <g stroke="rgba(22,33,28,0.16)" strokeWidth="1.2">
@@ -265,7 +265,7 @@ export function MaterialSwatch({
           fontSize="8"
           letterSpacing="1.5"
         >
-          CABIN // RECYCLED WEAVE
+          کابین // بافت بازیافتی
         </text>
       </svg>
     );
@@ -276,7 +276,7 @@ export function MaterialSwatch({
       className="em-swatch"
       viewBox="0 0 240 150"
       role="img"
-      aria-label="Illustration of bead-blasted eucalyptus aluminium charging arch with mint status ring."
+      aria-label="تصویر طاق شارژ آلومینیومی اوکالیپتوس سندبلاست با حلقهٔ وضعیت نعنایی."
     >
       <rect width="240" height="150" fill="#10221c" />
       <path
@@ -295,7 +295,7 @@ export function MaterialSwatch({
         fontSize="8"
         letterSpacing="1.5"
       >
-        ARCH // ANODISED MINT
+        طاق // نعنایی آنودایز
       </text>
     </svg>
   );

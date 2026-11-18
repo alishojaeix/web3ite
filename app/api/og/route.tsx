@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   const config = getSiteConfig(id);
 
   if (!template || !config) {
-    return new Response("Unknown site", { status: 404 });
+    return new Response("سایت ناموجود", { status: 404 });
   }
 
   const accent = template.theme.accent;
@@ -79,7 +79,7 @@ export async function GET(request: Request) {
               display: "flex",
             }}
           >
-            Web3ite demo website
+            وب‌سایت نمایشی Web3ite
           </div>
         </div>
 
@@ -131,7 +131,7 @@ export async function GET(request: Request) {
             color: "#8a847c",
           }}
         >
-          <div style={{ display: "flex" }}>Fictional demonstration · not a real business</div>
+          <div style={{ display: "flex" }}>نمایش داستانی · کسب‌وکاری واقعی نیست</div>
           <div style={{ display: "flex", color: accent }}>web3ite</div>
         </div>
       </div>

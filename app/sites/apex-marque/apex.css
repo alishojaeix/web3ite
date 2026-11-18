@@ -130,7 +130,7 @@
 .ap-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 140;
   display: inline-flex;
   align-items: center;
@@ -141,9 +141,8 @@
   background: var(--ap-surface);
   color: var(--ap-ink);
   font-family: var(--ap-sans);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -162,10 +161,9 @@
   gap: 8px;
   margin: 0;
   font-family: var(--ap-sans);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--ap-accent);
 }
 
@@ -200,7 +198,6 @@
   font-size: 8px;
   line-height: 1.75;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -210,7 +207,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -237,7 +233,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -294,7 +289,7 @@
   font-size: clamp(2.35rem, 8vw, 4.6rem);
   font-weight: 400;
   line-height: 0.98;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-ink);
   text-wrap: balance;
 }
@@ -351,17 +346,16 @@
 .ap-brand-word {
   font-family: var(--ap-display);
   font-size: 19px;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ap-brand-sub {
   display: none;
-  padding-left: 9px;
-  border-left: 1px solid var(--ap-line-strong);
+  padding-inline-start: 9px;
+  border-inline-start: 1px solid var(--ap-line-strong);
   font-family: var(--ap-sans);
   font-size: 8px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
   white-space: nowrap;
 }
@@ -377,10 +371,9 @@
   align-items: center;
   min-height: 38px;
   font-family: var(--ap-sans);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ap-muted);
   transition: color 180ms ease;
 }
@@ -405,7 +398,6 @@
   font-family: var(--ap-sans);
   font-size: 8.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ap-ink);
   transition:
     border-color 180ms ease,
@@ -452,7 +444,6 @@
   font-family: var(--ap-sans);
   font-size: 10.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ap-ink-soft);
 }
 
@@ -481,7 +472,6 @@
   font-size: 8.5px;
   line-height: 1.8;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -525,7 +515,6 @@
   font-family: var(--ap-sans);
   font-size: 8px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -556,7 +545,7 @@
   font-size: clamp(3.35rem, 13.4vw, 7.6rem);
   font-weight: 400;
   line-height: 0.88;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-ink);
   text-wrap: balance;
 }
@@ -595,15 +584,14 @@
 }
 
 .ap-hero-meta > div + div {
-  padding-left: 14px;
-  border-left: 1px solid var(--ap-line);
+  padding-inline-start: 14px;
+  border-inline-start: 1px solid var(--ap-line);
 }
 
 .ap-hero-meta dt {
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -647,7 +635,6 @@
   font-size: 7.5px;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -665,7 +652,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -710,14 +696,13 @@
 }
 
 .ap-stats dl > div:nth-child(2n) {
-  border-left: 1px solid var(--ap-line);
+  border-inline-start: 1px solid var(--ap-line);
 }
 
 .ap-stats dt {
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -726,14 +711,14 @@
   font-family: var(--ap-display);
   font-size: 32px;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-ink-soft);
 }
 
 .ap-stats dd span {
-  margin-left: 5px;
+  margin-inline-start: 5px;
   font-family: var(--ap-sans);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.08em;
   color: var(--ap-accent);
 }
@@ -744,7 +729,6 @@
   font-family: var(--ap-sans);
   font-size: 6.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -786,7 +770,6 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ap-muted);
 }
 
@@ -819,11 +802,10 @@
 
 .ap-spec-rows dd {
   font-family: var(--ap-sans);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  text-align: right;
-  text-transform: uppercase;
+  text-align: end;
   color: var(--ap-accent);
 }
 
@@ -844,7 +826,6 @@
   font-size: 7px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -866,7 +847,6 @@
   font-family: var(--ap-sans);
   font-size: 7px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -915,7 +895,6 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ap-accent);
 }
 
@@ -924,7 +903,7 @@
   font-family: var(--ap-display);
   font-size: 27px;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-ink);
 }
 
@@ -990,14 +969,13 @@
   font-family: var(--ap-sans);
   font-size: 7px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
 .ap-trim-check {
   position: absolute;
   top: 12px;
-  right: 12px;
+  inset-inline-end: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1026,7 +1004,6 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1064,13 +1041,12 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
 .ap-trim-rows dd {
   font-size: 12px;
-  text-align: right;
+  text-align: end;
   color: var(--ap-ink-soft);
 }
 
@@ -1080,7 +1056,6 @@
   font-size: 7px;
   line-height: 1.75;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1124,7 +1099,7 @@
   font-size: clamp(1.4rem, 4.6vw, 2rem);
   font-style: italic;
   line-height: 1.18;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-bone-ink);
   text-wrap: balance;
 }
@@ -1136,7 +1111,6 @@
   font-size: 7.5px;
   font-style: normal;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: #8a7666;
 }
 
@@ -1165,7 +1139,7 @@
   font-family: var(--ap-sans);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-bone-ink);
 }
 
@@ -1185,7 +1159,6 @@
   font-size: 7.5px;
   line-height: 1.75;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: #8a7666;
 }
 
@@ -1212,7 +1185,6 @@
   font-size: 8.5px;
   font-weight: 600;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--ap-accent);
 }
 
@@ -1238,7 +1210,7 @@
   font-family: var(--ap-display);
   font-size: 16.5px;
   line-height: 1.2;
-  text-align: right;
+  text-align: end;
   color: var(--ap-ink-soft);
 }
 
@@ -1286,7 +1258,6 @@
   font-size: 7.5px;
   line-height: 1.75;
   letter-spacing: 0.07em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1331,14 +1302,13 @@
 .ap-swatch-tag {
   position: absolute;
   top: 12px;
-  right: 12px;
+  inset-inline-end: 12px;
   padding: 5px 9px;
   border: 1px solid var(--ap-line-strong);
   background: rgba(10, 8, 7, 0.76);
   font-family: var(--ap-sans);
   font-size: 7px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ap-muted);
 }
 
@@ -1359,7 +1329,7 @@
   font-family: var(--ap-display);
   font-size: 25px;
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-ink);
 }
 
@@ -1396,12 +1366,12 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 24px;
   border-top: 1px solid var(--ap-line);
-  border-left: 1px solid var(--ap-line);
+  border-inline-start: 1px solid var(--ap-line);
 }
 
 .ap-contact-facts > div {
   padding: 13px 14px;
-  border-right: 1px solid var(--ap-line);
+  border-inline-end: 1px solid var(--ap-line);
   border-bottom: 1px solid var(--ap-line);
 }
 
@@ -1409,7 +1379,6 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1459,7 +1428,7 @@
   font-size: 27px;
   font-style: italic;
   line-height: 1.14;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ap-ink-soft);
   text-wrap: balance;
 }
@@ -1471,7 +1440,6 @@
   font-size: 7.5px;
   font-style: normal;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1521,7 +1489,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1564,10 +1531,9 @@
 
 .ap-form-title {
   font-family: var(--ap-sans);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: #9c4a28;
 }
 
@@ -1607,7 +1573,6 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: #6b5a4d;
 }
 
@@ -1629,7 +1594,7 @@
 
 .ap-form select {
   appearance: none;
-  padding-right: 38px;
+  padding-inline-end: 38px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b5a4d' stroke-width='1.2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 15px center;
@@ -1690,7 +1655,6 @@
   font-size: 7px;
   line-height: 1.75;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: #6b5a4d;
 }
 
@@ -1716,10 +1680,9 @@
 .ap-success-title {
   margin-top: 22px;
   font-family: var(--ap-sans);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: #9c4a28;
 }
 
@@ -1775,7 +1738,6 @@
   font-family: var(--ap-sans);
   font-size: 8px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1802,7 +1764,6 @@
   font-family: var(--ap-sans);
   font-size: 8px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ap-accent);
 }
 
@@ -1828,7 +1789,6 @@
   font-family: var(--ap-sans);
   font-size: 7.5px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--ap-quiet);
 }
 
@@ -1997,16 +1957,16 @@
   .ap-stats dl > div {
     padding: 24px 24px;
     border-top: 0;
-    border-left: 1px solid var(--ap-line);
+    border-inline-start: 1px solid var(--ap-line);
   }
 
   .ap-stats dl > div:first-child {
-    padding-left: 0;
-    border-left: 0;
+    padding-inline-start: 0;
+    border-inline-start: 0;
   }
 
   .ap-stats dl > div:nth-child(2n) {
-    border-left: 1px solid var(--ap-line);
+    border-inline-start: 1px solid var(--ap-line);
   }
 
   .ap-showcase-grid {
@@ -2036,8 +1996,8 @@
   }
 
   .ap-timeline li + li {
-    padding-left: 22px;
-    border-left: 1px solid var(--ap-bone-line);
+    padding-inline-start: 22px;
+    border-inline-start: 1px solid var(--ap-bone-line);
   }
 
   .ap-timeline-year {
@@ -2240,11 +2200,11 @@
   }
 
   .ap-timeline li {
-    padding-right: 28px;
+    padding-inline-end: 28px;
   }
 
   .ap-timeline li + li {
-    padding-left: 28px;
+    padding-inline-start: 28px;
   }
 
   .ap-timeline-year {

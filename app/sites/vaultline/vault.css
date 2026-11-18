@@ -26,8 +26,8 @@
   --vl-display: var(--font-display), "Inter", system-ui, sans-serif;
   --vl-body: var(--font-body), "Source Sans 3", system-ui, sans-serif;
   --vl-serif: var(--font-editorial), "Iowan Old Style", Georgia, serif;
-  --vl-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Mono", ui-monospace,
-    monospace;
+  --vl-mono: var(--font-body), "SFMono-Regular", "JetBrains Mono",
+    "Cascadia Mono", ui-monospace, monospace;
   --vl-radius: 6px;
 
   min-height: 100vh;
@@ -115,7 +115,7 @@
 .vl-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 140;
   display: inline-flex;
   align-items: center;
@@ -127,9 +127,8 @@
   background: var(--vl-surface);
   color: var(--vl-ink);
   font-family: var(--vl-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -148,9 +147,8 @@
   gap: 8px;
   margin: 0;
   font-family: var(--vl-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--vl-accent);
 }
 
@@ -181,7 +179,6 @@
   font-size: 8.5px;
   line-height: 1.75;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -191,7 +188,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -219,7 +215,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -276,7 +271,7 @@
   font-size: clamp(2.15rem, 7.6vw, 3.9rem);
   font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink);
   text-wrap: balance;
 }
@@ -334,17 +329,16 @@
   font-family: var(--vl-display);
   font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .vl-brand-sub {
   display: none;
-  padding-left: 9px;
-  border-left: 1px solid var(--vl-line-strong);
+  padding-inline-start: 9px;
+  border-inline-start: 1px solid var(--vl-line-strong);
   font-family: var(--vl-mono);
   font-size: 8px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
   white-space: nowrap;
 }
@@ -362,7 +356,6 @@
   font-family: var(--vl-mono);
   font-size: 9.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--vl-muted);
   transition: color 180ms ease;
 }
@@ -386,9 +379,8 @@
   border: 1px solid var(--vl-line-strong);
   border-radius: var(--vl-radius);
   font-family: var(--vl-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-ink);
   transition:
     border-color 180ms ease,
@@ -434,9 +426,8 @@
   min-height: 52px;
   border-bottom: 1px solid var(--vl-line);
   font-family: var(--vl-mono);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-ink-soft);
 }
 
@@ -466,7 +457,6 @@
   font-size: 8.5px;
   line-height: 1.8;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -495,7 +485,6 @@
   font-family: var(--vl-mono);
   font-size: 8.5px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -531,7 +520,7 @@
   font-size: clamp(3rem, 12.6vw, 6.7rem);
   font-weight: 600;
   line-height: 0.92;
-  letter-spacing: -0.055em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink);
   text-wrap: balance;
 }
@@ -562,14 +551,13 @@
 }
 
 .vl-hero-meta > div + div {
-  border-left: 1px solid var(--vl-line);
+  border-inline-start: 1px solid var(--vl-line);
 }
 
 .vl-hero-meta dt {
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -578,7 +566,7 @@
   font-family: var(--vl-display);
   font-size: 12.5px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink-soft);
 }
 
@@ -610,7 +598,6 @@
   font-family: var(--vl-mono);
   font-size: 7px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -634,7 +621,6 @@
   font-size: 7.5px;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -652,7 +638,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -697,7 +682,6 @@
   font-family: var(--vl-mono);
   font-size: 8px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--vl-muted);
 }
 
@@ -710,7 +694,7 @@
 }
 
 .vl-strip li + li {
-  margin-left: 12px;
+  margin-inline-start: 12px;
 }
 
 /* --------------------------------------------------------------------------
@@ -754,7 +738,7 @@
 
 .vl-feature-index {
   font-family: var(--vl-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
   color: var(--vl-accent-deep);
 }
@@ -772,7 +756,7 @@
   font-size: 22px;
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink);
 }
 
@@ -790,7 +774,6 @@
   font-family: var(--vl-mono);
   font-size: 8px !important;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-quiet) !important;
 }
 
@@ -808,7 +791,7 @@
   font-family: var(--vl-serif);
   font-size: clamp(1.7rem, 5.6vw, 2.6rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink-soft);
 }
 
@@ -816,7 +799,6 @@
   font-family: var(--vl-mono);
   font-size: 8px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -865,7 +847,7 @@
   font-family: var(--vl-display);
   font-size: 19px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink);
 }
 
@@ -905,7 +887,6 @@
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--vl-paper-ink);
 }
 
@@ -914,7 +895,6 @@
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-paper-muted);
 }
 
@@ -945,7 +925,7 @@
   content: "";
   position: absolute;
   top: 23px;
-  left: 2px;
+  inset-inline-start: 2px;
   width: 5px;
   height: 5px;
   border: 1px solid #6b5a9c;
@@ -957,7 +937,7 @@
   position: absolute;
   top: 29px;
   bottom: -1px;
-  left: 4.5px;
+  inset-inline-start: 4.5px;
   width: 1px;
   background: rgba(107, 90, 156, 0.28);
 }
@@ -981,7 +961,6 @@
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-paper-muted);
 }
 
@@ -992,7 +971,6 @@
   font-family: var(--vl-mono);
   font-size: 6.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: #6b5a9c;
 }
 
@@ -1004,7 +982,7 @@
   font-family: var(--vl-display);
   font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-paper-ink);
 }
 
@@ -1031,7 +1009,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--vl-paper-muted);
 }
 
@@ -1056,7 +1033,6 @@
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-muted);
 }
 
@@ -1095,15 +1071,14 @@
   font-size: 7.5px;
   font-weight: 400;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
 .vl-spec-grid dd {
   font-family: var(--vl-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.04em;
-  text-align: right;
+  text-align: end;
   color: var(--vl-accent);
 }
 
@@ -1152,7 +1127,6 @@
   font-size: 7.5px;
   line-height: 1.75;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -1196,7 +1170,7 @@
 
 .vl-swatch-tag {
   position: absolute;
-  left: 12px;
+  inset-inline-start: 12px;
   bottom: 12px;
   padding: 5px 9px;
   border: 1px solid var(--vl-line-strong);
@@ -1205,7 +1179,6 @@
   font-family: var(--vl-mono);
   font-size: 7px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-muted);
 }
 
@@ -1217,7 +1190,7 @@
   font-family: var(--vl-display);
   font-size: 21px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink);
 }
 
@@ -1253,12 +1226,12 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 26px;
   border-top: 1px solid var(--vl-line);
-  border-left: 1px solid var(--vl-line);
+  border-inline-start: 1px solid var(--vl-line);
 }
 
 .vl-disclosure-facts > div {
   padding: 13px 14px;
-  border-right: 1px solid var(--vl-line);
+  border-inline-end: 1px solid var(--vl-line);
   border-bottom: 1px solid var(--vl-line);
 }
 
@@ -1266,7 +1239,6 @@
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -1275,7 +1247,7 @@
   font-family: var(--vl-display);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink-soft);
 }
 
@@ -1317,7 +1289,7 @@
   font-family: var(--vl-serif);
   font-size: 25px;
   line-height: 1.16;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink-soft);
   text-wrap: balance;
 }
@@ -1329,7 +1301,6 @@
   font-size: 7.5px;
   font-style: normal;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -1379,7 +1350,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -1410,7 +1380,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-accent);
 }
 
@@ -1450,7 +1419,6 @@
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
   color: var(--vl-muted);
 }
 
@@ -1472,7 +1440,7 @@
 
 .vl-form select {
   appearance: none;
-  padding-right: 38px;
+  padding-inline-end: 38px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23aaa3bd' stroke-width='1.2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 15px center;
@@ -1523,7 +1491,6 @@
   font-size: 7px;
   line-height: 1.75;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -1553,7 +1520,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-accent);
 }
 
@@ -1591,7 +1557,7 @@
   font-family: var(--vl-display);
   font-size: 21px;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--vl-ink);
 }
 
@@ -1623,7 +1589,6 @@
   font-family: var(--vl-mono);
   font-size: 8.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--vl-accent);
 }
 
@@ -1649,7 +1614,6 @@
   font-family: var(--vl-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--vl-quiet);
 }
 
@@ -1792,7 +1756,7 @@
 
   .vl-quote-note {
     padding-bottom: 6px;
-    text-align: right;
+    text-align: end;
   }
 
   .vl-footer-cols {
@@ -1831,11 +1795,11 @@
   }
 
   .vl-spec-grid > div {
-    border-right: 1px solid var(--vl-line);
+    border-inline-end: 1px solid var(--vl-line);
   }
 
   .vl-spec-grid > div:nth-child(2n) {
-    border-right: 0;
+    border-inline-end: 0;
   }
 
   .vl-spec-grid > div:nth-last-child(-n + 2) {
@@ -1920,7 +1884,7 @@
   }
 
   .vl-strip li + li {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 
   .vl-quote-band {

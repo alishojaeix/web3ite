@@ -28,7 +28,7 @@
   --em-dark-ink: #eef5f1;
   --em-dark-muted: #a4b9af;
   --em-display: var(--font-display), "Syne", system-ui, sans-serif;
-  --em-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+  --em-sans: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
 
   min-height: 100vh;
   background:
@@ -60,7 +60,7 @@
 .em-skip {
   position: absolute;
   top: -48px;
-  left: 16px;
+  inset-inline-start: 16px;
   z-index: 100;
   padding: 8px 16px;
   background: var(--em-accent);
@@ -175,7 +175,7 @@
   font-family: var(--em-display);
   font-size: 1.02rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .em-brand-sub {
@@ -312,7 +312,6 @@
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--em-accent);
 }
 
@@ -327,7 +326,7 @@
   font-size: clamp(2.6rem, 5.2vw, 4.4rem);
   font-weight: 700;
   line-height: 1.03;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .em-display-accent {
@@ -454,7 +453,6 @@
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--em-accent);
 }
 
@@ -467,7 +465,7 @@
 }
 
 .em-highlight-val span {
-  margin-left: 6px;
+  margin-inline-start: 6px;
   font-family: var(--em-sans);
   font-size: 0.9rem;
   font-weight: 600;
@@ -513,7 +511,6 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--em-accent);
 }
 
@@ -527,7 +524,7 @@
   font-size: clamp(1.9rem, 3.2vw, 2.75rem);
   font-weight: 700;
   line-height: 1.08;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .em-h3 {
@@ -631,7 +628,6 @@
 .em-quote-banner footer {
   font-size: 0.78rem;
   color: var(--em-muted);
-  text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
@@ -676,7 +672,7 @@
   background: var(--em-bg);
   color: var(--em-ink);
   border: 1px solid var(--em-line);
-  text-align: left;
+  text-align: start;
   cursor: pointer;
 }
 
@@ -782,7 +778,6 @@
 
 .em-trip-metrics dt {
   font-size: 0.72rem;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--em-dim);
 }
@@ -811,7 +806,7 @@
   background: var(--em-bg);
   color: var(--em-ink);
   border: 1px solid var(--em-line);
-  text-align: left;
+  text-align: start;
   cursor: pointer;
 }
 
@@ -822,7 +817,7 @@
 
 .em-hub-code {
   display: inline-block;
-  margin-right: 8px;
+  margin-inline-end: 8px;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--em-accent);
@@ -948,7 +943,7 @@
 .em-spec-row dd {
   margin: 0;
   font-weight: 600;
-  text-align: right;
+  text-align: end;
 }
 
 .em-honest-box {
@@ -992,7 +987,6 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--em-accent);
 }
 
@@ -1032,7 +1026,6 @@
 
 .em-contact-facts dt {
   font-size: 0.72rem;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--em-dim);
 }
@@ -1055,7 +1048,6 @@
   margin-bottom: 4px;
   font-size: 0.72rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--em-accent);
 }

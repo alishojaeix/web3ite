@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ApexSite } from "@/components/sites/apex-marque/ApexSite";
 import "./apex.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Apex Marque — The long way home.";
+const title = "اپکس مارک — راهِ طولانیِ خانه";
 const description =
-  "A sample grand-tourer marque website: an editorial car study under one key light, an interactive trim selector, a plain illustrative specification, three materials and a build-request form. Fictional marque built as a Web3ite template.";
+  "نمونهٔ وب‌سایت یک برند خودروی گرند تورر: مطالعه‌ای تصویری از خودرو زیر یک نور کلیدی، انتخابگر تیپ تعاملی، مشخصات ساده و گویا، سه متریال و فرم درخواست ساخت. برندی خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=apex-marque",
         width: 1200,
         height: 630,
-        alt: "Apex Marque website preview",
+        alt: "پیش‌نمایش وب‌سایت اپکس مارک",
       },
     ],
   },

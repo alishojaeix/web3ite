@@ -6,227 +6,227 @@
  */
 
 export const apexNav = [
-  { label: "Marque", href: "#story" },
-  { label: "The car", href: "#showcase" },
-  { label: "Specification", href: "#specs" },
-  { label: "Configure", href: "#contact" },
+  { label: "برند", href: "#story" },
+  { label: "خودرو", href: "#showcase" },
+  { label: "مشخصات", href: "#specs" },
+  { label: "پیکربندی", href: "#contact" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Apex Marque / Grand tourer",
-  headline: "The long way",
-  headlineAccent: "home.",
+  eyebrow: "اپکس مارک / تور بزرگ",
+  headline: "از راهِ دور،",
+  headlineAccent: "به خانه",
   intro:
-    "A single grand tourer, presented under one key light. Long proportions, a calm cabin and a specification that rewards attention.",
-  status: "Showroom · model year 2026",
-  note: "Sample marque · fictional car and specification",
+    "یک تور بزرگ، زیر یک نورِ کلیدی. تناسبات کشیده، کابینی آرام و مشخصاتی که به دقت پاداش می‌دهد.",
+  status: "نمایشگاه · مدل سال ۲۰۲۶",
+  note: "برند نمونه · خودرو و مشخصات خیالی",
   caption: [
-    "Apex GT — profile study",
-    "Illustrative drawing · not a production vehicle",
+    "اپکس GT — بررسی نیمرخ",
+    "طراحی نمایشی · نه یک خودروی تولیدی",
   ],
-  footNote: "Grand tourer · One key light · Built to order",
+  footNote: "تور بزرگ · یک نور کلیدی · ساخت به سفارش",
 } as const;
 
 export const heroMeta = [
-  { label: "Body", value: "Grand tourer" },
-  { label: "Light", value: "One key" },
-  { label: "Build", value: "To order" },
+  { label: "بدنه", value: "تور بزرگ" },
+  { label: "نور", value: "یک نور کلیدی" },
+  { label: "ساخت", value: "به سفارش" },
 ] as const;
 
 export const stats = [
-  { label: "Power", value: "620", unit: "hp", note: "Illustrative" },
-  { label: "0–60", value: "3.4", unit: "s", note: "Illustrative" },
-  { label: "Range", value: "410", unit: "mi", note: "Illustrative" },
-  { label: "Weight", value: "1,780", unit: "kg", note: "Illustrative" },
+  { label: "توان", value: "۶۲۰", unit: "اسب‌بخار", note: "نمایشی" },
+  { label: "۰ تا ۱۰۰", value: "۳.۴", unit: "ثانیه", note: "نمایشی" },
+  { label: "برد", value: "۴۱۰", unit: "مایل", note: "نمایشی" },
+  { label: "وزن", value: "۱٬۷۸۰", unit: "کیلوگرم", note: "نمایشی" },
 ] as const;
 
 export const trims = [
   {
     id: "touring",
-    name: "Touring",
-    subtitle: "The quiet one",
-    wheels: "20-inch forged",
-    cabin: "Natural leather / open-pore wood",
+    name: "تورینگ",
+    subtitle: "آرام‌ترین",
+    wheels: "فورج ۲۰ اینچی",
+    cabin: "چرم طبیعی / چوب منفذدار",
     character:
-      "Long-legged and understated. The trim for people who plan routes by lunch, not by traffic.",
+      "کشیده و بی‌ادعا. تیپی برای کسانی که مسیر را با ناهار برنامه می‌ریزند، نه با ترافیک.",
   },
   {
     id: "grand",
-    name: "Grand",
-    subtitle: "The balance",
-    wheels: "21-inch forged",
-    cabin: "Natural leather / machined alloy",
+    name: "گراند",
+    subtitle: "تعادل",
+    wheels: "فورج ۲۱ اینچی",
+    cabin: "چرم طبیعی / آلیاژ ماشین‌کاری‌شده",
     character:
-      "The standard expression: more presence without more noise. The long route, clearly answered.",
+      "بیان استاندارد: حضور بیشتر، بدون سر و صدای بیشتر. پاسخِ روشن به مسیرِ دور.",
   },
   {
     id: "edition",
-    name: "Edition",
-    subtitle: "The last word",
-    wheels: "21-inch forged, polished face",
-    cabin: "Saddle leather / bronze stitch",
+    name: "ادیشن",
+    subtitle: "آخرین حرف",
+    wheels: "فورج ۲۱ اینچی، رویه صیقلی",
+    cabin: "چرم زینی / دوخت برنزی",
     character:
-      "A small, numbered run. The same car with a warmer room and a quieter badge.",
+      "سری‌ای کوچک و شماره‌دار. همان خودرو با اتاقی گرم‌تر و نشانِ ساکت‌تر.",
   },
 ] as const;
 
 export const showcase = {
-  label: "01 / The car",
-  title: "One car, clearly described.",
+  label: "۰۱ / خودرو",
+  title: "یک خودرو، به‌روشنی توصیف‌شده",
   intro:
-    "A single grand tourer under one key light. Long proportions, a calm cabin, an honest specification — and a configurator strip that shows what changes.",
-  note: "Sample specification and trims. Figures are illustrative, not homologated or measured.",
+    "یک تور بزرگ زیر یک نور کلیدی. تناسبات کشیده، کابینی آرام، مشخصاتی صادقانه — و نوار پیکربندیِ نمایشی که نشان می‌دهد چه چیزی عوض می‌شود.",
+  note: "مشخصات و تیپ‌های نمونه. اعداد نمایشی‌اند، نه همگام‌شده یا اندازه‌گیری‌شده.",
   config: {
-    label: "Trim / illustrative",
-    title: "Choose a trim",
-    note: "Interactive sample. Nothing here is orderable and no price is represented.",
+    label: "تیپ / نمایشی",
+    title: "یک تیپ انتخاب کنید",
+    note: "نمونهٔ تعاملی. هیچ‌چیز اینجا قابل سفارش نیست و قیمتی نمایش داده نمی‌شود.",
   },
 } as const;
 
 export const marque = {
-  label: "02 / The marque",
-  title: "Distance, taken seriously.",
+  label: "۰۲ / برند",
+  title: "مسافت، جدی گرفته‌شده",
   intro:
-    "The marque is built around one idea: distance should feel effortless. The car is the argument; the details are the evidence.",
+    "برند بر یک ایده ساخته شده است: مسافت باید بی‌زحمت حس شود. خودرو استدلال است و جزئیات، شاهد آن.",
   quote: {
-    text: "Distance is a material. The car is shaped around it.",
-    note: "Marque note · sample copy",
+    text: "مسافت یک ماده است. خودرو گرد آن شکل می‌گیرد.",
+    note: "یادداشت برند · متن نمونه",
   },
   timeline: [
     {
-      year: "2019",
-      title: "One idea",
-      body: "A single brief: a car for the long route, drawn around the driver and one passenger.",
+      year: "۲۰۱۹",
+      title: "یک ایده",
+      body: "یک بریف کوتاه: خودرویی برای مسیرِ دور، ترسیم‌شده گرد راننده و یک سرنشین.",
     },
     {
-      year: "2022",
-      title: "The form fixed",
-      body: "Proportions settled first — long bonnet, low roof, rear haunch. Nothing added to hide them.",
+      year: "۲۰۲۲",
+      title: "تثبیت فرم",
+      body: "نسبت‌ها نخست تثبیت شدند — کاپوت کشیده، سقف کوتاه، گلگیرِ عقب برجسته. چیزی برای پنهان‌کردن آن‌ها افزوده نشد.",
     },
     {
-      year: "2024",
-      title: "The cabin",
-      body: "Materials chosen for touch and age: natural leather, machined metal, open-pore wood.",
+      year: "۲۰۲۴",
+      title: "کابین",
+      body: "مواد برای لمس و کهنگی انتخاب شدند: چرم طبیعی، فلز ماشین‌کاری‌شده و چوب منفذدار.",
     },
     {
-      year: "2026",
-      title: "Built to order",
-      body: "The first sample build slot. A demonstration only; no car is produced, priced or sold.",
+      year: "۲۰۲۶",
+      title: "ساخت به سفارش",
+      body: "نخستین جایگاه ساخت نمونه. تنها یک نمایش است؛ هیچ خودرویی تولید، قیمت‌گذاری یا فروخته نمی‌شود.",
     },
   ],
-  note: "Sample heritage. The marque, dates and car are fictional.",
+  note: "تاریخچهٔ نمونه. برند، تاریخ‌ها و خودرو خیالی‌اند.",
 } as const;
 
 export const specification = {
-  label: "03 / Specification",
-  title: "Illustrative specification.",
+  label: "۰۳ / مشخصات",
+  title: "مشخصات نمایشی",
   intro:
-    "Published plainly, in three groups. Every figure is a sample for the layout — not a measured, homologated or certified value.",
+    "به‌روشنی و در سه گروه منتشر شده است. هر عدد، نمونه‌ای برای چیدمان است — نه مقداری اندازه‌گیری‌شده، همگام‌شده یا تأییدشده.",
   groups: [
     {
-      title: "Performance",
+      title: "عملکرد",
       rows: [
-        { label: "Power", value: "620 hp" },
-        { label: "0–60", value: "3.4 s" },
-        { label: "Range", value: "410 mi" },
-        { label: "Weight", value: "1,780 kg" },
+        { label: "توان", value: "۶۲۰ اسب‌بخار" },
+        { label: "۰ تا ۱۰۰", value: "۳.۴ ثانیه" },
+        { label: "برد", value: "۴۱۰ مایل" },
+        { label: "وزن", value: "۱٬۷۸۰ کیلوگرم" },
       ],
     },
     {
-      title: "Chassis",
+      title: "شاسی",
       rows: [
-        { label: "Layout", value: "Front-engine, RWD" },
-        { label: "Gearbox", value: "8-speed" },
-        { label: "Wheels", value: "21-inch" },
-        { label: "Trim", value: "Touring / Grand / Edition" },
+        { label: "چیدمان", value: "موتور جلو، دیفرانسیل عقب" },
+        { label: "جعبه‌دنده", value: "۸ سرعته" },
+        { label: "چرخ‌ها", value: "۲۱ اینچ" },
+        { label: "تیپ", value: "تورینگ / گراند / ادیشن" },
       ],
     },
     {
-      title: "Ownership",
+      title: "مالکیت",
       rows: [
-        { label: "Seats", value: "2+2" },
-        { label: "Boot", value: "310 L" },
-        { label: "Build", value: "To order" },
-        { label: "Deposit", value: "None" },
+        { label: "صندلی", value: "۲+۲" },
+        { label: "صندوق", value: "۳۱۰ لیتر" },
+        { label: "ساخت", value: "به سفارش" },
+        { label: "بیعانه", value: "ندارد" },
       ],
     },
   ],
   facts: [
-    { label: "Seats", value: "2+2" },
-    { label: "Boot", value: "310 L" },
-    { label: "Build", value: "To order" },
-    { label: "Deposit", value: "None" },
+    { label: "صندلی", value: "۲+۲" },
+    { label: "صندوق", value: "۳۱۰ لیتر" },
+    { label: "ساخت", value: "به سفارش" },
+    { label: "بیعانه", value: "ندارد" },
   ],
   notClaimed: [
-    "No production vehicle is represented",
-    "No figure is measured or homologated",
-    "No price, order or delivery is offered",
-    "No dealer network or warranty is claimed",
+    "هیچ خودروی تولیدی نمایش داده نمی‌شود",
+    "هیچ عددی اندازه‌گیری یا همگام‌شده نیست",
+    "هیچ قیمت، سفارش یا تحویلی پیشنهاد نمی‌شود",
+    "هیچ شبکهٔ نمایندگی یا گارانتی ادعا نمی‌شود",
   ],
   notClaimedNote:
-    "This is a demonstration website. A real marque page would publish tested figures and a regulated offer — or say nothing at all.",
-  note: "Illustrative specification. All values are sample content.",
+    "این یک وب‌سایت نمایشی است. صفحهٔ یک برند واقعی اعداد آزموده‌شده و پیشنهادی قانون‌مند منتشر می‌کند — یا اصلاً چیزی نمی‌گوید.",
+  note: "مشخصات نمایشی. همهٔ مقادیر محتوای نمونه‌اند.",
 } as const;
 
 export const materials = {
-  label: "04 / Materials",
-  title: "Three materials, one light.",
+  label: "۰۴ / مواد",
+  title: "سه ماده، یک نور",
   intro:
-    "The showroom is deliberately quiet: one paint, one alloy, one hide. The drawing does the talking.",
-  note: "Sample materials. No paint code, alloy specification or hide is supplied.",
+    "نمایشگاه عمداً ساکت است: یک رنگ، یک آلیاژ، یک چرم. طراحی، حرف می‌زند.",
+  note: "مواد نمونه. هیچ کد رنگ، مشخصات آلیاژ یا چرمی ارائه نمی‌شود.",
   items: [
     {
-      name: "Paint",
-      note: "One key light",
+      name: "رنگ",
+      note: "یک نور کلیدی",
       swatch: "paint",
-      body: "A warm metallic, sampled under a single key light. One colour, no configurator rainbow.",
+      body: "یک فلزیکِ گرم، نمونه‌برداری‌شده زیر یک نور کلیدی. یک رنگ، بدون رنگین‌کمانِ پیکربندی.",
     },
     {
-      name: "Alloy",
-      note: "Long proportions",
+      name: "آلیاژ",
+      note: "تناسبات کشیده",
       swatch: "alloy",
-      body: "A forged wheel with a machined face. The drawing shows the spoke, not a rendered showroom.",
+      body: "چرخِ فورج با رویهٔ ماشین‌کاری‌شده. طراحی، پره را نشان می‌دهد نه یک نمایشگاه رندرشده.",
     },
     {
-      name: "Leather",
-      note: "A calm cabin",
+      name: "چرم",
+      note: "کابینی آرام",
       swatch: "leather",
-      body: "Natural hide with unbleached stitching. The cabin is designed to age, not to gleam.",
+      body: "چرم طبیعی با دوختِ بی‌رنگ‌شده. کابین برای کهنه‌شدن طراحی شده است، نه برای برق‌زدن.",
     },
   ],
 } as const;
 
 export const contact = {
-  label: "05 / Configure",
-  title: "Build the long way home.",
+  label: "۰۵ / پیکربندی",
+  title: "از راهِ دور به خانه برسید",
   intro:
-    "Choose a trim and request a build slot. A short note about the route you have in mind is enough.",
+    "یک تیپ انتخاب کنید و جایگاه ساخت بخواهید. یک یادداشت کوتاه دربارهٔ مسیری که در ذهن دارید کافی است.",
   facts: [
-    { label: "Reply", value: "2 days" },
-    { label: "Format", value: "Spec" },
-    { label: "Build", value: "To order" },
-    { label: "Deposit", value: "None" },
+    { label: "پاسخ", value: "۲ روز" },
+    { label: "قالب", value: "مشخصات" },
+    { label: "ساخت", value: "به سفارش" },
+    { label: "بیعانه", value: "ندارد" },
   ],
   bring: [
-    "The trim you are drawn to",
-    "The route the car has to make easy",
-    "The detail you would change",
+    "تیپی که به آن کشیده می‌شوید",
+    "مسیری که خودرو باید آسان کند",
+    "جزئیاتی که تغییرش می‌دهید",
   ],
-  quote: "A grand tourer is a promise about time.",
-  quoteNote: "Marque note · sample copy",
+  quote: "تور بزرگ، وعده‌ای دربارهٔ زمان است.",
+  quoteNote: "یادداشت برند · متن نمونه",
   email: "atelier@apex-marque.demo",
   phone: "+44 20 7946 0008",
-  address: ["Apex Marque", "1 Concours Way", "London W1K 3AB"],
-  hours: "By appointment · Monday to Saturday",
-  note: "Fictional marque. Address, telephone number, car and details are illustrative.",
+  address: ["اپکس مارک", "خیابان کانسور ۱", "لندن W1K 3AB"],
+  hours: "با تعیین وقت قبلی · دوشنبه تا شنبه",
+  note: "برند خیالی. نشانی، شمارهٔ تلفن، خودرو و جزئیات نمایشی‌اند.",
   form: {
-    title: "Build request",
-    sub: "A trim, a route, no deposit",
-    trims: ["Touring", "Grand", "Edition", "Not sure yet"],
-    note: "Sample build form. Nothing is sent to a real marque, no order is accepted and no vehicle is offered for sale.",
+    title: "درخواست ساخت",
+    sub: "یک تیپ، یک مسیر، بدون بیعانه",
+    trims: ["تورینگ", "گراند", "ادیشن", "هنوز مطمئن نیستم"],
+    note: "فرم ساخت نمونه. چیزی به برند واقعی فرستاده نمی‌شود، سفارشی پذیرفته نمی‌شود و خودرویی برای فروش عرضه نمی‌شود.",
     confirmation:
-      "Your build request has been recorded for this demonstration. No message is sent, no order is accepted and no vehicle is offered for sale.",
+      "درخواست ساخت شما برای این نمایش ثبت شد. پیامی فرستاده نمی‌شود، سفارشی پذیرفته نمی‌شود و خودرویی برای فروش عرضه نمی‌شود.",
     fallback:
-      "The demo atelier is unavailable right now. Please use the email address on this page.",
+      "آتلیهٔ نمایشی اکنون در دسترس نیست. لطفاً از نشانی ایمیل روی این صفحه استفاده کنید.",
   },
 } as const;

@@ -20,7 +20,7 @@ export function ApexBrief() {
     const trim = String(data.get("trim") ?? "").trim();
     const detail = String(data.get("message") ?? "").trim();
 
-    const brief = [trim ? `Trim: ${trim}` : "", detail]
+    const brief = [trim ? `تیپ: ${trim}` : "", detail]
       .filter(Boolean)
       .join("\n\n");
 
@@ -65,7 +65,7 @@ export function ApexBrief() {
         <span className="ap-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="ap-success-title">Build request recorded</p>
+        <p className="ap-success-title">درخواست ساخت ثبت شد</p>
         <p className="ap-success-body">{message}</p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export function ApexBrief() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
@@ -97,7 +97,7 @@ export function ApexBrief() {
       <form className="ap-form" onSubmit={onSubmit}>
         <div className="ap-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -105,24 +105,24 @@ export function ApexBrief() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@example.com"
+              placeholder="you@example.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>Trim</span>
+          <span>تیپ</span>
           <select name="trim" defaultValue={contact.form.trims[1]}>
             {contact.form.trims.map((option) => (
               <option key={option} value={option}>
@@ -133,13 +133,13 @@ export function ApexBrief() {
         </label>
 
         <label>
-          <span>The route</span>
+          <span>مسیر</span>
           <textarea
             name="message"
             rows={4}
             required
             maxLength={1200}
-            placeholder="The route the car has to make easy, and the detail you would change."
+            placeholder="مسیری که خودرو باید آسان کند، و جزئیاتی که تغییرش می‌دهید."
           />
         </label>
 
@@ -148,7 +148,7 @@ export function ApexBrief() {
           className="ap-btn ap-btn--solid ap-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending request…" : "Send the build request"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال درخواست ساخت"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

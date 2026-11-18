@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { NeuralSite } from "@/components/sites/neural-studio/NeuralSite";
 import "./neural.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Neural Studio — Intelligence, given form";
+const title = "استودیوی نیورال — هوش، به‌شکل درآمده";
 const description =
-  "A sample applied-AI product studio website: capability systems, illustrative engagement work, a visible method and a working project intake form. Fictional London studio built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای استودیوی هوش مصنوعی: موارد کاربرد، روش کار، معیارهای ارزیابی و فرم ورودی پروژه. استودیوی خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=neural-studio",
         width: 1200,
         height: 630,
-        alt: "Neural Studio website preview",
+        alt: "پیش‌نمایش وب‌سایت استودیوی نیورال",
       },
     ],
   },

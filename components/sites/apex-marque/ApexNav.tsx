@@ -20,13 +20,13 @@ export function ApexNav() {
   return (
     <header className="ap-nav">
       <div className="ap-wrap ap-nav-bar">
-        <a href="#top" className="ap-brand" aria-label="Apex Marque, back to top">
+        <a href="#top" className="ap-brand" aria-label="اپکس مارک، بازگشت به بالا">
           <MarqueMark className="ap-brand-mark" />
-          <span className="ap-brand-word">Apex Marque</span>
-          <span className="ap-brand-sub">Grand tourer</span>
+          <span className="ap-brand-word">اپکس مارک</span>
+          <span className="ap-brand-sub">خودروی گرند تورر</span>
         </a>
 
-        <nav aria-label="Primary" className="ap-nav-links">
+        <nav aria-label="پیمایش اصلی" className="ap-nav-links">
           {apexNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function ApexNav() {
 
         <div className="ap-nav-tail">
           <a href="#contact" className="ap-nav-cta">
-            Build a spec
+            پیکربندی مشخصات
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="ap-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="ap-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function ApexNav() {
 
       {open ? (
         <div className="ap-mobile-wrap">
-          <nav id="ap-mobile-nav" aria-label="Mobile navigation" className="ap-mobile-nav">
+          <nav id="ap-mobile-nav" aria-label="پیمایش موبایل" className="ap-mobile-nav">
             {apexNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function ApexNav() {
               </a>
             ))}
             <a href="#contact" className="ap-mobile-cta" onClick={() => setOpen(false)}>
-              Build a spec
+              پیکربندی مشخصات
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="ap-mobile-note">
-              1 Concours Way, London W1K
+              خیابان کانسور ۱، لندن W1K
               <br />
-              By appointment · sample marque
+              با تعیین وقت · برند نمونه
             </p>
           </nav>
         </div>

@@ -14,12 +14,8 @@ export function ClocheScene() {
       role="img"
       aria-labelledby="md-cloche-title md-cloche-desc"
     >
-      <title id="md-cloche-title">A silver cloche on a linen table</title>
-      <desc id="md-cloche-desc">
-        A low pendant light hangs over a linen-covered table. A silver cloche,
-        a wine glass and a lit candle sit on the table, with the dark dining
-        room and an arched wall behind them.
-      </desc>
+      <title id="md-cloche-title">یک کلاج نقره‌ای روی میز کتان</title>
+      <desc id="md-cloche-desc"> آویز کم‌نوری بالای میزی با رویهٔ کتان است. کلاج نقره‌ای، لیوان شراب و شمعی روشن روی میز قرار دارند و اتاق تاریک غذاخوری و دیواری قوس‌دار پشت آن‌ها دیده می‌شود. </desc>
       <defs>
         <linearGradient id="md-wall" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#19110d" />
@@ -150,8 +146,8 @@ export function ClocheScene() {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="8.5" letterSpacing="3.2" fill="#d8c9b4">
-        <text x="92" y="404">MAISON · TABLE 12</text>
-        <text x="968" y="404" textAnchor="end">PARIS 1ER</text>
+        <text x="92" y="404">MAISON · میز ۱۲</text>
+        <text x="968" y="404" textAnchor="end">پاریس ۱</text>
       </g>
       <g stroke="#c47a5f" strokeOpacity="0.5">
         <path d="M92 414 h36 M1072 414 h36" />
@@ -169,11 +165,8 @@ export function RoomPlan() {
       role="img"
       aria-labelledby="md-plan-title md-plan-desc"
     >
-      <title id="md-plan-title">Seating plan of the Maison dining room</title>
-      <desc id="md-plan-desc">
-        A twelve-seat room arranged around a central pass, with an entrance,
-        a cellar and a small bar. The plan is illustrative and not to scale.
-      </desc>
+      <title id="md-plan-title">طرح نشستن اتاق غذاخوری Maison</title>
+      <desc id="md-plan-desc"> اتاقی دوازده‌نفره که گرد یک پاس مرکزی چیده شده، با ورودی، زیرزمین و باری کوچک. طرح نمایشی است و مقیاس ندارد. </desc>
       <defs>
         <pattern id="md-plan-grid" width="24" height="24" patternUnits="userSpaceOnUse">
           <path d="M24 0H0V24" fill="none" stroke="#2a211a" strokeOpacity="0.08" />
@@ -198,7 +191,7 @@ export function RoomPlan() {
         letterSpacing="3"
         fill="#2a211a"
       >
-        THE PASS
+        پاس
       </text>
       <text
         x="360"
@@ -209,7 +202,7 @@ export function RoomPlan() {
         letterSpacing="1.2"
         fill="#6c5a48"
       >
-        KITCHEN · 12 COVERS
+        آشپزخانه · ۱۲ جای نشستن
       </text>
       <path d="M322 272 h76" stroke="#c47a5f" strokeWidth="2" />
 
@@ -255,7 +248,7 @@ export function RoomPlan() {
           letterSpacing="1.6"
           fill="#2a211a"
         >
-          CELLAR
+          زیرزمین
         </text>
         <rect x="596" y="390" width="54" height="32" />
         <path d="M596 406 H650" strokeDasharray="3 4" />
@@ -268,7 +261,7 @@ export function RoomPlan() {
           letterSpacing="1.3"
           fill="#2a211a"
         >
-          BAR
+          بار
         </text>
       </g>
 
@@ -284,16 +277,16 @@ export function RoomPlan() {
         letterSpacing="1.4"
         fill="#6c5a48"
       >
-        ENTRANCE · RUE DES ORFÈVRES
+        ورودی · خیابان اورفِور
       </text>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="8" letterSpacing="2.4" fill="#2a211a">
-        <text x="54" y="40">MAISON · DINING ROOM</text>
-        <text x="666" y="40" textAnchor="end">GROUND FLOOR</text>
+        <text x="54" y="40">مزون · اتاق غذاخوری</text>
+        <text x="666" y="40" textAnchor="end">همکف</text>
       </g>
       <g fontFamily="var(--font-body), sans-serif" fontSize="7" letterSpacing="1.2" fill="#6c5a48">
-        <text x="54" y="504">ILLUSTRATIVE PLAN · NOT TO SCALE</text>
-        <text x="666" y="504" textAnchor="end">12 COVERS · ONE SEATING</text>
+        <text x="54" y="504">طرح نمایشی · بدون مقیاس</text>
+        <text x="666" y="504" textAnchor="end">۱۲ جای نشستن · یک سِرویس</text>
       </g>
     </svg>
   );
@@ -308,11 +301,8 @@ export function Carte() {
       role="img"
       aria-labelledby="md-carte-title md-carte-desc"
     >
-      <title id="md-carte-title">Postcard map to Maison Dining</title>
-      <desc id="md-carte-desc">
-        An illustrated map of the first arrondissement showing the Seine, Pont
-        Neuf, the Louvre and a copper marker on Rue des Orfèvres.
-      </desc>
+      <title id="md-carte-title">نقشهٔ کارت‌پستالی مزون داینینگ</title>
+      <desc id="md-carte-desc"> نقشه‌ای تصویری از منطقهٔ نخست پاریس که رود سن، پون‌نُف، لوور و نشانه‌ای مسی روی خیابان اورفِور را نشان می‌دهد. </desc>
       <rect width="640" height="440" fill="#eee3d3" />
       <g stroke="#2a211a" strokeOpacity="0.08">
         <path d="M0 88 H640 M0 176 H640 M0 264 H640 M0 352 H640" />
@@ -330,7 +320,7 @@ export function Carte() {
         fontStyle="italic"
         fill="#4f5a58"
       >
-        La Seine
+        رود سن
       </text>
 
       <g fill="none" stroke="#2a211a" strokeOpacity="0.55">
@@ -368,7 +358,7 @@ export function Carte() {
         letterSpacing="1.6"
         fill="#6c5a48"
       >
-        LOUVRE
+        لوور
       </text>
       <text
         x="322"
@@ -379,7 +369,7 @@ export function Carte() {
         letterSpacing="1.4"
         fill="#6c5a48"
       >
-        PONT NEUF
+        پون نوف
       </text>
 
       <g>
@@ -424,7 +414,7 @@ export function Carte() {
         letterSpacing="2.6"
         fill="#2a211a"
       >
-        PARIS 1ER
+        پاریس ۱
       </text>
       <text
         x="608"
@@ -435,7 +425,7 @@ export function Carte() {
         letterSpacing="1.2"
         fill="#6c5a48"
       >
-        NOT TO SCALE · ILLUSTRATIVE
+        بدون مقیاس · نمایشی
       </text>
     </svg>
   );

@@ -26,17 +26,17 @@ import {
 
 export function QuantumSite() {
   return (
-    <div className="qs-site" id="top">
+    <div className="qs-site" id="top" dir="rtl">
       <a className="qs-skip" href="#qs-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <QuantumNav />
 
-      <main id="qs-main">
+      <main id="qs-main" lang="fa" dir="rtl">
         <section className="qs-hero" aria-labelledby="qs-hero-title">
           <div className="qs-wrap qs-hero-top">
-            <p>1 Meridian Works · London E2</p>
+            <p>مریکن ورکس ۱ · لندن E2</p>
             <p className="qs-status">
               <span className="qs-status-dot" aria-hidden="true" />
               {hero.status}
@@ -59,11 +59,11 @@ export function QuantumSite() {
 
             <div className="qs-actions">
               <a className="qs-btn qs-btn--solid" href="#platform">
-                Explore the platform
+                کاوش در پلتفرم
                 <ArrowDown size={15} aria-hidden="true" />
               </a>
               <a className="qs-btn qs-btn--line" href="#research">
-                Read the research
+                خواندن پژوهش‌ها
                 <ArrowUpRight size={15} aria-hidden="true" />
               </a>
             </div>
@@ -83,7 +83,7 @@ export function QuantumSite() {
           <figure className="qs-wrap qs-plate">
             <div className="qs-plate-frame">
               <span className="qs-plate-rev" aria-hidden="true">
-                REV C · 2026
+                نسخهٔ C · ۲۰۲۶
               </span>
               <RingAssembly />
             </div>
@@ -96,7 +96,7 @@ export function QuantumSite() {
 
           <div className="qs-wrap qs-hero-foot">
             <a className="qs-scroll-cue" href="#platform">
-              Read the platform
+              خواندن پلتفرم
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -118,11 +118,11 @@ export function QuantumSite() {
             <div className="qs-platform-grid">
               <figure className="qs-schematic-frame">
                 <div className="qs-schematic-head">
-                  <span>FIG. 01 / SYSTEM STACK</span>
-                  <span>MODULAR</span>
+                  <span>شکل ۰۱ / پشتهٔ سیستم</span>
+                  <span>ماژولار</span>
                 </div>
                 <SystemSchematic />
-                <figcaption>Illustrative schematic · not a wiring diagram</figcaption>
+                <figcaption>شمای نمایشی · نه نقشهٔ سیم‌کشی</figcaption>
               </figure>
 
               <div className="qs-platform-list">
@@ -146,7 +146,7 @@ export function QuantumSite() {
             </div>
 
             <div className="qs-limits">
-              <p className="qs-mini-label">Documented limits</p>
+              <p className="qs-mini-label">محدودیت‌های مستند</p>
               <ul>
                 {platform.limits.map((limit) => (
                   <li key={limit}>
@@ -183,7 +183,7 @@ export function QuantumSite() {
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
                   <p className="qs-step-output">
-                    <span>Output</span>
+                    <span>خروجی</span>
                     {step.output}
                   </p>
                 </li>
@@ -205,7 +205,7 @@ export function QuantumSite() {
             <div className="qs-assembly-grid">
               <div className="qs-spec-panel">
                 <div className="qs-panel-head">
-                  <span>SPECIFICATION / QUALITATIVE</span>
+                  <span>مشخصات / کیفی</span>
                   <span>QS-03</span>
                 </div>
                 <dl className="qs-spec-dl">
@@ -219,7 +219,7 @@ export function QuantumSite() {
               </div>
 
               <div className="qs-parts-panel">
-                <p className="qs-mini-label">Three parts</p>
+                <p className="qs-mini-label">سه بخش</p>
                 <ul className="qs-parts">
                   {assembly.parts.map((part) => (
                     <li key={part.code}>
@@ -280,13 +280,13 @@ export function QuantumSite() {
 
             <div className="qs-cta-band">
               <div>
-                <p className="qs-cta-title">Read the method.</p>
+                <p className="qs-cta-title">روش را بخوانید</p>
                 <p className="qs-cta-body">
-                  Technical notes, tolerances and deployment details.
+                  یادداشت‌های فنی، تلورانس‌ها و جزئیات استقرار.
                 </p>
               </div>
               <a className="qs-btn qs-btn--line" href="#contact">
-                Request the technical brief
+                درخواست بریف فنی
                 <ArrowRight size={15} aria-hidden="true" />
               </a>
             </div>
@@ -318,9 +318,9 @@ export function QuantumSite() {
               </ul>
             </div>
 
-            <aside className="qs-record" aria-label="Company record">
+            <aside className="qs-record" aria-label="پروندهٔ شرکت">
               <div className="qs-record-head">
-                <span>RECORD / 05</span>
+                <span>پرونده / ۰۵</span>
                 <QMark className="qs-record-mark" />
               </div>
 
@@ -340,8 +340,8 @@ export function QuantumSite() {
               </div>
 
               <p className="qs-record-note">
-                A record of the working method, not a certificate. Sample company
-                copy for the template demonstration.
+                پرونده‌ای از روش کاری، نه یک گواهی. متن نمونهٔ شرکت برای
+                نمایش این قالب.
               </p>
             </aside>
           </div>
@@ -355,7 +355,7 @@ export function QuantumSite() {
               <p className="qs-section-lede">{contact.intro}</p>
 
               <div className="qs-bring">
-                <p className="qs-mini-label">What to bring</p>
+                <p className="qs-mini-label">چه چیزی همراه بیاورید</p>
                 <ul>
                   {contact.bring.map((item) => (
                     <li key={item}>
@@ -403,21 +403,21 @@ export function QuantumSite() {
             <div className="qs-footer-brand">
               <p className="qs-footer-word">
                 <QMark className="qs-footer-mark" />
-                Quantum <span>Systems</span>
+                Quantum <span>سیستم‌ها</span>
               </p>
               <p>
-                Precision compute, presented as observable parts. Documented
-                methods, published limits, no mythology.
+                پردازش دقیق، ارائه‌شده به‌صورت بخش‌های قابل مشاهده. روش‌های
+                مستند، محدودیت‌های منتشرشده، بدون افسانه.
               </p>
               <a href="#top" className="qs-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="qs-footer-cols">
               <div>
-                <p className="qs-footer-label">Company</p>
+                <p className="qs-footer-label">شرکت</p>
                 <address>
                   {contact.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -430,32 +430,32 @@ export function QuantumSite() {
               </div>
 
               <div>
-                <p className="qs-footer-label">Explore</p>
+                <p className="qs-footer-label">کاوش</p>
                 {qsNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
                   </a>
                 ))}
-                <a href="#contact">Technical brief</a>
+                <a href="#contact">بریف فنی</a>
               </div>
 
               <div>
-                <p className="qs-footer-label">Template</p>
-                <Link href="/templates/quantum-systems">Template details</Link>
-                <Link href="/checkout/quantum-systems">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="qs-footer-label">قالب</p>
+                <Link href="/templates/quantum-systems">جزئیات قالب</Link>
+                <Link href="/checkout/quantum-systems">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="qs-footer-bottom">
             <p>
-              © 2026 Quantum Systems (fictional). A demonstration website: the
-              company, platform and research index are illustrative. No product
-              is sold and no certification is claimed.
+              © ۲۰۲۶ کوانتوم سیستمز (خیالی). یک وب‌سایت نمایشی: شرکت، پلتفرم و
+              فهرست پژوهش‌ها نمایشی‌اند. هیچ محصولی فروخته نمی‌شود و هیچ گواهی
+              ادعا نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

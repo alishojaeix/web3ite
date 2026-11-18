@@ -1,4 +1,5 @@
 import { appendToCollection, readCollection } from "./store";
+import { faCurrency, faNumber } from "@/lib/i18n/format";
 
 export type PurchaseRecord = {
   id: string;
@@ -22,6 +23,16 @@ export async function listPurchasesForUser(userId: string): Promise<PurchaseReco
 export async function hasPurchased(userId: string, templateId: string): Promise<boolean> {
   const purchases = await listPurchasesForUser(userId);
   return purchases.some((purchase) => purchase.templateId === templateId);
+}
+
+/** Template ids the user already owns, for server-rendered catalog badges. */
+export async function listPurchasedTemplateIds(userId: string): Promise<string[]> {
+  const purchases = await listPurchasesForUser(userId);
+  const ids: string[] = [];
+  for (const purchase of purchases) {
+    if (!ids.includes(purchase.templateId)) ids.push(purchase.templateId);
+  }
+  return ids;
 }
 
 /**
@@ -57,9 +68,9 @@ export async function recordPurchase(input: {
 }
 
 export function formatPurchaseAmount(amount: number, currency: string): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: currency.toUpperCase(),
-    maximumFractionDigits: 2,
-  }).format(amount / 100);
+  const value = amount / 100;
+  if (currency.toLowerCase() === "usd") {
+    return faCurrency(value, { maximumFractionDigits: 2 });
+  }
+  return `${faNumber(value, { maximumFractionDigits: 2 })} ${currency.toUpperCase()}`;
 }

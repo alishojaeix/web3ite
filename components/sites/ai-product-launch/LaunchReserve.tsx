@@ -68,7 +68,7 @@ export function LaunchReserve() {
         <span className="la-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="la-success-title">Reservation recorded</p>
+        <p className="la-success-title">رزرو ثبت شد</p>
         <p className="la-success-body">{message}</p>
         <button
           type="button"
@@ -79,7 +79,7 @@ export function LaunchReserve() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
@@ -100,7 +100,7 @@ export function LaunchReserve() {
       <form className="la-form" onSubmit={onSubmit}>
         <div className="la-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -108,24 +108,24 @@ export function LaunchReserve() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@studio.com"
+              placeholder="you@studio.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>Configuration</span>
+          <span>پیکربندی</span>
           <select name="edition" defaultValue={reserve.form.editions[0]}>
             {reserve.form.editions.map((option) => (
               <option key={option} value={option}>
@@ -136,12 +136,12 @@ export function LaunchReserve() {
         </label>
 
         <label>
-          <span>Where will it sit?</span>
+          <span>کجا قرار می‌گیرد؟</span>
           <textarea
             name="message"
             rows={4}
             maxLength={1200}
-            placeholder="Optional: desk, studio or rack — and what you want it to run."
+            placeholder="اختیاری: میز، استودیو یا رک — و آنچه می‌خواهید روی آن اجرا شود."
           />
         </label>
 
@@ -150,7 +150,7 @@ export function LaunchReserve() {
           className="la-btn la-btn--solid la-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending request…" : "Request a reservation"}
+          {status === "sending" ? "در حال ارسال…" : "درخواست رزرو"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

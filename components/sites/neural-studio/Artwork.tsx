@@ -85,7 +85,7 @@ export function NodeField() {
       className="ns-field"
       viewBox="0 0 720 720"
       role="img"
-      aria-label="An abstract node network: a central core connected to a ring of labelled nodes."
+      aria-label="یک شبکهٔ انتزاعی گره‌ها: یک هستهٔ مرکزی متصل به حلقه‌ای از گره‌های برچسب‌دار."
     >
       <defs>
         <radialGradient id="ns-field-glow" cx="50%" cy="50%" r="50%">
@@ -195,16 +195,16 @@ export function NodeField() {
         letterSpacing="2.4"
       >
         <text x="360" y="112" textAnchor="middle">
-          INPUT
+          ورودی
         </text>
         <text x="494" y="238">
-          EVAL
+          ارزیابی
         </text>
         <text x="168" y="506">
-          HUMAN
+          انسانی
         </text>
         <text x="360" y="626" textAnchor="middle">
-          OUTPUT
+          خروجی
         </text>
       </g>
 
@@ -215,7 +215,7 @@ export function NodeField() {
         letterSpacing="2.4"
       >
         <text x="360" y="392" textAnchor="middle">
-          CORE
+          هسته
         </text>
       </g>
 
@@ -304,10 +304,10 @@ function ReviewDiagram() {
       <rect x="192" y="34" width="60" height="32" rx="3" />
       <rect x="192" y="104" width="60" height="32" rx="3" />
       <text x="200" y="53" fontFamily="var(--ns-mono), ui-monospace, monospace" fontSize="7" letterSpacing="1.2" fill="#c9d1ff">
-        HUMAN
+        انسانی
       </text>
       <text x="200" y="123" fontFamily="var(--ns-mono), ui-monospace, monospace" fontSize="7" letterSpacing="1.2" fill="#8f95ad">
-        ACCEPT
+        پذیرش
       </text>
     </>
   );
@@ -380,10 +380,10 @@ function RetrieveDiagram() {
       <rect x="160" y="92" width="40" height="14" rx="7" fill="rgba(170,181,255,0.16)" stroke="rgba(170,181,255,0.5)" />
       <rect x="206" y="92" width="34" height="14" rx="7" fill="rgba(170,181,255,0.1)" stroke="rgba(170,181,255,0.35)" />
       <text x="167" y="102" fontFamily="var(--ns-mono), ui-monospace, monospace" fontSize="6" letterSpacing="1" fill="#c9d1ff">
-        SOURCE
+        منشأ
       </text>
       <text x="213" y="102" fontFamily="var(--ns-mono), ui-monospace, monospace" fontSize="6" letterSpacing="1" fill="#aab5ff">
-        SPAN
+        دامنه
       </text>
       <path d="M 160 122 H 238" stroke="rgba(240,241,248,0.18)" strokeDasharray="2 4" />
     </>

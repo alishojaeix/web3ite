@@ -98,7 +98,7 @@
 .ek-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 120;
   transform: translateY(-180%);
   padding: 12px 18px;
@@ -107,7 +107,6 @@
   color: var(--ek-cream);
   font-size: 12px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -135,10 +134,9 @@
 .ek-mini-label {
   margin: 0;
   font-family: var(--ek-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
   color: var(--ek-ember-bright);
 }
 
@@ -171,7 +169,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -194,7 +191,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
 }
 
@@ -234,9 +230,8 @@
   gap: 7px;
   min-height: 44px;
   font-family: var(--ek-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ek-amber);
   border-bottom: 1px solid rgba(255, 180, 107, 0.3);
   transition: color 180ms ease, border-color 180ms ease;
@@ -294,7 +289,6 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .ek-brand-word small {
@@ -317,10 +311,9 @@
   align-items: center;
   min-height: 44px;
   font-family: var(--ek-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ek-muted);
   transition: color 200ms ease;
 }
@@ -328,9 +321,9 @@
 .ek-nav-links a::after {
   content: "";
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   bottom: 7px;
-  left: 0;
+  inset-inline-start: 0;
   height: 1px;
   background: var(--ek-ember);
   transform: scaleX(0);
@@ -364,7 +357,6 @@
   font-size: 8.5px;
   font-weight: 600;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -410,7 +402,7 @@
   font-family: var(--ek-display, var(--ek-caps));
   font-size: 21px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ek-mobile-nav > a:not(.ek-mobile-cta) > span {
@@ -428,10 +420,9 @@
   background: var(--ek-ember);
   color: #180c07;
   font-family: var(--ek-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .ek-mobile-note {
@@ -440,7 +431,6 @@
   font-size: 8px;
   line-height: 1.9;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -498,7 +488,6 @@
   font-size: 8px;
   line-height: 1.5;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -532,10 +521,9 @@
   gap: 8px;
   margin: 0 0 20px;
   font-family: var(--ek-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--ek-ember-bright);
 }
 
@@ -546,14 +534,14 @@
   font-size: clamp(3.3rem, 12vw, 7rem);
   font-weight: 600;
   line-height: 0.88;
-  letter-spacing: -0.055em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ek-hero h1 em {
   font-family: var(--ek-serif);
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ek-ember-bright);
 }
 
@@ -604,7 +592,6 @@
   font-size: 7.5px;
   line-height: 1.6;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -621,15 +608,14 @@
 }
 
 .ek-hero-meta > div + div {
-  padding-left: 14px;
-  border-left: 1px solid var(--ek-line);
+  padding-inline-start: 14px;
+  border-inline-start: 1px solid var(--ek-line);
 }
 
 .ek-hero-meta dt {
   font-family: var(--ek-caps);
   font-size: 7.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -657,7 +643,6 @@
   font-family: var(--ek-caps);
   font-size: 8px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -669,7 +654,6 @@
   font-family: var(--ek-caps);
   font-size: 8.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ek-muted);
 }
 
@@ -734,14 +718,14 @@
   font-size: clamp(2.25rem, 7vw, 4.5rem);
   font-weight: 600;
   line-height: 0.95;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ek-section-head h2 em {
   font-family: var(--ek-serif);
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ek-ember-bright);
 }
 
@@ -796,9 +780,8 @@
 .ek-menu-date {
   margin: 0;
   font-family: var(--ek-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--ek-ember-bright);
 }
 
@@ -837,7 +820,7 @@
 .ek-toggle-track span {
   position: absolute;
   top: 3px;
-  left: 3px;
+  inset-inline-start: 3px;
   width: 14px;
   height: 14px;
   background: var(--ek-muted);
@@ -866,7 +849,6 @@
   font-family: var(--ek-caps);
   font-size: 8.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ek-muted);
 }
 
@@ -877,7 +859,6 @@
   font-family: var(--ek-caps);
   font-size: 7.5px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -912,13 +893,13 @@
   font-family: var(--ek-display, var(--ek-caps));
   font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ek-cream);
 }
 
 .ek-menu-group-head p {
   margin: 4px 0 0;
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.04em;
   color: var(--ek-quiet);
 }
@@ -976,8 +957,8 @@
 }
 
 .ek-dish-price span {
-  margin-right: 1px;
-  font-size: 10px;
+  margin-inline-end: 1px;
+  font-size: 0.8125rem;
   color: var(--ek-quiet);
 }
 
@@ -990,7 +971,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1024,7 +1004,7 @@
   }
 
   .ek-menu-foot-right {
-    text-align: right;
+    text-align: end;
   }
 }
 
@@ -1038,7 +1018,7 @@
   }
 
   .ek-menu-group:nth-child(odd) {
-    border-right: 1px solid var(--ek-line);
+    border-inline-end: 1px solid var(--ek-line);
   }
 }
 
@@ -1114,14 +1094,13 @@
   font-size: 8.5px;
   font-weight: 500;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ek-muted);
-  text-align: left;
+  text-align: start;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
 .ek-hearth-tab:nth-child(odd) {
-  border-right: 1px solid var(--ek-line);
+  border-inline-end: 1px solid var(--ek-line);
 }
 
 .ek-hearth-tab:nth-last-child(-n + 2) {
@@ -1161,7 +1140,6 @@
   font-family: var(--ek-caps);
   font-size: 8px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--ek-ember-bright);
 }
 
@@ -1177,7 +1155,7 @@
   font-size: clamp(1.5rem, 4.6vw, 2rem);
   font-weight: 600;
   line-height: 1.02;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ek-hearth-panel > p:not(.ek-hearth-panel-label) {
@@ -1200,7 +1178,6 @@
   font-family: var(--ek-caps);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ek-soft);
 }
 
@@ -1214,7 +1191,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1231,11 +1207,11 @@
   }
 
   .ek-hearth-tab:nth-child(odd) {
-    border-right: 0;
+    border-inline-end: 0;
   }
 
   .ek-hearth-tab + .ek-hearth-tab {
-    border-left: 1px solid var(--ek-line);
+    border-inline-start: 1px solid var(--ek-line);
   }
 
   .ek-hearth-panel {
@@ -1324,10 +1300,9 @@
 .ek-seats h3 {
   margin: 0;
   font-family: var(--ek-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ek-amber);
 }
 
@@ -1364,7 +1339,6 @@
   font-family: var(--ek-caps);
   font-size: 7px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1400,7 +1374,6 @@
   font-family: var(--ek-caps);
   font-size: 8px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--ek-soft);
 }
 
@@ -1416,8 +1389,8 @@
   }
 
   .ek-seats li + li {
-    padding-left: 18px;
-    border-left: 1px solid var(--ek-line);
+    padding-inline-start: 18px;
+    border-inline-start: 1px solid var(--ek-line);
   }
 }
 
@@ -1461,7 +1434,7 @@
   font-size: clamp(2rem, 6vw, 4.2rem);
   font-style: italic;
   line-height: 1.06;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ek-cream);
 }
 
@@ -1470,7 +1443,6 @@
   font-family: var(--ek-caps);
   font-size: 8px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1504,7 +1476,7 @@
   font-size: clamp(2.25rem, 7vw, 4.4rem);
   font-weight: 600;
   line-height: 0.95;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ek-book-copy h2 em {
@@ -1543,7 +1515,6 @@
   font-family: var(--ek-caps);
   font-size: 7px;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1611,10 +1582,9 @@
 .ek-form-title {
   margin: 0;
   font-family: var(--ek-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ek-cream);
 }
 
@@ -1639,7 +1609,6 @@
   font-family: var(--ek-caps);
   font-size: 7.5px;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--ek-muted);
 }
 
@@ -1692,7 +1661,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1758,7 +1726,7 @@
   font-size: clamp(1.35rem, 4.4vw, 2.1rem);
   font-weight: 500;
   line-height: 1.18;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--ek-cream);
 }
 
@@ -1789,7 +1757,7 @@
   position: absolute;
   top: 44px;
   bottom: -1px;
-  left: 20px;
+  inset-inline-start: 20px;
   width: 1px;
   background: linear-gradient(180deg, rgba(226, 103, 44, 0.45), rgba(226, 103, 44, 0.06));
 }
@@ -1814,10 +1782,9 @@
 .ek-route h3 {
   margin: 2px 0 0;
   font-family: var(--ek-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--ek-cream);
 }
 
@@ -1857,10 +1824,10 @@
 .ek-hours dd {
   margin: 0;
   font-family: var(--ek-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.04em;
   color: var(--ek-cream);
-  text-align: right;
+  text-align: end;
 }
 
 .ek-hours-note {
@@ -1895,7 +1862,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
 }
 
@@ -1933,8 +1899,7 @@
   font-size: 28px;
   font-weight: 600;
   line-height: 0.92;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .ek-footer-word span {
@@ -1966,7 +1931,6 @@
   font-family: var(--ek-caps);
   font-size: 8px;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--ek-quiet);
   transition: color 180ms ease;
 }
@@ -1985,7 +1949,6 @@
   font-family: var(--ek-caps);
   font-size: 7.5px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--ek-ember-bright);
 }
 
@@ -2020,7 +1983,7 @@
   margin-top: 36px;
   padding-top: 16px;
   border-top: 1px solid var(--ek-line);
-  font-size: 9px;
+  font-size: 0.75rem;
   line-height: 1.7;
   color: #8b7a6b;
 }

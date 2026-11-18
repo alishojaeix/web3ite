@@ -20,13 +20,13 @@ export function VelocityNav() {
   return (
     <header className="vs-nav">
       <div className="vs-wrap vs-nav-bar">
-        <a href="#top" className="vs-brand" aria-label="Velocity Studio, back to top">
+        <a href="#top" className="vs-brand" aria-label="استودیوی ولوکیتی، بازگشت به بالا">
           <VelocityMark className="vs-brand-mark" />
-          <span className="vs-brand-word">Velocity Studio</span>
-          <span className="vs-brand-sub">Aero 01</span>
+          <span className="vs-brand-word">استودیوی ولوکیتی</span>
+          <span className="vs-brand-sub">آیرودینامیک ۰۱</span>
         </a>
 
-        <nav aria-label="Primary" className="vs-nav-links">
+        <nav aria-label="پیمایش اصلی" className="vs-nav-links">
           {velocityNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function VelocityNav() {
 
         <div className="vs-nav-tail">
           <a href="#showcase" className="vs-nav-cta">
-            See the study
+            دیدن مطالعه
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="vs-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="vs-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function VelocityNav() {
 
       {open ? (
         <div className="vs-mobile-wrap">
-          <nav id="vs-mobile-nav" aria-label="Mobile navigation" className="vs-mobile-nav">
+          <nav id="vs-mobile-nav" aria-label="پیمایش موبایل" className="vs-mobile-nav">
             {velocityNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function VelocityNav() {
               </a>
             ))}
             <a href="#showcase" className="vs-mobile-cta" onClick={() => setOpen(false)}>
-              See the study
+              دیدن مطالعه
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="vs-mobile-note">
-              8 Aero Court, London SE1
+              خیابان آیرو ۸، لندن SE1
               <br />
-              Mon–Fri · sample studio
+              دوشنبه تا جمعه · استودیوی نمونه
             </p>
           </nav>
         </div>

@@ -15,127 +15,127 @@ export type CafeImage = {
  * owner-approved content before publishing this as a real café website.
  */
 export const noirCafeContent = {
-  brand: "Noir Café",
-  shortBrand: "NOIR",
-  sampleNotice: "Sample website concept · illustrative copy and menu",
+  brand: "نوآر کافه",
+  shortBrand: "نوآر",
+  sampleNotice: "نمونهٔ مفهومی وب‌سایت · متن و منوی نمایشی",
   navigation: [
-    { label: "Our story", href: "#story" },
-    { label: "Coffee", href: "#menu" },
-    { label: "The room", href: "#gallery" },
-    { label: "Visit", href: "#visit" },
+    { label: "داستان ما", href: "#story" },
+    { label: "قهوه", href: "#menu" },
+    { label: "فضای کافه", href: "#gallery" },
+    { label: "بازدید", href: "#visit" },
   ],
   hero: {
-    kicker: "A coffee lounge, after hours",
-    title: "Coffee,\nafter dark.",
+    kicker: "یک اتاق قهوه، پس از تاریکی",
+    title: "قهوه،\nدر تاریکی",
     introduction:
-      "A quieter kind of coffee room. Slow espresso, thoughtful company, and a little more time at the table.",
+      "اتاقی آرام‌تر برای قهوه. اسپرسویی بی‌شتاب، همراهیِ فکرشده و کمی فرصت بیشتر پشت میز.",
     image: "/images/sites/noir-cafe/hero.webp",
     imageAlt:
-      "A dark, warmly lit lounge with leather chairs, brass pendant lights, and intimate seating",
+      "اتاقی تاریک و گرم با صندلی‌های چرمی، آویزهای برنجی و نشیمنی صمیمی",
   },
   story: {
-    heading: "Make room\nfor the ritual.",
+    heading: "برای آیینِ قهوه\nجا باز کنید",
     paragraphs: [
-      "Noir is imagined as a neighborhood espresso room shaped by warm wood, low light, and the pleasure of staying a little longer.",
-      "The details are deliberately unhurried: coffee prepared with care, a considered room, and space for conversation to find its own pace.",
+      "نویر را اتاقی محله‌ای برای اسپرسو تصور کنید که با چوب گرم، نور کم و لذتِ کمی بیشتر ماندن شکل گرفته است.",
+      "جزئیات عمداً بی‌شتاب‌اند: قهوه‌ای با دقت آماده‌شده، فضایی اندیشیده و جایی برای گفت‌وگویی که آهنگ خودش را پیدا کند.",
     ],
-    note: "Brand story shown here is sample copy for the website concept.",
+    note: "داستان برند در اینجا متن نمایشیِ همین مفهوم وب‌سایت است.",
   },
   menu: {
-    heading: "A short menu.\nA little ceremony.",
+    heading: "منویی کوتاه.\nآیینی کوچک",
     introduction:
-      "Illustrative coffee selections for the concept. Menu details, availability, and prices have not been supplied.",
+      "گزیده‌های نمایشی قهوه برای این مفهوم. جزئیات منو، موجودی و قیمت‌ها هنوز ارائه نشده‌اند.",
     groups: [
       {
-        title: "Espresso bar",
+        title: "بار اسپرسو",
         items: [
           {
-            name: "House espresso",
-            description: "A balanced sample blend, served short and unhurried.",
+            name: "اسپرسوی خانه",
+            description: "ترکیبِ متعادل نمونه، کوتاه و بی‌شتاب سرو می‌شود.",
           },
           {
-            name: "Cappuccino",
-            description: "Espresso beneath softly textured milk.",
+            name: "کاپوچینو",
+            description: "اسپرسو زیر شیرِ نرم و مخملی.",
           },
           {
-            name: "Caffè crema",
-            description: "A longer espresso with a rounded finish.",
+            name: "کافه کِرِما",
+            description: "اسپرسویی کشیده‌تر با پایانی گرد و نرم.",
           },
         ] satisfies CafeMenuItem[],
       },
       {
-        title: "Slow coffee",
+        title: "قهوهٔ دم‌آهسته",
         items: [
           {
-            name: "Guest roaster",
-            description: "A rotating sample pour-over from a visiting roaster.",
+            name: "رُستر مهمان",
+            description: "یک دَم‌آوری چرخشیِ نمونه از رُستری مهمان.",
           },
           {
-            name: "Decaf, considered",
-            description: "A gentle sample option, served with the same attention.",
+            name: "بی‌کافئین، با دقت",
+            description: "گزینه‌ای ملایم و نمونه، با همان توجه سرو می‌شود.",
           },
           {
-            name: "Something alongside",
-            description: "A small seasonal pairing, to be set by the café.",
+            name: "چیزی در کنارش",
+            description: "یک همراهی فصلیِ کوچک که کافه آن را برمی‌گزیند.",
           },
         ] satisfies CafeMenuItem[],
       },
     ],
   },
   collections: {
-    heading: "Take the ritual home.",
+    heading: "آیین را به خانه ببرید",
     introduction:
-      "A sample coffee collection layout. Product names, sourcing, availability, and prices require owner-approved details.",
+      "چیدمان نمایشیِ کلکسیون قهوه. نام محصولات، منبع، موجودی و قیمت‌ها به جزئیاتِ تأییدشدهٔ مالک نیاز دارد.",
     items: [
       {
         number: "01",
-        name: "The house blend",
-        description: "A sample espresso profile for the imagined evening bar.",
-        detail: "Coffee · sample concept",
+        name: "ترکیب خانه",
+        description: "پروفایل نمونهٔ اسپرسو برای بار خیالیِ شبانه.",
+        detail: "قهوه · مفهوم نمایشی",
       },
       {
         number: "02",
-        name: "The guest roast",
-        description: "A sample rotating coffee selection for slower mornings.",
-        detail: "Small batch · sample concept",
+        name: "رُست مهمان",
+        description: "گزیدهٔ چرخشیِ نمونهٔ قهوه برای صبح‌های آرام‌تر.",
+        detail: "دستهٔ کوچک · مفهوم نمایشی",
       },
       {
         number: "03",
-        name: "The brew set",
-        description: "A sample collection of considered tools for home brewing.",
-        detail: "Coffee accessories · sample concept",
+        name: "ست دَم‌آوری",
+        description: "کلکسیونی نمونه از ابزارهای اندیشیده برای دم‌آوری در خانه.",
+        detail: "لوازم قهوه · مفهوم نمایشی",
       },
     ],
   },
   gallery: {
-    heading: "A room to settle into.",
+    heading: "اتاقی برای جا افتادن",
     introduction:
-      "Details from the supplied lounge reference, cropped to show its light, seating, and materials.",
+      "جزئیاتی از مراجعهٔ مرجعِ همین اتاق، بریده‌شده تا نور، نشیمن و متریال آن دیده شود.",
     images: [
       {
         src: "/images/sites/noir-cafe/lounge.webp",
-        alt: "Leather lounge seating in warm pools of light",
-        caption: "A quieter corner",
+        alt: "نشیمن چرمی در استخرهای گرم نور",
+        caption: "گوشه‌ای آرام‌تر",
         position: "center 62%",
       },
       {
         src: "/images/sites/noir-cafe/warm-light.webp",
-        alt: "Warm pendant lighting above a dark wood lounge",
-        caption: "The evening light",
+        alt: "روشنایی گرم آویز بالای اتاقی با چوب تیره",
+        caption: "نور شبانه",
         position: "center 38%",
       },
       {
         src: "/images/sites/noir-cafe/leather-details.webp",
-        alt: "Leather chairs and a low table in an intimate lounge setting",
-        caption: "Stay a little longer",
+        alt: "صندلی‌های چرمی و میز کوتاه در اتاقی صمیمی",
+        caption: "کمی بیشتر بمانید",
         position: "center 65%",
       },
     ] satisfies CafeImage[],
   },
   visit: {
-    heading: "Come as you are.\nStay for a while.",
+    heading: "همان‌طور که هستید بیایید.\nمدتی بمانید",
     introduction:
-      "The room is ready to feel like a place. Real visit details will be added when the café provides them.",
+      "این اتاق آماده است تا جایی برای حس کردن باشد. جزئیات واقعیِ بازدید وقتی کافه آن‌ها را ارائه کند افزوده می‌شود.",
     address: null as string | null,
     hours: null as string | null,
     email: null as string | null,
@@ -144,5 +144,5 @@ export const noirCafeContent = {
     mapUrl: null as string | null,
   },
   footerNote:
-    "Noir Café is a fictional website concept. Menu and brand copy are illustrative; no operating venue or products are represented.",
+    "نویر یک مفهوم وب‌سایت خیالی است. متن منو و برند نمایشی‌اند و هیچ مکان فعال یا محصولی را بازنمایی نمی‌کنند.",
 };

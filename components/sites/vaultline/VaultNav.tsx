@@ -20,13 +20,13 @@ export function VaultNav() {
   return (
     <header className="vl-nav">
       <div className="vl-wrap vl-nav-bar">
-        <a href="#top" className="vl-brand" aria-label="Vaultline, back to top">
+        <a href="#top" className="vl-brand" aria-label="والت‌لاین، بازگشت به بالا">
           <VaultMark className="vl-brand-mark" />
-          <span className="vl-brand-word">Vaultline</span>
-          <span className="vl-brand-sub">Custody infrastructure</span>
+          <span className="vl-brand-word">والت‌لاین</span>
+          <span className="vl-brand-sub">زیرساخت نگه‌داری</span>
         </a>
 
-        <nav aria-label="Primary" className="vl-nav-links">
+        <nav aria-label="پیمایش اصلی" className="vl-nav-links">
           {vaultNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function VaultNav() {
 
         <div className="vl-nav-tail">
           <a href="#contact" className="vl-nav-cta">
-            Open disclosure
+            مشاهدهٔ افشا
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="vl-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="vl-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function VaultNav() {
 
       {open ? (
         <div className="vl-mobile-wrap">
-          <nav id="vl-mobile-nav" aria-label="Mobile navigation" className="vl-mobile-nav">
+          <nav id="vl-mobile-nav" aria-label="پیمایش موبایل" className="vl-mobile-nav">
             {vaultNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function VaultNav() {
               </a>
             ))}
             <a href="#contact" className="vl-mobile-cta" onClick={() => setOpen(false)}>
-              Open disclosure
+              مشاهدهٔ افشا
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="vl-mobile-note">
               7 Bastion Court, London E2
               <br />
-              Control overview · Monday to Friday
+              نمای کلی کنترل‌ها · دوشنبه تا جمعه
             </p>
           </nav>
         </div>

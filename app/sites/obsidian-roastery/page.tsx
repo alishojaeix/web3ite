@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ObsidianSite } from "@/components/sites/obsidian-roastery/ObsidianSite";
 import "./obsidian.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Obsidian Roastery — Roasted in the dark";
+const title = "رُستری ابسیدین — بوداده در تاریکی";
 const description =
-  "A sample small-batch roastery website: three coffees, one roast day, a reusable canister, an optional 3D canister viewer and a working subscription configurator. Fictional venue built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای رُستری تخصصی قهوه: سه قهوهٔ در حال عرضه، پروفایل بودادن، قوطی قابل استفادهٔ مجدد، اشتراک و صفحهٔ بازدید. رُستری خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=obsidian-roastery",
         width: 1200,
         height: 630,
-        alt: "Obsidian Roastery website preview",
+        alt: "پیش‌نمایش وب‌سایت رُستری ابسیدین",
       },
     ],
   },

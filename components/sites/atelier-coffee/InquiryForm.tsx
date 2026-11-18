@@ -36,7 +36,7 @@ export function InquiryForm() {
         setStatus("error");
         setMessage(
           payload.error ??
-            "The message could not be stored. Please try again in a moment."
+            "ذخیرهٔ پیام ممکن نشد. لطفاً کمی بعد دوباره تلاش کنید."
         );
         return;
       }
@@ -44,12 +44,12 @@ export function InquiryForm() {
       form.reset();
       setStatus("success");
       setMessage(
-        "Message received. This is a demonstration inbox: your note is stored on this server and no email is sent."
+        "پیام دریافت شد. این صندوق نمایشی است؛ یادداشت شما روی همین سرور ذخیره می‌شود و ایمیلی ارسال نمی‌شود."
       );
     } catch {
       setStatus("error");
       setMessage(
-        "The message could not be sent. Check your connection and try again."
+        "ارسال پیام ممکن نشد. اتصال خود را بررسی و دوباره تلاش کنید."
       );
     }
   }
@@ -58,46 +58,46 @@ export function InquiryForm() {
     <form className="at-form" onSubmit={onSubmit}>
       <div className="at-form-grid">
         <label>
-          <span>Name</span>
+          <span>نام</span>
           <input
             name="name"
             type="text"
             autoComplete="name"
             required
             maxLength={120}
-            placeholder="Your name"
+            placeholder="نام شما"
           />
         </label>
         <label>
-          <span>Email</span>
+          <span>ایمیل</span>
           <input
             name="email"
             type="email"
             autoComplete="email"
             required
             maxLength={180}
-            placeholder="you@example.com"
+            placeholder="you@example.com" dir="ltr"
           />
         </label>
       </div>
       <label>
-        <span>Message</span>
+        <span>پیام</span>
         <textarea
           name="message"
           required
           minLength={5}
           maxLength={2000}
           rows={4}
-          placeholder="A tasting for four, a Thursday morning, or a question about the coffee."
+          placeholder="یک چشایی برای چهار نفر، صبح پنجشنبه، یا پرسشی دربارهٔ قهوه."
         />
       </label>
       <div className="at-form-foot">
         <button type="submit" className="at-btn at-btn--solid" disabled={status === "sending"}>
-          {status === "sending" ? "Sending…" : "Send the note"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال یادداشت"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
         <p className="at-form-note">
-          Demo form · no email is sent. Please do not submit real personal details.
+          فرم نمایشی است و ایمیلی ارسال نمی‌شود. لطفاً اطلاعات شخصی واقعی وارد نکنید.
         </p>
       </div>
       <p className={`at-form-status at-form-status--${status}`} role="status" aria-live="polite">

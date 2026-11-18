@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Accounts are not configured on this deployment. An AUTH_SECRET of at least 32 characters is required.",
+          "حساب‌ها در این استقرار پیکربندی نشده‌اند. وجود AUTH_SECRET با حداقل ۳۲ نویسه لازم است.",
       },
       { status: 503 }
     );
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   const limit = rateLimit(`register:${clientKey(request)}`, 8, 10 * 60 * 1000);
   if (!limit.allowed) {
     return NextResponse.json(
-      { error: "Too many attempts. Please try again shortly." },
+      { error: "تلاش‌های بیش از حد. لطفاً کمی بعد دوباره تلاش کنید." },
       { status: 429, headers: { "Retry-After": String(limit.retryAfter) } }
     );
   }
@@ -38,17 +38,17 @@ export async function POST(request: Request) {
   try {
     body = (await request.json()) as typeof body;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "بدنهٔ درخواست نامعتبر است." }, { status: 400 });
   }
 
   const email = normalizeEmail(body.email);
   const password = validatePassword(body.password);
   if (!email) {
-    return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+    return NextResponse.json({ error: "یک نشانی ایمیل معتبر وارد کنید." }, { status: 400 });
   }
   if (!password) {
     return NextResponse.json(
-      { error: "Choose a password between 8 and 200 characters." },
+      { error: "گذرواژه‌ای بین ۸ تا ۲۰۰ نویسه انتخاب کنید." },
       { status: 400 }
     );
   }
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     const existing = await findUserByEmail(email);
     if (existing) {
       return NextResponse.json(
-        { error: "An account with this email already exists." },
+        { error: "حسابی با این ایمیل از قبل وجود دارد." },
         { status: 409 }
       );
     }
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     const token = createSessionToken(user.id);
     if (!token) {
       return NextResponse.json(
-        { error: "Accounts are not configured on this deployment." },
+        { error: "حساب‌ها در این استقرار پیکربندی نشده‌اند." },
         { status: 503 }
       );
     }
@@ -81,7 +81,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Account storage is read-only on this deployment. Configure WEB3ITE_DATA_DIR to a writable location or connect a database.",
+          "فضای ذخیره‌سازی حساب در این استقرار فقط‌خواندنی است. WEB3ITE_DATA_DIR را به مسیری قابل نوشتن تنظیم کنید یا یک پایگاه داده وصل کنید.",
       },
       { status: 503 }
     );

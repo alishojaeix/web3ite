@@ -36,14 +36,14 @@ export function MenuCard() {
         <div className="md-menu-card-head">
           <div>
             <p className="md-menu-date">{menu.date}</p>
-            <p className="md-menu-service">Five courses · one seating</p>
+            <p className="md-menu-service">پنج دور · یک سِرویس</p>
           </div>
           <p className="md-menu-stamp" aria-hidden="true">
             M
           </p>
         </div>
 
-        <div className="md-menu-tabs" role="tablist" aria-label="Choose a menu">
+        <div className="md-menu-tabs" role="tablist" aria-label="انتخاب منو">
           {menu.options.map((option, index) => (
             <button
               key={option.id}
@@ -87,7 +87,7 @@ export function MenuCard() {
                     <p>{course.description}</p>
                   </div>
                   <p className="md-course-pairing">
-                    <span>Pairing</span>
+                    <span>همراهی</span>
                     {course.pairing}
                   </p>
                 </li>
@@ -99,37 +99,37 @@ export function MenuCard() {
         <p className="md-menu-note">{menu.note}</p>
       </div>
 
-      <aside className="md-menu-side" aria-label="Menu details">
-        <p className="md-mini-label">The card</p>
+      <aside className="md-menu-side" aria-label="جزئیات منو">
+        <p className="md-mini-label">کارت</p>
         <p className="md-menu-price">
           <span aria-hidden="true">€</span>
           {menu.price}
-          <small>per guest</small>
+          <small>برای هر مهمان</small>
         </p>
         <dl className="md-menu-facts">
           <div>
-            <dt>Wine pairing</dt>
+            <dt>همراهی شراب</dt>
             <dd>€{menu.pairing}</dd>
           </div>
           <div>
-            <dt>Seating</dt>
+            <dt>سِرویس</dt>
             <dd>18:30</dd>
           </div>
           <div>
-            <dt>Duration</dt>
+            <dt>مدت</dt>
             <dd>{menu.duration}</dd>
           </div>
           <div>
-            <dt>Dietary</dt>
-            <dd>48 hours&apos; notice</dd>
+            <dt>رژیم غذایی</dt>
+            <dd>۴۸ ساعت اطلاع قبلی</dd>
           </div>
         </dl>
         <p className="md-menu-side-note">
-          The printed card is dated and kept as a record of the evening. Ask the
-          room for a copy on your way out.
+          کارت چاپی تاریخ‌دار است و به‌عنوان یادگاری از آن شب نگه داشته می‌شود.
+          هنگام خروج، نسخه‌ای از اتاق بخواهید.
         </p>
         <a href="#reserve" className="md-btn md-btn--ink">
-          Reserve a table
+          رزرو میز
           <ArrowUpRight size={15} aria-hidden="true" />
         </a>
       </aside>

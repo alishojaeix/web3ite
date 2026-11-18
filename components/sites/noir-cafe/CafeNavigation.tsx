@@ -22,17 +22,17 @@ export function CafeNavigation() {
       <div className="mx-auto flex max-w-[1440px] items-center justify-between border-b border-white/25 pb-4">
         <Link
           href="#top"
-          aria-label="Noir Café, back to top"
+          aria-label="نوآر کافه، بازگشت به بالا"
           onClick={() => setOpen(false)}
           className="group flex items-center gap-3 text-[var(--nc-cream)]"
         >
           <span className="grid h-10 w-10 place-items-center rounded-full border border-[var(--nc-brass)]/80 font-editorial text-lg text-[var(--nc-brass)] transition-colors group-hover:bg-[var(--nc-brass)] group-hover:text-[var(--nc-ink)]">
-            N
+            ن
           </span>
-          <span className="font-editorial text-xl tracking-[0.04em]">Noir Café</span>
+          <span className="font-editorial text-xl tracking-[0.04em]">نوآر کافه</span>
         </Link>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="پیمایش اصلی" className="hidden items-center gap-8 md:flex">
           {noirCafeContent.navigation.map((item) => (
             <Link
               key={item.href}
@@ -46,7 +46,7 @@ export function CafeNavigation() {
 
         <button
           type="button"
-          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
           aria-expanded={open}
           aria-controls="noir-mobile-navigation"
           onClick={() => setOpen((value) => !value)}
@@ -59,7 +59,7 @@ export function CafeNavigation() {
       {open ? (
         <nav
           id="noir-mobile-navigation"
-          aria-label="Mobile navigation"
+          aria-label="پیمایش موبایل"
           className="mx-auto mt-2 max-w-[1440px] border border-white/15 bg-[var(--nc-ink)]/95 p-3 shadow-2xl backdrop-blur-md md:hidden"
         >
           {noirCafeContent.navigation.map((item) => (

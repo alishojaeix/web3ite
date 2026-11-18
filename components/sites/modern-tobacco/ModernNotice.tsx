@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Check, RotateCcw } from "lucide-react";
+import { Check, RotateCcw, ShieldCheck } from "lucide-react";
 import { contact } from "./content";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -17,10 +17,10 @@ export function ModernNotice() {
 
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
-    const type = String(data.get("type") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
     const detail = String(data.get("message") ?? "").trim();
 
-    const brief = [type ? `Request: ${type}` : "", detail]
+    const notes = [subject ? `درخواست: ${subject}` : "", detail]
       .filter(Boolean)
       .join("\n\n");
 
@@ -35,8 +35,8 @@ export function ModernNotice() {
           site: "modern-tobacco",
           name,
           email,
-          message: brief,
-          ageConfirmed: true,
+          message: notes,
+          ageConfirmed: data.get("ageConfirmed") === "on",
         }),
       });
 
@@ -46,26 +46,33 @@ export function ModernNotice() {
 
       if (!response.ok) {
         setStatus("error");
-        setMessage(payload.error || contact.form.fallback);
+        setMessage(
+          payload.error ??
+            "ثبت درخواست ممکن نشد. کمی بعد دوباره تلاش کنید."
+        );
         return;
       }
 
       form.reset();
       setStatus("success");
-      setMessage(contact.form.confirmation);
+      setMessage(
+        "درخواست یادداشت‌های قفسه ثبت شد. این صندوق صرفاً نمایشی است؛ ایمیلی ارسال نمی‌شود و هیچ محصول، قیمت یا سفارشی ایجاد نمی‌شود."
+      );
     } catch {
       setStatus("error");
-      setMessage(contact.form.fallback);
+      setMessage(
+        "ارسال درخواست ممکن نشد. اتصال خود را بررسی و دوباره تلاش کنید."
+      );
     }
   }
 
   if (status === "success") {
     return (
-      <div className="mt-card mt-success" role="status" aria-live="polite">
+      <div className="mt-form-card mt-success" role="status" aria-live="polite">
         <span className="mt-success-mark" aria-hidden="true">
           <Check size={20} />
         </span>
-        <p className="mt-success-title">Notice request logged</p>
+        <p className="mt-success-title">درخواست یادداشت‌ها ثبت شد</p>
         <p className="mt-success-body">{message}</p>
         <button
           type="button"
@@ -76,55 +83,54 @@ export function ModernNotice() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Log another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
   }
 
   return (
-    <div className="mt-card">
+    <div className="mt-form-card">
       <div className="mt-form-head">
         <div>
-          <p className="mt-form-title">{contact.form.title}</p>
-          <p className="mt-form-sub">{contact.form.sub}</p>
+          <p className="mt-form-title">{contact.formTitle}</p>
+          <p className="mt-form-sub">{contact.formSub}</p>
         </div>
         <span className="mt-form-code" aria-hidden="true">
-          MODERN / 18+
+          {contact.formCode}
         </span>
       </div>
 
       <form className="mt-form" onSubmit={onSubmit}>
         <div className="mt-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
-              name="name"
               type="text"
+              name="name"
               autoComplete="name"
-              required
-              minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              required
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
-              name="email"
               type="email"
+              name="email"
               autoComplete="email"
-              required
               maxLength={180}
-              placeholder="you@example.com"
+              required
+              placeholder="name@example.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>Request type</span>
-          <select name="type" defaultValue={contact.form.types[0]}>
-            {contact.form.types.map((option) => (
+            <span>یادداشت‌ها درباره چه موضوعی باشند؟</span>
+          <select name="subject" defaultValue={contact.formOptions[0]}>
+            {contact.formOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -133,14 +139,22 @@ export function ModernNotice() {
         </label>
 
         <label>
-          <span>Your note</span>
+          <span>پیام</span>
           <textarea
             name="message"
             rows={4}
+            maxLength={2000}
             required
-            maxLength={1200}
-            placeholder="Confirm you are 18 or older and specify the notice or stockist sheet you wish to receive."
+            placeholder="یادداشتی کوتاه برای این بوتیک خیالی بنویسید."
           />
+        </label>
+
+        <label className="mt-check">
+          <input type="checkbox" name="ageConfirmed" required />
+          <span>
+            <ShieldCheck size={15} aria-hidden="true" />
+            تأیید می‌کنم ۱۸ سال یا بیشتر دارم. ویژه بزرگسالان.
+          </span>
         </label>
 
         <button
@@ -148,8 +162,7 @@ export function ModernNotice() {
           className="mt-btn mt-btn--solid mt-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Recording request…" : "Request the notice"}
-          <ArrowUpRight size={15} aria-hidden="true" />
+          {status === "sending" ? "در حال ارسال…" : contact.cta}
         </button>
 
         {status === "error" ? (
@@ -158,7 +171,7 @@ export function ModernNotice() {
           </p>
         ) : null}
 
-        <p className="mt-form-demo">{contact.form.note}</p>
+        <p className="mt-form-demo">{contact.formNote}</p>
       </form>
     </div>
   );

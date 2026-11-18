@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
+import { fa } from "@/lib/i18n/fa";
 
 export function Waitlist() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
@@ -28,13 +29,13 @@ export function Waitlist() {
       };
       if (!response.ok) {
         setStatus("error");
-        setMessage(payload.error ?? "The request could not be stored. Try again.");
+        setMessage(payload.error ?? fa.errors.generic);
         return;
       }
       setStatus("success");
     } catch {
       setStatus("error");
-      setMessage("The request could not be sent. Check your connection.");
+      setMessage(fa.errors.network);
     }
   }
 
@@ -45,23 +46,23 @@ export function Waitlist() {
           className="pointer-events-none absolute inset-0 opacity-80"
           style={{
             background:
-              "radial-gradient(700px 360px at 85% 10%, rgba(212,175,122,0.12), transparent 65%), radial-gradient(500px 300px at 8% 100%, rgba(90,74,55,0.18), transparent 70%)",
+              "radial-gradient(700px 360px at 15% 10%, rgba(212,175,122,0.12), transparent 65%), radial-gradient(500px 300px at 92% 100%, rgba(90,74,55,0.18), transparent 70%)",
           }}
         />
         <div className="relative grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-end">
           <div>
             <p className="eyebrow flex items-center gap-3 text-[#8a847c]">
               <span className="h-px w-8 bg-[#d4af7a]/60" />
-              Launch access
+              دسترسی راه‌اندازی
             </p>
             <h2 className="display-face mt-6 max-w-[12ch] text-balance text-[clamp(2.7rem,5vw,4.8rem)] leading-[0.95] text-[#f6f1ea]">
-              Put a room
-              <span className="editorial-face ml-3 italic text-[#e4c69c]">on the floor.</span>
+              یک اتاق را
+              <span className="editorial-face ms-3 text-[#e4c69c]">به نمایشگاه بیاورید</span>
             </h2>
             <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#a7a198]">
-              The catalog is open for inspection. Production access, model
-              replacement and deployment are being prepared. No fake metrics, no
-              invented customer logos — just a list.
+              کاتالوگ برای بررسی باز است. دسترسی تولیدی، جایگزینی مدل و استقرار
+              در حال آماده‌سازی است. بدون آمار ساختگی، بدون لوگوی مشتری جعلی —
+              فقط یک فهرست.
             </p>
           </div>
 
@@ -75,41 +76,42 @@ export function Waitlist() {
                 <span className="grid h-8 w-8 place-items-center rounded-full bg-[#d4af7a]/15 text-[#f0d9a8]">
                   <Check className="h-4 w-4" />
                 </span>
-                <p className="mt-4 font-display text-[22px] tracking-[-0.03em] text-[#f6f1ea]">
-                  Added to the launch list.
+                <p className="mt-4 font-display text-[22px] tracking-[0.01em] text-[#f6f1ea]">
+                  به فهرست راه‌اندازی اضافه شد.
                 </p>
                 <p className="mt-2 text-[13px] leading-relaxed text-[#9a958c]">
-                  The address is stored on this demo server. No email is sent.
+                  نشانی روی همین سرور نمایشی ذخیره شد. ایمیلی ارسال نمی‌شود.
                 </p>
                 <button
                   type="button"
                   onClick={() => setStatus("idle")}
-                  className="mt-4 min-h-11 text-[10px] uppercase tracking-[0.16em] text-[#d4af7a] hover:text-[#f0d9a8]"
+                  className="mt-4 min-h-11 text-[13px] tracking-[0.16em] text-[#d4af7a] hover:text-[#f0d9a8]"
                 >
-                  Use another email
+                  استفاده از ایمیل دیگر
                 </button>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-3">
                 <label className="block">
-                  <span className="sr-only">Email address</span>
+                  <span className="sr-only">نشانی ایمیل</span>
                   <input
                     name="email"
                     type="email"
                     required
                     autoComplete="email"
                     maxLength={180}
+                    dir="ltr"
                     placeholder="you@studio.com"
-                    className="h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/50"
+                    className="h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-start text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/50"
                   />
                 </label>
                 <label className="block">
-                  <span className="sr-only">What are you building?</span>
+                  <span className="sr-only">چه چیزی می‌سازید؟</span>
                   <input
                     name="project"
                     type="text"
                     maxLength={240}
-                    placeholder="What are you building? (optional)"
+                    placeholder="چه چیزی می‌سازید؟ (اختیاری)"
                     className="h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/50"
                   />
                 </label>
@@ -118,21 +120,21 @@ export function Waitlist() {
                   disabled={status === "sending"}
                   className="group flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-[#f4efe6] px-5 text-[13px] font-medium text-[#111] transition-colors hover:bg-white disabled:cursor-wait disabled:opacity-70"
                 >
-                  {status === "sending" ? "Sending…" : "Request launch access"}
+                  {status === "sending" ? "در حال ارسال…" : "درخواست دسترسی راه‌اندازی"}
                   {status !== "sending" ? (
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5" />
                   ) : null}
                 </button>
                 <p
                   role="alert"
                   aria-live="polite"
-                  className="min-h-[14px] text-[10px] leading-relaxed text-[#f2b6b0]"
+                  className="min-h-[14px] text-[13px] leading-relaxed text-[#f2b6b0]"
                 >
                   {status === "error" ? message : ""}
                 </p>
-                <p className="text-[10px] leading-relaxed text-[#6f6a62]">
-                  Demo launch list. The address is stored on this server; no marketing
-                  email is sent.
+                <p className="text-[13px] leading-relaxed text-[#6f6a62]">
+                  فهرست راه‌اندازی نمایشی. نشانی روی همین سرور ذخیره می‌شود؛
+                  ایمیل بازاریابی ارسال نمی‌شود.
                 </p>
               </form>
             )}

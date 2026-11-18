@@ -24,7 +24,7 @@ export function CoffeeMenu() {
                     <div className="flex items-baseline justify-between gap-4">
                       <h4 className="font-medium text-[17px] tracking-[0.01em]">{item.name}</h4>
                       <span className="h-px min-w-5 flex-1 border-b border-dotted border-[var(--nc-ink)]/35" aria-hidden="true" />
-                      <span className="text-xs text-[var(--nc-ink)]/55">Sample</span>
+                      <span className="text-xs text-[var(--nc-ink)]/55">نمونه</span>
                     </div>
                     <p className="mt-2 max-w-md text-sm leading-6 text-[var(--nc-ink)]/68">{item.description}</p>
                   </li>
@@ -34,7 +34,7 @@ export function CoffeeMenu() {
           ))}
         </div>
         <p className="mt-10 border-l border-[var(--nc-ink)]/35 pl-4 text-xs leading-5 text-[var(--nc-ink)]/60">
-          Sample menu only. No prices, availability, or real products are represented.
+          تنها منوی نمونه. هیچ قیمت، موجودی یا محصول واقعی بازنمایی نمی‌شود.
         </p>
       </div>
     </section>

@@ -7,75 +7,75 @@
  */
 
 export const neuralNav = [
-  { label: "Systems", href: "#systems" },
-  { label: "Work", href: "#work" },
-  { label: "Method", href: "#method" },
-  { label: "Studio", href: "#studio" },
-  { label: "Contact", href: "#contact" },
+  { label: "سامانه‌ها", href: "#systems" },
+  { label: "کارها", href: "#work" },
+  { label: "روش", href: "#method" },
+  { label: "استودیو", href: "#studio" },
+  { label: "تماس", href: "#contact" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Neural Studio / Applied AI",
-  headline: "Intelligence,",
-  headlineAccent: "given form.",
+  eyebrow: "استودیوی نیورال / هوش مصنوعی کاربردی",
+  headline: "هوش،",
+  headlineAccent: "شکل‌گرفته",
   intro:
-    "A product studio for applied machine learning. We turn ambiguous data problems into interfaces people can trust.",
-  note: "Sample website concept · fictional studio, systems and details",
-  status: "Selective engagements · senior team",
+    "استودیوی محصول برای یادگیری ماشین کاربردی. ما مسئله‌های مبهم داده را به رابط‌هایی تبدیل می‌کنیم که مردم می‌توانند به آن‌ها اعتماد کنند.",
+  note: "مفهوم نمایشی وب‌سایت · استودیو، سامانه‌ها و جزئیات خیالی",
+  status: "همکاری‌های گزیده · تیم ارشد",
   caption: [
-    "Node field 01 — a system, made legible",
-    "Illustrative visualisation · not a live model",
+    "میدان گره ۰۱ — سامانه‌ای که خوانا شده است",
+    "نمایش‌سازی نمایشی · نه یک مدل زنده",
   ],
   footNote:
-    "Applied AI · Product studio · Evaluation, interfaces and operations",
+    "هوش مصنوعی کاربردی · استودیوی محصول · ارزشیابی، رابط‌ها و بهره‌برداری",
 } as const;
 
 export const heroMeta = [
-  { label: "Practice", value: "Applied AI" },
-  { label: "Model", value: "Product studio" },
-  { label: "Team", value: "Senior, small" },
+  { label: "حرفه", value: "هوش مصنوعی کاربردی" },
+  { label: "مدل", value: "استودیوی محصول" },
+  { label: "تیم", value: "ارشد، کوچک" },
 ];
 
 export const strip = [
-  "Evaluation",
-  "Provenance",
-  "Confidence",
-  "Human review",
-  "Observability",
-  "Interfaces",
-  "Deployment",
+  "ارزشیابی",
+  "منشأ",
+  "اطمینان",
+  "بازبینی انسانی",
+  "قابلیت مشاهده",
+  "رابط‌ها",
+  "استقرار",
 ] as const;
 
 export const systems = {
-  label: "01 / Systems",
-  title: "Built around the problem.",
+  label: "۰۱ / سامانه‌ها",
+  title: "ساخته‌شده گرد مسئله",
   intro:
-    "Four disciplines, one loop. We do not begin with a model; we begin with the decision the product has to support, then earn the right to automate it.",
-  note: "Every system is described in plain language: what it does, what it cannot do and where a person takes over.",
+    "چهار رشته، یک حلقه. کار را با مدل شروع نمی‌کنیم؛ با تصمیمی شروع می‌کنیم که محصول باید پشتیبانی کند، و بعد حقِ خودکارسازی آن را به دست می‌آوریم.",
+  note: "هر سامانه به زبان ساده توصیف شده است: چه می‌کند، چه نمی‌کند و کجا یک انسان کنترل را به دست می‌گیرد.",
   items: [
     {
       index: "01",
-      title: "Research",
-      body: "Frame the problem before choosing a model. The brief is part of the work.",
-      deliverables: ["Working brief", "Decision map", "Evaluation plan"],
+      title: "پژوهش",
+      body: "پیش از انتخاب مدل، مسئله را قاب‌بندی کنید. بریف بخشی از کار است.",
+      deliverables: ["بریف کاری", "نقشهٔ تصمیم", "برنامهٔ ارزشیابی"],
     },
     {
       index: "02",
-      title: "Product",
-      body: "Design the system around the decision a person actually has to make.",
-      deliverables: ["Interface model", "Failure states", "Prototype"],
+      title: "محصول",
+      body: "سامانه را گرد تصمیمی طراحی کنید که یک انسان واقعاً باید بگیرد.",
+      deliverables: ["مدل رابط", "حالت‌های شکست", "نمونهٔ اولیه"],
     },
     {
       index: "03",
-      title: "Engineering",
-      body: "Ship the interface, the evaluation loop and the observability together.",
-      deliverables: ["Vertical slice", "Eval harness", "Telemetry"],
+      title: "مهندسی",
+      body: "رابط، حلقهٔ ارزشیابی و قابلیت مشاهده را با هم عرضه کنید.",
+      deliverables: ["برش عمودی", "چارچوب ارزشیابی", "تله‌متری"],
     },
     {
       index: "04",
-      title: "Deployment",
-      body: "Operate with confidence: clear limits, measured behaviour, a human route in.",
-      deliverables: ["Runbook", "Limits", "Review queue"],
+      title: "استقرار",
+      body: "با اطمینان بهره‌برداری کنید: محدودیت‌های روشن، رفتار سنجیده و راهی برای ورود انسان.",
+      deliverables: ["دستنامهٔ بهره‌برداری", "محدودیت‌ها", "صف بازبینی"],
     },
   ],
 } as const;
@@ -83,163 +83,163 @@ export const systems = {
 export type ProjectVariant = "review" | "extract" | "retrieve";
 
 export const work = {
-  label: "02 / Selected systems",
-  title: "Interfaces for decisions.",
+  label: "۰۲ / سامانه‌های منتخب",
+  title: "رابط‌هایی برای تصمیم",
   intro:
-    "Three illustrative systems that show the shape of the work: a queue, a pipeline and a search surface. Each one is designed to explain itself.",
-  note: "Illustrative engagement descriptions. No client work, results or claims are represented.",
+    "سه سامانهٔ نمایشی که شکل کار را نشان می‌دهند: یک صف، یک خط لوله و یک سطح جست‌وجو. هر کدام برای توضیح دادنِ خودش طراحی شده است.",
+  note: "توصیف نمایشی همکاری‌ها. هیچ کار مشتری، نتیجه یا ادعایی بازنمایی نمی‌شود.",
   projects: [
     {
       index: "01",
-      name: "Signal Review",
-      kind: "Operations · Anomaly review",
+      name: "بازبینی سیگنال",
+      kind: "بهره‌برداری · بازبینی ناهنجاری",
       description:
-        "A review surface for model-flagged events. Reason codes, provenance and an override path sit beside the queue, so a person can act without guessing.",
-      tags: ["Evaluation", "Human review", "Reason codes"],
+        "سطحی برای بازبینی رویدادهایی که مدل علامت زده است. کد دلیل، منشأ و مسیر تجدیدنظر کنار صف می‌نشینند تا یک نفر بتواند بی‌آنکه حدس بزند عمل کند.",
+      tags: ["ارزشیابی", "بازبینی انسانی", "کد دلیل"],
       variant: "review" as ProjectVariant,
     },
     {
       index: "02",
-      name: "Ledger Intelligence",
-      kind: "Finance · Document extraction",
+      name: "هوش دفتر کل",
+      kind: "مالی · استخراج سند",
       description:
-        "A document pipeline that shows its work: extracted fields, source spans and a confidence note before anything reaches the ledger.",
-      tags: ["Extraction", "Provenance", "Audit trail"],
+        "خط لوله‌ای برای سندها که کارش را نشان می‌دهد: فیلدهای استخراج‌شده، بازهٔ منبع و یادداشت اطمینان، پیش از آنکه چیزی به دفتر برسد.",
+      tags: ["استخراج", "منشأ", "رد ممیزی"],
       variant: "extract" as ProjectVariant,
     },
     {
       index: "03",
-      name: "Atlas Retrieval",
-      kind: "Knowledge · Internal search",
+      name: "بازیابی اطلس",
+      kind: "دانش · جست‌وجوی درون‌سازمانی",
       description:
-        "Retrieval for operations teams, with citations, permissions and an honest empty state when the corpus has no good answer.",
-      tags: ["Retrieval", "Citations", "Permissions"],
+        "بازیابی برای تیم‌های بهره‌برداری، با ارجاع، دسترسی‌ها و یک حالت خالیِ صادقانه وقتی مجموعه پاسخ خوبی ندارد.",
+      tags: ["بازیابی", "ارجاع‌ها", "دسترسی‌ها"],
       variant: "retrieve" as ProjectVariant,
     },
   ],
 } as const;
 
 export const method = {
-  label: "03 / Method",
-  title: "Evidence, not theatre.",
+  label: "۰۳ / روش",
+  title: "شاهد، نه نمایش",
   intro:
-    "A short, visible loop. Each step ends with an artefact you can read, challenge and keep — no black boxes between the brief and the build.",
+    "حلقه‌ای کوتاه و دیده‌شدنی. هر مرحله با اثری تمام می‌شود که می‌توانید بخوانید، به آن ایراد بگیرید و نگهش دارید — بدون جعبهٔ سیاه میان بریف و ساخت.",
   steps: [
     {
       step: "01",
-      title: "Frame",
-      body: "A working session and a written brief. We name the decision, the constraints and what would count as evidence.",
-      output: "Brief · decision map",
+      title: "قاب‌بندی",
+      body: "یک نشست کاری و یک بریف نوشته‌شده. تصمیم، محدودیت‌ها و آنچه شاهد به حساب می‌آید را نام می‌بریم.",
+      output: "بریف · نقشهٔ تصمیم",
     },
     {
       step: "02",
-      title: "Sketch",
-      body: "Low-fidelity interfaces and an evaluation plan. We test the shape of the product before choosing a model.",
-      output: "Prototype · eval plan",
+      title: "طرح‌ریزی",
+      body: "رابط‌های کم‌وفایی و یک برنامهٔ ارزشیابی. شکل محصول را پیش از انتخاب مدل می‌آزماییم.",
+      output: "نمونهٔ اولیه · برنامهٔ ارزشیابی",
     },
     {
       step: "03",
-      title: "Build",
-      body: "A vertical slice: interface, model, evaluation and observability in one loop, reviewed weekly.",
-      output: "Working system",
+      title: "ساخت",
+      body: "یک برش عمودی: رابط، مدل، ارزشیابی و قابلیت مشاهده در یک حلقه، با بازبینی هفتگی.",
+      output: "سامانهٔ کارکننده",
     },
     {
       step: "04",
-      title: "Operate",
-      body: "Limits documented, behaviour measured, a human route in. The system is handed over with its evidence.",
-      output: "Runbook · handover",
+      title: "بهره‌برداری",
+      body: "محدودیت‌ها مستند، رفتار سنجیده و راهی برای ورود انسان. سامانه با شاهدهایش تحویل داده می‌شود.",
+      output: "دستنامه · تحویل",
     },
   ],
 } as const;
 
 export const studio = {
-  label: "04 / Studio",
-  title: "A small senior room.",
+  label: "۰۴ / استودیو",
+  title: "اتاقی کوچک و ارشد",
   paragraphs: [
-    "The studio is deliberately small. Strategy, research, design and engineering sit in one room, from the first sketch to the shipped system.",
-    "We take one substantial engagement at a time. That keeps the people who framed the problem in the room when it is built — and accountable when it ships.",
+    "استودیو عمداً کوچک است. استراتژی، پژوهش، طراحی و مهندسی از نخستین طرح تا سامانهٔ تحویل‌شده در یک اتاق می‌نشینند.",
+    "هر بار یک همکاری سنگین را برمی‌داریم. همین باعث می‌شود کسانی که مسئله را قاب‌بندی کردند هنگام ساختن هم در اتاق باشند — و هنگام عرضه هم پاسخ‌گو.",
   ],
   principles: [
     {
-      title: "Evidence over theatre",
-      body: "No AI mystique. Confidence, provenance and failure states are part of the interface.",
+      title: "شاهد بر نمایش",
+      body: "بدون ابهام‌سازیِ هوش مصنوعی. اطمینان، منشأ و حالت‌های شکست بخشی از رابط‌اند.",
     },
     {
-      title: "The decision is the product",
-      body: "A model is only useful if it helps someone act with more clarity.",
+      title: "تصمیم، همان محصول است",
+      body: "مدل تنها وقتی به کار می‌آید که به کسی کمک کند با وضوح بیشتری عمل کند.",
     },
     {
-      title: "A human route in",
-      body: "Every automated path has a visible way to ask, override or escalate.",
+      title: "راهی برای ورود انسان",
+      body: "هر مسیر خودکار، راهی دیده‌شدنی برای پرسیدن، تجدیدنظر یا ارجاع دارد.",
     },
   ],
   facts: [
-    { label: "Focus", value: "Applied AI" },
-    { label: "Team", value: "Senior" },
-    { label: "Engagement", value: "Project" },
-    { label: "Base", value: "London" },
+    { label: "تمرکز", value: "هوش مصنوعی کاربردی" },
+    { label: "تیم", value: "ارشد" },
+    { label: "همکاری", value: "پروژه" },
+    { label: "پایگاه", value: "لندن" },
   ],
-  quote: "The model is never the product. The decision is.",
-  quoteNote: "Studio principle · sample copy",
+  quote: "مدل هرگز محصول نیست. تصمیم، محصول است.",
+  quoteNote: "اصول استودیو · متن نمونه",
 } as const;
 
 export const notes = {
-  label: "Field notes",
-  title: "Working in the open.",
+  label: "یادداشت‌های میدانی",
+  title: "کار در فضای باز",
   intro:
-    "Short notes on the parts of applied AI that are usually left out of the launch page.",
+    "یادداشت‌های کوتاه دربارهٔ بخش‌هایی از هوش مصنوعی کاربردی که معمولاً در صفحهٔ رونمایی جا می‌مانند.",
   items: [
     {
-      index: "Note 01",
-      title: "Designing for low confidence",
-      body: "What an interface owes a person when the model is unsure — and how to make uncertainty actionable rather than decorative.",
-      tag: "Interface",
+      index: "یادداشت ۰۱",
+      title: "طراحی برای اطمینان پایین",
+      body: "رابط وقتی مدل مطمئن نیست به یک نفر چه بدهکار است — و چطور بی‌اطمینانی را قابل اقدام کنیم، نه تزئینی.",
+      tag: "رابط",
     },
     {
-      index: "Note 02",
-      title: "Evaluation is a product surface",
-      body: "The review queue deserves the same care as the happy path. A short argument for treating evaluation as a feature.",
-      tag: "Evaluation",
+      index: "یادداشت ۰۲",
+      title: "ارزشیابی، یک سطح محصول است",
+      body: "صف بازبینی شایستهٔ همان توجه مسیر خوش‌حال است. استدلالی کوتاه برای رفتار با ارزشیابی به‌عنوان یک ویژگی.",
+      tag: "ارزشیابی",
     },
     {
-      index: "Note 03",
-      title: "Provenance, not decoration",
-      body: "Showing where an answer came from without burying the decision. Notes on citations, spans and trust.",
-      tag: "Trust",
+      index: "یادداشت ۰۳",
+      title: "منشأ، نه تزئین",
+      body: "نشان دادن اینکه پاسخ از کجا آمده، بی‌آنکه تصمیم دفن شود. یادداشت‌هایی دربارهٔ ارجاع‌ها، بازه‌ها و اعتماد.",
+      tag: "اعتماد",
     },
   ],
-  note: "Illustrative field notes. No external articles are linked.",
+  note: "یادداشت‌های میدانی نمایشی. هیچ مقاله بیرونی پیوند داده نشده است.",
 } as const;
 
 export const contact = {
-  label: "05 / Contact",
-  title: "Bring us the hard problem.",
+  label: "۰۵ / تماس",
+  title: "مسئلهٔ سخت را نزد ما بیاورید",
   intro:
-    "A short technical brief is enough to start: the decision, the data you have and what makes it difficult. We reply within two working days.",
+    "یک بریف فنی کوتاه برای شروع کافی است: تصمیم، داده‌ای که دارید و آنچه آن را دشوار می‌کند. در دو روز کاری پاسخ می‌دهیم.",
   bring: [
-    "The decision the product needs to support",
-    "What data exists — and what does not",
-    "Constraints: team, timeline, regulation",
+    "تصمیمی که محصول باید پشتیبانی کند",
+    "چه داده‌ای هست — و چه نیست",
+    "محدودیت‌ها: تیم، زمان‌بندی، مقررات",
   ],
   email: "hello@neural-studio.demo",
   phone: "+44 20 7946 0001",
-  address: ["Neural Studio", "4 Signal Yard", "London E2 7JY"],
-  hours: "Monday – Friday · 09:00 – 18:00",
-  note: "Fictional studio. The address, telephone number and details are illustrative.",
+  address: ["استودیوی نیورال", "سیگنال‌یارد ۴", "لندن E2 7JY"],
+  hours: "دوشنبه – جمعه · 09:00 – 18:00",
+  note: "استودیوی خیالی. نشانی، شمارهٔ تلفن و جزئیات نمایشی‌اند.",
   form: {
-    title: "Project intake",
-    sub: "A short brief, not a sales call",
+    title: "پذیرش پروژه",
+    sub: "یک بریف کوتاه، نه تماس فروش",
     projectTypes: [
-      "Applied AI product",
-      "Evaluation & review",
-      "Interface & design system",
-      "Technical advisory",
-      "Something else",
+      "محصول هوش مصنوعی کاربردی",
+      "ارزشیابی و بازبینی",
+      "رابط و سامانهٔ طراحی",
+      "مشاورهٔ فنی",
+      "چیز دیگری",
     ],
-    note: "Sample intake form. Nothing is sent to a real studio, no project is accepted and no payment is taken.",
+    note: "فرم پذیرش نمونه. چیزی به استودیویی واقعی فرستاده نمی‌شود، پروژه‌ای پذیرفته نمی‌شود و پرداختی گرفته نمی‌شود.",
     confirmation:
-      "Your brief has been recorded for this demonstration. No message is sent, no project is accepted and no payment is taken.",
+      "بریف شما برای این نمایش ثبت شد. پیامی فرستاده نمی‌شود، پروژه‌ای پذیرفته نمی‌شود و پرداختی گرفته نمی‌شود.",
     fallback:
-      "The demo inbox is unavailable right now. Please use the email address on this page.",
+      "صندوق ورودی نمایشی اکنون در دسترس نیست. لطفاً از نشانی ایمیل روی همین صفحه استفاده کنید.",
   },
 } as const;

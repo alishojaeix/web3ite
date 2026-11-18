@@ -8,42 +8,42 @@ import { evening, heroMeta, maisonNav, menu, reservation, room, visit } from "./
 
 export function MaisonSite() {
   return (
-    <div className="md-site" id="top">
+    <div className="md-site" id="top" dir="rtl">
       <a className="md-skip" href="#md-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <MaisonNav />
 
-      <main id="md-main">
+      <main id="md-main" lang="fa" dir="rtl">
         <section className="md-hero" aria-labelledby="md-hero-title">
           <div className="md-wrap">
             <div className="md-hero-topline">
-              <p>One seating · Wednesday to Sunday</p>
-              <p>Paris 1er · Twelve covers</p>
+              <p>یک سِرویس · چهارشنبه تا یکشنبه</p>
+              <p>پاریس ۱ · دوازده مهمان</p>
             </div>
 
             <div className="md-hero-head">
               <p className="md-kicker">
                 <Ornament />
-                Maison Dining · Tasting room
+                مزون داینینگ · اتاق چشایی
               </p>
               <h1 id="md-hero-title">
-                A table set{" "}
+                میزی چیده‌شده{" "}
                 <br />
-                <em>for the evening.</em>
+                <em>برای این شب</em>
               </h1>
               <p className="md-lede">
-                A twelve-seat dining room built around one seasonal menu, quiet
-                service, and a long view of the kitchen.
+                اتاق غذاخوری دوازده‌نفره‌ای با یک منوی فصلی، سرویسِ آرام و
+                دیدی بلند به آشپزخانه.
               </p>
               <div className="md-actions">
                 <a className="md-btn md-btn--copper" href="#menu">
-                  Read the menu
+                  خواندن منو
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="md-btn md-btn--ghost" href="#reserve">
-                  Reserve a table
+                  رزرو میز
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -52,8 +52,8 @@ export function MaisonSite() {
             <figure className="md-hero-figure">
               <ClocheScene />
               <figcaption>
-                <span>Silver cloche · linen · one candle</span>
-                <span>18:20, before service</span>
+                <span>کلاچ نقره‌ای · کتان · یک شمع</span>
+                <span>۱۸:۲۰، پیش از سرویس</span>
               </figcaption>
             </figure>
 
@@ -67,15 +67,15 @@ export function MaisonSite() {
             </dl>
 
             <p className="md-demo-note">
-              Sample website concept · fictional dining room, menu and imagery
+              طرح نمایشی وب‌سایت · اتاق غذاخوری، منو و تصویرها خیالی‌اند
             </p>
 
             <div className="md-hero-foot">
               <a href="#menu" className="md-scroll-cue">
-                Scroll to the menu
+                اسکرول تا منو
                 <ArrowDown size={14} aria-hidden="true" />
               </a>
-              <p>Menu €{menu.price} · pairing €{menu.pairing}</p>
+              <p>منو €{menu.price} · همراهی €{menu.pairing}</p>
             </div>
           </div>
         </section>
@@ -86,9 +86,9 @@ export function MaisonSite() {
               <div>
                 <p className="md-eyebrow">{menu.label}</p>
                 <h2 id="md-menu-title">
-                  One menu,{" "}
+                  یک منو،{" "}
                   <br />
-                  <em>written each morning.</em>
+                  <em>هر روز صبح نوشته می‌شود</em>
                 </h2>
               </div>
               <p className="md-intro">{menu.intro}</p>
@@ -104,9 +104,9 @@ export function MaisonSite() {
               <div className="md-room-copy">
                 <p className="md-eyebrow">{room.label}</p>
                 <h2 id="md-room-title">
-                  Twelve seats,{" "}
+                  دوازده صندلی،{" "}
                   <br />
-                  <em>around the pass.</em>
+                  <em>گردِ پاس</em>
                 </h2>
                 <p className="md-intro">{room.intro}</p>
                 <div className="md-prose">
@@ -129,12 +129,12 @@ export function MaisonSite() {
                 <RoomPlan />
                 <figcaption>
                   <span>{room.plan.note}</span>
-                  <span>Illustrative plan · not to scale</span>
+                  <span>طرح نمایشی · بدون مقیاس</span>
                 </figcaption>
               </figure>
             </div>
 
-            <ul className="md-materials" aria-label="The materials of the room">
+            <ul className="md-materials" aria-label="مواد اتاق">
               {room.materials.map((material) => (
                 <li key={material.label}>
                   <span className="md-material-label">{material.label}</span>
@@ -151,9 +151,9 @@ export function MaisonSite() {
               <div>
                 <p className="md-eyebrow">{evening.label}</p>
                 <h2 id="md-evening-title">
-                  The room sets{" "}
+                  اتاق ریتمش را{" "}
                   <br />
-                  <em>its own pace.</em>
+                  <em>خودش تعیین می‌کند</em>
                 </h2>
               </div>
               <p className="md-intro">{evening.intro}</p>
@@ -192,16 +192,16 @@ export function MaisonSite() {
               <div className="md-visit-copy">
                 <p className="md-eyebrow">{visit.label}</p>
                 <h2 id="md-visit-title">
-                  Find{" "}
+                  پیدا کردن{" "}
                   <br />
-                  <em>the room.</em>
+                  <em>اتاق</em>
                 </h2>
 
                 <div className="md-visit-details">
                   <div>
                     <h3>
                       <MapPin size={16} aria-hidden="true" />
-                      Address
+                      نشانی
                     </h3>
                     <address>
                       {visit.address.map((line) => (
@@ -213,7 +213,7 @@ export function MaisonSite() {
                   <div>
                     <h3>
                       <Clock size={16} aria-hidden="true" />
-                      Hours
+                      ساعات
                     </h3>
                     <dl>
                       {visit.hours.map((row) => (
@@ -223,7 +223,7 @@ export function MaisonSite() {
                         </div>
                       ))}
                     </dl>
-                    <p>The door opens at 18:15. Service begins at {reservation.sitting}.</p>
+                    <p>در ساعت ۱۸:۱۵ باز می‌شود. سرویس از {reservation.sitting} آغاز می‌شود.</p>
                   </div>
                 </div>
 
@@ -239,8 +239,8 @@ export function MaisonSite() {
               <figure className="md-carte-card">
                 <Carte />
                 <figcaption>
-                  <span>6 Rue des Orfèvres · 75001</span>
-                  <span>Métro Pont Neuf · 4 min</span>
+                  <span>خیابان اورفِور ۶ · ۷۵۰۰۱</span>
+                  <span>مترو پون‌نُف · ۴ دقیقه</span>
                 </figcaption>
               </figure>
             </div>
@@ -252,17 +252,17 @@ export function MaisonSite() {
         <div className="md-wrap">
           <div className="md-footer-top">
             <div className="md-footer-brand">
-              <p className="md-footer-word">Maison</p>
-              <p>A table set for the evening. Paris 1er.</p>
+              <p className="md-footer-word">مزون</p>
+              <p>میزی برای این شب. پاریس ۱.</p>
               <a href="#top" className="md-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="md-footer-cols">
               <div>
-                <p className="md-footer-label">Visit</p>
+                <p className="md-footer-label">بازدید</p>
                 <address>
                   {visit.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -274,30 +274,30 @@ export function MaisonSite() {
                 </a>
               </div>
               <div>
-                <p className="md-footer-label">Explore</p>
+                <p className="md-footer-label">کاوش</p>
                 {maisonNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
                   </a>
                 ))}
-                <a href="#reserve">Reservations</a>
+                <a href="#reserve">رزروها</a>
               </div>
               <div>
-                <p className="md-footer-label">Template</p>
-                <Link href="/templates/maison-dining">Template details</Link>
-                <Link href="/checkout/maison-dining">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="md-footer-label">قالب</p>
+                <Link href="/templates/maison-dining">جزئیات قالب</Link>
+                <Link href="/checkout/maison-dining">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="md-footer-bottom">
             <p>
-              © 2026 Maison Dining (fictional). A demonstration website: the venue,
-              menu, prices and imagery are illustrative. No reservations are taken.
+              © ۲۰۲۶ مزون داینینگ (خیالی). یک وب‌سایت نمایشی: مکان، منو، قیمت‌ها و
+              تصویرها نمایشی‌اند. هیچ رزروی انجام نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

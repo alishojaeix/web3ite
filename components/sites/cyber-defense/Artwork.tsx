@@ -35,7 +35,7 @@ export function ShieldScan() {
       className="cd-shield"
       viewBox="0 0 760 720"
       role="img"
-      aria-label="An illustrative faceted shield inside concentric radar rings, drawn in copper and signal red on a dark grid."
+      aria-label="یک سپهر چندوجهی نمایشی درون حلقه‌های هم‌مرکز رادار، با مس و قرمز هشدار روی شبکه‌ای تیره."
     >
       <defs>
         <radialGradient id="cd-halo" cx="50%" cy="46%" r="52%">
@@ -183,14 +183,14 @@ export function ShieldScan() {
         fontSize="8"
         letterSpacing="1.7"
       >
-        <text x="64" y="70">DEFENSE / MODEL 01</text>
-        <text x="696" y="70" textAnchor="end">SIGNAL / MANAGED</text>
-        <text x="64" y="654">5 WATCHTOWER SQUARE</text>
-        <text x="696" y="654" textAnchor="end">ILLUSTRATIVE — NOT LIVE</text>
+        <text x="64" y="70">دفاع / مدل ۰۱</text>
+        <text x="696" y="70" textAnchor="end">سیگنال / مدیریت‌شده</text>
+        <text x="64" y="654">میدان واچ‌تاور ۵</text>
+        <text x="696" y="654" textAnchor="end">نمایشی — نه زنده</text>
       </g>
       <g fill="#ec9b79">
         <text x="64" y="86" fontFamily="var(--cd-mono), ui-monospace, monospace" fontSize="7.5" letterSpacing="1.5">
-          FICTIONAL PRACTICE
+          عملکرد خیالی
         </text>
         <text
           x="696"
@@ -200,7 +200,7 @@ export function ShieldScan() {
           fontSize="7.5"
           letterSpacing="1.5"
         >
-          SAMPLE DATA
+          دادهٔ نمونه
         </text>
       </g>
 
@@ -287,7 +287,7 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
         className="cd-swatch"
         viewBox="0 0 220 160"
         role="img"
-        aria-label="Illustration of concentric scan rings with a radar sweep."
+        aria-label="تصویر حلقه‌های هم‌مرکز اسکن با جاروب رادار."
       >
         <rect width="220" height="160" fill="#0d0a08" />
         <g stroke="rgba(246,236,231,0.05)">
@@ -310,7 +310,7 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
         <circle cx="74" cy="104" r="1.7" fill="#ec9b79" opacity="0.7" />
         <circle cx="133" cy="107" r="1.5" fill="#ec9b79" opacity="0.5" />
         <text x="14" y="148" fill="#6f6059" fontFamily="var(--cd-mono), monospace" fontSize="6.5" letterSpacing="1.4">
-          SCAN / 12S
+          اسکن / ۱۲ ثانیه
         </text>
         <text x="206" y="148" textAnchor="end" fill="#6f6059" fontFamily="var(--cd-mono), monospace" fontSize="6.5" letterSpacing="1.4">
           R=250
@@ -326,7 +326,7 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
         className="cd-swatch"
         viewBox="0 0 220 160"
         role="img"
-        aria-label="Illustration of a signal bar chart with one tall red alarm bar."
+        aria-label="تصویر نمودار میله‌ای سیگنال با یک میلهٔ بلند قرمز هشدار."
       >
         <rect width="220" height="160" fill="#0d0a08" />
         <line x1="20" y1="120" x2="200" y2="120" stroke="rgba(246,236,231,0.16)" />
@@ -343,10 +343,10 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
         <line x1="83" y1="28" x2="83" y2="132" stroke="rgba(239,106,76,0.4)" strokeDasharray="2 4" />
         <circle cx="83" cy="28" r="2.5" fill="#ef6a4c" />
         <text x="20" y="148" fill="#6f6059" fontFamily="var(--cd-mono), monospace" fontSize="6.5" letterSpacing="1.4">
-          ONE ALARM
+          یک هشدار
         </text>
         <text x="200" y="148" textAnchor="end" fill="#6f6059" fontFamily="var(--cd-mono), monospace" fontSize="6.5" letterSpacing="1.4">
-          R=NOISE
+          R=نویز
         </text>
       </svg>
     );
@@ -357,7 +357,7 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
       className="cd-swatch"
       viewBox="0 0 220 160"
       role="img"
-      aria-label="Illustration of an incident paper record with a sample stamp."
+      aria-label="تصویر یک پروندهٔ کاغذی رویداد با مهر نمونه."
     >
       <rect width="220" height="160" fill="#0d0a08" />
       <g transform="rotate(-2 110 80)">
@@ -365,7 +365,7 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
         <rect x="44" y="16" width="132" height="128" fill="none" stroke="rgba(27,23,38,0.3)" />
         <rect x="44" y="16" width="132" height="14" fill="#d9d0c2" />
         <text x="52" y="26" fill="#514a60" fontFamily="var(--cd-mono), monospace" fontSize="5.5" letterSpacing="1">
-          INCIDENT / SAMPLE
+          رویداد / نمونه
         </text>
         <rect x="54" y="40" width="62" height="5" fill="#2a2430" />
         <rect x="54" y="52" width="112" height="3" fill="#aca293" />
@@ -379,12 +379,12 @@ export function MaterialSwatch({ variant }: { variant: "rings" | "signal" | "pap
         <g transform="rotate(-5 156 122)">
           <rect x="126" y="108" width="60" height="20" fill="none" stroke="rgba(239,106,76,0.7)" strokeDasharray="2 2" />
           <text x="156" y="122" textAnchor="middle" fill="#c4472e" fontFamily="var(--cd-mono), monospace" fontSize="6.5" letterSpacing="1.4">
-            SAMPLE
+            نمونه
           </text>
         </g>
       </g>
       <text x="20" y="150" fill="#6f6059" fontFamily="var(--cd-mono), monospace" fontSize="6.5" letterSpacing="1.4">
-        THE WRITTEN ACCOUNT
+        روایت مکتوب
       </text>
     </svg>
   );

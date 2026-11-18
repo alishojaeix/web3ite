@@ -100,7 +100,7 @@
 .md-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 120;
   transform: translateY(-180%);
   padding: 12px 18px;
@@ -109,7 +109,6 @@
   color: var(--md-cream);
   font-size: 12px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -125,7 +124,7 @@
 .md-site h2 {
   font-family: var(--md-serif);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   text-wrap: balance;
 }
 
@@ -141,7 +140,6 @@
   font-size: 9.5px;
   font-weight: 400;
   letter-spacing: 0.28em;
-  text-transform: uppercase;
   color: var(--md-copper);
 }
 
@@ -150,7 +148,6 @@
   font-family: var(--md-caps);
   font-size: 8.5px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -197,10 +194,9 @@
   padding: 0 22px;
   border: 1px solid transparent;
   font-family: var(--md-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   text-align: center;
   transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
 }
@@ -295,7 +291,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
   color: var(--md-muted);
 }
 
@@ -319,7 +314,6 @@
   font-family: var(--md-caps);
   font-size: 9.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-muted);
   transition: color 200ms ease;
 }
@@ -327,9 +321,9 @@
 .md-nav-side nav a::after {
   content: "";
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   bottom: 8px;
-  left: 0;
+  inset-inline-start: 0;
   height: 1px;
   background: var(--md-copper);
   transform: scaleX(0);
@@ -353,8 +347,8 @@
   padding: 0 18px;
   border: 1px solid var(--md-copper);
   color: var(--md-cream);
-  font-size: 9px !important;
-  letter-spacing: 0.16em;
+  font-size: 0.875rem;
+  letter-spacing: var(--tracking-fa, 0);
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -417,9 +411,8 @@
   background: var(--md-copper);
   color: #160d09;
   font-family: var(--md-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
 }
 
 .md-mobile-note {
@@ -428,7 +421,6 @@
   font-size: 8px;
   line-height: 1.9;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -499,7 +491,6 @@
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--md-muted);
 }
 
@@ -524,7 +515,6 @@
   font-family: var(--md-caps);
   font-size: 8.5px;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
   color: var(--md-muted);
 }
 
@@ -541,7 +531,7 @@
 
 .md-hero h1 em {
   display: inline-block;
-  padding-right: 0.06em;
+  padding-inline-end: 0.06em;
 }
 
 .md-lede {
@@ -586,7 +576,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -612,7 +601,6 @@
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -643,7 +631,6 @@
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--md-muted);
 }
 
@@ -783,9 +770,8 @@
 .md-menu-date {
   margin: 0;
   font-family: var(--md-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--md-ink);
 }
 
@@ -827,19 +813,18 @@
   gap: 4px;
   min-height: 58px;
   padding: 11px 16px 12px 0;
-  margin-right: 20px;
+  margin-inline-end: 20px;
   border-bottom: 2px solid transparent;
-  text-align: left;
+  text-align: start;
   color: var(--md-ink-soft);
   transition: color 200ms ease, border-color 200ms ease;
 }
 
 .md-menu-tab span {
   font-family: var(--md-caps);
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .md-menu-tab small {
@@ -891,7 +876,7 @@
   font-family: var(--md-serif);
   font-size: clamp(1.25rem, 1.9vw, 1.5rem);
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   line-height: 1.2;
   color: var(--md-ink);
 }
@@ -914,12 +899,11 @@
 
 .md-course-pairing span {
   display: inline-block;
-  margin-right: 7px;
+  margin-inline-end: 7px;
   font-family: var(--md-caps);
   font-size: 7px;
   font-style: normal;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: #8c7a68;
 }
 
@@ -961,11 +945,10 @@
 }
 
 .md-menu-price small {
-  margin-left: 7px;
+  margin-inline-start: 7px;
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: rgba(243, 234, 223, 0.55);
 }
 
@@ -988,7 +971,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: rgba(243, 234, 223, 0.52);
 }
 
@@ -1037,9 +1019,9 @@
   .md-course-pairing {
     grid-column: 3;
     margin-top: 0;
-    padding-left: 18px;
-    border-left: 1px solid rgba(33, 24, 19, 0.14);
-    text-align: left;
+    padding-inline-start: 18px;
+    border-inline-start: 1px solid rgba(33, 24, 19, 0.14);
+    text-align: start;
   }
 }
 
@@ -1113,7 +1095,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -1150,7 +1131,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: #6c5a48;
 }
 
@@ -1180,7 +1160,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -1196,13 +1175,13 @@
   .md-materials li {
     padding: 18px 24px 18px 0;
     border-bottom: 0;
-    border-left: 1px solid var(--md-line);
-    padding-left: 24px;
+    border-inline-start: 1px solid var(--md-line);
+    padding-inline-start: 24px;
   }
 
   .md-materials li:first-child {
-    border-left: 0;
-    padding-left: 0;
+    border-inline-start: 0;
+    padding-inline-start: 0;
   }
 }
 
@@ -1251,7 +1230,7 @@
 .md-timeline-dot {
   position: absolute;
   top: 28px;
-  left: 0;
+  inset-inline-start: 0;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -1270,10 +1249,9 @@
 .md-timeline h3 {
   margin: 11px 0 6px;
   font-family: var(--md-caps);
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--md-cream);
 }
 
@@ -1301,7 +1279,7 @@
   font-size: clamp(1.7rem, 3.5vw, 2.9rem);
   font-style: italic;
   line-height: 1.24;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--md-cream);
   text-wrap: balance;
 }
@@ -1311,7 +1289,6 @@
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -1319,7 +1296,7 @@
   max-width: 56ch;
   margin: 28px auto 0;
   text-align: center;
-  font-size: 10px;
+  font-size: 0.8125rem;
   line-height: 1.7;
   color: var(--md-quiet);
 }
@@ -1335,8 +1312,8 @@
   }
 
   .md-timeline li + li {
-    padding-left: 24px;
-    border-left: 1px solid var(--md-line);
+    padding-inline-start: 24px;
+    border-inline-start: 1px solid var(--md-line);
   }
 
   .md-timeline-dot {
@@ -1344,11 +1321,11 @@
   }
 
   .md-timeline li:first-child .md-timeline-dot {
-    left: 0;
+    inset-inline-start: 0;
   }
 
   .md-timeline li + li .md-timeline-dot {
-    left: 24px;
+    inset-inline-start: 24px;
   }
 
   .md-timeline-time {
@@ -1403,7 +1380,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-quiet);
 }
 
@@ -1465,10 +1441,9 @@
   padding-bottom: 16px;
   border-bottom: 1px solid var(--md-line);
   font-family: var(--md-caps);
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
   color: var(--md-muted);
 }
 
@@ -1485,7 +1460,6 @@
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-muted);
 }
 
@@ -1542,7 +1516,7 @@
     calc(100% - 13px) 21px;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
-  padding-right: 34px;
+  padding-inline-end: 34px;
 }
 
 .md-field-full {
@@ -1555,7 +1529,7 @@
 
 .md-form-demo {
   margin: 11px 0 0;
-  font-size: 9px;
+  font-size: 0.75rem;
   line-height: 1.55;
   color: var(--md-quiet);
 }
@@ -1631,10 +1605,9 @@
   gap: 8px;
   margin: 0 0 11px;
   font-family: var(--md-caps);
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--md-cream);
 }
 
@@ -1682,8 +1655,8 @@
 .md-visit-private {
   max-width: 48ch;
   margin: 26px 0 0;
-  padding-left: 16px;
-  border-left: 1px solid var(--md-copper);
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid var(--md-copper);
   font-family: var(--md-serif);
   font-size: 1rem;
   font-style: italic;
@@ -1724,7 +1697,6 @@
   font-family: var(--md-caps);
   font-size: 7.5px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: #6c5a48;
 }
 
@@ -1780,7 +1752,6 @@
   font-family: var(--md-caps);
   font-size: 8.5px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--md-copper-soft) !important;
 }
 
@@ -1794,7 +1765,6 @@
   font-family: var(--md-caps);
   font-size: 8px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: #a39484;
 }
 

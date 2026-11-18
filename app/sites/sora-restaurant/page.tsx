@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { SoraSite } from "@/components/sites/sora-restaurant/SoraSite";
 import "./sora.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Sora Restaurant — A quieter table";
+const title = "رستوران سورا — میزی آرام‌تر";
 const description =
-  "A sample modern Japanese restaurant website: seasonal small plates, a counter menu, one clay-pot rice, sake by the glass and a working table request form. Fictional London dining room built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای رستوران ژاپنی مدرن: منوی کانتر، فهرست ساکه، اطلاعات بازدید و فرم درخواست میز. رستوران خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=sora-restaurant",
         width: 1200,
         height: 630,
-        alt: "Sora Restaurant website preview",
+        alt: "پیش‌نمایش وب‌سایت رستوران سورا",
       },
     ],
   },

@@ -27,17 +27,17 @@ import {
 
 export function OnchainSite() {
   return (
-    <div className="oc-site" id="top">
+    <div className="oc-site" id="top" dir="rtl">
       <a className="oc-skip" href="#oc-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <OnchainNav />
 
-      <main id="oc-main">
+      <main id="oc-main" lang="fa" dir="rtl">
         <section className="oc-hero" aria-labelledby="oc-hero-title">
           <div className="oc-wrap oc-hero-top">
-            <p>12 Ledger Lane · London E2</p>
+            <p>کوچهٔ لجر ۱۲ · لندن E2</p>
             <p className="oc-status">
               <span className="oc-status-dot" aria-hidden="true" />
               {hero.status}
@@ -61,11 +61,11 @@ export function OnchainSite() {
 
               <div className="oc-actions">
                 <a className="oc-btn oc-btn--solid" href="#showcase">
-                  See the work
+                  کارها را ببینید
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="oc-btn oc-btn--line" href="#materials">
-                  Read the notes
+                  یادداشت‌ها را بخوانید
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -96,7 +96,7 @@ export function OnchainSite() {
 
           <div className="oc-wrap oc-hero-foot">
             <a className="oc-scroll-cue" href="#showcase">
-              See the work
+              کارها را ببینید
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -151,7 +151,7 @@ export function OnchainSite() {
             <div className="oc-work-head">
               <div>
                 <p className="oc-mini-label">{work.label}</p>
-                <h3 className="oc-work-title">Three problems, three interfaces.</h3>
+                <h3 className="oc-work-title">سه مسئله، سه رابط</h3>
               </div>
               <p className="oc-work-note">{work.note}</p>
             </div>
@@ -168,15 +168,15 @@ export function OnchainSite() {
                   <h4>{project.name}</h4>
                   <dl className="oc-work-dl">
                     <div>
-                      <dt>Problem</dt>
+                      <dt>مسئله</dt>
                       <dd>{project.problem}</dd>
                     </div>
                     <div>
-                      <dt>Interface</dt>
+                      <dt>رابط</dt>
                       <dd>{project.interface}</dd>
                     </div>
                     <div>
-                      <dt>Trade-off</dt>
+                      <dt>مبادله</dt>
                       <dd>{project.tradeoff}</dd>
                     </div>
                   </dl>
@@ -221,10 +221,10 @@ export function OnchainSite() {
               <p className="oc-note-line">{studio.note}</p>
             </div>
 
-            <aside className="oc-method" aria-label="The studio working method">
+            <aside className="oc-method" aria-label="روش کاری استودیو">
               <div className="oc-method-head">
                 <p className="oc-mini-label">{studio.method.label}</p>
-                <span aria-hidden="true">FIG / 02</span>
+                <span aria-hidden="true">شکل / ۰۲</span>
               </div>
               <ol className="oc-method-list">
                 {studio.method.steps.map((step) => (
@@ -240,7 +240,7 @@ export function OnchainSite() {
                 ))}
               </ol>
               <p className="oc-method-note">
-                A method, not a promise: each step leaves a written artefact behind.
+                یک روش، نه یک وعده: هر گام یک یافتهٔ مکتوب بر جای می‌گذارد.
               </p>
             </aside>
           </div>
@@ -272,7 +272,7 @@ export function OnchainSite() {
                   <p className="oc-note-excerpt">{note.excerpt}</p>
                   <p className="oc-note-foot">
                     <span>{note.read} read</span>
-                    <span className="oc-note-sample">Sample note</span>
+                    <span className="oc-note-sample">یادداشت نمونه</span>
                   </p>
                 </article>
               ))}
@@ -309,7 +309,7 @@ export function OnchainSite() {
                 </dl>
 
                 <div className="oc-disciplines">
-                  <p className="oc-mini-label">Disciplines</p>
+                  <p className="oc-mini-label">حرفه‌ها</p>
                   <ul>
                     {details.disciplines.map((item) => (
                       <li key={item}>{item}</li>
@@ -321,7 +321,7 @@ export function OnchainSite() {
               <div className="oc-notclaimed">
                 <p className="oc-mini-label">
                   <BlockMark className="oc-notclaimed-mark" />
-                  What this page does not claim
+                  این صفحه چه چیزی را ادعا نمی‌کند
                 </p>
                 <ul>
                   {details.notClaimed.map((item) => (
@@ -360,7 +360,7 @@ export function OnchainSite() {
               </dl>
 
               <div className="oc-bring">
-                <p className="oc-mini-label">Bring to the brief</p>
+                <p className="oc-mini-label">همراه با بریف</p>
                 <ul>
                   {contact.bring.map((item) => (
                     <li key={item}>
@@ -413,21 +413,21 @@ export function OnchainSite() {
             <div className="oc-footer-brand">
               <p className="oc-footer-word">
                 <BlockMark className="oc-footer-mark" />
-                Onchain <span>Studio</span>
+                Onchain <span>استودیو</span>
               </p>
               <p>
-                Products, not narratives. Clear interfaces, documented
-                mechanics and work that can be audited.
+                محصول، نه روایت. رابط‌های روشن، مکانیک‌های مستند و کارهایی که می‌توان
+                حسابرسی کرد.
               </p>
               <a href="#top" className="oc-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="oc-footer-cols">
               <div>
-                <p className="oc-footer-label">Studio</p>
+                <p className="oc-footer-label">استودیو</p>
                 <address>
                   {contact.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -440,7 +440,7 @@ export function OnchainSite() {
               </div>
 
               <div>
-                <p className="oc-footer-label">Explore</p>
+                <p className="oc-footer-label">کاوش</p>
                 {onchainNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -449,22 +449,20 @@ export function OnchainSite() {
               </div>
 
               <div>
-                <p className="oc-footer-label">Template</p>
-                <Link href="/templates/onchain-studio">Template details</Link>
-                <Link href="/checkout/onchain-studio">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="oc-footer-label">قالب</p>
+                <Link href="/templates/onchain-studio">جزئیات قالب</Link>
+                <Link href="/checkout/onchain-studio">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="oc-footer-bottom">
             <p>
-              © 2026 Onchain Studio (fictional). A demonstration website: the
-              studio, projects and notes are illustrative. No client, token or
-              financial product is represented.
+              © ۲۰۲۶ آن‌چین استودیو (خیالی). یک وب‌سایت نمایشی: استودیو، پروژه‌ها و یادداشت‌ها نمایشی‌اند. هیچ مشتری، توکن یا محصول مالی نمایش داده نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

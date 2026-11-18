@@ -27,17 +27,17 @@ import {
 
 export function VaultSite() {
   return (
-    <div className="vl-site" id="top">
+    <div className="vl-site" id="top" dir="rtl">
       <a className="vl-skip" href="#vl-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <VaultNav />
 
-      <main id="vl-main">
+      <main id="vl-main" lang="fa" dir="rtl">
         <section className="vl-hero" aria-labelledby="vl-hero-title">
           <div className="vl-wrap vl-hero-top">
-            <p>7 Bastion Court · London E2</p>
+            <p>باستیون کورت ۷ · لندن E2</p>
             <p className="vl-status">
               <span className="vl-status-dot" aria-hidden="true" />
               {hero.status}
@@ -61,11 +61,11 @@ export function VaultSite() {
 
               <div className="vl-actions">
                 <a className="vl-btn vl-btn--solid" href="#showcase">
-                  Read the controls
+                  خواندن کنترل‌ها
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="vl-btn vl-btn--line" href="#contact">
-                  Open disclosure
+                  گشودن افشاگری
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -85,8 +85,8 @@ export function VaultSite() {
             <figure className="vl-hero-figure">
               <div className="vl-hero-plate">
                 <div className="vl-plate-head">
-                  <span>DRAWING / 01 — CUSTODY</span>
-                  <span>REV C · 2026</span>
+                  <span>نقشه / ۰۱ — حضانت</span>
+                  <span>بازبینی C · ۲۰۲۶</span>
                 </div>
                 <VaultStack />
               </div>
@@ -100,7 +100,7 @@ export function VaultSite() {
 
           <div className="vl-wrap vl-hero-foot">
             <a className="vl-scroll-cue" href="#showcase">
-              Read the controls
+              خواندن کنترل‌ها
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -185,13 +185,13 @@ export function VaultSite() {
               <p className="vl-note-line">{assurance.note}</p>
             </div>
 
-            <aside className="vl-record" aria-label="Illustrative audit record">
+            <aside className="vl-record" aria-label="پروندهٔ حسابرسی نمایشی">
               <div className="vl-record-head">
                 <div>
                   <p className="vl-record-label">{assurance.record.label}</p>
-                  <p className="vl-record-meta">AUDIT / EXTRACT · FY 2026</p>
+                  <p className="vl-record-meta">حسابرسی / گزیده · سال مالی ۲۰۲۶</p>
                 </div>
-                <span className="vl-record-stamp">SAMPLE</span>
+                <span className="vl-record-stamp">نمونه</span>
               </div>
 
               <ol className="vl-record-list">
@@ -233,8 +233,8 @@ export function VaultSite() {
 
             <div className="vl-spec-panel">
               <div className="vl-panel-head">
-                <span>Platform / summary</span>
-                <span aria-hidden="true">VAULT / 01</span>
+                <span>پلتفرم / خلاصه</span>
+                <span aria-hidden="true">والت / ۰۱</span>
               </div>
               <dl className="vl-spec-grid">
                 {platform.rows.map((row) => (
@@ -252,7 +252,7 @@ export function VaultSite() {
             <div className="vl-notclaimed">
               <p className="vl-mini-label">
                 <ShieldCheck size={13} aria-hidden="true" />
-                What this page does not claim
+                این صفحه چه چیزی را ادعا نمی‌کند
               </p>
               <ul>
                 {platform.notClaimed.map((item) => (
@@ -325,7 +325,7 @@ export function VaultSite() {
               </dl>
 
               <div className="vl-bring">
-                <p className="vl-mini-label">Bring to the request</p>
+                <p className="vl-mini-label">همراه با درخواست</p>
                 <ul>
                   {disclosure.bring.map((item) => (
                     <li key={item}>
@@ -378,21 +378,21 @@ export function VaultSite() {
             <div className="vl-footer-brand">
               <p className="vl-footer-word">
                 <VaultMark className="vl-footer-mark" />
-                Vaultline <span>Custody</span>
+                Vaultline <span>حضانت</span>
               </p>
               <p>
-                A custody platform that shows its work: named owners,
-                documented controls and an audit record written to be read.
+                یک پلتفرم حضانت که کارش را نشان می‌دهد: مالکان نام‌برده،
+                کنترل‌های مستند و پروندهٔ حسابرسی خوانا.
               </p>
               <a href="#top" className="vl-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="vl-footer-cols">
               <div>
-                <p className="vl-footer-label">Office</p>
+                <p className="vl-footer-label">دفتر</p>
                 <address>
                   {disclosure.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -405,33 +405,32 @@ export function VaultSite() {
               </div>
 
               <div>
-                <p className="vl-footer-label">Explore</p>
+                <p className="vl-footer-label">کاوش</p>
                 {vaultNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
                   </a>
                 ))}
-                <a href="#materials">Details</a>
+                <a href="#materials">جزئیات</a>
               </div>
 
               <div>
-                <p className="vl-footer-label">Template</p>
-                <Link href="/templates/vaultline">Template details</Link>
-                <Link href="/checkout/vaultline">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="vl-footer-label">قالب</p>
+                <Link href="/templates/vaultline">جزئیات قالب</Link>
+                <Link href="/checkout/vaultline">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="vl-footer-bottom">
             <p>
-              © 2026 Vaultline (fictional). A demonstration website: the
-              company, platform and audit record are illustrative. No
-              certification, audit opinion or security guarantee is
-              represented.
+              © ۲۰۲۶ Vaultline (خیالی). یک وب‌سایت نمایشی: شرکت، پلتفرم و پروندهٔ
+              حسابرسی نمایشی‌اند. هیچ گواهی، نظر حسابرسی یا تضمین امنیتی
+              ارائه نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

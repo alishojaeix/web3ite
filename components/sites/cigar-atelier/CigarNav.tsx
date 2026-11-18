@@ -20,32 +20,32 @@ export function CigarNav() {
   return (
     <header className="ca-nav">
       <div className="ca-wrap ca-nav-bar">
-        <a href="#top" className="ca-brand" aria-label="Cigar Atelier, back to top">
+        <a href="#top" className="ca-brand" aria-label="سیگار آتلیه، بازگشت به بالا">
           <CigarMark className="ca-brand-mark" />
-          <span className="ca-brand-word">Cigar Atelier</span>
-          <span className="ca-brand-sub">Adults 18+</span>
+          <span className="ca-brand-word">سیگار آتلیه</span>
+          <span className="ca-brand-sub">نمایه خانه</span>
         </a>
 
-        <nav aria-label="Primary" className="ca-nav-links">
-          {cigarNav.map((item, idx) => (
+        <nav aria-label="پیمایش اصلی" className="ca-nav-links">
+          {cigarNav.map((item) => (
             <a key={item.href} href={item.href}>
-              <span className="ca-nav-idx" aria-hidden="true">
-                0{idx + 1}
-              </span>
               {item.label}
             </a>
           ))}
         </nav>
 
         <div className="ca-nav-tail">
+          <span className="ca-age-badge" aria-label="فقط برای بزرگسالان بالای ۱۸ سال">
+            18+
+          </span>
           <a href="#contact" className="ca-nav-cta">
-            Read the notice
-            <ArrowUpRight size={13} aria-hidden="true" />
+            مطالعه اطلاعیه
+            <ArrowUpRight size={14} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="ca-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="ca-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -57,7 +57,7 @@ export function CigarNav() {
 
       {open ? (
         <div className="ca-mobile-wrap">
-          <nav id="ca-mobile-nav" aria-label="Mobile navigation" className="ca-mobile-nav">
+          <nav id="ca-mobile-nav" aria-label="پیمایش موبایل" className="ca-mobile-nav">
             {cigarNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -65,11 +65,13 @@ export function CigarNav() {
               </a>
             ))}
             <a href="#contact" className="ca-mobile-cta" onClick={() => setOpen(false)}>
-              Read the notice
+              مطالعه اطلاعیه
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="ca-mobile-note">
-              By appointment only · Fictional house · Adults 18+
+              خانه سیگار برگ خیالی · فقط بزرگسالان بالای ۱۸ سال.
+              <br />
+              بدون فروش، موجودی یا ادعای سلامت.
             </p>
           </nav>
         </div>

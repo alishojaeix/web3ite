@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   const limit = rateLimit(`waitlist:${clientKey(request)}`, 5, 10 * 60 * 1000);
   if (!limit.allowed) {
     return NextResponse.json(
-      { error: "Too many requests. Please try again shortly." },
+      { error: "درخواست‌های بیش از حد. لطفاً کمی بعد دوباره تلاش کنید." },
       { status: 429, headers: { "Retry-After": String(limit.retryAfter) } }
     );
   }
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   try {
     body = (await request.json()) as typeof body;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "بدنهٔ درخواست نامعتبر است." }, { status: 400 });
   }
 
   const email =
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
   const project = typeof body.project === "string" ? body.project.trim() : "";
 
   if (email.length > 180 || !EMAIL.test(email)) {
-    return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+    return NextResponse.json({ error: "یک نشانی ایمیل معتبر وارد کنید." }, { status: 400 });
   }
 
   try {
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "The launch list is read-only on this deployment. Please try again when storage is configured.",
+          "فهرست راه‌اندازی در این استقرار فقط‌خواندنی است. پس از پیکربندی فضای ذخیره‌سازی دوباره تلاش کنید.",
       },
       { status: 503 }
     );

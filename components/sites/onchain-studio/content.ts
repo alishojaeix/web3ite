@@ -6,243 +6,243 @@
  */
 
 export const onchainNav = [
-  { label: "Protocols", href: "#showcase" },
-  { label: "Studio", href: "#story" },
-  { label: "Notes", href: "#materials" },
-  { label: "Contact", href: "#contact" },
+  { label: "پروتکل‌ها", href: "#showcase" },
+  { label: "استودیو", href: "#story" },
+  { label: "یادداشت‌ها", href: "#materials" },
+  { label: "تماس", href: "#contact" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Onchain Studio / Product engineering",
-  headline: "Onchain,",
-  headlineAccent: "made legible.",
+  eyebrow: "آن‌چین استودیو / مهندسی محصول",
+  headline: "روی‌زنجیر،",
+  headlineAccent: "به‌روشنی",
   intro:
-    "A product studio for teams building on open networks. Clear interfaces, honest constraints and work that can be audited.",
-  status: "Working file · 2026",
-  note: "Sample studio concept · fictional projects and notes",
-  caption: ["Ledger 01 — blocks in sequence", "Illustrative drawing · not chain data"],
-  footNote: "Product engineering · Open networks · Auditable work",
+    "یک استودیوی محصول برای تیم‌هایی که روی شبکه‌های باز می‌سازند. رابط‌های روشن، محدودیت‌های صادقانه و کارهایی که می‌توان حسابرسی کرد.",
+  status: "فایلِ کاری · ۲۰۲۶",
+  note: "مفهوم استودیوی نمونه · پروژه‌ها و یادداشت‌های خیالی",
+  caption: ["دفترکل ۰۱ — بلاک‌ها در توالی", "طراحی نمایشی · نه دادهٔ زنجیره"],
+  footNote: "مهندسی محصول · شبکه‌های باز · کارِ قابل‌حسابرسی",
 } as const;
 
 export const heroMeta = [
-  { label: "Focus", value: "Products" },
-  { label: "Method", value: "Documented" },
-  { label: "Work", value: "Auditable" },
+  { label: "تمرکز", value: "محصول" },
+  { label: "روش", value: "مستند" },
+  { label: "کار", value: "قابل‌حسابرسی" },
 ] as const;
 
 export const strip = [
-  "Wallet flows",
-  "Protocol mechanics",
-  "Interface testing",
-  "Working notes",
-  "Public process",
-  "No speculation",
+  "جریان‌های کیف‌پول",
+  "مکانیکِ پروتکل",
+  "آزمونِ رابط",
+  "یادداشت‌های کاری",
+  "فرایندِ عمومی",
+  "بدون گمانه‌زنی",
 ] as const;
 
 export const protocols = {
-  label: "02 / Protocols",
-  title: "Products, not narratives.",
+  label: "۰۲ / پروتکل‌ها",
+  title: "محصول، نه روایت",
   intro:
-    "Case studies describe the problem, the interface and the trade-offs. Mechanics are documented when they exist — in language a user can follow.",
-  note: "Sample capability list. Nothing here represents a client engagement, audit or production system.",
+    "مطالعات موردی مسئله، رابط و مصالحه‌ها را توصیف می‌کنند. مکانیک‌ها، هرگاه وجود دارند، مستند می‌شوند — به زبانی که کاربر بتواند دنبال کند.",
+  note: "فهرست توانمندی نمونه. هیچ‌چیز در اینجا نمایندهٔ مشارکت با مشتری، حسابرسی یا سامانهٔ تولیدی نیست.",
   items: [
     {
-      index: "01",
-      title: "Interfaces",
-      body: "Wallet flows that explain themselves before a signature is requested. State is shown first; the button comes second.",
-      detail: "Wallet flows · State-first",
+      index: "۰۱",
+      title: "رابط‌ها",
+      body: "جریان‌های کیف‌پولی که پیش از درخواستِ امضا، خود را توضیح می‌دهند. وضعیت نخست نشان داده می‌شود؛ دکمه در مرحلهٔ دوم می‌آید.",
+      detail: "جریان کیف‌پول · وضعیت‌محور",
     },
     {
-      index: "02",
-      title: "Protocol design",
-      body: "Mechanics written down while they are being designed, not after launch. Constraints sit beside the promise.",
-      detail: "Mechanics · Documented",
+      index: "۰۲",
+      title: "طراحی پروتکل",
+      body: "مکانیک‌ها در همان حال طراحی نوشته می‌شوند، نه پس از عرضه. محدودیت‌ها در کنار وعده می‌نشینند.",
+      detail: "مکانیک‌ها · مستند",
     },
     {
-      index: "03",
-      title: "Testing",
-      body: "Every interface is tested against real state, not a happy-path mock. Edge cases are part of the design file.",
-      detail: "Real state · Edge cases",
+      index: "۰۳",
+      title: "آزمون",
+      body: "هر رابط در برابر وضعیتِ واقعی آزمایش می‌شود، نه ماکِ مسیرِ خوش‌بینانه. حالت‌های لبه بخشی از فایلِ طراحی‌اند.",
+      detail: "وضعیتِ واقعی · حالت‌های لبه",
     },
     {
-      index: "04",
-      title: "Notes",
-      body: "A public working file on patterns, flows and the unglamorous edges of onchain product design.",
-      detail: "Public · Working file",
+      index: "۰۴",
+      title: "یادداشت‌ها",
+      body: "یک فایلِ کاریِ عمومی دربارهٔ الگوها، جریان‌ها و لبه‌های بی‌زرق‌وبرقِ طراحیِ محصولِ روی‌زنجیر.",
+      detail: "عمومی · فایلِ کاری",
     },
   ],
   quote: {
-    text: "If the interface cannot explain it, it is not finished.",
-    note: "Studio principle · sample copy",
+    text: "اگر رابط نتواند توضیح دهد، کار تمام نشده است.",
+    note: "اصول استودیو · متن نمونه",
   },
 } as const;
 
 export const work = {
-  label: "Selected work · illustrative",
-  note: "Fictional projects included to demonstrate the case-study layout. No client, metric or production outcome is represented.",
+  label: "کارهای برگزیده · نمایشی",
+  note: "پروژه‌های خیالی برای نمایش چیدمان مطالعهٔ موردی. هیچ مشتری، شاخص یا نتیجهٔ تولیدی نمایش داده نمی‌شود.",
   projects: [
     {
-      index: "01",
+      index: "۰۱",
       name: "Ledgerline",
-      kind: "Custody interface",
+      kind: "رابط حضانت",
       problem:
-        "A custody tool asked users to approve transfers without showing which policy would be applied.",
+        "ابزاری برای حضانت از کاربران می‌خواست انتقال‌ها را تأیید کنند، بدون نشان‌دادن اینکه چه سیاستی اعمال خواهد شد.",
       interface:
-        "A review step that names the policy, the owner and the exact change before anything is signed.",
+        "گامی برای بازبینی که سیاست، مالک و تغییرِ دقیق را پیش از هر امضا نام می‌برد.",
       tradeoff:
-        "One extra screen in the flow, in exchange for a decision a reviewer can defend.",
-      tags: ["Wallet flow", "Policy review"],
+        "یک صفحهٔ اضافه در جریان، در ازای تصمیمی که یک بازبین بتواند از آن دفاع کند.",
+      tags: ["جریان کیف‌پول", "بازبینی سیاست"],
     },
     {
-      index: "02",
-      name: "Quorum Notes",
-      kind: "Governance client",
+      index: "۰۲",
+      name: "کورام نوتس",
+      kind: "مشتری حاکمیت",
       problem:
-        "Delegates were reading raw proposal data and missing the practical effect of a vote.",
+        "نمایندگان دادهٔ خامِ پیشنهادها را می‌خواندند و اثرِ عملی یک رأی را از دست می‌دادند.",
       interface:
-        "A plain-language summary layer: what changes, who is affected and when the change takes effect.",
+        "لایه‌ای از خلاصه‌های به زبان ساده: چه چیزی تغییر می‌کند، چه کسی اثر می‌بیند و تغییر کی مؤثر می‌شود.",
       tradeoff:
-        "Summaries are editorial work, so the client labels every one as sourced or incomplete.",
-      tags: ["Proposal reader", "Editorial layer"],
+        "خلاصه‌ها کارِ تحریریه‌اند، پس مشتری هر یک را دارای منبع یا ناقص برچسب می‌زند.",
+      tags: ["خوانندهٔ پیشنهاد", "لایهٔ تحریریه"],
     },
     {
-      index: "03",
+      index: "۰۳",
       name: "Field",
-      kind: "Protocol explorer",
+      kind: "کاوشگر پروتکل",
       problem:
-        "A test network explorer exposed every event at once, with no way to follow one transaction.",
+        "کاوشگر یک شبکهٔ آزمایشی همهٔ رویدادها را یک‌جا آشکار می‌کرد و راهی برای دنبال‌کردن یک تراکنش نبود.",
       interface:
-        "A single trace view with named stages, clear failures and a copyable state snapshot.",
+        "یک نمای ردیابیِ یگانه با مرحله‌های نام‌برده، شکست‌های روشن و یک عکسِ وضعیتِ قابل‌کپی.",
       tradeoff:
-        "Fewer charts on the first screen, and a faster route to the question people actually arrived with.",
-      tags: ["Trace view", "Error states"],
+        "نمودارهای کمتر در صفحهٔ نخست، و راهی سریع‌تر به پرسشی که مردم واقعاً با آن آمده بودند.",
+      tags: ["نمای ردیابی", "حالت‌های خطا"],
     },
   ],
 } as const;
 
 export const studio = {
-  label: "01 / The studio",
-  title: "Onchain, made legible.",
+  label: "۰۱ / استودیو",
+  title: "روی‌زنجیر، به‌روشنی",
   intro:
-    "Design and protocol engineering sit together. The work is technical by default, written in public where it can be, and tested against reality rather than a demo.",
+    "طراحی و مهندسی پروتکل در کنار هم می‌نشینند. کار به‌طور پیش‌فرض فنی است، هر جا که می‌توان عمومی نوشته می‌شود و در برابر واقعیت آزمایش می‌شود نه یک نمایش.",
   principles: [
     {
-      title: "One room",
-      body: "Interface design and protocol mechanics are worked on together. Hand-offs are where the explanation usually gets lost.",
+      title: "یک اتاق",
+      body: "طراحی رابط و مکانیکِ پروتکل با هم کار می‌شوند. تحویل‌های واسط، جایی است که توضیح معمولاً گم می‌شود.",
     },
     {
-      title: "Test the edges",
-      body: "Empty wallets, rejected signatures, pending state and failed reads are designed before the success screen.",
+      title: "لبه‌ها را آزمایش کنید",
+      body: "کیف‌پول‌های خالی، امضاهای ردشده، وضعیتِ در انتظار و خواندن‌های ناموفق، پیش از صفحهٔ موفقیت طراحی می‌شوند.",
     },
     {
-      title: "Write it down",
-      body: "Decisions live in a working file: what changed, why, and what the interface still cannot promise.",
+      title: "نوشتن، بخشی از کار است",
+      body: "تصمیم‌ها در یک فایلِ کاری زندگی می‌کنند: چه چیزی تغییر کرد، چرا، و رابط هنوز چه چیزی را نمی‌تواند وعده دهد.",
     },
   ],
   method: {
-    label: "A working method",
+    label: "یک روشِ کاری",
     steps: [
-      { step: "01", title: "Brief", body: "The decision the product has to support." },
-      { step: "02", title: "Map", body: "States, actors and the failure paths between them." },
-      { step: "03", title: "Build", body: "Interface and mechanics in the same iteration." },
-      { step: "04", title: "Publish", body: "Notes, limits and a readable record of the work." },
+      { step: "۰۱", title: "بریف", body: "تصمیمی که محصول باید پشتیبانی کند." },
+      { step: "۰۲", title: "نگاشت", body: "وضعیت‌ها، کنشگران و مسیرهای شکست میان آن‌ها." },
+      { step: "۰۳", title: "ساخت", body: "رابط و مکانیک در همان تکرار." },
+      { step: "۰۴", title: "انتشار", body: "یادداشت‌ها، محدودیت‌ها و سابقه‌ای خوانا از کار." },
     ],
   },
-  note: "Sample studio story. The studio, method and projects are fictional.",
+  note: "روایت استودیوی نمونه. استودیو، روش و پروژه‌ها خیالی‌اند.",
 } as const;
 
 export const notes = {
-  label: "03 / Notes",
-  title: "A public working file.",
+  label: "۰۳ / یادداشت‌ها",
+  title: "یک فایلِ کاریِ عمومی",
   intro:
-    "Short notes on interface patterns, wallet flows and the unglamorous edges of onchain product design. Written to be useful before they are polished.",
-  note: "Sample notes for layout only. No real article, author or publication is represented.",
+    "یادداشت‌های کوتاه دربارهٔ الگوهای رابط، جریان‌های کیف‌پول و لبه‌های بی‌زرق‌وبرقِ طراحیِ محصولِ روی‌زنجیر. نوشته‌شده تا پیش از صیقل‌خوردن، سودمند باشند.",
+  note: "یادداشت‌های نمونه، تنها برای چیدمان. هیچ مقاله، نویسنده یا نشریه‌ای واقعی نمایش داده نمی‌شود.",
   items: [
     {
-      date: "2026 · 05",
-      tag: "Interface",
-      title: "The signature is not the flow",
+      date: "۲۰۲۶ · ۰۵",
+      tag: "رابط",
+      title: "امضا، همان جریان نیست",
       excerpt:
-        "A wallet prompt is the middle of a flow, not the end of one. If the review starts at the signature, the user has already lost the context they need.",
-      read: "4 min",
+        "فراخوانِ کیف‌پول، میانهٔ یک جریان است نه پایان آن. اگر بازبینی از امضا آغاز شود، کاربر زمینه‌ای را که به آن نیاز دارد از دست داده است.",
+      read: "۴ دقیقه",
     },
     {
-      date: "2026 · 04",
-      tag: "State",
-      title: "Design the pending state first",
+      date: "۲۰۲۶ · ۰۴",
+      tag: "وضعیت",
+      title: "نخست، وضعیتِ در انتظار را طراحی کنید",
       excerpt:
-        "Pending is not a spinner. It is a question: what is happening, who can act, and what happens if nothing arrives? The answer belongs on the screen.",
-      read: "5 min",
+        "در انتظار، یک اسپینر نیست. یک پرسش است: چه اتفاقی می‌افتد، چه کسی می‌تواند اقدام کند و اگر هیچ‌چیز نرسد چه می‌شود؟ پاسخ به صفحه تعلق دارد.",
+      read: "۵ دقیقه",
     },
     {
-      date: "2026 · 03",
-      tag: "Protocol",
-      title: "Mechanics deserve a sentence",
+      date: "۲۰۲۶ · ۰۳",
+      tag: "پروتکل",
+      title: "مکانیک‌ها شایستهٔ یک جمله‌اند",
       excerpt:
-        "A parameter table is not an explanation. One sentence about who is affected and when is worth more than another diagram of the system.",
-      read: "6 min",
+        "یک جدول پارامتر، توضیح نیست. یک جمله دربارهٔ اینکه چه کسی اثر می‌بیند و کی، ارزشمندتر از یک نمودارِ دیگر از سامانه است.",
+      read: "۶ دقیقه",
     },
   ],
 } as const;
 
 export const details = {
-  label: "04 / Details",
-  title: "The studio.",
+  label: "۰۴ / جزئیات",
+  title: "استودیو",
   intro:
-    "A small product studio, described the way we would describe a project: focus, method and the boundaries of the work.",
+    "یک استودیوی محصولِ کوچک، آن‌گونه که یک پروژه را توصیف می‌کنیم: تمرکز، روش و مرزهای کار.",
   facts: [
-    { label: "Focus", value: "Onchain products", note: "Interfaces + mechanics" },
-    { label: "Team", value: "Design + protocol", note: "One room" },
-    { label: "Engagement", value: "Project", note: "Scoped" },
-    { label: "Working file", value: "Public", note: "Where possible" },
+    { label: "تمرکز", value: "محصولِ روی‌زنجیر", note: "رابط + مکانیک" },
+    { label: "تیم", value: "طراحی + پروتکل", note: "یک اتاق" },
+    { label: "مشارکت", value: "پروژه", note: "دارای دامنه" },
+    { label: "فایلِ کاری", value: "عمومی", note: "هر جا که ممکن باشد" },
   ],
   disciplines: [
-    "Interface design",
-    "Protocol research",
-    "Front-end engineering",
-    "Technical writing",
+    "طراحی رابط",
+    "پژوهش پروتکل",
+    "مهندسی فرانت‌اند",
+    "نوشتن فنی",
   ],
   notClaimed: [
-    "No token is offered or promoted",
-    "No financial product or return is represented",
-    "No client, audit or production system is claimed",
+    "هیچ توکنی عرضه یا ترویج نمی‌شود",
+    "هیچ محصول مالی یا بازدهی نمایش داده نمی‌شود",
+    "هیچ مشتری، حسابرسی یا سامانهٔ تولیدی ادعا نمی‌شود",
   ],
   notClaimedNote:
-    "This is a demonstration website. A real studio page would name its team, clients and scope — or leave the space empty.",
-  note: "Illustrative studio details. All values are qualitative on purpose.",
+    "این یک وب‌سایت نمایشی است. صفحهٔ یک استودیوی واقعی تیم، مشتریان و دامنهٔ خود را نام می‌برد — یا فضا را خالی می‌گذارد.",
+  note: "جزئیات استودیو به‌صورت نمایشی. همهٔ مقادیر عمداً کیفی‌اند.",
 } as const;
 
 export const contact = {
-  label: "05 / Contact",
-  title: "Make the next one legible.",
+  label: "۰۵ / تماس",
+  title: "بعدی را به‌روشنی بسازید",
   intro:
-    "A short brief and a link to the product is enough. We reply with a scope, a first question and a point of view — not a deck.",
+    "یک بریف کوتاه و یک پیوند به محصول کافی است. با دامنه، پرسشی نخست و یک نقطه‌نظر پاسخ می‌دهیم — نه با یک ارائه.",
   facts: [
-    { label: "Reply", value: "3 days" },
-    { label: "Format", value: "Brief" },
-    { label: "Scope", value: "Project" },
-    { label: "Deck", value: "None" },
+    { label: "پاسخ", value: "۳ روز" },
+    { label: "قالب", value: "بریف" },
+    { label: "دامنه", value: "پروژه" },
+    { label: "ارائه", value: "ندارد" },
   ],
   bring: [
-    "The product and the network it runs on",
-    "The decision your interface has to support",
-    "The constraint you cannot move",
+    "محصول و شبکه‌ای که روی آن اجرا می‌شود",
+    "تصمیمی که رابط شما باید پشتیبانی کند",
+    "محدودیتی که نمی‌توانید جابه‌جا کنید",
   ],
-  quote: "The best onchain interface is the one that explains the chain.",
-  quoteNote: "Studio principle · sample copy",
+  quote: "بهترین رابطِ روی‌زنجیر، همان است که زنجیره را توضیح می‌دهد.",
+  quoteNote: "اصول استودیو · متن نمونه",
   email: "hello@onchain-studio.demo",
   phone: "+44 20 7946 0006",
-  address: ["Onchain Studio", "12 Ledger Lane", "London E2 7JY"],
-  hours: "Monday – Friday · 10:00 – 18:00",
-  note: "Fictional studio. Address, telephone number and details are illustrative.",
+  address: ["آن‌چین استودیو", "کوچهٔ لجر ۱۲", "لندن E2 7JY"],
+  hours: "دوشنبه تا جمعه · ۱۰:۰۰ – ۱۸:۰۰",
+  note: "استودیوی خیالی. نشانی، شمارهٔ تلفن و جزئیات نمایشی‌اند.",
   form: {
-    title: "Project brief",
-    sub: "A link and a decision, not a sales call",
-    types: ["Interface review", "Protocol design", "Product build", "Something else"],
-    note: "Sample brief form. Nothing is sent to a real studio, no project is accepted and no financial product is offered.",
+    title: "بریف پروژه",
+    sub: "یک پیوند و یک تصمیم، نه یک تماس فروش",
+    types: ["بازبینی رابط", "طراحی پروتکل", "ساخت محصول", "چیز دیگر"],
+    note: "فرم بریف نمونه. چیزی به استودیوی واقعی فرستاده نمی‌شود، پروژه‌ای پذیرفته نمی‌شود و محصول مالی عرضه نمی‌شود.",
     confirmation:
-      "Your brief has been recorded for this demonstration. No message is sent, no project is accepted and no financial product is offered.",
+      "بریف شما برای این نمایش ثبت شد. پیامی فرستاده نمی‌شود، پروژه‌ای پذیرفته نمی‌شود و محصول مالی عرضه نمی‌شود.",
     fallback:
-      "The demo inbox is unavailable right now. Please use the email address on this page.",
+      "صندوق ورودی نمایشی اکنون در دسترس نیست. لطفاً از نشانی ایمیل روی این صفحه استفاده کنید.",
   },
 } as const;

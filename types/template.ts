@@ -125,19 +125,19 @@ export type Template = {
 };
 
 export const CATEGORY_LABELS: Record<TemplateCategory, string> = {
-  cafe: "Cafe & Coffee",
-  restaurant: "Restaurants",
-  ai: "AI & Technology",
-  security: "Security & Web3",
-  automotive: "Automotive",
-  tobacco: "Tobacco & Cigars",
+  cafe: "کافه و قهوه",
+  restaurant: "رستوران",
+  ai: "هوش مصنوعی و فناوری",
+  security: "امنیت و وب۳",
+  automotive: "خودرو",
+  tobacco: "توتون و سیگار برگ",
 };
 
 export const CATEGORY_DESCRIPTIONS: Record<TemplateCategory, string> = {
-  cafe: "Editorial coffee rooms, roasteries and neighbourhood counters.",
-  restaurant: "Fine dining, open-fire kitchens and quiet hospitality.",
-  ai: "Technical product stories with a sculptural point of view.",
-  security: "Infrastructure, custody and onchain products without the noise.",
-  automotive: "Showroom-ready launches for marques and mobility studios.",
-  tobacco: "Age-gated, regulation-aware presentations for adult products.",
+  cafe: "کافه‌های تحریریه‌ای، رستری‌ها و پیشخوان‌های محله.",
+  restaurant: "غذاخوری‌های شیک، آشپزخانه‌های آتش‌باز و مهمان‌نوازی آرام.",
+  ai: "روایت محصولات فنی با نگاهی مجسمه‌وار.",
+  security: "زیرساخت، امانت‌داری و محصولات آن‌چین، بدون هیاهو.",
+  automotive: "معرفی‌های آمادهٔ نمایشگاه برای برندها و استودیوهای تحرک.",
+  tobacco: "معرفی‌های ویژهٔ بزرگسالان با در نظر گرفتن مقررات محصولات توتون.",
 };

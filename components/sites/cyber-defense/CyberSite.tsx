@@ -33,17 +33,17 @@ import {
 
 export function CyberSite() {
   return (
-    <div className="cd-site" id="top">
+    <div className="cd-site" id="top" dir="rtl">
       <a className="cd-skip" href="#cd-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <CyberNav />
 
-      <main id="cd-main">
+      <main id="cd-main" lang="fa" dir="rtl">
         <section className="cd-hero" aria-labelledby="cd-hero-title">
           <div className="cd-wrap cd-hero-top">
-            <p>5 Watchtower Square · London E1</p>
+            <p>میدان واچ‌تاور ۵ · لندن E1</p>
             <p className="cd-status">
               <span className="cd-status-dot" aria-hidden="true" />
               {hero.status}
@@ -67,11 +67,11 @@ export function CyberSite() {
 
               <div className="cd-actions">
                 <a className="cd-btn cd-btn--solid" href="#showcase">
-                  See the response model
+                  مدل پاسخ را ببینید
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="cd-btn cd-btn--line" href="#contact">
-                  Request a brief
+                  درخواست بریف
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -102,7 +102,7 @@ export function CyberSite() {
 
           <div className="cd-wrap cd-hero-foot">
             <a className="cd-scroll-cue" href="#showcase">
-              See the response model
+              مدل پاسخ را ببینید
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -157,7 +157,7 @@ export function CyberSite() {
                 </div>
                 <span className="cd-board-live" aria-hidden="true">
                   <span className="cd-board-dot" />
-                  Sample
+                  نمونه
                 </span>
               </div>
               <ul className="cd-board-list">
@@ -209,7 +209,7 @@ export function CyberSite() {
               <p className="cd-note-line">{response.note}</p>
             </div>
 
-            <aside className="cd-clock" aria-label="Illustrative response clock">
+            <aside className="cd-clock" aria-label="ساعت پاسخ نمایشی">
               <div className="cd-clock-head">
                 <div>
                   <p className="cd-clock-title">{response.clock.title}</p>
@@ -301,8 +301,8 @@ export function CyberSite() {
 
                 <div className="cd-spec-panel">
                   <div className="cd-panel-head">
-                    <span>Practice / summary</span>
-                    <span aria-hidden="true">CD / 01</span>
+                    <span>تمرین / خلاصه</span>
+                    <span aria-hidden="true">CD / ۰۱</span>
                   </div>
                   <dl className="cd-spec-rows">
                     {practice.rows.map((row) => (
@@ -321,7 +321,7 @@ export function CyberSite() {
               <div className="cd-notclaimed">
                 <p className="cd-mini-label">
                   <ShieldCheck size={13} aria-hidden="true" />
-                  What this page does not claim
+                  این صفحه چه چیزی را ادعا نمی‌کند
                 </p>
                 <ul>
                   {practice.notClaimed.map((item) => (
@@ -360,7 +360,7 @@ export function CyberSite() {
               </dl>
 
               <div className="cd-bring">
-                <p className="cd-mini-label">Bring to the brief</p>
+                <p className="cd-mini-label">همراه با بریف</p>
                 <ul>
                   {contact.bring.map((item) => (
                     <li key={item}>
@@ -413,21 +413,20 @@ export function CyberSite() {
             <div className="cd-footer-brand">
               <p className="cd-footer-word">
                 <ShieldMark className="cd-footer-mark" />
-                Cyber Defense <span>Response</span>
+                سایبر دیفنس <span>پاسخ</span>
               </p>
               <p>
-                Prepared before impact: a calm response model, rehearsed
-                runbooks and a written record of what happened.
+                آماده پیش از ضربه: یک مدل پاسخِ آرام، رویه‌های تمرین‌شده و سابقه‌ای مکتوب از آنچه رخ داد.
               </p>
               <a href="#top" className="cd-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="cd-footer-cols">
               <div>
-                <p className="cd-footer-label">Response desk</p>
+                <p className="cd-footer-label">میز پاسخ</p>
                 <address>
                   {contact.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -440,7 +439,7 @@ export function CyberSite() {
               </div>
 
               <div>
-                <p className="cd-footer-label">Explore</p>
+                <p className="cd-footer-label">کاوش</p>
                 {cyberNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -449,22 +448,20 @@ export function CyberSite() {
               </div>
 
               <div>
-                <p className="cd-footer-label">Template</p>
-                <Link href="/templates/cyber-defense">Template details</Link>
-                <Link href="/checkout/cyber-defense">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="cd-footer-label">قالب</p>
+                <Link href="/templates/cyber-defense">جزئیات قالب</Link>
+                <Link href="/checkout/cyber-defense">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="cd-footer-bottom">
             <p>
-              © 2026 Cyber Defense (fictional). A demonstration website: the
-              practice, model and records are illustrative. No live
-              monitoring, certification or security guarantee is represented.
+              © ۲۰۲۶ سایبر دیفنس (خیالی). یک وب‌سایت نمایشی: تمرین، مدل و سوابق نمایشی‌اند. هیچ پایش زنده، گواهی یا تضمین امنیتی نمایش داده نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

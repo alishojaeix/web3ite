@@ -20,15 +20,15 @@ export function QuantumNav() {
   return (
     <header className="qs-nav">
       <div className="qs-wrap qs-nav-bar">
-        <a href="#top" className="qs-brand" aria-label="Quantum Systems, back to top">
+        <a href="#top" className="qs-brand" aria-label="کوانتوم سیستمز، بازگشت به بالا">
           <QMark className="qs-brand-mark" />
           <span className="qs-brand-word">
-            Quantum <span>Systems</span>
+            کوانتوم <span>سیستمز</span>
           </span>
-          <span className="qs-brand-sub">Precision compute</span>
+          <span className="qs-brand-sub">پردازش دقیق</span>
         </a>
 
-        <nav aria-label="Primary" className="qs-nav-links">
+        <nav aria-label="پیمایش اصلی" className="qs-nav-links">
           {qsNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -38,13 +38,13 @@ export function QuantumNav() {
 
         <div className="qs-nav-tail">
           <a href="#contact" className="qs-nav-cta">
-            Technical brief
+            شرح فنی
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="qs-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="qs-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -56,7 +56,7 @@ export function QuantumNav() {
 
       {open ? (
         <div className="qs-mobile-wrap">
-          <nav id="qs-mobile-nav" aria-label="Mobile navigation" className="qs-mobile-nav">
+          <nav id="qs-mobile-nav" aria-label="پیمایش موبایل" className="qs-mobile-nav">
             {qsNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -64,13 +64,13 @@ export function QuantumNav() {
               </a>
             ))}
             <a href="#contact" className="qs-mobile-cta" onClick={() => setOpen(false)}>
-              Request the technical brief
+              درخواست شرح فنی
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="qs-mobile-note">
               1 Meridian Works, London E2
               <br />
-              Precision compute · Monday to Friday
+              پردازش دقیق · دوشنبه تا جمعه
             </p>
           </nav>
         </div>

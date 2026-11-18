@@ -42,18 +42,18 @@ export function SiteContactForm({
         setStatus("error");
         setMessage(
           payload.error ??
-            "The request could not be stored. Please try again in a moment."
+            "امکان ثبت درخواست وجود ندارد. لطفاً کمی بعد دوباره تلاش کنید."
         );
         return;
       }
       form.reset();
       setStatus("success");
       setMessage(
-        "Request received. This is a demonstration inbox — your message is stored on this server and no email is sent."
+        "درخواست دریافت شد. این صندوق پیام نمایشی است؛ پیام شما روی همین سرور ذخیره می‌شود و ایمیلی ارسال نخواهد شد."
       );
     } catch {
       setStatus("error");
-      setMessage("The request could not be sent. Check your connection and try again.");
+      setMessage("ارسال درخواست ممکن نشد. اتصال اینترنت را بررسی و دوباره تلاش کنید.");
     }
   }
 
@@ -61,43 +61,43 @@ export function SiteContactForm({
     <form className="site-form" onSubmit={onSubmit}>
       <div className="site-form-grid">
         <label className="site-field">
-          <span>Name</span>
+          <span>نام</span>
           <input
             name="name"
             type="text"
             autoComplete="name"
             required
             maxLength={120}
-            placeholder="Your name"
+            placeholder="نام شما"
           />
         </label>
         <label className="site-field">
-          <span>Email</span>
+          <span>ایمیل</span>
           <input
             name="email"
             type="email"
             autoComplete="email"
             required
             maxLength={180}
-            placeholder="you@example.com"
+            placeholder="name@example.com" dir="ltr"
           />
         </label>
       </div>
       <label className="site-field">
-        <span>Message</span>
+        <span>پیام</span>
         <textarea
           name="message"
           required
           maxLength={2000}
           rows={4}
-          placeholder="Tell us what you need."
+          placeholder="نیازتان را برای ما بنویسید."
         />
       </label>
 
       {ageRestricted ? (
         <label className="site-check">
           <input type="checkbox" name="ageConfirmed" required />
-          <span>I confirm I am 18 or older.</span>
+          <span>تأیید می‌کنم که ۱۸ سال یا بیشتر دارم.</span>
         </label>
       ) : null}
 
@@ -107,10 +107,10 @@ export function SiteContactForm({
           className="site-btn site-btn--primary"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending…" : ctaLabel}
+          {status === "sending" ? "در حال ارسال…" : ctaLabel}
         </button>
         <p className="site-form-note">
-          Demo form · no email is sent. Do not submit real personal details.
+          فرم نمایشی است و ایمیلی ارسال نمی‌شود. اطلاعات شخصی واقعی وارد نکنید.
         </p>
       </div>
 

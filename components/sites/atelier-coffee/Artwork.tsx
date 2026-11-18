@@ -12,11 +12,8 @@ export function PourOverArt() {
       role="img"
       aria-labelledby="at-pour-title at-pour-desc"
     >
-      <title id="at-pour-title">A glass pour-over carafe and a ceramic cup</title>
-      <desc id="at-pour-desc">
-        An illustration of a pour-over dripper resting on a glass carafe, with a
-        cup to the right, steam rising, and a branch in a small vase.
-      </desc>
+      <title id="at-pour-title">یک ظرف شیشه‌ای دَم‌آوری و یک فنجان سرامیکی</title>
+      <desc id="at-pour-desc"> تصویری از یک فیلتر دَم‌آوری روی ظرف شیشه‌ای، با فنجانی در سمت راست، بخار برخاسته و شاخه‌ای در گلدان کوچک. </desc>
       <defs>
         <linearGradient id="at-pour-bg" x1="0" y1="0" x2="0.7" y2="1">
           <stop offset="0" stopColor="#e9dfcd" />
@@ -161,7 +158,7 @@ export function PourOverArt() {
 export function CounterArt() {
   return (
     <svg viewBox="0 0 560 400" role="img" aria-labelledby="at-counter-title">
-      <title id="at-counter-title">Illustration of the coffee counter with stools and a pendant lamp</title>
+      <title id="at-counter-title">تصویر پیشخوان قهوه با صندلی‌های کوتاه و آویز نوری</title>
       <defs>
         <linearGradient id="at-counter-bg" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#e7ddcc" />
@@ -221,7 +218,7 @@ export function CounterArt() {
 export function WindowArt() {
   return (
     <svg viewBox="0 0 560 400" role="img" aria-labelledby="at-window-title">
-      <title id="at-window-title">Illustration of a tall north window casting light onto a bench</title>
+      <title id="at-window-title">تصویر پنجرهٔ شمالی بلند که نور را روی نیمکتی می‌تاباند</title>
       <defs>
         <linearGradient id="at-window-bg" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#e9dfce" />
@@ -270,7 +267,7 @@ export function WindowArt() {
 export function ShelfArt() {
   return (
     <svg viewBox="0 0 560 400" role="img" aria-labelledby="at-shelf-title">
-      <title id="at-shelf-title">Illustration of the coffee shelf with bags, jars and a grinder</title>
+      <title id="at-shelf-title">تصویر قفسهٔ قهوه با کیسه‌ها، شیشه‌ها و آسیاب</title>
       <defs>
         <linearGradient id="at-shelf-bg" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#e5dac8" />
@@ -343,11 +340,8 @@ export function MapArt() {
       role="img"
       aria-labelledby="at-map-title at-map-desc"
     >
-      <title id="at-map-title">Illustrative map of Foundry Lane</title>
-      <desc id="at-map-desc">
-        A hand-drawn map with Foundry Lane marked at the corner of Foundry
-        Square. The map is illustrative and not to scale.
-      </desc>
+      <title id="at-map-title">نقشهٔ نمایشی خیابان فاندری</title>
+      <desc id="at-map-desc"> نقشه‌ای دستی که خیابان فاندری در گوشهٔ میدان فاندری علامت خورده است. نقشه نمایشی است و مقیاس ندارد. </desc>
       <rect width="600" height="360" fill="#e9dfce" />
       <path d="M420 0 C400 70 470 118 440 180 C416 230 470 292 452 360 L600 360 V0Z" fill="#c2cdc1" />
       <path d="M0 268 C90 244 172 288 254 270 C346 250 394 286 470 268" fill="none" stroke="#f5edde" strokeWidth="26" />
@@ -393,11 +387,11 @@ export function MapArt() {
       </g>
 
       <g fontFamily="var(--font-body), sans-serif" fill="#6b5a45">
-        <text x="200" y="200" fontSize="12" letterSpacing="1.4">ATELIER COFFEE</text>
-        <text x="200" y="216" fontSize="10" letterSpacing="1">14 FOUNDRY LANE</text>
-        <text x="22" y="120" fontSize="10" letterSpacing="1.6" opacity="0.75">FOUNDRY SQUARE</text>
-        <text x="396" y="110" fontSize="10" letterSpacing="1.4" opacity="0.7">REGENT CANAL</text>
-        <text x="22" y="236" fontSize="9" letterSpacing="1.6" opacity="0.6">E2 · LONDON</text>
+        <text x="200" y="200" fontSize="12" letterSpacing="1.4">آتلیه قهوه</text>
+        <text x="200" y="216" fontSize="10" letterSpacing="1">خیابان فاندری ۱۴</text>
+        <text x="22" y="120" fontSize="10" letterSpacing="1.6" opacity="0.75">میدان فاندری</text>
+        <text x="396" y="110" fontSize="10" letterSpacing="1.4" opacity="0.7">کانال رجنت</text>
+        <text x="22" y="236" fontSize="9" letterSpacing="1.6" opacity="0.6">E2 · لندن</text>
       </g>
       <g fill="none" stroke="#7f5435" strokeWidth="2" strokeDasharray="5 7">
         <path d="M182 184 C150 214 142 244 146 268" />

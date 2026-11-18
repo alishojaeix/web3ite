@@ -30,16 +30,16 @@ export function EmberBooking() {
 
     if (!date) {
       setStatus("error");
-      setMessage("Please choose a preferred date.");
+      setMessage("لطفاً تاریخ دلخواه را انتخاب کنید.");
       return;
     }
 
     const partyLabel =
-      booking.partySizes.find((option) => option.value === party)?.label ?? `${party} guests`;
+      booking.partySizes.find((option) => option.value === party)?.label ?? `${party} مهمان`;
     const preferenceLabel =
       booking.preferences.find((option) => option.value === preference)?.label ??
-      "Either is fine";
-    const dateLabel = new Date(`${date}T12:00:00`).toLocaleDateString("en-GB", {
+      "هر دو مناسب است";
+    const dateLabel = new Date(`${date}T12:00:00`).toLocaleDateString("fa-IR", {
       weekday: "long",
       day: "numeric",
       month: "long",
@@ -57,8 +57,8 @@ export function EmberBooking() {
           site: "ember-kitchen",
           name,
           email,
-          message: `Counter request — ${partyLabel}, ${dateLabel}. Seat: ${preferenceLabel}. Notes: ${
-            notes || "none noted"
+          message: `درخواست کانتر — ${partyLabel}، ${dateLabel}. صندلی: ${preferenceLabel}. یادداشت: ${
+            notes || "یادداشتی ثبت نشده"
           }.`,
           ageConfirmed: false,
         }),
@@ -67,7 +67,7 @@ export function EmberBooking() {
 
       if (!response.ok) {
         setStatus("error");
-        setMessage(payload.error ?? "The request could not be stored. Please try again.");
+        setMessage(payload.error ?? "ثبت درخواست ممکن نشد. لطفاً دوباره تلاش کنید.");
         return;
       }
 
@@ -76,7 +76,7 @@ export function EmberBooking() {
       setMessage(booking.confirmation);
     } catch {
       setStatus("error");
-      setMessage("The request could not be sent. Check your connection and try again.");
+      setMessage("ارسال درخواست ممکن نشد. اتصال خود را بررسی و دوباره تلاش کنید.");
     }
   }
 
@@ -85,9 +85,9 @@ export function EmberBooking() {
       <div className="ek-book-copy">
         <p className="ek-eyebrow">{booking.label}</p>
         <h2 id="ek-book-title">
-          Take a seat{" "}
+          کنار آتش{" "}
           <br />
-          <em>by the fire.</em>
+          <em>بنشینید</em>
         </h2>
         <p className="ek-intro">{booking.intro}</p>
 
@@ -95,32 +95,31 @@ export function EmberBooking() {
           <div>
             <dt>
               <Clock size={14} aria-hidden="true" />
-              Service
+              سرویس
             </dt>
             <dd>{booking.sitting}</dd>
           </div>
           <div>
-            <dt>Last orders</dt>
+            <dt>آخرین سفارش</dt>
             <dd>{booking.lastOrders}</dd>
           </div>
           <div>
-            <dt>The room</dt>
-            <dd>24 seats</dd>
+            <dt>اتاق</dt>
+            <dd>۲۴ صندلی</dd>
           </div>
           <div>
-            <dt>The card</dt>
-            <dd>Set each morning</dd>
+            <dt>کارت</dt>
+            <dd>هر صبح نوشته می‌شود</dd>
           </div>
         </dl>
 
         <p className="ek-book-release">
-          Counter seats are released each morning for the same evening. The pass
-          table seats six and can be held for a group; the whole room can be taken
-          on a Monday or Tuesday.
+          صندلی‌های کانتر هر صبح برای همان شب آزاد می‌شوند. میزِ پاس شش نفره است و برای یک گروه
+          قابل رزرو است؛ کل اتاق را می‌توان دوشنبه یا سه‌شنبه گرفت.
         </p>
 
         <div className="ek-book-contact">
-          <p className="ek-mini-label">The kitchen</p>
+          <p className="ek-mini-label">آشپزخانه</p>
           <a href={`mailto:${visit.email}`}>
             <Mail size={14} aria-hidden="true" />
             {visit.email}
@@ -135,13 +134,13 @@ export function EmberBooking() {
       <div className="ek-book-card">
         <form className="ek-form" onSubmit={onSubmit}>
           <div className="ek-form-head">
-            <p className="ek-form-title">Request the counter</p>
-            <p className="ek-form-sub">One request per party · reply within one working day</p>
+            <p className="ek-form-title">درخواست کانتر</p>
+            <p className="ek-form-sub">یک درخواست برای هر گروه · پاسخ در یک روز کاری</p>
           </div>
 
           <div className="ek-form-row">
             <label>
-              <span>Name</span>
+              <span>نام</span>
               <input
                 name="name"
                 type="text"
@@ -149,29 +148,29 @@ export function EmberBooking() {
                 required
                 minLength={2}
                 maxLength={120}
-                placeholder="Your name"
+                placeholder="نام شما"
               />
             </label>
             <label>
-              <span>Email</span>
+              <span>ایمیل</span>
               <input
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
                 maxLength={180}
-                placeholder="you@example.com"
+                placeholder="you@example.com" dir="ltr"
               />
             </label>
           </div>
 
           <div className="ek-form-row">
             <label>
-              <span>Preferred date</span>
+              <span>تاریخ دلخواه</span>
               <input name="date" type="date" required min={minDate} />
             </label>
             <label>
-              <span>Party</span>
+              <span>گروه</span>
               <select name="party" defaultValue="2" required>
                 {booking.partySizes.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -183,7 +182,7 @@ export function EmberBooking() {
           </div>
 
           <label className="ek-field-full">
-            <span>Where would you rather sit?</span>
+            <span>کجا ترجیح می‌دهید بنشینید؟</span>
             <select name="preference" defaultValue="either">
               {booking.preferences.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -194,17 +193,17 @@ export function EmberBooking() {
           </label>
 
           <label className="ek-field-full">
-            <span>Notes for the kitchen</span>
+            <span>یادداشت برای آشپزخانه</span>
             <textarea
               name="notes"
               rows={4}
               maxLength={500}
-              placeholder="Allergies, access needs, celebrations (optional)"
+              placeholder="آلرژی‌ها، نیازهای دسترسی، جشن‌ها (اختیاری)"
             />
           </label>
 
           <button type="submit" className="ek-btn ek-btn--ember" disabled={status === "sending"}>
-            {status === "sending" ? "Sending…" : "Request a seat"}
+            {status === "sending" ? "در حال ارسال…" : "درخواست صندلی"}
             <ArrowUpRight size={15} aria-hidden="true" />
           </button>
 

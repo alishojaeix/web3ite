@@ -81,7 +81,7 @@ export function LedgerStack() {
       className="oc-stack"
       viewBox="0 0 720 740"
       role="img"
-      aria-label="An illustrative sequence of four isometric ledger blocks joined by a dashed spine, drawn in muted green on a dark grid."
+      aria-label="دنبالهٔ نمایشی چهار بلوک دفتری ایزومتریک متصل با ستون فقرات چین‌دار، با سبز ملایم روی شبکه‌ای تیره."
     >
       <defs>
         <radialGradient id="oc-halo" cx="50%" cy="46%" r="52%">
@@ -154,14 +154,14 @@ export function LedgerStack() {
       </g>
 
       <g fontFamily="var(--oc-mono), ui-monospace, monospace" fontSize="9" letterSpacing="1.9">
-        <text x="596" y="228" fill="#b3d2ae">003 / RECORD</text>
-        <text x="596" y="246" fontSize="7.5" fill="#778873">PUBLISHED · SAMPLE</text>
-        <text x="122" y="348" textAnchor="end" fill="#b3d2ae">002 / REVIEW</text>
-        <text x="122" y="366" textAnchor="end" fontSize="7.5" fill="#778873">NAMED OWNER</text>
-        <text x="596" y="468" fill="#b3d2ae">001 / STATE</text>
-        <text x="596" y="486" fontSize="7.5" fill="#778873">EXPLICIT</text>
-        <text x="122" y="588" textAnchor="end" fill="#b3d2ae">000 / GENESIS</text>
-        <text x="122" y="606" textAnchor="end" fontSize="7.5" fill="#778873">OPEN NETWORK</text>
+        <text x="596" y="228" fill="#b3d2ae">۰۰۳ / رکورد</text>
+        <text x="596" y="246" fontSize="7.5" fill="#778873">منتشرشده · نمونه</text>
+        <text x="122" y="348" textAnchor="end" fill="#b3d2ae">۰۰۲ / بازبینی</text>
+        <text x="122" y="366" textAnchor="end" fontSize="7.5" fill="#778873">مالک نام‌برده</text>
+        <text x="596" y="468" fill="#b3d2ae">۰۰۱ / وضعیت</text>
+        <text x="596" y="486" fontSize="7.5" fill="#778873">صریح</text>
+        <text x="122" y="588" textAnchor="end" fill="#b3d2ae">۰۰۰ / پیدایش</text>
+        <text x="122" y="606" textAnchor="end" fontSize="7.5" fill="#778873">شبکهٔ باز</text>
       </g>
 
       <g fill="#b3d2ae">
@@ -180,10 +180,10 @@ export function LedgerStack() {
       </g>
 
       <g fill="#778873" fontFamily="var(--oc-mono), ui-monospace, monospace" fontSize="8" letterSpacing="1.6">
-        <text x="26" y="48">LEDGER / SEQUENCE 004</text>
-        <text x="694" y="48" textAnchor="end">SAMPLE DATA</text>
-        <text x="26" y="704">ONCHAIN STUDIO</text>
-        <text x="694" y="704" textAnchor="end">ILLUSTRATIVE — NOT CHAIN DATA</text>
+        <text x="26" y="48">دفتر / توالی ۰۰۴</text>
+        <text x="694" y="48" textAnchor="end">دادهٔ نمونه</text>
+        <text x="26" y="704">آن‌چین استودیو</text>
+        <text x="694" y="704" textAnchor="end">نمایشی — نه دادهٔ زنجیره</text>
       </g>
 
       <g fill="#b3d2ae">

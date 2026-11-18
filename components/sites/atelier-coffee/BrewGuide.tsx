@@ -78,7 +78,7 @@ export function BrewGuide() {
 
   return (
     <div className="at-brew">
-      <div className="at-brew-tabs" role="tablist" aria-label="Brew recipes">
+      <div className="at-brew-tabs" role="tablist" aria-label="دستورهای دم‌آوری">
         {brewRecipes.map((item, index) => (
           <button
             key={item.id}
@@ -150,19 +150,19 @@ export function BrewGuide() {
                     ) : (
                       <Play size={15} aria-hidden="true" />
                     )}
-                    {running ? "Pause" : done ? "Brew again" : remaining === 0 ? "Brew again" : "Start"}
+                    {running ? "توقف" : done ? "دم‌آوری دوباره" : remaining === 0 ? "دم‌آوری دوباره" : "شروع"}
                   </button>
                   <button
                     type="button"
                     className="at-timer-reset"
                     onClick={reset}
-                    aria-label="Reset timer"
+                    aria-label="بازنشانی زمان‌سنج"
                   >
                     <RotateCcw size={15} aria-hidden="true" />
                   </button>
                 </div>
                 <p className="at-timer-status" aria-live="polite">
-                  {done ? "Cup ready. Pour, taste and adjust." : running ? "Timer running." : ""}
+                  {done ? "فنجان آماده است. بریزید، بچشید و تنظیم کنید." : running ? "زمان‌سنج در حال اجراست." : ""}
                 </p>
               </div>
             ) : null}
@@ -177,8 +177,8 @@ export function BrewGuide() {
             </ol>
 
             <p className="at-brew-note">
-              These are demonstration recipes. Adjust the grind and ratio to your own
-              equipment and water.
+              این دستورها نمایشی‌اند. درجهٔ آسیاب و نسبت را با تجهیزات و آب
+              خودتان تنظیم کنید.
             </p>
           </div>
         );

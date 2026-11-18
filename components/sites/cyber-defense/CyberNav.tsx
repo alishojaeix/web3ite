@@ -20,13 +20,13 @@ export function CyberNav() {
   return (
     <header className="cd-nav">
       <div className="cd-wrap cd-nav-bar">
-        <a href="#top" className="cd-brand" aria-label="Cyber Defense, back to top">
+        <a href="#top" className="cd-brand" aria-label="سایبر دیفنس، بازگشت به بالا">
           <ShieldMark className="cd-brand-mark" />
-          <span className="cd-brand-word">Cyber Defense</span>
-          <span className="cd-brand-sub">Managed response</span>
+          <span className="cd-brand-word">سایبر دیفنس</span>
+          <span className="cd-brand-sub">پاسخ‌گویی مدیریت‌شده</span>
         </a>
 
-        <nav aria-label="Primary" className="cd-nav-links">
+        <nav aria-label="پیمایش اصلی" className="cd-nav-links">
           {cyberNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function CyberNav() {
 
         <div className="cd-nav-tail">
           <a href="#contact" className="cd-nav-cta">
-            Request a brief
+            درخواست شرح نیاز
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="cd-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="cd-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function CyberNav() {
 
       {open ? (
         <div className="cd-mobile-wrap">
-          <nav id="cd-mobile-nav" aria-label="Mobile navigation" className="cd-mobile-nav">
+          <nav id="cd-mobile-nav" aria-label="پیمایش موبایل" className="cd-mobile-nav">
             {cyberNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function CyberNav() {
               </a>
             ))}
             <a href="#contact" className="cd-mobile-cta" onClick={() => setOpen(false)}>
-              Request a brief
+              درخواست شرح نیاز
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="cd-mobile-note">
-              5 Watchtower Square, London E1
+              میدان واچ‌تاور ۵، لندن E1
               <br />
-              24/7 response desk · sample practice
+              میز پاسخ‌گویی شبانه‌روزی · مجموعهٔ نمونه
             </p>
           </nav>
         </div>

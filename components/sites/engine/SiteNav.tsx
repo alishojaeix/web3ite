@@ -36,26 +36,26 @@ export function SiteNav({
   catalogueHref?: string;
 }) {
   const ctaHref = catalogueHref ?? config.navCta.href;
-  const ctaLabel = catalogueHref ? "Open catalogue" : config.navCta.label;
+  const ctaLabel = catalogueHref ? "مشاهدهٔ کاتالوگ" : config.navCta.label;
 
   return (
     <header className="site-nav">
       <div className="site-nav-inner">
-        <Link href={`/sites/${template.id}`} className="site-brand" aria-label={`${template.title} home`}>
+        <Link href={`/sites/${template.id}`} className="site-brand" aria-label={`صفحهٔ اصلی ${template.title}`}>
           <span className="site-brand-mark" aria-hidden>
             {template.title.slice(0, 1)}
           </span>
           <span className="site-brand-name">{template.title}</span>
         </Link>
 
-        <nav className="site-nav-links" aria-label="Sections">
+        <nav className="site-nav-links" aria-label="بخش‌ها">
           {config.nav.map((item) => (
             <SiteLink key={item.href} href={item.href} className="site-nav-link">
               {item.label}
             </SiteLink>
           ))}
           <Link href="/templates" className="site-nav-platform">
-            All templates
+            همهٔ قالب‌ها
           </Link>
         </nav>
 
@@ -64,9 +64,9 @@ export function SiteNav({
         </SiteLink>
 
         <details className="site-nav-mobile">
-          <summary aria-label="Open navigation">
+          <summary aria-label="باز کردن پیمایش">
             <Menu aria-hidden />
-            <span>Menu</span>
+            <span>فهرست</span>
           </summary>
           <div className="site-nav-mobile-panel">
             {config.nav.map((item) => (
@@ -75,10 +75,10 @@ export function SiteNav({
               </SiteLink>
             ))}
             <Link href="/templates" className="site-nav-mobile-link">
-              All templates
+              همهٔ قالب‌ها
             </Link>
             <Link href="/legal" className="site-nav-mobile-link">
-              Demo & age policy
+              سیاست پیش‌نمایش و محدودیت سنی
             </Link>
             <SiteLink href={ctaHref} className="site-btn site-btn--primary site-nav-mobile-cta">
               {ctaLabel}

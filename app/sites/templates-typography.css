@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Template typography readability pass
+   --------------------------------------------------------------------------
+   Shared by every `/sites/*` template. Each template keeps its own identity,
+   colour, layout, motion and 3D — this layer only lifts the *supporting*
+   typography out of the 7–13px range that made Persian hard to read.
+
+   How it works without redesigning anything:
+   - Every rule is scoped to a template root (`[class$="-site"]` /
+     `[class*="-site "]` / `.site-shell`), so nothing leaks into Web3ite chrome.
+   - Targets are matched by class *suffix* (all 16 templates share the same
+     role-based suffixes: `-eyebrow`, `-nav-links`, `-demo-note`, `-footer-*`, …).
+     The scope + suffix selector (two classes) outranks a template's own
+     single-class rule, so these sizes win without `!important` and without a
+     specificity war.
+   - Hero and section display headings are never touched — their sizes live in
+     each template and already meet the target scale, so hierarchy is preserved.
+   - Sizes use `clamp()` so mobile and desktop both land in the target band.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   Baseline: Persian face + comfortable Persian line-height everywhere.
+   ------------------------------------------------------------------------- */
+:where([class$="-site"], [class*="-site "], .site-shell) {
+  font-family: var(--font-body), var(--font-fallback-persian), system-ui,
+    sans-serif;
+}
+
+:where([class$="-site"], [class*="-site "], .site-shell) :is(p, li, dd, dt) {
+  line-height: 1.8;
+}
+
+/* -------------------------------------------------------------------------
+   Body descriptions / ledes  →  16–18px desktop, 15–16px mobile
+   ------------------------------------------------------------------------- */
+[class$="-site"] [class*="-lede"],
+[class*="-site "] [class*="-lede"],
+.site-shell [class*="-lede"],
+[class$="-site"] [class*="-intro"],
+[class*="-site "] [class*="-intro"] {
+  font-size: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  line-height: 1.8;
+}
+
+/* -------------------------------------------------------------------------
+   Eyebrows / statuses / caps labels  →  13–14px desktop, 12–14px mobile
+   ------------------------------------------------------------------------- */
+[class$="-site"] :is([class*="-eyebrow"], [class*="-kicker"]),
+[class*="-site "] :is([class*="-eyebrow"], [class*="-kicker"]),
+[class$="-site"] [class*="-status"],
+[class*="-site "] [class*="-status"] {
+  font-size: clamp(0.8125rem, 0.78rem + 0.16vw, 0.875rem);
+  letter-spacing: 0.14em;
+}
+
+/* Small supporting notes / captions / demo notes  →  12–13px */
+[class$="-site"] :is([class*="-note"], [class*="-caption"], [class*="-demo"], [class*="-meta"]),
+[class*="-site "] :is([class*="-note"], [class*="-caption"], [class*="-demo"], [class*="-meta"]) {
+  font-size: clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+}
+
+/* -------------------------------------------------------------------------
+   Navigation links + CTA  →  15–16px desktop
+   ------------------------------------------------------------------------- */
+[class$="-site"] :is([class*="-nav-links"] a, [class*="-navlinks"] a),
+[class*="-site "] :is([class*="-nav-links"] a, [class*="-navlinks"] a) {
+  font-size: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  letter-spacing: 0.03em;
+}
+
+[class$="-site"] [class*="-nav-cta"],
+[class*="-site "] [class*="-nav-cta"] {
+  font-size: clamp(0.9375rem, 0.9rem + 0.12vw, 1rem);
+  letter-spacing: 0.03em;
+}
+
+/* Brand sub-label  →  12–13px */
+[class$="-site"] [class*="-brand-sub"],
+[class*="-site "] [class*="-brand-sub"] {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* -------------------------------------------------------------------------
+   Buttons / form controls  →  15–16px (controls need a predictable box)
+   ------------------------------------------------------------------------- */
+[class$="-site"] :is(button, [class*="-btn"], [class*="-cta"]),
+[class*="-site "] :is(button, [class*="-btn"], [class*="-cta"]) {
+  font-size: clamp(0.9375rem, 0.9rem + 0.14vw, 1rem);
+  letter-spacing: 0.02em;
+}
+
+/* -------------------------------------------------------------------------
+   Footer: headings 16–18px, descriptions / links 15–16px
+   ------------------------------------------------------------------------- */
+[class$="-site"] footer :is(h2, h3, [class*="-heading"], [class*="-label"]),
+[class*="-site "] footer :is(h2, h3, [class*="-heading"], [class*="-label"]) {
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  line-height: 1.5;
+}
+
+[class$="-site"] footer :is(a, p, li, [class*="-desc"]),
+[class*="-site "] footer :is(a, p, li, [class*="-desc"]) {
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.8;
+}
+
+[class$="-site"] [class*="-footer-bottom"],
+[class*="-site "] [class*="-footer-bottom"] {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* -------------------------------------------------------------------------
+   Card titles  →  20–24px desktop, 18–21px mobile (heading level only)
+   ------------------------------------------------------------------------- */
+[class$="-site"] :is(h3, h4):not([class*="-hero"] *),
+[class*="-site "] :is(h3, h4):not([class*="-hero"] *) {
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  line-height: 1.3;
+}
+
+/* Card description under a title  →  16–18px */
+[class$="-site"] [class*="-desc"],
+[class*="-site "] [class*="-desc"] {
+  font-size: clamp(0.9375rem, 0.9rem + 0.22vw, 1.0625rem);
+  line-height: 1.75;
+}
+
+/* -------------------------------------------------------------------------
+   Generated templates (`site-engine.css` → `.site-shell`) share the same
+   role-based class names with a `site-` prefix. Mirror the lift so the
+   engine-driven sites match the hand-built ones.
+   ------------------------------------------------------------------------- */
+.site-shell .site-eyebrow,
+.site-shell .site-kicker,
+.site-shell .site-footer-label {
+  font-size: clamp(0.8125rem, 0.78rem + 0.16vw, 0.875rem);
+}
+
+.site-shell .site-section-intro,
+.site-shell .site-body {
+  font-size: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  line-height: 1.8;
+}
+
+.site-shell .site-btn {
+  font-size: clamp(0.9375rem, 0.9rem + 0.14vw, 1rem);
+}
+
+.site-shell .site-footer a,
+.site-shell .site-footer p,
+.site-shell .site-footer li {
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.8;
+}
+
+/* Skip links are visible on keyboard focus — keep them legible too. */
+[class$="-site"] [class*="-skip"],
+[class*="-site "] [class*="-skip"] {
+  font-size: 0.875rem;
+}
+
+
+
+

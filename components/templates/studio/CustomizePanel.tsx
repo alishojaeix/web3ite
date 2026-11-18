@@ -1,6 +1,7 @@
 "use client";
 
 import type { Template } from "@/types/template";
+import { fa } from "@/lib/i18n/fa";
 
 /** Warm, brand-adjacent swatches — no neon, no bright cyan. */
 const ACCENT_SWATCHES = ["#d4af7a", "#c47a5f", "#a8b9a1", "#9aa8ff", "#c9a0a0"];
@@ -23,13 +24,14 @@ export function CustomizePanel({
     return (
       <div className="mt-8 space-y-4">
         <p className="text-[13px] leading-relaxed text-[#b8b3aa]">
-          This template ships as a self-contained static HTML document. Its
-          styling and motion are authored inside that file, so the accent and
-          rotation controls do not apply to it.
+          {fa.studio.staticHtmlBody}
         </p>
         <p className="text-[13px] leading-relaxed text-[#b8b3aa]">
-          Customizing it means editing that document directly. The source is at{" "}
-          <code className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]">
+          {fa.studio.staticHtmlCustomize}{" "}
+          <code
+            dir="ltr"
+            className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]"
+          >
             {sourcePath}
           </code>
           .
@@ -43,14 +45,16 @@ export function CustomizePanel({
   return (
     <div className="mt-8 space-y-6">
       <div>
-        <p className="text-[12px] uppercase tracking-[0.14em] text-[#8a847c]">Accent</p>
+        <p className="text-[12px] tracking-[0.14em] text-[#8a847c]">
+          {fa.studio.accent}
+        </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {swatches.map((color) => (
             <button
               key={color}
               type="button"
               onClick={() => onAccentChange(color)}
-              aria-label={`Accent ${color}`}
+              aria-label={`${fa.studio.accent} ${color}`}
               aria-pressed={accent === color}
               className={`h-9 w-9 rounded-full border ${
                 accent === color ? "border-white" : "border-white/20"
@@ -60,13 +64,13 @@ export function CustomizePanel({
           ))}
         </div>
         <p className="mt-3 text-[12px] leading-relaxed text-[#8a847c]">
-          The accent feeds the live scene materials and lighting — the room
-          recolors instantly.
+          رنگ تأکید به متریال و نور صحنهٔ زنده متصل است — اتاق بی‌درنگ
+          رنگ عوض می‌کند.
         </p>
       </div>
 
       <label className="flex items-center justify-between text-[14px] text-[#c4bfb6]">
-        Auto rotate
+        {fa.studio.autoRotate}
         <input
           type="checkbox"
           checked={spin}
@@ -78,20 +82,33 @@ export function CustomizePanel({
       <p className="text-[13px] leading-relaxed text-[#8a847c]">
         {template.modelPath ? (
           <>
-            Model slot:{" "}
-            <code className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]">
+            جایگاه مدل:{" "}
+            <code
+              dir="ltr"
+              className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]"
+            >
               {template.modelPath}
             </code>{" "}
-            — the preview renders that GLB when the file is present.
+            — پیش‌نمایش در صورت وجود فایل، همان GLB را نمایش می‌دهد.
           </>
         ) : (
           <>
-            This preview renders the template&apos;s procedural scene. A GLB can
-            replace it later by dropping the file at{" "}
-            <code className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]">
+            این پیش‌نمایش صحنهٔ رویه‌ای قالب را رندر می‌کند. بعداً می‌توانید با
+            قرار دادن فایل در{" "}
+            <code
+              dir="ltr"
+              className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]"
+            >
               public/models/{template.id}.glb
             </code>{" "}
-            and setting <code className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]">modelPath</code>.
+            و تنظیم{" "}
+            <code
+              dir="ltr"
+              className="rounded-sm bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-[#d4af7a]"
+            >
+              modelPath
+            </code>{" "}
+            آن را با یک GLB جایگزین کنید.
           </>
         )}
       </p>

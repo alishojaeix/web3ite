@@ -19,17 +19,17 @@ export function EmberNav() {
   return (
     <header className="ek-nav">
       <div className="ek-wrap ek-nav-bar">
-        <a href="#top" className="ek-brand" aria-label="Ember Kitchen, back to top">
+        <a href="#top" className="ek-brand" aria-label="امبر کیچن، بازگشت به بالا">
           <span className="ek-brand-mark" aria-hidden="true">
             <Flame size={16} strokeWidth={1.6} />
           </span>
           <span className="ek-brand-word">
             Ember
-            <small>Kitchen</small>
+            <small>آشپزخانه</small>
           </span>
         </a>
 
-        <nav aria-label="Primary" className="ek-nav-links">
+        <nav aria-label="پیمایش اصلی" className="ek-nav-links">
           {emberNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -39,12 +39,12 @@ export function EmberNav() {
 
         <div className="ek-nav-tail">
           <a href="#book" className="ek-nav-cta">
-            Book the counter
+            رزرو کانتر
           </a>
           <button
             type="button"
             className="ek-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="ek-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -56,7 +56,7 @@ export function EmberNav() {
 
       {open ? (
         <div className="ek-mobile-wrap">
-          <nav id="ek-mobile-nav" aria-label="Mobile navigation" className="ek-mobile-nav">
+          <nav id="ek-mobile-nav" aria-label="پیمایش موبایل" className="ek-mobile-nav">
             {emberNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -64,12 +64,12 @@ export function EmberNav() {
               </a>
             ))}
             <a href="#book" className="ek-mobile-cta" onClick={() => setOpen(false)}>
-              Book the counter
+              رزرو کانتر
             </a>
             <p className="ek-mobile-note">
-              22 Kiln Street, London E2
+              22 خیابان کیلن، لندن E2
               <br />
-              Tuesday – Saturday · from 17:30
+              سه‌شنبه تا شنبه · از ۱۷:۳۰
             </p>
           </nav>
         </div>

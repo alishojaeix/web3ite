@@ -33,17 +33,17 @@ import {
 
 export function ApexSite() {
   return (
-    <div className="ap-site" id="top">
+    <div className="ap-site" id="top" dir="rtl">
       <a className="ap-skip" href="#ap-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <ApexNav />
 
-      <main id="ap-main">
+      <main id="ap-main" lang="fa" dir="rtl">
         <section className="ap-hero" aria-labelledby="ap-hero-title">
           <div className="ap-wrap ap-hero-top">
-            <p>1 Concours Way · London W1K</p>
+            <p>خیابان کانسور ۱ · لندن W1K</p>
             <p className="ap-status">
               <span className="ap-status-dot" aria-hidden="true" />
               {hero.status}
@@ -67,11 +67,11 @@ export function ApexSite() {
 
               <div className="ap-actions">
                 <a className="ap-btn ap-btn--solid" href="#showcase">
-                  Explore the car
+                  کاوش خودرو
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="ap-btn ap-btn--line" href="#contact">
-                  Build a spec
+                  ساخت مشخصات
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -102,7 +102,7 @@ export function ApexSite() {
 
           <div className="ap-wrap ap-hero-foot">
             <a className="ap-scroll-cue" href="#showcase">
-              The car, clearly described
+              خودرو، به‌روشنی توصیف‌شده
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -144,55 +144,54 @@ export function ApexSite() {
               <div className="ap-showcase-aside">
                 <div className="ap-spec-panel">
                   <div className="ap-panel-head">
-                    <span>Apex GT / At a glance</span>
-                    <span aria-hidden="true">APX / 01</span>
+                    <span>اپکس GT / در یک نگاه</span>
+                    <span aria-hidden="true">APX / ۰۱</span>
                   </div>
                   <dl className="ap-spec-rows">
                     <div>
-                      <dt>Body</dt>
+                      <dt>بدنه</dt>
                       <dd>
-                        Grand tourer
-                        <span>2+2</span>
+                        تور بزرگ
+                        <span>۲+۲</span>
                       </dd>
                     </div>
                     <div>
-                      <dt>Layout</dt>
+                      <dt>چیدمان</dt>
                       <dd>
-                        Front-engine
-                        <span>Rear-wheel drive</span>
+                        موتور جلو
+                        <span>دیفرانسیل عقب</span>
                       </dd>
                     </div>
                     <div>
-                      <dt>Gearbox</dt>
+                      <dt>جعبه‌دنده</dt>
                       <dd>
-                        8-speed
-                        <span>Automatic</span>
+                        ۸ سرعته
+                        <span>خودکار</span>
                       </dd>
                     </div>
                     <div>
-                      <dt>Build</dt>
+                      <dt>ساخت</dt>
                       <dd>
-                        To order
-                        <span>No deposit</span>
+                        به سفارش
+                        <span>بدون بیعانه</span>
                       </dd>
                     </div>
                   </dl>
                   <p className="ap-panel-foot">
-                    Illustrative only. No production vehicle is represented.
+                    فقط نمایشی. هیچ خودروی تولیدی نمایش داده نمی‌شود.
                   </p>
                 </div>
 
                 <figure className="ap-detail">
                   <figcaption>
-                    <span>Detail / 21-inch forged</span>
-                    <span aria-hidden="true">Sample</span>
+                    <span>جزئیات / فورج ۲۱ اینچی</span>
+                    <span aria-hidden="true">نمونه</span>
                   </figcaption>
                   <div className="ap-detail-art">
                     <WheelStudy size={168} />
                   </div>
                   <p>
-                    A machined face and a warm dark barrel. Drawn, not
-                    photographed — like the rest of the car.
+                    رویهٔ ماشین‌کاری‌شده و استوانهٔ تیره و گرم. ترسیم‌شده، نه عکس‌برداری‌شده — مانند بقیهٔ خودرو.
                   </p>
                 </figure>
               </div>
@@ -272,7 +271,7 @@ export function ApexSite() {
               <div>
                 <p className="ap-mini-label">
                   <ShieldCheck size={13} aria-hidden="true" />
-                  What this page does not claim
+                  این صفحه چه چیزی را ادعا نمی‌کند
                 </p>
                 <ul>
                   {specification.notClaimed.map((item) => (
@@ -357,7 +356,7 @@ export function ApexSite() {
               </dl>
 
               <div className="ap-bring">
-                <p className="ap-mini-label">Bring to the request</p>
+                <p className="ap-mini-label">همراه با درخواست</p>
                 <ul>
                   {contact.bring.map((item) => (
                     <li key={item}>
@@ -410,21 +409,20 @@ export function ApexSite() {
             <div className="ap-footer-brand">
               <p className="ap-footer-word">
                 <MarqueMark className="ap-footer-mark" />
-                Apex Marque <span>Grand tourer</span>
+                اپکس مارک <span>تور بزرگ</span>
               </p>
               <p>
-                The long way home: one car, one key light and a specification
-                that shows its workings.
+                از راهِ دور به خانه: یک خودرو، یک نور کلیدی و مشخصاتی که جزئیات کار خود را نشان می‌دهد.
               </p>
               <a href="#top" className="ap-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="ap-footer-cols">
               <div>
-                <p className="ap-footer-label">Showroom</p>
+                <p className="ap-footer-label">نمایشگاه</p>
                 <address>
                   {contact.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -437,7 +435,7 @@ export function ApexSite() {
               </div>
 
               <div>
-                <p className="ap-footer-label">Explore</p>
+                <p className="ap-footer-label">کاوش</p>
                 {apexNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -446,22 +444,20 @@ export function ApexSite() {
               </div>
 
               <div>
-                <p className="ap-footer-label">Template</p>
-                <Link href="/templates/apex-marque">Template details</Link>
-                <Link href="/checkout/apex-marque">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="ap-footer-label">قالب</p>
+                <Link href="/templates/apex-marque">جزئیات قالب</Link>
+                <Link href="/checkout/apex-marque">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="ap-footer-bottom">
             <p>
-              © 2026 Apex Marque (fictional). A demonstration website: the
-              marque, car, trims and figures are illustrative. No production
-              vehicle, order, price or deposit is represented.
+              © ۲۰۲۶ اپکس مارک (خیالی). یک وب‌سایت نمایشی: برند، خودرو، تیپ‌ها و اعداد نمایشی‌اند. هیچ خودروی تولیدی، سفارش، قیمت یا بیعانه‌ای نمایش داده نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

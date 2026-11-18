@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { AtelierSite } from "@/components/sites/atelier-coffee/AtelierSite";
 import "./atelier.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Atelier Coffee — A quieter kind of coffee";
+const title = "آتلیه قهوه — نوعی آرام‌تر از قهوه";
 const description =
-  "A sample independent coffee-studio website: a twelve-seat counter, a rotating filter list, a brew timer, the room, journal notes and a tasting enquiry form. Fictional venue built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای کافه: قهوهٔ در حال باز، فهرست کوتاه نوشیدنی‌ها، رزرو چشیدن و یک نقشهٔ نمایشی. برندی خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=atelier-coffee",
         width: 1200,
         height: 630,
-        alt: "Atelier Coffee website preview",
+        alt: "پیش‌نمایش وب‌سایت آتلیه قهوه",
       },
     ],
   },

@@ -16,13 +16,13 @@ export function StudioTabs({
           key={id}
           type="button"
           onClick={() => onChange(id)}
-          className={`rounded-sm px-4 py-2 text-[12px] uppercase tracking-[0.14em] ${
+          className={`rounded-sm px-4 py-2 text-[12px] tracking-[0.14em] ${
             view === id
               ? "bg-[#f4efe6] text-[#111]"
               : "border border-white/10 text-[#9a958c] hover:text-[#e8e4dc]"
           }`}
         >
-          {id === "preview" ? "Preview" : "Customize"}
+          {id === "preview" ? "پیش‌نمایش" : "شخصی‌سازی"}
         </button>
       ))}
     </div>

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { LaunchSite } from "@/components/sites/ai-product-launch/LaunchSite";
 import "./launch.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "AI Product Launch — Small object. Serious machine.";
+const title = "لانچ محصول هوش مصنوعی — شیئی کوچک. ماشینی جدی";
 const description =
-  "A sample cinematic product launch website: a glass compute prism, a labelled specification sheet, a three-beat product story and a working reservation request form. Fictional device built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای رونمایی محصول هوش مصنوعی: یک شیء سرامیکی آرام، مشخصات ساده، فهرست انتظار و فرم رزرو. محصول و برند خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=ai-product-launch",
         width: 1200,
         height: 630,
-        alt: "AI Product Launch website preview",
+        alt: "پیش‌نمایش وب‌سایت لانچ محصول هوش مصنوعی",
       },
     ],
   },

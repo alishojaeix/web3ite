@@ -22,8 +22,11 @@
   --la-display: var(--font-display), "Inter", system-ui, sans-serif;
   --la-body: var(--font-body), "Source Sans 3", system-ui, sans-serif;
   --la-serif: var(--font-editorial), "Iowan Old Style", Georgia, serif;
-  --la-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Mono", ui-monospace,
-    monospace;
+  /* Persian leads every stack. The mono look survives on Latin faces further
+     down the list, but Persian glyphs — and Persian text that reuses a
+     "technical" label — always render in Vazirmatn. */
+  --la-mono: var(--font-body), "SFMono-Regular", "JetBrains Mono",
+    "Cascadia Mono", ui-monospace, monospace;
   --la-radius: 14px;
 
   min-height: 100vh;
@@ -111,7 +114,7 @@
 .la-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 140;
   display: inline-flex;
   align-items: center;
@@ -123,9 +126,8 @@
   background: var(--la-surface);
   color: var(--la-ink);
   font-family: var(--la-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -144,9 +146,8 @@
   gap: 8px;
   margin: 0;
   font-family: var(--la-mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: clamp(0.8125rem, 0.78rem + 0.18vw, 0.875rem);
+  letter-spacing: 0.14em;
   color: var(--la-accent);
 }
 
@@ -163,8 +164,8 @@
 .la-section-lede {
   max-width: 52ch;
   margin: 0;
-  font-size: 15px;
-  line-height: 1.72;
+  font-size: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  line-height: 1.8;
   color: var(--la-muted);
 }
 
@@ -174,20 +175,18 @@
   padding-top: 14px;
   border-top: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 8.5px;
+  font-size: 0.8125rem;
   line-height: 1.75;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
 .la-demo-note {
   margin-top: 22px;
   font-family: var(--la-mono);
-  font-size: 8px;
-  line-height: 1.7;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -213,10 +212,9 @@
   border: 1px solid transparent;
   border-radius: 999px;
   font-family: var(--la-mono);
-  font-size: 9.5px;
+  font-size: clamp(0.9375rem, 0.9rem + 0.18vw, 1rem);
   font-weight: 500;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -273,7 +271,7 @@
   font-size: clamp(2.15rem, 7.6vw, 3.9rem);
   font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink);
   text-wrap: balance;
 }
@@ -318,17 +316,16 @@
   font-family: var(--la-display);
   font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .la-brand-sub {
   display: none;
-  padding-left: 9px;
-  border-left: 1px solid var(--la-line-strong);
+  padding-inline-start: 9px;
+  border-inline-start: 1px solid var(--la-line-strong);
   font-family: var(--la-mono);
-  font-size: 8px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--la-quiet);
   white-space: nowrap;
 }
@@ -344,9 +341,8 @@
   align-items: center;
   min-height: 38px;
   font-family: var(--la-mono);
-  font-size: 9.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  letter-spacing: 0.03em;
   color: var(--la-muted);
   transition: color 180ms ease;
 }
@@ -370,9 +366,8 @@
   border: 1px solid var(--la-line-strong);
   border-radius: 999px;
   font-family: var(--la-mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: clamp(0.9375rem, 0.9rem + 0.12vw, 1rem);
+  letter-spacing: 0.03em;
   color: var(--la-ink);
   transition:
     border-color 180ms ease,
@@ -418,14 +413,13 @@
   min-height: 52px;
   border-bottom: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--la-ink-soft);
 }
 
 .la-mobile-nav > a span {
-  font-size: 8.5px;
+  font-size: 0.75rem;
   color: var(--la-accent-deep);
 }
 
@@ -447,10 +441,9 @@
 .la-mobile-note {
   margin-top: 18px;
   font-family: var(--la-mono);
-  font-size: 8.5px;
+  font-size: 0.75rem;
   line-height: 1.8;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -477,9 +470,8 @@
   padding-bottom: 16px;
   border-bottom: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 8.5px;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--la-quiet);
 }
 
@@ -516,7 +508,7 @@
   font-size: clamp(3.1rem, 13.2vw, 7.2rem);
   font-weight: 600;
   line-height: 0.9;
-  letter-spacing: -0.055em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink);
 }
 
@@ -527,8 +519,8 @@
 .la-hero-lede {
   max-width: 52ch;
   margin-top: 24px;
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.8;
   color: var(--la-muted);
 }
 
@@ -548,23 +540,22 @@
 }
 
 .la-hero-meta > div + div {
-  border-left: 1px solid var(--la-line);
+  border-inline-start: 1px solid var(--la-line);
 }
 
 .la-hero-meta dt {
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--la-quiet);
 }
 
 .la-hero-meta dd {
   margin-top: 6px;
   font-family: var(--la-display);
-  font-size: 12.5px;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink-soft);
 }
 
@@ -594,16 +585,15 @@
 .la-stage-badge {
   position: absolute;
   top: 14px;
-  left: 14px;
+  inset-inline-start: 14px;
   z-index: 2;
   padding: 6px 10px;
   border: 1px solid var(--la-line-strong);
   border-radius: 999px;
   background: rgba(9, 9, 11, 0.72);
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--la-accent);
 }
 
@@ -614,10 +604,9 @@
   gap: 6px 24px;
   padding-top: 10px;
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  line-height: 1.5;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -633,10 +622,9 @@
   padding: 16px 0 24px;
   border-top: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 8px;
-  line-height: 1.7;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -679,9 +667,8 @@
   align-items: center;
   gap: 12px;
   font-family: var(--la-mono);
-  font-size: 8px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
   color: var(--la-muted);
 }
 
@@ -694,7 +681,7 @@
 }
 
 .la-strip li + li {
-  margin-left: 12px;
+  margin-inline-start: 12px;
 }
 
 /* --------------------------------------------------------------------------
@@ -739,7 +726,7 @@
 
 .la-feature-index {
   font-family: var(--la-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
   color: var(--la-accent-deep);
 }
@@ -754,17 +741,17 @@
 .la-feature h3 {
   margin-top: 30px;
   font-family: var(--la-display);
-  font-size: 22px;
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.25;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink);
 }
 
 .la-feature p {
   margin-top: 9px;
-  font-size: 13.5px;
-  line-height: 1.68;
+  font-size: clamp(0.9375rem, 0.9rem + 0.22vw, 1.0625rem);
+  line-height: 1.75;
   color: var(--la-muted);
 }
 
@@ -773,9 +760,8 @@
   padding-top: 14px;
   border-top: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 8px !important;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.02em;
   color: var(--la-quiet) !important;
 }
 
@@ -793,15 +779,14 @@
   font-family: var(--la-serif);
   font-size: clamp(1.7rem, 5.6vw, 2.6rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink-soft);
 }
 
 .la-quote-note {
   font-family: var(--la-mono);
-  font-size: 8px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -835,9 +820,8 @@
   padding: 14px 18px;
   border-bottom: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--la-muted);
 }
 
@@ -866,25 +850,24 @@
   display: grid;
   gap: 2px;
   font-family: var(--la-display);
-  font-size: 12.5px;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--la-ink-soft);
 }
 
 .la-spec-note {
   font-family: var(--la-mono);
-  font-size: 7.5px;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
 .la-spec-dl dd {
   font-family: var(--la-mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  text-align: right;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  text-align: end;
   color: var(--la-accent);
 }
 
@@ -901,26 +884,24 @@
 
 .la-spec-foot p {
   max-width: 62ch;
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.75;
   color: var(--la-muted);
 }
 
 .la-spec-stamp {
   font-family: var(--la-mono);
-  font-size: 7.5px !important;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.04em;
   color: var(--la-accent-deep) !important;
 }
 
 .la-spec-footnote {
   margin-top: 10px;
   font-family: var(--la-mono);
-  font-size: 8px;
+  font-size: 0.75rem;
   line-height: 1.7;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -957,7 +938,7 @@
 
 .la-beat-step {
   font-family: var(--la-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
   color: var(--la-accent-deep);
 }
@@ -967,25 +948,25 @@
   border: 1px solid var(--la-line);
   border-radius: 999px;
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
 .la-beats h3 {
   margin-top: 16px;
   font-family: var(--la-display);
-  font-size: 22px;
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
+  line-height: 1.3;
   color: var(--la-ink);
 }
 
 .la-beats p {
   margin-top: 8px;
-  font-size: 13.5px;
-  line-height: 1.68;
+  font-size: clamp(0.9375rem, 0.9rem + 0.22vw, 1.0625rem);
+  line-height: 1.75;
   color: var(--la-muted);
 }
 
@@ -1009,9 +990,8 @@
   padding-top: 10px;
   border-top: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -1055,16 +1035,15 @@
 
 .la-swatch-tag {
   position: absolute;
-  left: 12px;
+  inset-inline-start: 12px;
   bottom: 12px;
   padding: 5px 9px;
   border: 1px solid var(--la-line-strong);
   border-radius: 999px;
   background: rgba(9, 9, 11, 0.7);
   font-family: var(--la-mono);
-  font-size: 7px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   color: var(--la-muted);
 }
 
@@ -1074,16 +1053,17 @@
 
 .la-material-copy h3 {
   font-family: var(--la-display);
-  font-size: 21px;
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
+  line-height: 1.3;
   color: var(--la-ink);
 }
 
 .la-material-copy p {
   margin-top: 8px;
-  font-size: 13px;
-  line-height: 1.66;
+  font-size: clamp(0.9375rem, 0.9rem + 0.22vw, 1.0625rem);
+  line-height: 1.7;
   color: var(--la-muted);
 }
 
@@ -1112,29 +1092,28 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 26px;
   border-top: 1px solid var(--la-line);
-  border-left: 1px solid var(--la-line);
+  border-inline-start: 1px solid var(--la-line);
 }
 
 .la-reserve-facts > div {
   padding: 13px 14px;
-  border-right: 1px solid var(--la-line);
+  border-inline-end: 1px solid var(--la-line);
   border-bottom: 1px solid var(--la-line);
 }
 
 .la-reserve-facts dt {
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
 .la-reserve-facts dd {
   margin-top: 5px;
   font-family: var(--la-display);
-  font-size: 14px;
+  font-size: 0.9375rem;
   font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink-soft);
 }
 
@@ -1150,8 +1129,8 @@
   gap: 9px;
   min-height: 32px;
   padding: 5px 0;
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.7;
   color: var(--la-ink-soft);
 }
 
@@ -1172,7 +1151,7 @@
   font-family: var(--la-serif);
   font-size: 25px;
   line-height: 1.16;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink-soft);
   text-wrap: balance;
 }
@@ -1181,10 +1160,9 @@
   display: block;
   margin-top: 10px;
   font-family: var(--la-mono);
-  font-size: 7.5px;
+  font-size: 0.8125rem;
   font-style: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -1204,8 +1182,8 @@
   gap: 10px;
   min-height: 44px;
   padding: 7px 0;
-  font-size: 12.5px;
-  line-height: 1.6;
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.7;
   color: var(--la-muted);
 }
 
@@ -1231,10 +1209,9 @@
 .la-contact-note {
   margin-top: 16px;
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  line-height: 1.7;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -1262,24 +1239,24 @@
 
 .la-form-title {
   font-family: var(--la-mono);
-  font-size: 9.5px;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--la-accent);
 }
 
 .la-form-sub {
   margin-top: 6px;
-  font-size: 11.5px;
+  font-size: 0.8125rem;
+  line-height: 1.7;
   color: var(--la-quiet);
 }
 
 .la-form-code {
   padding-top: 2px;
   font-family: var(--la-mono);
-  font-size: 7px;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
   white-space: nowrap;
 }
@@ -1303,9 +1280,8 @@
 
 .la-form label > span {
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
   color: var(--la-muted);
 }
 
@@ -1319,7 +1295,7 @@
   border-radius: 10px;
   background: #0c0b0f;
   color: var(--la-ink);
-  font-size: 14px;
+  font-size: 1rem;
   transition:
     border-color 180ms ease,
     background-color 180ms ease;
@@ -1327,7 +1303,7 @@
 
 .la-form select {
   appearance: none;
-  padding-right: 38px;
+  padding-inline-end: 38px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b3a99c' stroke-width='1.2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 15px center;
@@ -1368,17 +1344,16 @@
   border: 1px solid rgba(240, 152, 130, 0.4);
   border-radius: 10px;
   background: rgba(240, 152, 130, 0.08);
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 0.8125rem;
+  line-height: 1.7;
   color: #f3b3a2;
 }
 
 .la-form-demo {
   font-family: var(--la-mono);
-  font-size: 7px;
+  font-size: 0.75rem;
   line-height: 1.75;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -1405,18 +1380,17 @@
 .la-success-title {
   margin-top: 22px;
   font-family: var(--la-mono);
-  font-size: 9.5px;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--la-accent);
 }
 
 .la-success-body {
   max-width: 40ch;
   margin-top: 10px;
-  font-size: 13.5px;
-  line-height: 1.7;
+  font-size: clamp(0.9375rem, 0.9rem + 0.22vw, 1.0625rem);
+  line-height: 1.75;
   color: var(--la-muted);
 }
 
@@ -1444,9 +1418,9 @@
   align-items: center;
   gap: 9px;
   font-family: var(--la-display);
-  font-size: 21px;
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--la-ink);
 }
 
@@ -1464,8 +1438,8 @@
 .la-footer-brand > p:not(.la-footer-word) {
   max-width: 42ch;
   margin-top: 12px;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.8;
   color: var(--la-muted);
 }
 
@@ -1476,9 +1450,8 @@
   min-height: 44px;
   margin-top: 12px;
   font-family: var(--la-mono);
-  font-size: 8.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
   color: var(--la-accent);
 }
 
@@ -1502,9 +1475,8 @@
 .la-footer-label {
   margin-bottom: 4px;
   font-family: var(--la-mono);
-  font-size: 7.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: clamp(0.8125rem, 0.78rem + 0.16vw, 0.875rem);
+  letter-spacing: 0.04em;
   color: var(--la-quiet);
 }
 
@@ -1513,7 +1485,7 @@
   align-items: center;
   gap: 7px;
   min-height: 44px;
-  font-size: 12.5px;
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
   color: var(--la-muted);
   transition: color 180ms ease;
 }
@@ -1523,8 +1495,8 @@
 }
 
 .la-footer-cols address {
-  font-size: 12.5px;
-  line-height: 1.7;
+  font-size: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  line-height: 1.8;
   color: var(--la-muted);
 }
 
@@ -1539,9 +1511,9 @@
   padding-top: 18px;
   border-top: 1px solid var(--la-line);
   font-family: var(--la-mono);
-  font-size: 8.5px;
-  line-height: 1.7;
-  letter-spacing: 0.03em;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
   color: var(--la-quiet);
 }
 
@@ -1655,7 +1627,7 @@
 
   .la-quote-note {
     padding-bottom: 6px;
-    text-align: right;
+    text-align: end;
   }
 
   .la-footer-cols {
@@ -1718,7 +1690,7 @@
   }
 
   .la-strip li + li {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 
   .la-features {

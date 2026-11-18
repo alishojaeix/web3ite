@@ -31,21 +31,21 @@ export function SoraBooking() {
 
     if (!date) {
       setStatus("error");
-      setMessage("Please choose a preferred date.");
+      setMessage("لطفاً تاریخ دلخواه را انتخاب کنید.");
       return;
     }
 
     if (service === "lunch") {
       setStatus("error");
-      setMessage("Lunch is walk-in only. Please choose dinner, or simply come by.");
+      setMessage("ناهار فقط ورودِ آزاد است. لطفاً شام را انتخاب کنید یا بی‌واسطه تشریف بیاورید.");
       return;
     }
 
     const partyLabel =
-      booking.partySizes.find((option) => option.value === party)?.label ?? `${party} guests`;
+      booking.partySizes.find((option) => option.value === party)?.label ?? `${party} مهمان`;
     const seatingLabel =
-      booking.seating.find((option) => option.value === seating)?.label ?? "Either is fine";
-    const dateLabel = new Date(`${date}T12:00:00`).toLocaleDateString("en-GB", {
+      booking.seating.find((option) => option.value === seating)?.label ?? "هر دو مناسب است";
+    const dateLabel = new Date(`${date}T12:00:00`).toLocaleDateString("fa-IR", {
       weekday: "long",
       day: "numeric",
       month: "long",
@@ -63,8 +63,8 @@ export function SoraBooking() {
           site: "sora-restaurant",
           name,
           email,
-          message: `Table request - ${partyLabel}, ${dateLabel}, dinner. Seating: ${seatingLabel}. Notes: ${
-            notes || "none noted"
+          message: `درخواست میز - ${partyLabel}، ${dateLabel}، شام. صندلی: ${seatingLabel}. یادداشت: ${
+            notes || "یادداشتی ثبت نشده"
           }.`,
           ageConfirmed: false,
         }),
@@ -73,7 +73,7 @@ export function SoraBooking() {
 
       if (!response.ok) {
         setStatus("error");
-        setMessage(payload.error ?? "The request could not be stored. Please try again.");
+        setMessage(payload.error ?? "ثبت درخواست ممکن نشد. لطفاً دوباره تلاش کنید.");
         return;
       }
 
@@ -82,7 +82,7 @@ export function SoraBooking() {
       setMessage(booking.confirmation);
     } catch {
       setStatus("error");
-      setMessage("The request could not be sent. Check your connection and try again.");
+      setMessage("ارسال درخواست ممکن نشد. اتصال خود را بررسی و دوباره تلاش کنید.");
     }
   }
 
@@ -91,9 +91,9 @@ export function SoraBooking() {
       <div className="sr-book-copy">
         <p className="sr-eyebrow">{booking.label}</p>
         <h2 id="sr-book-title">
-          An easy{" "}
+          یک شبِ{" "}
           <br />
-          <em>evening.</em>
+          <em>آسان</em>
         </h2>
         <p className="sr-intro">{booking.intro}</p>
 
@@ -101,28 +101,28 @@ export function SoraBooking() {
           <div>
             <dt>
               <Clock size={14} aria-hidden="true" />
-              Dinner
+              شام
             </dt>
             <dd>{booking.sitting}</dd>
           </div>
           <div>
-            <dt>Last orders</dt>
+            <dt>آخرین سفارش</dt>
             <dd>{booking.lastOrders}</dd>
           </div>
           <div>
-            <dt>Tables</dt>
-            <dd>Ten seats</dd>
+            <dt>میزها</dt>
+            <dd>ده صندلی</dd>
           </div>
           <div>
-            <dt>Counter</dt>
-            <dd>Walk-in</dd>
+            <dt>کانتر</dt>
+            <dd>ورودِ آزاد</dd>
           </div>
         </dl>
 
         <p className="sr-book-release">{visit.lunchNote}</p>
 
         <div className="sr-book-contact">
-          <p className="sr-mini-label">The room</p>
+          <p className="sr-mini-label">اتاق</p>
           <a href={`mailto:${visit.email}`}>
             <Mail size={14} aria-hidden="true" />
             {visit.email}
@@ -137,13 +137,13 @@ export function SoraBooking() {
       <div className="sr-book-card">
         <form className="sr-form" onSubmit={onSubmit}>
           <div className="sr-form-head">
-            <p className="sr-form-title">Request a table</p>
-            <p className="sr-form-sub">A reply within one working day</p>
+            <p className="sr-form-title">درخواست میز</p>
+            <p className="sr-form-sub">پاسخ در یک روز کاری</p>
           </div>
 
           <div className="sr-form-row">
             <label>
-              <span>Name</span>
+              <span>نام</span>
               <input
                 name="name"
                 type="text"
@@ -151,29 +151,29 @@ export function SoraBooking() {
                 required
                 minLength={2}
                 maxLength={120}
-                placeholder="Your name"
+                placeholder="نام شما"
               />
             </label>
             <label>
-              <span>Email</span>
+              <span>ایمیل</span>
               <input
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
                 maxLength={180}
-                placeholder="you@example.com"
+                placeholder="you@example.com" dir="ltr"
               />
             </label>
           </div>
 
           <div className="sr-form-row">
             <label>
-              <span>Preferred date</span>
+              <span>تاریخ دلخواه</span>
               <input name="date" type="date" required min={minDate} />
             </label>
             <label>
-              <span>Party</span>
+              <span>گروه</span>
               <select name="party" defaultValue="2" required>
                 {booking.partySizes.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -186,7 +186,7 @@ export function SoraBooking() {
 
           <div className="sr-form-row">
             <label>
-              <span>Service</span>
+              <span>سرویس</span>
               <select name="service" defaultValue="dinner">
                 {booking.services.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -196,7 +196,7 @@ export function SoraBooking() {
               </select>
             </label>
             <label>
-              <span>Seating</span>
+              <span>صندلی</span>
               <select name="seating" defaultValue="either">
                 {booking.seating.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -208,17 +208,17 @@ export function SoraBooking() {
           </div>
 
           <label className="sr-field-full">
-            <span>Notes for the room</span>
+            <span>یادداشت برای اتاق</span>
             <textarea
               name="notes"
               rows={4}
               maxLength={500}
-              placeholder="Allergies, access needs, a celebration (optional)"
+              placeholder="آلرژی‌ها، نیازهای دسترسی، یک جشن (اختیاری)"
             />
           </label>
 
           <button type="submit" className="sr-btn sr-btn--ink" disabled={status === "sending"}>
-            {status === "sending" ? "Sending…" : "Request a table"}
+            {status === "sending" ? "در حال ارسال…" : "درخواست میز"}
             <ArrowUpRight size={15} aria-hidden="true" />
           </button>
 

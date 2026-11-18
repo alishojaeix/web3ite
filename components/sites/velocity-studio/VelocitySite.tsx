@@ -30,17 +30,17 @@ import {
 
 export function VelocitySite() {
   return (
-    <div className="vs-site" id="top">
+    <div className="vs-site" id="top" dir="rtl">
       <a className="vs-skip" href="#vs-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <VelocityNav />
 
-      <main id="vs-main">
+      <main id="vs-main" lang="fa" dir="rtl">
         <section className="vs-hero" aria-labelledby="vs-hero-title">
           <div className="vs-wrap vs-hero-top">
-            <p>8 Aero Court · London SE1</p>
+            <p>خیابان آیرو ۸ · لندن SE1</p>
             <p className="vs-status">
               <span className="vs-status-dot" aria-hidden="true" />
               {hero.status}
@@ -63,11 +63,11 @@ export function VelocitySite() {
 
               <div className="vs-actions">
                 <a className="vs-btn vs-btn--solid" href="#showcase">
-                  See the study
+                  دیدن مطالعه
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="vs-btn vs-btn--line" href="#story">
-                  Read the aero notes
+                  خواندن یادداشت‌های آیرو
                   <ArrowRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -87,7 +87,7 @@ export function VelocitySite() {
             <figure className="vs-hero-art">
               <div className="vs-hero-frame">
                 <div className="vs-frame-head">
-                  <span>Still / frame 01</span>
+                  <span>تصویر ثابت / نما ۰۱</span>
                   <span aria-hidden="true">00:00</span>
                 </div>
                 <AeroStudy />
@@ -197,14 +197,14 @@ export function VelocitySite() {
                 ))}
               </ol>
 
-              <aside className="vs-sheet" aria-label="Illustrative wind tunnel sheet">
+              <aside className="vs-sheet" aria-label="برگهٔ نمایشی تونل باد">
                 <div className="vs-sheet-head">
                   <div>
                     <p className="vs-sheet-title">{aero.sheet.title}</p>
                     <p className="vs-sheet-caption">{aero.sheet.caption}</p>
                   </div>
                   <span className="vs-sheet-code" aria-hidden="true">
-                    AERO / 03
+                    آیرو / ۰۳
                   </span>
                 </div>
 
@@ -267,7 +267,7 @@ export function VelocitySite() {
               <div>
                 <p className="vs-mini-label">
                   <ShieldCheck size={13} aria-hidden="true" />
-                  What this page does not claim
+                  این صفحه چه چیزی را ادعا نمی‌کند
                 </p>
                 <ul>
                   {specification.notClaimed.map((item) => (
@@ -348,7 +348,7 @@ export function VelocitySite() {
               </dl>
 
               <div className="vs-bring">
-                <p className="vs-mini-label">Bring to the request</p>
+                <p className="vs-mini-label">همراه با درخواست</p>
                 <ul>
                   {contact.bring.map((item) => (
                     <li key={item}>
@@ -401,21 +401,21 @@ export function VelocitySite() {
             <div className="vs-footer-brand">
               <p className="vs-footer-word">
                 <VelocityMark className="vs-footer-mark" />
-                Velocity Studio <span>Aero 01</span>
+                استودیوی Velocity <span>آیرو ۰۱</span>
               </p>
               <p>
-                Shape in motion: one aero study, one launch film and a
-                specification that shows its workings.
+                شکل در حرکت: یک مطالعهٔ آیرو، یک فیلم رونمایی و فصلی که
+                سازوکارش را نشان می‌دهد.
               </p>
               <a href="#top" className="vs-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="vs-footer-cols">
               <div>
-                <p className="vs-footer-label">Studio</p>
+                <p className="vs-footer-label">استودیو</p>
                 <address>
                   {contact.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -428,7 +428,7 @@ export function VelocitySite() {
               </div>
 
               <div>
-                <p className="vs-footer-label">Explore</p>
+                <p className="vs-footer-label">کاوش</p>
                 {velocityNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -437,22 +437,20 @@ export function VelocitySite() {
               </div>
 
               <div>
-                <p className="vs-footer-label">Template</p>
-                <Link href="/templates/velocity-studio">Template details</Link>
-                <Link href="/checkout/velocity-studio">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="vs-footer-label">قالب</p>
+                <Link href="/templates/velocity-studio">جزئیات قالب</Link>
+                <Link href="/checkout/velocity-studio">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="vs-footer-bottom">
             <p>
-              © 2026 Velocity Studio (fictional). A demonstration website: the
-              studio, study, film and figures are illustrative. No production
-              vehicle, measured aero result or offer is represented.
+              © ۲۰۲۶ استودیوی ولوکیتی (خیالی). یک وب‌سایت نمایشی: استودیو، مطالعه، فیلم و ارقام نمایشی‌اند. هیچ خودروی تولیدی، نتیجهٔ اندازه‌گیری‌شدهٔ آیرو یا پیشنهادی نمایش داده نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

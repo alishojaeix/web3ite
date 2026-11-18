@@ -20,7 +20,7 @@ export function VelocityBrief() {
     const type = String(data.get("type") ?? "").trim();
     const detail = String(data.get("message") ?? "").trim();
 
-    const brief = [type ? `Type: ${type}` : "", detail]
+    const brief = [type ? `نوع: ${type}` : "", detail]
       .filter(Boolean)
       .join("\n\n");
 
@@ -65,7 +65,7 @@ export function VelocityBrief() {
         <span className="vs-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="vs-success-title">Request recorded</p>
+        <p className="vs-success-title">درخواست ثبت شد</p>
         <p className="vs-success-body">{message}</p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export function VelocityBrief() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
@@ -90,14 +90,14 @@ export function VelocityBrief() {
           <p className="vs-form-sub">{contact.form.sub}</p>
         </div>
         <span className="vs-form-code" aria-hidden="true">
-          VS / 01
+          VS / ۰۱
         </span>
       </div>
 
       <form className="vs-form" onSubmit={onSubmit}>
         <div className="vs-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -105,24 +105,24 @@ export function VelocityBrief() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@studio.com"
+              placeholder="you@studio.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>What do you need?</span>
+          <span>چه چیزی نیاز دارید؟</span>
           <select name="type" defaultValue={contact.form.types[0]}>
             {contact.form.types.map((option) => (
               <option key={option} value={option}>
@@ -133,13 +133,13 @@ export function VelocityBrief() {
         </label>
 
         <label>
-          <span>The project</span>
+          <span>پروژه</span>
           <textarea
             name="message"
             rows={4}
             required
             maxLength={1200}
-            placeholder="The vehicle or study you are working on, and the decision the aero story has to support."
+            placeholder="خودرو یا مطالعه‌ای که روی آن کار می‌کنید، و تصمیمی که روایت آیرو باید پشتیبانی کند."
           />
         </label>
 
@@ -148,7 +148,7 @@ export function VelocityBrief() {
           className="vs-btn vs-btn--solid vs-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending request…" : "Send the request"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال درخواست"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

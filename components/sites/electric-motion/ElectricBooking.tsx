@@ -20,7 +20,7 @@ export function ElectricBooking() {
     const hub = String(data.get("hub") ?? "").trim();
     const detail = String(data.get("message") ?? "").trim();
 
-    const brief = [hub ? `Hub: ${hub}` : "", detail]
+    const brief = [hub ? `ایستگاه: ${hub}` : "", detail]
       .filter(Boolean)
       .join("\n\n");
 
@@ -65,7 +65,7 @@ export function ElectricBooking() {
         <span className="em-success-mark" aria-hidden="true">
           <Check size={20} />
         </span>
-        <p className="em-success-title">Test-drive request recorded</p>
+        <p className="em-success-title">درخواست رانندگی آزمایشی ثبت شد</p>
         <p className="em-success-body">{message}</p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export function ElectricBooking() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
@@ -89,13 +89,13 @@ export function ElectricBooking() {
           <p className="em-form-title">{contact.form.title}</p>
           <p className="em-form-sub">{contact.form.sub}</p>
         </div>
-        <span className="em-pill">POD 01</span>
+        <span className="em-pill">کپسول ۰۱</span>
       </div>
 
       <form className="em-form" onSubmit={onSubmit}>
         <div className="em-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -103,24 +103,24 @@ export function ElectricBooking() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@example.com"
+              placeholder="you@example.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>Departure hub</span>
+          <span>ایستگاه حرکت</span>
           <select name="hub" defaultValue={contact.form.hubs[0]}>
             {contact.form.hubs.map((option) => (
               <option key={option} value={option}>
@@ -131,13 +131,13 @@ export function ElectricBooking() {
         </label>
 
         <label>
-          <span>Your usual city trip</span>
+          <span>سفر شهری همیشگی شما</span>
           <textarea
             name="message"
             rows={4}
             required
             maxLength={1200}
-            placeholder="Preferred day, how many passengers you usually carry, or any accessibility needs."
+            placeholder="روز دلخواه، تعداد مسافران همیشگی، یا هر نیاز دسترس‌پذیری."
           />
         </label>
 
@@ -146,7 +146,7 @@ export function ElectricBooking() {
           className="em-btn em-btn--solid em-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Recording request…" : "Book a demo drive"}
+          {status === "sending" ? "در حال ثبت درخواست…" : "رزرو رانندگی نمایشی"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { EmberSite } from "@/components/sites/ember-kitchen/EmberSite";
 import "./ember.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Ember Kitchen — Cooked by fire";
+const title = "امبر کیچن — پخته‌شده با آتش";
 const description =
-  "A sample live-fire restaurant website: one oak hearth, eighteen counter seats, a menu written at the pass, an interactive hearth section, the room and a working booking request form. Fictional London kitchen built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای رستوران آتش‌باز: اجاق هیزمی، منوی فصلی در پاس، هجده صندلی کانتر و فرم درخواست رزرو. رستوران خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=ember-kitchen",
         width: 1200,
         height: 630,
-        alt: "Ember Kitchen website preview",
+        alt: "پیش‌نمایش وب‌سایت امبر کیچن",
       },
     ],
   },

@@ -6,7 +6,7 @@ import type { TemplateTheme } from "@/types/template";
 export function ScenePoster({
   theme,
   label,
-  message = "WebGL is unavailable in this browser.",
+  message = "WebGL در این مرورگر در دسترس نیست.",
   compact = false,
 }: {
   theme: TemplateTheme;
@@ -30,17 +30,17 @@ export function ScenePoster({
         style={{ borderColor: theme.accent }}
       />
       <div className="relative z-10 max-w-[18rem] px-6 text-center">
-        <p className="text-[10px] uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
-          3D preview
+        <p className="text-[13px] uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
+          ۳بعدی پیش‌نمایش
         </p>
         {label ? (
-          <p className="mt-3 font-display text-[24px] leading-none tracking-[-0.03em]" style={{ color: theme.foreground }}>
+          <p className="mt-3 font-display text-[24px] leading-none tracking-[0.01em]" style={{ color: theme.foreground }}>
             {label}
           </p>
         ) : null}
         {!compact ? (
           <p className="mt-4 text-[12px] leading-relaxed" style={{ color: theme.muted }}>
-            {message} Enable hardware acceleration or open the template in a WebGL-capable browser.
+            {message} شتاب سخت‌افزاری را فعال کنید یا قالب را در مرورگری با پشتیبانی WebGL باز کنید.
           </p>
         ) : null}
       </div>
@@ -60,8 +60,8 @@ export function SceneLoading({ theme, label }: { theme: TemplateTheme; label?: s
         className="h-8 w-8 animate-spin rounded-full border-2 border-transparent"
         style={{ borderTopColor: theme.accent, borderRightColor: `${theme.accent}55` }}
       />
-      <p className="text-[10px] uppercase tracking-[0.22em]" style={{ color: theme.muted }}>
-        {label ? `Rendering ${label}` : "Rendering 3D"}
+      <p className="text-[13px] uppercase tracking-[0.22em]" style={{ color: theme.muted }}>
+        {label ? `در حال رندر ${label}` : "در حال رندر سه‌بعدی"}
       </p>
     </div>
   );
@@ -78,7 +78,7 @@ export function SceneError({
     <ScenePoster
       theme={theme}
       label={label}
-      message="The 3D scene could not start."
+      message="صحنهٔ سه‌بعدی آغاز نشد."
     />
   );
 }

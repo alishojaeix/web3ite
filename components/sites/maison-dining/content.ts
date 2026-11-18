@@ -7,16 +7,16 @@
  */
 
 export const maisonNav = [
-  { label: "Menu", href: "#menu" },
-  { label: "The room", href: "#room" },
-  { label: "The evening", href: "#evening" },
-  { label: "Visit", href: "#visit" },
+  { label: "منو", href: "#menu" },
+  { label: "اتاق", href: "#room" },
+  { label: "آن شب", href: "#evening" },
+  { label: "بازدید", href: "#visit" },
 ] as const;
 
 export const heroMeta = [
-  { label: "Paris 1er", value: "6 Rue des Orfèvres" },
-  { label: "Covers", value: "Twelve" },
-  { label: "Seating", value: "18:30" },
+  { label: "منطقهٔ یکم پاریس", value: "خیابان اورفِور ۶" },
+  { label: "مهمان", value: "دوازده" },
+  { label: "نشستن", value: "18:30" },
 ];
 
 export type Course = {
@@ -34,176 +34,176 @@ export type MenuOption = {
 };
 
 export const menu = {
-  label: "01 / The menu",
-  title: "One menu, written each morning.",
+  label: "۰۱ / منو",
+  title: "یک منو، هر روز صبح نوشته‌شده",
   intro:
-    "Five courses, one seating, and a card that changes with what the market sends us. The kitchen cooks the same menu for the whole room so that every plate leaves the pass at the same moment.",
-  date: "Autumn card · November 2026",
+    "پنج دور، یک نشست و کارتی که با آنچه بازار می‌فرستد عوض می‌شود. آشپزخانه برای تمام اتاق یک منو می‌پزد تا هر بشقاب در یک لحظه از پاس بیرون بیاید.",
+  date: "کارت پاییز · نوامبر ۲۰۲۶",
   price: "95",
   pairing: "65",
-  duration: "Three and a half hours",
+  duration: "سه ساعت و نیم",
   options: [
     {
       id: "full",
-      label: "The full menu",
-      note: "Five courses",
+      label: "منوی کامل",
+      note: "پنج دور",
       courses: [
         {
           numeral: "I",
-          name: "Oyster, kohlrabi, verbena",
-          description: "Chilled, mineral, a little sharp. Served in the shell.",
-          pairing: "Champagne, Blanc de Blancs",
+          name: "اویستر، کلم‌قمری، وربنا",
+          description: "سرد، معدنی و کمی تند. در همان صدف سرو می‌شود.",
+          pairing: "شامپاین، بلان دو بلان",
         },
         {
           numeral: "II",
-          name: "Cured trout, buttermilk, dill",
-          description: "A soft cure, a cold sauce, and rye toasted at the pass.",
-          pairing: "Sancerre, Les Monts Damnés",
+          name: "قزل‌آلای نمک‌سود، باترمیلک، شوید",
+          description: "نمک‌سودی نرم، سسی سرد و نان چاودری که همان‌جا تست شده است.",
+          pairing: "سانسر، له مونت دامی",
         },
         {
           numeral: "III",
-          name: "Turbot, beurre blanc, sea herbs",
-          description: "Line-caught, cooked on the bone, finished with salted butter.",
-          pairing: "Meursault, Les Narvaux",
+          name: "توربوت، بُور بلان، سبزیجات دریایی",
+          description: "صیدشده با قلاب، پخته با استخوان و تمام‌شده با کرهٔ نمکی.",
+          pairing: "مورسو، له ناروو",
         },
         {
           numeral: "IV",
-          name: "Aged duck, cherry, black garlic",
-          description: "Dry-aged for fourteen days and carved at the table.",
-          pairing: "Pinot Noir, Côte de Nuits",
+          name: "اردک کهنه، گیلاس، سیر سیاه",
+          description: "چهارده روز کهنه‌شده و پشت میز بریده می‌شود.",
+          pairing: "پینو نوار، کوت دو نوی",
         },
         {
           numeral: "V",
-          name: "Buckwheat, honey, cream",
-          description: "Toasted buckwheat, cold cream, a thin sheet of honey.",
-          pairing: "Jurançon, late harvest",
+          name: "گندم‌سیاه، عسل، خامه",
+          description: "گندم‌سیاه تست‌شده، خامهٔ سرد و ورقه‌ای نازک از عسل.",
+          pairing: "ژوران‌سون، برداشت دیرهنگام",
         },
       ],
     },
     {
       id: "garden",
-      label: "From the garden",
-      note: "Five courses · vegetarian",
+      label: "از باغ",
+      note: "پنج دور · گیاهی",
       courses: [
         {
           numeral: "I",
-          name: "Kohlrabi, oyster leaf, verbena",
-          description: "Shaved raw, dressed with verbena oil and sea salt.",
-          pairing: "Champagne, Blanc de Blancs",
+          name: "کلم‌قمری، برگ اویستر، وربنا",
+          description: "نازک و خام، با روغن وربنا و نمک دریا.",
+          pairing: "شامپاین، بلانک دو بلانک",
         },
         {
           numeral: "II",
-          name: "Heritage beetroot, smoked cream",
-          description: "Roasted in salt, peeled warm, finished at the pass.",
-          pairing: "Sancerre, Les Monts Damnés",
+          name: "چغندر کهن، خامهٔ دودی",
+          description: "در نمک بوداده، گرم پوست‌کنده و همان‌جا تمام‌شده.",
+          pairing: "سانسر، له مونت دامی",
         },
         {
           numeral: "III",
-          name: "Celeriac, hazelnut, truffle",
-          description: "Baked whole for three hours, carved like a joint.",
-          pairing: "Meursault, Les Narvaux",
+          name: "کرفس‌رشه، فندق، ترافل",
+          description: "سه ساعت درسته پخته و مانند یک برش گوشت بریده می‌شود.",
+          pairing: "مورسو، له ناروو",
         },
         {
           numeral: "IV",
-          name: "Comté, quince, walnut",
-          description: "Aged comté, quince paste, and a warm walnut loaf.",
-          pairing: "Pinot Noir, Côte de Nuits",
+          name: "کمتی کهنه، به، گردو",
+          description: "کمتی کهنه، لواشهٔ به و نان گرم گردو.",
+          pairing: "پینو نوار، کوت دو نوی",
         },
         {
           numeral: "V",
-          name: "Buckwheat, honey, cream",
-          description: "Toasted buckwheat, cold cream, a thin sheet of honey.",
-          pairing: "Jurançon, late harvest",
+          name: "گندم‌سیاه، عسل، خامه",
+          description: "گندم‌سیاه تست‌شده، خامهٔ سرد و ورقه‌ای نازک از عسل.",
+          pairing: "ژوران‌سون، برداشت دیرهنگام",
         },
       ],
     },
   ] as MenuOption[],
-  note: "Sample menu. Dishes, prices and pairings are illustrative. Allergies can be accommodated with 48 hours' notice.",
+  note: "منوی نمونه. غذاها، قیمت‌ها و همراهی‌ها نمایشی‌اند. آلرژی‌ها با اطلاع ۴۸ ساعت قبل قابل تطبیق‌اند.",
 };
 
 export const room = {
-  label: "02 / The room",
-  title: "Twelve seats, arranged around the pass.",
+  label: "۰۲ / اتاق",
+  title: "دوازده صندلی، چیده‌شده گرد پاس",
   intro:
-    "The dining room is one long table and two small ones, set around the kitchen rather than away from it. There is no music and no second seating: the room fills once and stays until the last course.",
+    "اتاق غذاخوری یک میز بلند و دو میز کوچک است، چیده‌شده گرد آشپزخانه و نه دور از آن. موسیقی نیست و نشست دوم هم نیست: اتاق یک بار پر می‌شود و تا آخرین دور می‌ماند.",
   paragraphs: [
-    "Walnut tables, unbleached linen, old silver and a single pendant over the pass. The room was a print workshop before it was a restaurant; the marks on the floor are still the marks of the presses.",
-    "Every seat can see the kitchen. We think that is the point: the cooking is the room's only performance, and the pace belongs to the pass.",
+    "میزهای گردو، کتان رنگ‌نشسته، نقره‌های کهنه و یک آویز بالای پاس. این اتاق پیش از رستوران شدن، چاپخانه بود؛ جای دستگاه‌های چاپ هنوز روی کف اتاق مانده است.",
+    "از هر صندلی می‌شود آشپزخانه را دید. به نظر ما همین نکته است: پختن، تنها نمایش این اتاق است و آهنگ کار هم به پاس تعلق دارد.",
   ],
   materials: [
-    { label: "Walnut", note: "Tables, cut from one tree" },
-    { label: "Linen", note: "Unbleached, changed daily" },
-    { label: "Silver", note: "The cloche, lifted at the table" },
+    { label: "گردو", note: "میزها، بریده از یک درخت" },
+    { label: "کتان", note: "رنگ‌نشسته، هر روز عوض‌شده" },
+    { label: "نقره", note: "کلوشه، روی میز برداشته‌شده" },
   ],
   facts: [
-    { label: "Opened", value: "2018" },
-    { label: "Covers", value: "12" },
-    { label: "Kitchen", value: "Open pass" },
-    { label: "Service", value: "One seating" },
+    { label: "گشایش", value: "2018" },
+    { label: "مهمان", value: "12" },
+    { label: "آشپزخانه", value: "پاس باز" },
+    { label: "سرویس", value: "یک نشست" },
   ],
   plan: {
-    note: "Ground floor · 6 Rue des Orfèvres",
+    note: "همکف · خیابان اورفِور ۶",
     labels: {
-      pass: "The pass",
-      cellar: "Cellar",
-      entrance: "Entrance",
-      room: "Dining room · 12 covers",
+      pass: "پاس",
+      cellar: "زیرزمین",
+      entrance: "ورودی",
+      room: "اتاق غذاخوری · ۱۲ مهمان",
     },
   },
 };
 
 export const evening = {
-  label: "03 / The evening",
-  title: "The room sets its own pace.",
+  label: "۰۳ / آن شب",
+  title: "آهنگ شب را خود اتاق می‌سازد",
   intro:
-    "Doors open a quarter of an hour before the seating. Courses move with the kitchen, not a clock, and the last petit four arrives when the room is ready for it.",
+    "درها یک ربع پیش از نشستن باز می‌شوند. دورها با آشپزخانه پیش می‌روند نه با ساعت، و آخرین پتی‌فور وقتی می‌رسد که اتاق آماده‌اش باشد.",
   timeline: [
-    { time: "18:15", title: "Doors", body: "Aperitif at the bar while the room is set." },
-    { time: "18:30", title: "Seating", body: "Everyone is seated together for the first course." },
-    { time: "18:45", title: "The menu", body: "Five courses, served from the open pass." },
-    { time: "22:30", title: "Last course", body: "Petit four, coffee, and the walk home." },
+    { time: "18:15", title: "درها", body: "آپریتیف در بار، در حالی که اتاق چیده می‌شود." },
+    { time: "18:30", title: "نشستن", body: "همه با هم برای دور اول می‌نشینند." },
+    { time: "18:45", title: "منو", body: "پنج دور، سرو‌شده از پاس باز." },
+    { time: "22:30", title: "آخرین دور", body: "پتی‌فور، قهوه و راهِ خانه." },
   ],
   quote:
-    "We cook one menu so we can buy better, waste less, and give every plate the time it needs.",
-  attribution: "The kitchen",
-  note: "We ask guests to arrive together. The room is small, and the first course waits for no one.",
+    "یک منو می‌پزیم تا بتوانیم بهتر بخریم، کمتر دور بریزیم و به هر بشقاب فرصتی که لازم دارد بدهیم.",
+  attribution: "آشپزخانه",
+  note: "از مهمان‌ها می‌خواهیم با هم برسند. اتاق کوچک است و دور اول منتظر کسی نمی‌ماند.",
 };
 
 export type PartySize = "2" | "3" | "4" | "6" | "private";
 
 export const reservation = {
-  label: "04 / Reservations",
-  title: "Reserve the room.",
+  label: "۰۴ / رزرو",
+  title: "اتاق را رزرو کنید",
   intro:
-    "One seating each evening, Wednesday to Sunday. Tell us the date and any dietary needs; the réservations desk replies by email within one working day.",
+    "هر شب یک نشست، چهارشنبه تا یکشنبه. تاریخ و هر محدودیت غذایی را بگویید؛ میز رزرو در یک روز کاری با ایمیل پاسخ می‌دهد.",
   sitting: "18:30",
   price: "95",
   pairing: "65",
   partySizes: [
-    { value: "2" as PartySize, label: "Two guests" },
-    { value: "3" as PartySize, label: "Three guests" },
-    { value: "4" as PartySize, label: "Four guests" },
-    { value: "6" as PartySize, label: "Six guests" },
-    { value: "private" as PartySize, label: "Private room · 12" },
+    { value: "2" as PartySize, label: "دو مهمان" },
+    { value: "3" as PartySize, label: "سه مهمان" },
+    { value: "4" as PartySize, label: "چهار مهمان" },
+    { value: "6" as PartySize, label: "شش مهمان" },
+    { value: "private" as PartySize, label: "اتاق خصوصی · ۱۲" },
   ],
-  note: "Sample reservation form. No table is held and no email is sent.",
+  note: "فرم رزرو نمونه. هیچ میزی رزرو نمی‌شود و ایمیلی فرستاده نمی‌شود.",
   confirmation:
-    "Your request has been recorded for this demonstration. No table is held, no deposit is taken, and no email is sent.",
+    "درخواست شما برای این نمایش ثبت شد. هیچ میزی رزرو نمی‌شود، بیعانه‌ای گرفته نمی‌شود و ایمیلی فرستاده نمی‌شود.",
 };
 
 export const visit = {
-  label: "05 / Visit",
-  title: "Find the room.",
-  address: ["Maison Dining", "6 Rue des Orfèvres", "75001 Paris"],
+  label: "۰۵ / بازدید",
+  title: "اتاق را پیدا کنید",
+  address: ["مزون داینینگ", "خیابان اورفِور ۶", "پاریس ۷۵۰۰۱"],
   transport:
-    "Métro Pont Neuf (line 7), four minutes on foot. The door is the green one beside the gallery; ring the bell marked Maison.",
+    "متروی پون‌نُف (خط ۷)، چهار دقیقه پیاده. در، همان در سبز کنار گالری است؛ زنگِ «مزون» را بزنید.",
   hours: [
-    { day: "Wednesday – Sunday", time: "18:30 seating" },
-    { day: "Monday – Tuesday", time: "Closed" },
+    { day: "چهارشنبه – یکشنبه", time: "نشست 18:30" },
+    { day: "دوشنبه – سه‌شنبه", time: "بسته" },
   ],
   email: "reservations@maison-dining.demo",
   phone: "+33 1 84 00 00 00",
   privateNote:
-    "The whole room can be taken privately for up to twelve guests. Ask for the buyout card when you write.",
-  note: "Fictional venue. The address, telephone number and opening hours are illustrative.",
+    "کل اتاق برای تا دوازده مهمان قابل رزرو خصوصی است. هنگام نوشتن، کارت خرید کامل را بخواهید.",
+  note: "مکان خیالی. نشانی، شمارهٔ تلفن و ساعات باز بودن نمایشی‌اند.",
 };

@@ -16,12 +16,12 @@ export function ApexTrim() {
           <p className="ap-config-title">{showcase.config.title}</p>
         </div>
         <span className="ap-config-code" aria-hidden="true">
-          03 / TRIM
+          ۰۳ / تیپ
         </span>
       </div>
 
       <fieldset className="ap-trim-fieldset">
-        <legend className="ap-visually-hidden">Choose a trim</legend>
+        <legend className="ap-visually-hidden">یک تیپ انتخاب کنید</legend>
         <div className="ap-trim-options">
           {trims.map((trim) => {
             const selected = trim.id === active;
@@ -57,11 +57,11 @@ export function ApexTrim() {
         <p className="ap-trim-character">{current.character}</p>
         <dl className="ap-trim-rows">
           <div>
-            <dt>Wheels</dt>
+            <dt>چرخ‌ها</dt>
             <dd>{current.wheels}</dd>
           </div>
           <div>
-            <dt>Cabin</dt>
+            <dt>کابین</dt>
             <dd>{current.cabin}</dd>
           </div>
         </dl>

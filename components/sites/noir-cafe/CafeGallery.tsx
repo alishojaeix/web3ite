@@ -34,7 +34,7 @@ export function CafeGallery() {
               <button
                 type="button"
                 onClick={() => openImage(image)}
-                aria-label={`View larger image: ${image.caption}`}
+                aria-label={`نمایش تصویر بزرگ‌تر: ${image.caption}`}
                 aria-haspopup="dialog"
                 className="group relative block aspect-[4/3] w-full overflow-hidden text-left focus-visible:outline-offset-4"
               >
@@ -59,7 +59,7 @@ export function CafeGallery() {
 
       <dialog
         ref={dialogRef}
-        aria-label="Gallery image"
+        aria-label="تصویر گالری"
         onClose={() => setSelected(null)}
         onClick={(event) => {
           if (event.target === dialogRef.current) closeDialog();
@@ -73,7 +73,7 @@ export function CafeGallery() {
               <button
                 type="button"
                 onClick={closeDialog}
-                aria-label="Close gallery image"
+                aria-label="بستن تصویر گالری"
                 className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/30 hover:border-[var(--nc-brass)] hover:text-[var(--nc-brass)]"
               >
                 <X size={18} aria-hidden="true" />

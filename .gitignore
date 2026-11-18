@@ -2,10 +2,46 @@ node_modules
 .next
 out
 .DS_Store
+Thumbs.db
 *.log
-.env*.local
 .impeccable
 tsconfig.tsbuildinfo
 .playwright-mcp/
 data/runtime/
+
+# Environment files - never commit real credentials
 .env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+
+# Build output / coverage
+dist/
+build/
+coverage/
+
+# Local QA + audit scratch space (browser profiles, screenshots, logs)
+.audit/
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Local databases and certificates
+*.sqlite
+*.sqlite3
+*.db
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS / temporary artifacts
+*.tmp
+*.bak

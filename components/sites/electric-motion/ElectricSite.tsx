@@ -18,12 +18,12 @@ import {
 
 export function ElectricSite() {
   return (
-    <div className="em-site" id="top">
+    <div className="em-site" id="top" dir="rtl">
       <a href="#em-main" className="em-skip">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
-      <div className="em-topbar" role="note" aria-label="Mobility pilot notice">
+      <div className="em-topbar" role="note" aria-label="اطلاعیهٔ طرح آزمایشی حمل‌ونقل">
         <div className="em-wrap em-topbar-inner">
           <span className="em-topbar-status">
             <span className="em-dot" aria-hidden="true" />
@@ -31,7 +31,7 @@ export function ElectricSite() {
           </span>
           <span className="em-topbar-note">{hero.note}</span>
           <a href="#showcase" className="em-topbar-link">
-            Charge &amp; range calculator
+            محاسبهٔ شارژ و برد
             <ArrowUpRight size={12} aria-hidden="true" />
           </a>
         </div>
@@ -39,7 +39,7 @@ export function ElectricSite() {
 
       <ElectricNav />
 
-      <main id="em-main">
+      <main id="em-main" lang="fa" dir="rtl">
         {/* HERO — Centered Daylight Courtyard with Pod & Semicircular Arch */}
         <section className="em-hero" aria-labelledby="em-hero-title">
           <div className="em-wrap">
@@ -58,16 +58,16 @@ export function ElectricSite() {
 
               <div className="em-actions">
                 <a href="#showcase" className="em-btn em-btn--solid">
-                  Meet the vehicle
+                  با خودرو آشنا شوید
                   <ArrowDownRight size={15} aria-hidden="true" />
                 </a>
                 <a href="#contact" className="em-btn em-btn--line">
-                  Book a test drive
+                  رزرو آزمایش رانندگی
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
 
-              <ul className="em-badge-row" aria-label="Key vehicle highlights">
+              <ul className="em-badge-row" aria-label="برجسته‌ترین ویژگی‌های خودرو">
                 {heroBadges.map((item) => (
                   <li key={item.label}>
                     <span>{item.label}</span>
@@ -85,7 +85,7 @@ export function ElectricSite() {
               </figcaption>
             </figure>
 
-            <dl className="em-highlights" aria-label="Illustrative figures">
+            <dl className="em-highlights" aria-label="اعداد نمایشی">
               {highlights.map((item) => (
                 <div key={item.label} className="em-highlight-card">
                   <dt>{item.label}</dt>
@@ -268,15 +268,15 @@ export function ElectricSite() {
 
               <div className="em-address-cards">
                 <div>
-                  <span className="em-meta-label">Studio courtyard</span>
+                  <span className="em-meta-label">حیاط استودیو</span>
                   <p className="em-meta-val">
-                    {contact.address.join(", ")}
+                    {contact.address.join("، ")}
                     <br />
                     {contact.hours}
                   </p>
                 </div>
                 <div>
-                  <span className="em-meta-label">Direct desk</span>
+                  <span className="em-meta-label">میز مستقیم</span>
                   <a href={`mailto:${contact.email}`} className="em-mail-link">
                     {contact.email}
                   </a>
@@ -297,13 +297,13 @@ export function ElectricSite() {
               <span className="em-brand-badge">
                 <PodMark className="em-brand-mark" />
               </span>
-              <span className="em-brand-word">Electric Motion</span>
-              <span className="em-brand-sub">Urban mobility</span>
+              <span className="em-brand-word">الکتریک موشن</span>
+              <span className="em-brand-sub">حمل‌ونقل شهری</span>
             </p>
             <p className="em-footer-note">{contact.note}</p>
           </div>
 
-          <nav aria-label="Footer navigation" className="em-footer-links">
+          <nav aria-label="پیمایش فوتر" className="em-footer-links">
             {electricNav.map((item) => (
               <a key={item.href} href={item.href}>
                 {item.label}
@@ -314,11 +314,12 @@ export function ElectricSite() {
 
         <div className="em-wrap em-footer-bottom">
           <span>
-            Electric Motion — fictional urban electric mobility demonstration.
+            الکتریک موشن — نمایش خیالی حمل‌ونقل برقی شهری.
           </span>
           <div className="em-footer-market">
-            <Link href="/templates/electric-motion">Template detail</Link>
-            <Link href="/templates">All templates</Link>
+            <Link href="/templates/electric-motion">جزئیات قالب</Link>
+            <Link href="/checkout/electric-motion">خرید این قالب</Link>
+            <Link href="/templates">همهٔ قالب‌ها</Link>
           </div>
         </div>
       </footer>

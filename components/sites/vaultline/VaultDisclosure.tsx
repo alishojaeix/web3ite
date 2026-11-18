@@ -65,7 +65,7 @@ export function VaultDisclosure() {
         <span className="vl-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="vl-success-title">Request recorded</p>
+        <p className="vl-success-title">درخواست ثبت شد</p>
         <p className="vl-success-body">{message}</p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export function VaultDisclosure() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another request
+          ارسال درخواست دیگر
         </button>
       </div>
     );
@@ -97,7 +97,7 @@ export function VaultDisclosure() {
       <form className="vl-form" onSubmit={onSubmit}>
         <div className="vl-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -105,24 +105,24 @@ export function VaultDisclosure() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@company.com"
+              placeholder="you@company.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>Request type</span>
+          <span>نوع درخواست</span>
           <select name="type" defaultValue={disclosure.form.types[0]}>
             {disclosure.form.types.map((option) => (
               <option key={option} value={option}>
@@ -133,13 +133,13 @@ export function VaultDisclosure() {
         </label>
 
         <label>
-          <span>What do you need to inspect?</span>
+          <span>چه چیزی را باید بازرسی کنید؟</span>
           <textarea
             name="message"
             rows={4}
             required
             maxLength={1200}
-            placeholder="Control area, deployment model and the decision your review has to support."
+            placeholder="بخش کنترل، الگوی استقرار و تصمیمی که بازبینی شما باید پشتیبانی کند."
           />
         </label>
 
@@ -148,7 +148,7 @@ export function VaultDisclosure() {
           className="vl-btn vl-btn--solid vl-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending request…" : "Request the overview"}
+          {status === "sending" ? "در حال ارسال…" : "درخواست مرور کلی"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

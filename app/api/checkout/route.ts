@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   const user = await getSessionUser();
   if (!user) {
     return NextResponse.json(
-      { error: "Sign in to continue to checkout.", code: "unauthorized" },
+      { error: "برای ادامه به پرداخت وارد شوید.", code: "unauthorized" },
       { status: 401 }
     );
   }
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   const limit = rateLimit(`checkout:${clientKey(request)}`, 10, 10 * 60 * 1000);
   if (!limit.allowed) {
     return NextResponse.json(
-      { error: "Too many checkout attempts. Please try again shortly." },
+      { error: "تلاش‌های پرداخت بیش از حد. لطفاً کمی بعد دوباره تلاش کنید." },
       { status: 429, headers: { "Retry-After": String(limit.retryAfter) } }
     );
   }
@@ -28,25 +28,25 @@ export async function POST(request: Request) {
   try {
     body = (await request.json()) as typeof body;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "بدنهٔ درخواست نامعتبر است." }, { status: 400 });
   }
 
   const templateId = typeof body.templateId === "string" ? body.templateId : "";
   const template = await getTemplateById(templateId);
   if (!template) {
-    return NextResponse.json({ error: "Unknown template." }, { status: 404 });
+    return NextResponse.json({ error: "قالب ناشناخته است." }, { status: 404 });
   }
 
   try {
     if (await hasPurchased(user.id, template.id)) {
       return NextResponse.json(
-        { error: "This template is already in your account.", code: "already_owned" },
+        { error: "این قالب از قبل در حساب شماست.", code: "already_owned" },
         { status: 409 }
       );
     }
   } catch {
     return NextResponse.json(
-      { error: "Purchase storage is unavailable. Please try again later." },
+      { error: "فضای ذخیره‌سازی خرید در دسترس نیست. لطفاً بعداً تلاش کنید." },
       { status: 503 }
     );
   }
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Payments are not configured on this deployment. No payment was taken.",
+          "پرداخت در این استقرار پیکربندی نشده است. مبلغی دریافت نشد.",
         code: "not_configured",
       },
       { status: 503 }
@@ -82,7 +82,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "The payment provider could not start checkout. No payment was taken. Please try again.",
+          "ارائه‌دهندهٔ پرداخت نتوانست فرایند را آغاز کند. مبلغی دریافت نشد. لطفاً دوباره تلاش کنید.",
       },
       { status: 502 }
     );

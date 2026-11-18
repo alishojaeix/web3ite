@@ -68,7 +68,7 @@ export function AeroStudy() {
       className="vs-aero-study"
       viewBox="0 0 900 620"
       role="img"
-      aria-label="An illustrative low performance car drawn as layered aero contours, with streamlines and a directional red light."
+      aria-label="یک خودروی آیروی پایین نمایشی با خطوط لایه‌ای، خطوط جریان و نور قرمز جهت‌دار."
     >
       <defs>
         <radialGradient id="vs-halo" cx="64%" cy="24%" r="62%">
@@ -226,14 +226,14 @@ export function AeroStudy() {
 
       {/* Labels */}
       <g fill="#b6a5a4" fontFamily="var(--vs-display), system-ui, sans-serif" fontSize="9" letterSpacing="2.2">
-        <text x="40" y="44">VELOCITY STUDIO / AERO 01</text>
-        <text x="860" y="44" textAnchor="end">CONTOUR SECTION / REV C</text>
-        <text x="40" y="592">ILLUSTRATIVE — NOT A PRODUCTION VEHICLE</text>
-        <text x="860" y="592" textAnchor="end">DIRECTIONAL LIGHT / SIGNAL RED</text>
+        <text x="40" y="44">استودیوی Velocity / آیرو ۰۱</text>
+        <text x="860" y="44" textAnchor="end">برش خطوط / بازبینی C</text>
+        <text x="40" y="592">نمایشی — نه خودروی تولیدی</text>
+        <text x="860" y="592" textAnchor="end">نور جهت‌دار / قرمز هشدار</text>
       </g>
       <g fill="#e45f58" fontFamily="var(--vs-display), system-ui, sans-serif" fontSize="8" letterSpacing="1.8">
-        <text x="40" y="60">SAMPLE STUDY</text>
-        <text x="860" y="60" textAnchor="end">FLOW →</text>
+        <text x="40" y="60">مطالعهٔ نمونه</text>
+        <text x="860" y="60" textAnchor="end">جریان</text>
       </g>
 
       {/* Frame */}
@@ -255,14 +255,15 @@ const wingByMode: Record<AeroModeId, { front: number; rear: number; pressure: nu
 
 export function AeroPlan({ mode }: { mode: AeroModeId }) {
   const wing = wingByMode[mode];
-  const label = mode === "aero" ? "AERO" : mode === "low" ? "LOW DRAG" : "ROAD";
+  const label =
+    mode === "aero" ? "چسبندگی" : mode === "low" ? "درگِ کم" : "جاده";
 
   return (
     <svg
       className="vs-plan"
       viewBox="0 0 760 440"
       role="img"
-      aria-label={`Illustrative plan view of the aero study in ${label.toLowerCase()} mode, with flow lines and pressure zones.`}
+      aria-label={`نمای نمایشی از بالا در مطالعهٔ آیرو، حالت ${label}، با خطوط جریان و نواحی فشار.`}
     >
       <defs>
         <radialGradient id="vs-plan-halo" cx="58%" cy="46%" r="58%">
@@ -359,13 +360,13 @@ export function AeroPlan({ mode }: { mode: AeroModeId }) {
 
       {/* Labels */}
       <g fill="#b6a5a4" fontFamily="var(--vs-display), system-ui, sans-serif" fontSize="8.5" letterSpacing="2">
-        <text x="24" y="32">PRESSURE PLAN / {label}</text>
-        <text x="736" y="32" textAnchor="end">PLAN VIEW · NOT TO SCALE</text>
-        <text x="24" y="414">FRONT →</text>
-        <text x="736" y="414" textAnchor="end">SAMPLE · ILLUSTRATIVE</text>
+        <text x="24" y="32">نقشهٔ فشار / {label}</text>
+        <text x="736" y="32" textAnchor="end">نمای بالا · بدون مقیاس</text>
+        <text x="24" y="414">جلو</text>
+        <text x="736" y="414" textAnchor="end">نمونه · نمایشی</text>
       </g>
       <g fill="#e45f58" fontFamily="var(--vs-display), system-ui, sans-serif" fontSize="7.5" letterSpacing="1.6">
-        <text x="380" y="48" textAnchor="middle">FLOW</text>
+        <text x="380" y="48" textAnchor="middle">جریان</text>
         <text x="24" y="48">01</text>
         <text x="736" y="48" textAnchor="end">03</text>
       </g>
@@ -380,7 +381,7 @@ export function MaterialSwatch({ variant }: { variant: "carbon" | "signal" | "tu
         className="vs-swatch"
         viewBox="0 0 220 160"
         role="img"
-        aria-label="Illustration of a carbon twill surface with one red thread."
+        aria-label="تصویر سطح توییل کربنی با یک رشتهٔ قرمز."
       >
         <defs>
           <pattern id="vs-carbon-weave" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -401,10 +402,10 @@ export function MaterialSwatch({ variant }: { variant: "carbon" | "signal" | "tu
         <path d="M 44 152 L 174 20" stroke="rgba(228,95,88,0.28)" strokeWidth="1" />
         <path d="M 22 132 L 132 22 M 60 150 L 198 12" stroke="rgba(245,236,235,0.1)" strokeWidth="0.8" />
         <text x="18" y="26" fill="#d9c9c7" fontFamily="var(--vs-display), sans-serif" fontSize="6.5" letterSpacing="1.6">
-          CARBON / TWILL
+          کربن / توییل
         </text>
         <text x="202" y="148" textAnchor="end" fill="#b6a5a4" fontFamily="var(--vs-display), sans-serif" fontSize="6.5" letterSpacing="1.4">
-          SAMPLE
+          نمونه
         </text>
       </svg>
     );
@@ -416,7 +417,7 @@ export function MaterialSwatch({ variant }: { variant: "carbon" | "signal" | "tu
         className="vs-swatch"
         viewBox="0 0 220 160"
         role="img"
-        aria-label="Illustration of a directional signal-red light passing across a dark surface."
+        aria-label="تصویر نور قرمز هشدار جهت‌دار که از روی سطحی تیره می‌گذرد."
       >
         <defs>
           <linearGradient id="vs-signal-beam" x1="0" y1="0" x2="1" y2="0.6">
@@ -446,10 +447,10 @@ export function MaterialSwatch({ variant }: { variant: "carbon" | "signal" | "tu
           <circle cx="108" cy="91" r="1.3" opacity="0.5" />
         </g>
         <text x="18" y="26" fill="#d9c9c7" fontFamily="var(--vs-display), sans-serif" fontSize="6.5" letterSpacing="1.6">
-          SIGNAL / RED
+          سیگنال / قرمز
         </text>
         <text x="202" y="148" textAnchor="end" fill="#b6a5a4" fontFamily="var(--vs-display), sans-serif" fontSize="6.5" letterSpacing="1.4">
-          DIRECTIONAL
+          جهت‌دار
         </text>
       </svg>
     );
@@ -460,7 +461,7 @@ export function MaterialSwatch({ variant }: { variant: "carbon" | "signal" | "tu
       className="vs-swatch"
       viewBox="0 0 220 160"
       role="img"
-      aria-label="Illustration of wind-tunnel streamlines passing over a low car silhouette."
+      aria-label="تصویر خطوط جریان تونل باد که از روی سیلوئت کوتاه خودرو می‌گذرند."
     >
       <defs>
         <linearGradient id="vs-tunnel-fade" x1="0" y1="0" x2="1" y2="0">
@@ -492,10 +493,10 @@ export function MaterialSwatch({ variant }: { variant: "carbon" | "signal" | "tu
         <path d="M 176 78 C 168 88 164 98 166 110" />
       </g>
       <text x="18" y="26" fill="#d9c9c7" fontFamily="var(--vs-display), sans-serif" fontSize="6.5" letterSpacing="1.6">
-        TUNNEL / FLOW
+        تونل / جریان
       </text>
       <text x="202" y="148" textAnchor="end" fill="#b6a5a4" fontFamily="var(--vs-display), sans-serif" fontSize="6.5" letterSpacing="1.4">
-        SAMPLE
+        نمونه
       </text>
     </svg>
   );

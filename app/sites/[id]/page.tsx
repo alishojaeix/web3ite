@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getSiteConfig } from "@/lib/sites";
 import { getTemplateById, listTemplates } from "@/lib/templates";
 import { TemplateWebsite } from "@/components/sites/engine/TemplateWebsite";
+import "@/app/sites/templates-typography.css";
 
 type PageProps = {
   params: { id: string };
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!template || !config) return {};
 
   const title = `${template.title} — ${template.content.headline} ${template.content.headlineAccent}`;
-  const description = `${template.content.intro} A fictional demonstration website built with the ${template.title} Web3ite template.`;
+  const description = `${template.content.intro} وب‌سایتی نمایشی و خیالی که با قالب ${template.title} از Web3ite ساخته شده است.`;
   const ageRestricted = Boolean(template.ageRestricted);
 
   return {
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: `/api/og?site=${template.id}`,
           width: 1200,
           height: 630,
-          alt: `${template.title} website preview`,
+          alt: `پیش‌نمایش وب‌سایت ${template.title}`,
         },
       ],
     },

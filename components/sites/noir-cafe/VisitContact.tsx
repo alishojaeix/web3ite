@@ -15,7 +15,7 @@ export function VisitContact() {
     <section id="visit" className="scroll-mt-6 bg-[var(--nc-wood)] px-6 py-24 sm:px-10 sm:py-28 lg:px-16 lg:py-36">
       <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[1fr_0.72fr] lg:gap-24">
         <div>
-          <p className="mb-6 text-sm text-[var(--nc-brass)]">Visit the room</p>
+          <p className="mb-6 text-sm text-[var(--nc-brass)]">بازدید از اتاق</p>
           <h2 className="whitespace-pre-line font-editorial text-[clamp(3.2rem,7vw,6.7rem)] leading-[0.9] tracking-[-0.04em] text-[var(--nc-cream)]">
             {visit.heading}
           </h2>
@@ -24,30 +24,30 @@ export function VisitContact() {
         <div className="self-end border-t border-[var(--nc-line)] pt-6">
           {hasVisitDetails ? (
             <dl className="space-y-5">
-              {visit.address ? <div><dt className="text-xs text-[var(--nc-muted)]">Address</dt><dd className="mt-1 text-base">{visit.address}</dd></div> : null}
-              {visit.hours ? <div><dt className="text-xs text-[var(--nc-muted)]">Opening hours</dt><dd className="mt-1 whitespace-pre-line text-base">{visit.hours}</dd></div> : null}
+              {visit.address ? <div><dt className="text-xs text-[var(--nc-muted)]">نشانی</dt><dd className="mt-1 text-base">{visit.address}</dd></div> : null}
+              {visit.hours ? <div><dt className="text-xs text-[var(--nc-muted)]">ساعات بازدید</dt><dd className="mt-1 whitespace-pre-line text-base">{visit.hours}</dd></div> : null}
             </dl>
           ) : (
             <p className="max-w-md text-sm leading-6 text-[var(--nc-muted)]">
-              Address and opening hours are not set. Add the café’s verified visit details before publishing this as an operating venue.
+              نشانی و ساعات بازدید تعیین نشده است. پیش از انتشار به‌عنوان یک مکان فعال، جزئیات تأییدشدهٔ بازدید کافه را بیفزایید.
             </p>
           )}
           {visit.reservationUrl ? (
             <a href={visit.reservationUrl} className="mt-7 inline-flex min-h-12 items-center gap-3 border-b border-[var(--nc-brass)] text-sm text-[var(--nc-cream)] hover:text-[var(--nc-brass)]">
-              Make a reservation <ArrowUpRight size={16} aria-hidden="true" />
+              رزرو میز <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           ) : contactHref ? (
             <a href={contactHref} className="mt-7 inline-flex min-h-12 items-center gap-3 border-b border-[var(--nc-brass)] text-sm text-[var(--nc-cream)] hover:text-[var(--nc-brass)]">
-              Get in touch <ArrowUpRight size={16} aria-hidden="true" />
+              تماس <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           ) : (
             <p className="mt-7 text-xs leading-5 text-[var(--nc-muted)]">
-              Contact and reservation links will appear when verified details are supplied.
+              پیوندهای تماس و رزرو پس از ارائهٔ جزئیات تأییدشده افزوده می‌شوند.
             </p>
           )}
           {visit.address && visit.mapUrl ? (
             <Link href={visit.mapUrl} target="_blank" rel="noreferrer" className="mt-4 flex min-h-11 w-fit items-center gap-2 text-xs text-[var(--nc-brass)] hover:text-[var(--nc-cream)]">
-              Open map <ArrowUpRight size={14} aria-hidden="true" />
+              گشودن نقشه <ArrowUpRight size={14} aria-hidden="true" />
             </Link>
           ) : null}
         </div>

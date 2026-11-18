@@ -1,155 +1,286 @@
 /**
- * Cigar Atelier - sample luxury tobacco content (adults 18+).
+ * Cigar Atelier — sample cigar-house content.
  *
- * The house, cigars, materials, specifications and contact are fictional.
- * No real products, sales, health claims or therapeutic benefits are represented.
- * Age-gated demonstration only.
+ * The house, formats, specifications and correspondence details are fictional.
+ * The page is an age-gated design demonstration for adults and sells nothing.
  */
 
+export const healthWarning =
+  "مصرف تنباکو برای سلامتی مضر است. این یک نمایش طراحی خیالی برای بزرگسالان است. مسئولیت رعایت محدودیت‌های سنی، قواعد تبلیغات و هشدارهای سلامتِ الزامی در بازار خود، بر عهدهٔ اپراتور است.";
+
 export const cigarNav = [
-  { label: "Collection", href: "#showcase" },
-  { label: "Atelier", href: "#story" },
-  { label: "Materials", href: "#materials" },
-  { label: "Details", href: "#specs" },
-  { label: "Adults 18+", href: "#contact" },
+  { label: "کلکسیون", href: "#showcase" },
+  { label: "آتلیه", href: "#story" },
+  { label: "مواد", href: "#materials" },
+  { label: "جزئیات", href: "#specs" },
+  { label: "اطلاعیه", href: "#contact" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Cigar Atelier / Adults 18+",
-  headline: "Craft,",
-  headlineAccent: "kept quiet.",
+  eyebrow: "سیگار آتلیه / فهرست خانه ۰۱",
+  headline: "ظرافت،",
+  headlineAccent: "بی‌هیاهو",
   intro:
-    "A fictional cigar house presented with archival restraint: material, provenance and a carefully controlled product gallery.",
-  status: "Private house · by appointment",
-  note: "Age-gated demo · fictional products · no sales",
+    "یک خانهٔ خیالی سیگار، ارائه‌شده به‌صورت آرشیو: چهار فرمت شماره‌دار، یک مطالعهٔ مواد و بدون ویترین. هر رکورد نمایشی است و این صفحه هیچ چیز نمی‌فروشد.",
+  status: "بزرگسالان ۱۸+ · خانهٔ خیالی",
+  note: "نمایش با محدودیت سن · محصولات خیالی · بدون فروش یا ادعای سلامت",
   caption: [
-    "Cedar-lined vitrine · four indexed formats",
-    "Illustrative concept · no real products or sales",
+    "طبیعت بی‌جان ۰۱ — سینی سرو، کارت فهرست، خط‌کش برنجی",
+    "اثر نمایشی · نه عکس محصول واقعی",
   ],
+  footNote: "چهار رکورد · بدون موجودی · بدون سفارش",
 } as const;
 
 export const heroMeta = [
-  { label: "House", value: "Fictional" },
-  { label: "Access", value: "18+ gate" },
-  { label: "Batch", value: "Small" },
+  { label: "دسترسی", value: "دروازهٔ ۱۸+" },
+  { label: "فرمت‌ها", value: "چهار مورد، شماره‌دار" },
+  { label: "وضعیت", value: "تنها آرشیو" },
 ] as const;
 
-export const atelier = {
-  label: "01 / The atelier",
-  title: "A small, indexed catalogue.",
+export const story = {
+  label: "۰۱ / آتلیه",
+  title: "خانه‌ای که به‌صورت فهرست نگه داشته می‌شود",
   intro:
-    "Three fictional formats, each with a plain specification card. Product details are illustrative and do not describe real goods.",
-  formats: [
+    "سیگار آتلیه خانه‌ای خیالی است که حول ابزارهای کاری یک آتلیهٔ کوچک شکل گرفته: سینی‌های سرو، خط‌کش‌های برنجی و کارت‌های فهرستی چاپی. این صفحه کلکسیونی را بدون تسویه‌حساب ارائه می‌دهد.",
+  quote: {
+    text: "اینجا هیچ چیز فروخته نمی‌شود. کلکسیون یک مطالعهٔ طراحی است، نه فهرست موجودی.",
+    note: "یادداشت خانه ۰۱",
+  },
+  notes: [
     {
-      index: "01",
-      name: "Cedar",
-      origin: "Connecticut",
-      size: "6 × 50",
-      profile: ["Cedar", "Cream", "Paper"],
-      note: "The lightest expression — a morning companion.",
+      index: "۰۱",
+      title: "آرشیو در وهلهٔ نخست",
+      body:
+        "هر فرمت به‌صورت یک رکورد شماره‌دار با مشخصات ساده ارائه می‌شود. هیچ چیز به‌صورت پیشنهاد، قیمت یا توصیه آراسته نشده است.",
     },
     {
-      index: "02",
-      name: "Maduro",
-      origin: "Nicaragua",
-      size: "5 × 54",
-      profile: ["Cocoa", "Leather", "Dark"],
-      note: "Rich, square-pressed wrapper — evening depth.",
+      index: "۰۲",
+      title: "ماده پیش از تصویر",
+      body:
+        "سرو، برنج و کاغذ هویت را حمل می‌کنند. اثر ترسیم شده است نه عکاسی‌شده، بنابراین هیچ محصول واقعی القا نمی‌شود.",
     },
     {
-      index: "03",
-      name: "Rosado",
-      origin: "Honduras",
-      size: "6 × 52",
-      profile: ["Rose", "Cedar", "Spice"],
-      note: "Reddish wrapper — balanced bridge between the two.",
+      index: "۰۳",
+      title: "خویشتن‌داری به‌عنوان سیاست",
+      body:
+        "خانه هیچ ادعای سلامت، ترک یا درمانی ندارد. تأیید سن و هشدارهای سلامت بخشی از رابط‌اند، نه متن ریز.",
     },
   ],
-  disclaimer:
-    "All formats are fictional. No tobacco product, flavour profile, measurement or price is real.",
+  sheet: {
+    title: "رکورد آتلیه",
+    caption: "خانه ۰۱ · نمایشی",
+    code: "CA / ۰۱",
+    rows: [
+      {
+        area: "سینی",
+        value: "سرو",
+        note: "بافت باز، سینی کم‌عمق، بدون نمونهٔ پوشش.",
+      },
+      {
+        area: "فهرست",
+        value: "کاغذ",
+        note: "کارت رکورد چاپی با زبانهٔ شماره‌دار.",
+      },
+      {
+        area: "خط‌کش",
+        value: "برنج",
+        note: "لبهٔ مستقیم برنجی کهنه برای مطالعهٔ تناسب.",
+      },
+      {
+        area: "نور",
+        value: "کم",
+        note: "یک منبع گرم تکی، دور از رکوردهای محصول.",
+      },
+    ],
+    note:
+      "یک رکورد خیالی. هیچ محصول، ادعای منشأ یا موجودی بازنمایی نمی‌شود.",
+  },
+  note:
+    "آتلیه یک نمایش طراحی است. هیچ خانه، سازنده یا کلکسیون واقعی را توصیف نمی‌کند.",
+} as const;
+
+export type CigarVariant = "cedar" | "maduro" | "rosado" | "corona";
+
+export const collection = {
+  label: "۰۲ / کلکسیون",
+  title: "چهار فرمت، یک فهرست",
+  intro:
+    "یک کاتالوگ کوچک و خیالی. برای دیدن کارت، رکوردی را انتخاب کنید. همهٔ مشخصات نمایشی‌اند و کالای واقعی را توصیف نمی‌کنند.",
+  note:
+    "تنها مشخصات نمایشی. هیچ محصولی برای فروش نیست و هیچ‌چیز اینجا توصیه به مصرف تنباکو نیست.",
+  items: [
+    {
+      id: "cedar" as CigarVariant,
+      index: "۰۱",
+      name: "سرو",
+      format: "کانکتیکات · ۶ × ۵۰",
+      wrapper: "سایهٔ کانکتیکات",
+      fill: "ترکیب نمایشی",
+      notes: ["سرو", "خامه", "کاغذ"],
+      body:
+        "رکوردی روشن و کاغذی با نوار سادهٔ سرو. کارت برای نشان دادن تناسب ترسیم شده، نه برای توصیف یک سیگار واقعی.",
+      tone: "#d9c7a6",
+      band: "#8a5a33",
+      bandInk: "#f4ead8",
+      caption: "رکورد ۰۱ · روکش روشن، نوار سرو",
+    },
+    {
+      id: "maduro" as CigarVariant,
+      index: "۰۲",
+      name: "مادورو",
+      format: "نیکاراگوئه · ۵ × ۵۴",
+      wrapper: "سایهٔ مادورو",
+      fill: "ترکیب نمایشی",
+      notes: ["کاکائو", "چرم", "تیره"],
+      body:
+        "رکوردی تیره و کوتاه با نوار پهن و شانهٔ نرم. واژه‌های چشایی خیالی‌اند و ادعای چشایی نیستند.",
+      tone: "#60402f",
+      band: "#1d1511",
+      bandInk: "#dcaf78",
+      caption: "رکورد ۰۲ · روکش تیره، نوار پهن",
+    },
+    {
+      id: "rosado" as CigarVariant,
+      index: "۰۳",
+      name: "روزادو",
+      format: "هندوراس · ۶ × ۵۲",
+      wrapper: "سایهٔ روزادو",
+      fill: "ترکیب نمایشی",
+      notes: ["گل سرخ", "سرو", "ادویه"],
+      body:
+        "رکوردی با تُن گلگون و نوار باریک دوبل. یادداشت‌هایش از پالت آتلیه گرفته شده، نه از ترکیب واقعی.",
+      tone: "#c08d78",
+      band: "#7a3d38",
+      bandInk: "#f4ead8",
+      caption: "رکورد ۰۳ · روکش گلگون، نوار دوبل",
+    },
+    {
+      id: "corona" as CigarVariant,
+      index: "۰۴",
+      name: "دابل کرونا",
+      format: "دominican · ۷ × ۵۰",
+      wrapper: "سایهٔ کلرادو",
+      fill: "ترکیب نمایشی",
+      notes: ["سرو", "توست", "بلند"],
+      body:
+        "رکوردی بلند و باریک که برای آزمودن تناسب و فاصلهٔ برچسب گنجانده شده. هیچ فرمت یا منشأ واقعی را بازنمایی نمی‌کند.",
+      tone: "#a97c52",
+      band: "#3f2f22",
+      bandInk: "#f4ead8",
+      caption: "رکورد ۰۴ · فرمت بلند، نوار ساده",
+    },
+  ],
 } as const;
 
 export const materials = {
-  label: "02 / The materials",
-  title: "Cedar, brass and paper.",
+  label: "۰۳ / مواد",
+  title: "سرو، برنج و کاغذ چاپی",
   intro:
-    "The visual language is built from the objects of the atelier: cedar, aged brass, dark leather and printed index cards.",
+    "زبان بصری از ابزارهای کاری آتلیه می‌آید. هر مطالعه ترسیم شده است نه عکاسی‌شده، و هیچ نمونهٔ مادی ارائه نمی‌شود.",
   items: [
     {
-      name: "Spanish cedar",
-      note: "The atelier",
+      name: "سرو",
+      note: "سینی و روکش",
+      body:
+        "بافتی گرم و باز برای سینی و روکش رکورد. تُن از سرو بدون پرداخت گرفته شده است.",
       swatch: "cedar",
-      body: "Lined drawers and vitrines. The wood regulates humidity and imparts a quiet, sweet-woody note to the resting stock.",
     },
     {
-      name: "Aged brass",
-      note: "Index and seal",
+      name: "برنج کهنه",
+      note: "خط‌کش و مهر",
+      body:
+        "لبهٔ مستقیم برنجی ملایم و مهری کوچک. فلز کهنه نمایش داده می‌شود، بدون پرداخت آینه‌ای.",
       swatch: "brass",
-      body: "Hand-stamped indices, drawer pulls and wax seals. The patina records every handling without spectacle.",
     },
     {
-      name: "Printed index card",
-      note: "Archival restraint",
+      name: "فهرست چاپی",
+      note: "رکورد و زبانه",
+      body:
+        "کاغذ کرم، خطوط راهنما و زبانهٔ شماره‌دار. فهرست، مهم‌ترین عنصر گرافیکی خانه است.",
       swatch: "paper",
-      body: "Cotton-rag stock, letterpress-printed. Each card carries origin, size, profile and the house disclaimer in one view.",
     },
   ],
-  note: "Illustrative material studies for layout demonstration.",
+  note: "مطالعات مواد نمایشی‌اند. هیچ نمونهٔ فیزیکی، محصول یا پرداختی ارائه نمی‌شود.",
 } as const;
 
 export const specification = {
-  label: "03 / Details",
-  title: "No health claims.",
+  label: "۰۴ / جزئیات",
+  title: "این صفحه چه ارائه می‌دهد — و چه نمی‌دهد",
   intro:
-    "The presentation makes no health, cessation or therapeutic claims. Operators must add the warnings and restrictions required in their market.",
+    "رکوردی ساده از دامنهٔ این نمایش، تا خیالی بودنش روشن بماند.",
   groups: [
     {
-      title: "Access & format",
+      title: "قالب",
       rows: [
-        { label: "Age gate", value: "18+ required" },
-        { label: "Catalogue", value: "4 indexed formats" },
-        { label: "Layout", value: "Single page + 3D" },
-        { label: "Sales", value: "None" },
+        { label: "قالب", value: "سیگار آتلیه" },
+        { label: "صنعت", value: "تنباکو و سیگار" },
+        { label: "قالب صفحه", value: "تک‌صفحه" },
       ],
     },
     {
-      title: "Compliance",
+      title: "دسترسی",
       rows: [
-        { label: "Health warning", value: "Operator responsibility" },
-        { label: "Advertising", value: "Market-dependent" },
-        { label: "Age verification", value: "Cookie-based demo" },
-        { label: "Indexing", value: "Sequential 01–04" },
+        { label: "دروازهٔ سن", value: "تأیید ۱۸+" },
+        { label: "روش دروازه", value: "کوکی نشست" },
+        { label: "فرم", value: "صندوق نمایشی" },
+      ],
+    },
+    {
+      title: "کلکسیون",
+      rows: [
+        { label: "فرمت‌ها", value: "۴ مورد نمایشی" },
+        { label: "اثر", value: "SVG درون‌خطی" },
+        { label: "فروش", value: "هیچ" },
       ],
     },
   ],
-  disclaimer:
-    "This is a demonstration template. Real operators are responsible for all applicable laws, warnings and age restrictions.",
+  notClaimed: [
+    "وجود یا فروش هر محصول",
+    "درستی هر ترکیب، منشأ یا اندازه",
+    "هر سودمندی سلامت، ترک یا درمانی",
+    "هر تأییدی از سوی خانه یا سازندهٔ واقعی",
+  ],
+  notClaimedNote:
+    "سیگار آتلیه یک نمایش طراحی خیالی برای بزرگسالان است. اپراتور باید محدودیت‌های سنی، قواعد تبلیغات و هشدارهای سلامتِ بازار خود را بیفزاید.",
+  note:
+    "این صفحه یک مطالعهٔ طراحی است. فروشگاه، کاتالوگ کالای واقعی یا اطلاعات سلامت نیست.",
 } as const;
 
 export const contact = {
-  label: "04 / Notice",
-  title: "Read the notice.",
+  label: "۰۵ / اطلاعیه",
+  title: "اطلاعیه را بخوانید",
   intro:
-    "This is a fictional demonstration. Operators are responsible for local restrictions, required health warnings and age verification.",
+    "این یک نمایش با محدودیت سنی است. برای دریافت نسخهٔ اطلاعیهٔ خانهٔ خیالی، درخواست دهید؛ هیچ اطلاعات محصول یا پیشنهادی ارسال نمی‌شود.",
   facts: [
-    { label: "Access", value: "Adults 18+" },
-    { label: "Format", value: "Index cards + 3D" },
-    { label: "Products", value: "Fictional" },
-    { label: "Sales", value: "None" },
+    { label: "دسترسی", value: "بزرگسالان ۱۸+" },
+    { label: "وضعیت", value: "خانهٔ خیالی" },
+    { label: "صندوق", value: "تنها نمایشی" },
+    { label: "فروش", value: "هیچ" },
   ],
+  lines: [
+    "بدون سفارش، قیمت یا ارسال",
+    "بدون ادعای سلامت یا ترک",
+    "بدون محصول، سازنده یا موجودی واقعی",
+  ],
+  quote: "دروازه نخستین صفحه است، نه آخرین.",
+  quoteNote: "یادداشت خانه ۰۲",
   email: "house@cigar-atelier.demo",
-  phone: "+44 20 7946 0189",
-  address: ["Cigar Atelier", "By appointment only", "—"],
-  hours: "Private · no walk-in",
-  note: "Fictional demonstration. Adults 18+ only. No sales or health claims.",
-  form: {
-    title: "Request the notice",
-    sub: "Fictional house · no sales call · no products",
-    types: ["House notice", "Index cards", "Material study", "Something else"],
-    note: "Sample request form. Nothing is sent to a real house, no products are offered and no sales contact is made.",
-    confirmation:
-      "Your request has been recorded for this demonstration. No message is sent, no products are offered and no sales contact is made.",
-    fallback:
-      "The demo house is unavailable right now. Please use the email address on this page.",
-  },
+  address: ["سیگار آتلیه (خیالی)", "تنها با قرار قبلی", "بدون ویترین عمومی"],
+  hours: "رکورد نمایشی · نه ساعت کاری واقعی",
+  note:
+    "نشانی ایمیل و نشانی پستی خیالی‌اند. فرم یک درخواست نمایشی را روی این سرور ذخیره می‌کند و ایمیلی ارسال نمی‌کند.",
+  formTitle: "درخواست اطلاعیهٔ خانه",
+  formSub: "یک فرم نمایشی برای خانهٔ خیالی. تنها بزرگسالان ۱۸+.",
+  formCode: "CA / اطلاعیه",
+  formOptions: ["اطلاعیهٔ خانه", "فهرست کلکسیون", "مطبوعات و اعتبارها"],
+  formNote:
+    "فرم نمایشی · ایمیلی ارسال نمی‌شود و سفارشی ساخته نمی‌شود. اطلاعات شخصی واقعی وارد نکنید.",
+  cta: "درخواست اطلاعیه",
+} as const;
+
+export const footer = {
+  blurb:
+    "ظرافت، بی‌هیاهو: خانهٔ خیالی سیگار به‌صورت فهرستی از مواد، رکوردها و محدودیت‌ها.",
+  note:
+    "© ۲۰۲۶ سیگار آتلیه (خیالی). یک وب‌سایت نمایشی برای بزرگسالان. هیچ محصولی فروخته نمی‌شود، موجودی وجود ندارد و هیچ ادعای سلامت، ترک یا درمانی مطرح نمی‌شود.",
 } as const;

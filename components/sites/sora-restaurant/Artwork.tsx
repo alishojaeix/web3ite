@@ -12,12 +12,8 @@ export function BowlScene() {
       role="img"
       aria-labelledby="sr-bowl-title sr-bowl-desc"
     >
-      <title id="sr-bowl-title">A sage-glazed stoneware bowl set for lunch</title>
-      <desc id="sr-bowl-desc">
-        A wide ceramic bowl with a pale sage glaze sits on a warm timber table.
-        A pair of chopsticks rests to the right, with a small cup and a folded
-        linen napkin. Soft daylight comes from the left.
-      </desc>
+      <title id="sr-bowl-title">یک کاسهٔ سفالی با لعاب مریم‌گلی برای ناهار</title>
+      <desc id="sr-bowl-desc"> کاسه‌ای سرامیکی پهن با لعاب مریم‌گلی روشن روی میز چوبی گرم قرار دارد. جفت چاپ‌استیک در سمت راست، همراه فنجانی کوچک و دستمال کتانی تا‌شده است. نور ملایم روز از چپ می‌آید. </desc>
       <defs>
         <linearGradient id="sr-bg" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#eee9dd" />
@@ -72,8 +68,8 @@ export function BowlScene() {
       <rect y="560" width="1200" height="200" fill="url(#sr-grain)" />
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="9" letterSpacing="3" fill="#5c604f">
-        <text x="48" y="52">SORA · GARDEN LANE</text>
-        <text x="1152" y="52" textAnchor="end">STONEWARE No. 04</text>
+        <text x="48" y="52">سورا · کوچهٔ گاردن</text>
+        <text x="1152" y="52" textAnchor="end">سفال شمارهٔ ۰۴</text>
       </g>
       <g stroke="#5c604f" strokeOpacity="0.22">
         <path d="M48 68H240M960 68H1152" />
@@ -145,8 +141,8 @@ export function BowlScene() {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="8" letterSpacing="2.6" fill="#5c604f">
-        <text x="48" y="700">SAGE GLAZE · STONEWARE</text>
-        <text x="1152" y="700" textAnchor="end">DAYLIGHT · 11:40</text>
+        <text x="48" y="700">لعاب مریم‌گلی · سفال</text>
+        <text x="1152" y="700" textAnchor="end">نور روز · ۱۱:۴۰</text>
       </g>
     </svg>
   );
@@ -160,11 +156,8 @@ export function RoomPlan() {
       role="img"
       aria-labelledby="sr-plan-title sr-plan-desc"
     >
-      <title id="sr-plan-title">Floor plan of the Sora dining room</title>
-      <desc id="sr-plan-desc">
-        A plan showing a ten-seat counter facing the kitchen, two tables for
-        five, a small courtyard at the rear and the entrance on Garden Lane.
-      </desc>
+      <title id="sr-plan-title">طرح کف اتاق غذاخوری سورا</title>
+      <desc id="sr-plan-desc"> طرحی با پیشخوانی ده‌نفره رو به آشپزخانه، دو میز پنج‌نفره، حیاطی کوچک در انتها و ورودی در کوچهٔ گاردن. </desc>
       <defs>
         <pattern id="sr-plan-grid" width="30" height="30" patternUnits="userSpaceOnUse">
           <path d="M30 0H0V30" fill="none" stroke="#ece6d8" strokeOpacity="0.045" />
@@ -175,8 +168,8 @@ export function RoomPlan() {
       <rect width="900" height="700" fill="url(#sr-plan-grid)" />
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="8" letterSpacing="2.6" fill="#aab09c">
-        <text x="40" y="46">SORA · GROUND FLOOR</text>
-        <text x="860" y="46" textAnchor="end">PLAN 1:50 · NOT TO SCALE</text>
+        <text x="40" y="46">سورا · همکف</text>
+        <text x="860" y="46" textAnchor="end">طرح ۱:۵۰ · بدون مقیاس</text>
       </g>
 
       <g fill="none" stroke="#ede7d9" strokeOpacity="0.5">
@@ -198,7 +191,7 @@ export function RoomPlan() {
           <circle key={x} cx={x} cy="213" r="10" fill="none" stroke="#b9c4aa" strokeOpacity="0.45" />
         ))}
         <text x="285" y="177" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2" fill="#d9dfcd">
-          COUNTER · 10
+          پیشخوان · ۱۰
         </text>
       </g>
 
@@ -206,7 +199,7 @@ export function RoomPlan() {
         <rect x="120" y="238" width="330" height="34" fill="#20261e" stroke="#b9c4aa" strokeOpacity="0.2" />
         <path d="M140 238V272M180 238V272M220 238V272M260 238V272M300 238V272M340 238V272M380 238V272M420 238V272" stroke="#b9c4aa" strokeOpacity="0.2" />
         <text x="285" y="259" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2" fill="#aab09c">
-          KITCHEN
+          آشپزخانه
         </text>
       </g>
 
@@ -216,10 +209,10 @@ export function RoomPlan() {
         <circle cx="420" cy="360" r="27" fill="none" stroke="#d9dfcd" strokeOpacity="0.42" />
         <circle cx="420" cy="360" r="9" fill="none" stroke="#d9dfcd" strokeOpacity="0.28" />
         <text x="190" y="408" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2" fill="#aab09c">
-          TABLE · 5
+          میز · ۵
         </text>
         <text x="420" y="408" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2" fill="#aab09c">
-          TABLE · 5
+          میز · ۵
         </text>
       </g>
 
@@ -229,7 +222,7 @@ export function RoomPlan() {
         <circle cx="715" cy="280" r="10" fill="none" stroke="#96a487" strokeOpacity="0.4" />
         <circle cx="750" cy="258" r="13" fill="none" stroke="#96a487" strokeOpacity="0.4" />
         <text x="715" y="336" textAnchor="middle" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2" fill="#aab09c">
-          COURTYARD · 4
+          حیاط · ۴
         </text>
       </g>
 
@@ -237,7 +230,7 @@ export function RoomPlan() {
         <path d="M330 470V540" stroke="#d9dfcd" strokeOpacity="0.4" strokeDasharray="3 5" />
         <path d="M300 540H360" stroke="#d9dfcd" strokeOpacity="0.4" />
         <text x="430" y="528" fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2" fill="#aab09c">
-          ENTRANCE · GARDEN LANE
+          ورودی · کوچهٔ گاردن
         </text>
         <path d="M410 516H300" stroke="#d9dfcd" strokeOpacity="0.28" />
       </g>
@@ -252,8 +245,8 @@ export function RoomPlan() {
       </g>
 
       <g fontFamily="var(--font-display), sans-serif" fontSize="7.5" letterSpacing="2.2" fill="#8b927f">
-        <text x="40" y="650">LUNCH · DINNER</text>
-        <text x="860" y="650" textAnchor="end">SORA · 3 GARDEN LANE</text>
+        <text x="40" y="650">ناهار · شام</text>
+        <text x="860" y="650" textAnchor="end">سورا · کوچهٔ گاردن ۳</text>
       </g>
     </svg>
   );

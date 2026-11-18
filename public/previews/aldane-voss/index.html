@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aldane &amp; Voss — Tobacco Catalogue</title>
+<title>آلدین و واس — کاتالوگ تنباکو</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,14 @@
      until (and if) the webfonts arrive. -->
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;1,6..72,200&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
-:root{--bg:#0d0c0b;--char:#1a1816;--warm:#8d867c;--ink:#ece6da;--ember:#b8794a;--line:rgba(236,230,218,.15);--serif:'Newsreader',Georgia,serif;--sans:'Instrument Sans',system-ui,sans-serif;--px:clamp(1.2rem,4vw,3.5rem);--ease:cubic-bezier(.2,.8,.1,1);box-sizing:border-box}
+/* Vazirmatn is the product face. When the local files are present it loads;
+   otherwise the stack falls through to the template's own webfonts, so the
+   document renders identically either way. */
+@font-face{font-family:"Vazirmatn";src:url("/font/Vazirmatn-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Vazirmatn";src:url("/font/Vazirmatn-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Vazirmatn";src:url("/font/Vazirmatn-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Vazirmatn";src:url("/font/Vazirmatn-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+:root{--bg:#0d0c0b;--char:#1a1816;--warm:#8d867c;--ink:#ece6da;--ember:#b8794a;--line:rgba(236,230,218,.15);--serif:'Vazirmatn','Newsreader',Georgia,serif;--sans:'Vazirmatn','Instrument Sans',system-ui,sans-serif;--px:clamp(1.2rem,4vw,3.5rem);--ease:cubic-bezier(.2,.8,.1,1);box-sizing:border-box}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
@@ -114,7 +121,7 @@ footer{background:var(--bg);padding:2rem var(--px) calc(2rem + env(safe-area-ins
 </style>
 </head>
 <body>
-<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><div><h2 id="gt">Are you 18 or older?</h2><p>This catalogue describes tobacco products and is intended for adult smokers only.</p><button id="yes">Yes, I am 18 or older</button><button class="no" id="no">No</button><noscript><p>JavaScript is required to confirm your age. Enable JavaScript and reload.</p></noscript></div></div>
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><div><h2 id="gt">آیا ۱۸ سال یا بیشتر دارید؟</h2><p>این کاتالوگ محصولات تنباکو را توصیف می‌کند و تنها برای بزرگسالان سیگاری است.</p><button id="yes">بله، ۱۸ سال یا بیشتر دارم</button><button class="no" id="no">خیر</button><noscript><p>برای تأیید سن به JavaScript نیاز است. JavaScript را فعال کرده و صفحه را بارگذاری مجدد کنید.</p></noscript></div></div>
 <script>
 /* Standalone 18+ controller. It runs before every external resource and the
    catalogue script below, so a slow font, CDN or main script can never leave
@@ -142,7 +149,7 @@ footer{background:var(--bg);padding:2rem var(--px) calc(2rem + env(safe-area-ins
   function restrict() {
     var panel = gate.querySelector("div");
     if (panel) {
-      panel.innerHTML = '<h2>Access restricted</h2><p>This catalogue is only available to adults.</p>';
+      panel.innerHTML = '<h2>دسترسی محدود</h2><p>این کاتالوگ تنها برای بزرگسالان در دسترس است.</p>';
     }
     gate.dataset.confirmed = "false";
     window.__aldaneGateConfirmed = false;
@@ -156,45 +163,45 @@ footer{background:var(--bg);padding:2rem var(--px) calc(2rem + env(safe-area-ins
 })();
 </script>
 <canvas id="gl" aria-hidden="true"></canvas><div class="vig"></div><div class="grain"></div>
-<header id="nav"><a class="logo" href="#top">Aldane &amp; Voss</a>
-<nav class="links" aria-label="Main"><a href="#collection">Collection</a><a href="#detail">Products</a><a href="#story">Story</a><a href="#info">Information</a></nav>
-<div class="tools"><button id="sbtn">Search</button><button id="mbtn" aria-expanded="false" aria-controls="menu">Menu</button></div></header>
-<div id="menu" role="dialog" aria-label="Menu"><button class="x" id="xbtn">Close</button>
-<ul id="mlinks"></ul><input id="q" type="search" placeholder="Search blends" aria-label="Search blends"><ul id="mprods"></ul></div>
+<header id="nav"><a class="logo" href="#top">آلدین و واس</a>
+<nav class="links" aria-label="اصلی"><a href="#collection">کالکشن</a><a href="#detail">محصولات</a><a href="#story">داستان</a><a href="#info">اطلاعات</a></nav>
+<div class="tools"><button id="sbtn">جستجو</button><button id="mbtn" aria-expanded="false" aria-controls="menu">منو</button></div></header>
+<div id="menu" role="dialog" aria-label="فهرست"><button class="x" id="xbtn">بستن</button>
+<ul id="mlinks"></ul><input id="q" type="search" placeholder="جستجوی ترکیب‌ها" aria-label="جستجوی ترکیب‌ها"><ul id="mprods"></ul></div>
 
 <main>
-<section id="top"><div class="stick pad"><div class="htx" id="htx"><h1 aria-label="Aldane &amp; Voss"><span><i>Aldane</i></span> <span><i>&amp; Voss</i></span></h1><p>Tobacco blends, specified plainly. A catalogue for adult smokers.</p></div></div></section>
+<section id="top"><div class="stick pad"><div class="htx" id="htx"><h1 aria-label="آلدین و واس"><span><i>آلدین</i></span> <span><i>و واس</i></span></h1><p>ترکیب‌های تنباکو، به‌سادگی بیان شده. کاتالوگی برای بزرگسالان سیگاری.</p></div></div></section>
 
 <section id="reveal" class="layer"><div class="stick">
- <article class="shot on"><b>01 Material</b><h2>One leaf, rested for a year.</h2><p>Flue-cured Virginia and air-cured Burley are stored for twelve months before blending.</p></article>
- <article class="shot"><b>02 Form</b><h2>Eighty-eight millimetres of structure.</h2><p>A hard pack with a hinged lid, a foil inner and a low-porosity paper wrap.</p></article>
- <article class="shot"><b>03 Detail</b><h2>Foil, edge and seam.</h2><p>Each lid is scored and folded by machine to a tolerance of 0.2 mm.</p></article>
- <article class="shot"><b>04 Identity</b><h2>A name, a number, a blend.</h2><p>Four blends, each given one number and no slogan.</p></article>
+ <article class="shot on"><b>۰۱ ماده</b><h2>یک برگ، یک سال استراحت</h2><p>تنباکوی ویرجینیای فرآوری‌شده با حرارت و بورلی هوایی به مدت دوازده ماه پیش از ترکیب‌سازی انبار می‌شوند.</p></article>
+ <article class="shot"><b>۰۲ شکل</b><h2>هشتاد و هشت میلی‌متر ساختار</h2><p>پاکت سخت با درب لولایی، فویل داخلی و کاغذ بسته‌بندی کم‌نفوذ.</p></article>
+ <article class="shot"><b>۰۳ جزئیات</b><h2>فویل، لبه و درز</h2><p>هر درب با ماشین تا تلورانس ۰.۲ میلی‌متر خراش داده و تا می‌شود.</p></article>
+ <article class="shot"><b>۰۴ هویت</b><h2>یک نام، یک شماره، یک ترکیب</h2><p>چهار ترکیب، هر کدام یک شماره و بدون شعار.</p></article>
  <div class="rail"><i id="rail"></i></div></div></section>
 
-<section id="collection" class="layer"><div class="stick"><div class="track" id="ctrack"><div class="hd"><h2 class="rv">The collection</h2><p class="lead">Scroll to move through four blends. Each lists its specification.</p></div></div></div></section>
+<section id="collection" class="layer"><div class="stick"><div class="track" id="ctrack"><div class="hd"><h2 class="rv">کالکشن</h2><p class="lead">برای عبور از چهار ترکیب اسکرول کنید. مشخصات هر کدام آمده است.</p></div></div></div></section>
 
 <section id="detail" class="layer pad" aria-live="polite"></section>
 
-<section id="viewer" class="layer pad" aria-label="Interactive viewer">
- <div><h2 class="rv">Hold and turn.</h2><p class="lead" style="margin-top:1rem">Drag to rotate the pack. Scroll nudges it too.</p></div>
- <div class="ctl"><span id="vname"></span><label>Zoom <input type="range" id="zoom" min="4" max="10" step=".1" value="7" aria-label="Zoom"></label></div></section>
+<section id="viewer" class="layer pad" aria-label="نمای تعاملی">
+ <div><h2 class="rv">بگیرید و بچرخانید</h2><p class="lead" style="margin-top:1rem">برای چرخاندن پاکت بکشید. اسکرول نیز آن را حرکت می‌دهد.</p></div>
+ <div class="ctl"><span id="vname"></span><label>بزرگ‌نمایی <input type="range" id="zoom" min="4" max="10" step=".1" value="7" aria-label="بزرگ‌نمایی"></label></div></section>
 
 <section id="story" class="layer"><div class="stick"><div class="tr" id="str">
- <div class="sc"><h2>Made slowly.</h2><p>Aldane &amp; Voss began in 1921 as a leaf merchant.</p></div>
- <div class="sc"><h2>Blended small.</h2><p>No lot exceeds 400 kg. Each is tasted before it is packed.</p></div>
- <div class="sc"><h2>Described plainly.</h2><p>We publish the specification and leave the rest to you.</p></div>
- <div class="sc"><h2>For adults only.</h2><p>Sold to those aged 18 and over, and never marketed otherwise.</p></div></div></div></section>
+ <div class="sc"><h2>به آرامی ساخته شد</h2><p>آلدین و واس در سال ۱۹۲۱ به‌عنوان بازرگان برگ آغاز شد.</p></div>
+ <div class="sc"><h2>ترکیب کوچک</h2><p>هیچ دسته‌ای بیش از ۴۰۰ کیلوگرم نیست. هر کدام پیش از بسته‌بندی چشیده می‌شود.</p></div>
+ <div class="sc"><h2>به‌سادگی توصیف شده</h2><p>ما مشخصات را منتشر می‌کنیم و بقیه را به شما می‌سپاریم.</p></div>
+ <div class="sc"><h2>تنها برای بزرگسالان</h2><p>به افراد ۱۸ سال و بالاتر فروخته می‌شود و هرگز به شکل دیگری بازاریابی نمی‌شود.</p></div></div></div></section>
 
-<section id="info" class="layer pad"><h2 class="rv">Information and responsibility</h2>
- <div class="ig"><div class="warn">Smoking causes cancer and is addictive. Smoking kills.</div>
- <div><h3>Product information</h3><p>Ingredient and emission data appear on each pack and are filed with the competent authority.</p></div>
- <div><h3>Regulation</h3><p>Products comply with the EU Tobacco Products Directive 2014/40/EU and national law.</p></div>
- <div><h3>Age</h3><p>For adults aged 18 and over. Please don't share this catalogue with minors.</p></div>
- <div><h3>Support to quit</h3><p>BZgA helpline (Germany): 0800 8 313131. Your doctor or pharmacist can also help.</p></div></div></section>
+<section id="info" class="layer pad"><h2 class="rv">اطلاعات و مسئولیت</h2>
+ <div class="ig"><div class="warn">سیگار کشیدن باعث سرطان می‌شود و اعتیادآور است. سیگار می‌کشد.</div>
+ <div><h3>اطلاعات محصول</h3><p>داده‌های مواد تشکیل‌دهنده و انتشار در هر پاکت درج شده و به مقام ذیصلاح ثبت می‌شوند.</p></div>
+ <div><h3>مقررات</h3><p>محصولات مطابق با دستورالعمل محصولات تنباکوی اتحادیه اروپا 2014/40/EU و قوانین ملی هستند.</p></div>
+ <div><h3>سن</h3><p>برای بزرگسالان ۱۸ سال و بالاتر. لطفاً این کاتالوگ را با افراد زیر ۱۸ سال به اشتراک نگذارید.</p></div>
+ <div><h3>پشتیبانی برای ترک</h3><p>خط کمک BZgA (آلمان): 0800 8 313131. پزشک یا داروساز شما نیز می‌تواند کمک کند.</p></div></div></section>
 
-<section id="final" class="layer"><div class="stick pad"><h2 id="fh">Read the specification. Decide for yourself.</h2><p>The full product data sheet is available on request.</p><a class="btn" href="mailto:info@example.com?subject=Product%20data%20sheet">Request data sheet</a></div></section>
-<footer class="layer">&copy; Aldane &amp; Voss. Fictional brand for design demonstration. Adults 18+ only.</footer>
+<section id="final" class="layer"><div class="stick pad"><h2 id="fh">مشخصات را بخوانید، خودتان تصمیم بگیرید</h2><p>برگه کامل داده‌های محصول در صورت درخواست در دسترس است.</p><a class="btn" href="mailto:info@example.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%A8%D8%B1%DA%AF%D9%87%20%D8%AF%D8%A7%D8%AF%D9%87">درخواست برگه داده</a></div></section>
+<footer class="layer">&copy; آلدین و واس. برندی خیالی برای نمایش طراحی. تنها بزرگسالان ۱۸+.</footer>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous" defer></script>
@@ -205,31 +212,34 @@ const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),lerp=(a,b,t)=>a+(b-a)*t,sm=t=>t*t*(3-2*t);
 /* ---------- content / data ---------- */
 const P=[
- {id:'ashfield',n:'No. 1',nm:'Ashfield',cat:'Light Virginia',tone:'#d9c9a8',desc:'Bright flue-cured leaf with a fine cut.',origin:'Virginia',st:3,cut:'0.8 mm',filter:'18 mm acetate',ing:'Tobacco; humectant (glycerol).'},
- {id:'corvane',n:'No. 2',nm:'Corvane',cat:'Medium blend',tone:'#c4a77d',desc:'Two parts Virginia to one part toasted Burley.',origin:'Virginia, Burley',st:5,cut:'0.9 mm',filter:'21 mm acetate',ing:'Tobacco; humectant (glycerol); flavouring (cocoa).'},
- {id:'halloway',n:'No. 3',nm:'Halloway',cat:'Full, spiced',tone:'#9c6f4a',desc:'Sun-cured Oriental leaf rested for eighteen months.',origin:'Burley, Oriental',st:7,cut:'1.0 mm',filter:'15 mm acetate, slim',ing:'Tobacco; humectant (glycerol).'},
- {id:'nocturne',n:'No. 4',nm:'Nocturne',cat:'Dark, dry',tone:'#6d4a33',desc:'Dark air-cured Malawi leaf with a coarser cut.',origin:'Malawi, Burley',st:8,cut:'1.1 mm',filter:'24 mm acetate',ing:'Tobacco; humectant (propylene glycol).'}
+ {id:'ashfield',n:'شماره ۱',nm:'Ashfield',cat:'ویرجینیای روشن',tone:'#d9c9a8',desc:'برگ روشنِ گرمادیده با برش ریز.',origin:'ویرجینیا',st:3,cut:'۰٫۸ میلی‌متر',filter:'استات ۱۸ میلی‌متر',ing:'تنباکو؛ رطوبت‌گیر (گلیسیرین).'},
+ {id:'corvane',n:'شماره ۲',nm:'Corvane',cat:'ترکیب متوسط',tone:'#c4a77d',desc:'دو بخش ویرجینیا به یک بخش برلی بوداده.',origin:'ویرجینیا، برلی',st:5,cut:'۰٫۹ میلی‌متر',filter:'استات ۲۱ میلی‌متر',ing:'تنباکو؛ رطوبت‌گیر (گلیسیرین)؛ طعم‌دهنده (کاکائو).'},
+ {id:'halloway',n:'شماره ۳',nm:'Halloway',cat:'پرقدرت، ادویه‌دار',tone:'#9c6f4a',desc:'برگ اُریانتال خشک‌شده در آفتاب، هجده ماه استراحت کرده.',origin:'برلی، اُریانتال',st:7,cut:'۱ میلی‌متر',filter:'استات ۱۵ میلی‌متر، باریک',ing:'تنباکو؛ رطوبت‌گیر (گلیسیرین).'},
+ {id:'nocturne',n:'شماره ۴',nm:'Nocturne',cat:'تیره و خشک',tone:'#6d4a33',desc:'برگ مالاوی خشک‌شده در هوا با برش درشت‌تر.',origin:'مالاوی، برلی',st:8,cut:'۱٫۱ میلی‌متر',filter:'استات ۲۴ میلی‌متر',ing:'تنباکو؛ رطوبت‌گیر (پروپیلن گلیکول).'}
 ];
-const VAR=[{k:'Hard pack',d:'88 × 56 × 22 mm'},{k:'Soft pack',d:'86 × 55 × 21 mm'}];
+const VAR=[{k:'پاکت سخت',d:'۸۸ × ۵۶ × ۲۲ میلی‌متر'},{k:'پاکت نرم',d:'۸۶ × ۵۵ × ۲۱ میلی‌متر'}];
 let sel=0,vr=0;
 const mq=matchMedia('(max-width:860px)');
 /* menu links */
-[['Collection','#collection'],['Products','#detail'],['Story','#story'],['Information','#info']].forEach(([t,h],i)=>{const a=document.createElement('a');a.href=h;a.textContent=t;a.style.setProperty('--i',i);const li=document.createElement('li');li.appendChild(a);$('#mlinks').appendChild(li)});
+[['کالکشن','#collection'],['محصولات','#detail'],['داستان','#story'],['اطلاعات','#info']].forEach(([t,h],i)=>{const a=document.createElement('a');a.href=h;a.textContent=t;a.style.setProperty('--i',i);const li=document.createElement('li');li.appendChild(a);$('#mlinks').appendChild(li)});
+/* Keep the header nav labels Persian even if the static markup is edited later. */
+const NV={collection:'کالکشن',detail:'محصولات',story:'داستان',info:'اطلاعات'};
+$$('#nav .links a').forEach(a=>{const k=(a.getAttribute('href')||'').slice(1);if(NV[k])a.textContent=NV[k]});
 /* collection panels */
 const ct=$('#ctrack');
 P.forEach((p,i)=>{const d=document.createElement('article');d.className='cp';d.style.setProperty('--o',(i%2?10:0)+'vh');
- d.innerHTML=`<div class="vis"><div class="cpack" style="--tone:${p.tone}"><span>${p.n}<br>${p.nm}</span></div></div><div><h3>${p.nm}</h3><small>${p.cat}</small><p>${p.desc}</p><dl class="sp"><dt>Strength</dt><dd>${p.st} of 10</dd><dt>Origin</dt><dd>${p.origin}</dd><dt>Cut</dt><dd>${p.cut}</dd></dl><button class="btn" data-i="${i}">View details</button></div>`;ct.appendChild(d)});
+ d.innerHTML=`<div class="vis"><div class="cpack" style="--tone:${p.tone}"><span>${p.n}<br>${p.nm}</span></div></div><div><h3>${p.nm}</h3><small>${p.cat}</small><p>${p.desc}</p><dl class="sp"><dt>قدرت</dt><dd>${p.st} از ۱۰</dd><dt>منشأ</dt><dd>${p.origin}</dd><dt>برش</dt><dd>${p.cut}</dd></dl><button class="btn" data-i="${i}">جزئیات</button></div>`;ct.appendChild(d)});
 ct.addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(b){choose(+b.dataset.i);go('#detail')}});
 /* detail */
 const det=$('#detail');
 function renderDetail(){const p=P[sel];
- det.innerHTML=`<div class="chips" role="group" aria-label="Choose blend">${P.map((q,i)=>`<button data-i="${i}" aria-pressed="${i===sel}">${q.nm}</button>`).join('')}</div>
+ det.innerHTML=`<div class="chips" role="group" aria-label="انتخاب ترکیب">${P.map((q,i)=>`<button data-i="${i}" aria-pressed="${i===sel}">${q.nm}</button>`).join('')}</div>
  <div class="pp"><h2>${p.nm}</h2><p>${p.cat}. ${p.desc}</p></div>
- <div class="pp"><h3>Specification</h3><dl class="sp"><dt>Strength</dt><dd>${p.st} of 10, manufacturer scale</dd><dt>Origin</dt><dd>${p.origin}</dd><dt>Cut width</dt><dd>${p.cut}</dd><dt>Filter</dt><dd>${p.filter}</dd><dt>Per pack</dt><dd>20 sticks</dd></dl></div>
- <div class="pp"><h3>Ingredients</h3><p>${p.ing} Full ingredient and emission data are printed on the pack.</p></div>
- <div class="pp"><h3>Packaging and variants</h3><p id="dm">${VAR[vr].k}: ${VAR[vr].d}. Stick length 84 mm.</p><div class="var" role="group" aria-label="Variant">${VAR.map((v,i)=>`<button data-v="${i}" aria-pressed="${i===vr}">${v.k}</button>`).join('')}</div></div>`;
+ <div class="pp"><h3>مشخصات</h3><dl class="sp"><dt>قدرت</dt><dd>${p.st} از ۱۰، مقیاس تولیدکننده</dd><dt>منشأ</dt><dd>${p.origin}</dd><dt>عرض برش</dt><dd>${p.cut}</dd><dt>فیلتر</dt><dd>${p.filter}</dd><dt>در هر پاکت</dt><dd>۲۰ نخ</dd></dl></div>
+ <div class="pp"><h3>مواد تشکیل‌دهنده</h3><p>${p.ing} کامل داده‌های مواد تشکیل‌دهنده و انتشار روی پاکت چاپ شده است.</p></div>
+ <div class="pp"><h3>بسته‌بندی و انواع</h3><p id="dm">${VAR[vr].k}: ${VAR[vr].d}. طول نخ ۸۴ میلی‌متر.</p><div class="var" role="group" aria-label="نوع بسته‌بندی">${VAR.map((v,i)=>`<button data-v="${i}" aria-pressed="${i===vr}">${v.k}</button>`).join('')}</div></div>`;
  $('#vname').textContent=p.n+' '+p.nm;$$('#detail .pp').forEach(e=>e.classList.add('rv'));$$('#detail .pp').forEach(e=>io.observe(e))}
-det.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.i!==undefined)choose(+b.dataset.i);if(b.dataset.v!==undefined){vr=+b.dataset.v;$$('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#dm').textContent=VAR[vr].k+': '+VAR[vr].d+'. Stick length 84 mm.'}});
+det.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.i!==undefined)choose(+b.dataset.i);if(b.dataset.v!==undefined){vr=+b.dataset.v;$$('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#dm').textContent=VAR[vr].k+': '+VAR[vr].d+'. طول نخ ۸۴ میلی‌متر.'}});
 function choose(i){sel=i;renderDetail();drawPack()}
 /* reveal on view */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
@@ -293,8 +303,8 @@ function drawPack(){if(!texF)return;const p=P[sel],c=texF.image,x=c.getContext('
  x.fillStyle='#14120f';x.fillRect(0,0,512,720);x.textAlign='center';x.fillStyle=p.tone;
  x.font='300 22px Newsreader,Georgia,serif';x.fillText('A L D A N E   &   V O S S',256,90);
  x.fillRect(120,250,272,2);x.fillStyle='#ece6da';x.font='200 58px Newsreader,Georgia,serif';x.fillText(p.n,256,380);x.font='italic 200 84px Newsreader,Georgia,serif';x.fillText(p.nm,256,470);
- x.fillStyle='#8d867c';x.font='22px Newsreader,Georgia,serif';x.fillText('20 cigarettes',256,640);texF.needsUpdate=true;
- const b=texB.image.getContext('2d');b.fillStyle='#14120f';b.fillRect(0,0,512,720);b.strokeStyle='#ece6da';b.lineWidth=4;b.strokeRect(40,200,432,300);b.fillStyle='#ece6da';b.textAlign='center';b.font='300 40px Newsreader,Georgia,serif';b.fillText('Smoking kills.',256,330);b.font='26px Newsreader,Georgia,serif';b.fillText('Stop now.',256,390);texB.needsUpdate=true}
+ x.fillStyle='#8d867c';x.font='22px Newsreader,Georgia,serif';x.fillText('20 نخ سیگار',256,640);texF.needsUpdate=true;
+ const b=texB.image.getContext('2d');b.fillStyle='#14120f';b.fillRect(0,0,512,720);b.strokeStyle='#ece6da';b.lineWidth=4;b.strokeRect(40,200,432,300);b.fillStyle='#ece6da';b.textAlign='center';b.font='300 40px Newsreader,Georgia,serif';b.fillText('سیگار می‌کشد.',256,330);b.font='26px Newsreader,Georgia,serif';b.fillText('همین حالا ترک کنید.',256,390);texB.needsUpdate=true}
 function buildGL(){try{buildGLInner()}catch(e){failGL(e)}}
 function buildGLInner(){const T=window.THREE,cv=$('#gl');
  if(!T||!cv)throw new Error('Three.js or canvas missing');

@@ -1,73 +1,97 @@
 import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight, Edit, Grid, ShieldAlert } from "lucide-react";
-import { TinMark, ModernTobaccoScene, MaterialSwatch } from "./Artwork";
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUp,
+  ArrowUpRight,
+  Clock,
+  Mail,
+  MapPin,
+  ShieldAlert,
+  ShieldCheck,
+} from "lucide-react";
+import { MaterialSwatch, ShelfElevation, TinHero, TinMark } from "./Artwork";
+import { ModernEdit } from "./ModernEdit";
 import { ModernNav } from "./ModernNav";
-import { ModernEdit, ModernShelf, ModernMaterials, ModernDetails } from "./ModernSections";
 import { ModernNotice } from "./ModernNotice";
 import {
-  edit,
   contact,
-  modernNav,
+  edit,
+  footer,
+  healthWarning,
   hero,
   heroMeta,
   materials,
-  shelf,
+  modernNav,
   specification,
+  story,
 } from "./content";
 
 export function ModernSite() {
   return (
-    <div className="mt-site" id="top">
-      <a href="#mt-main" className="mt-skip">
-        Skip to content
+    <div className="mt-site" id="top" dir="rtl">
+      <a className="mt-skip" href="#mt-main">
+        رفتن به محتوای اصلی
       </a>
 
-      <div className="mt-topbar" role="note" aria-label="Boutique status">
+      <div
+        className="mt-topbar"
+        role="note"
+        aria-label="اطلاعیه نمایشی با محدودیت سنی"
+      >
         <div className="mt-wrap mt-topbar-inner">
           <span className="mt-topbar-status">
             <span className="mt-dot" aria-hidden="true" />
-            {hero.status}
+            بزرگسالان بالای ۱۸ سال · نمایش با محدودیت سنی
           </span>
-          <span className="mt-topbar-sep" aria-hidden="true" />
-          <span className="mt-topbar-note">{hero.note}</span>
+          <span className="mt-topbar-note">
+            بوتیک خیالی · بدون فروش · بدون ادعای سلامت
+          </span>
           <a href="#contact" className="mt-topbar-link">
-            Read the notice
-            <ArrowUpRight size={12} aria-hidden="true" />
+            مطالعه اطلاعیه
+            <ArrowUpRight size={13} aria-hidden="true" />
           </a>
         </div>
       </div>
 
       <ModernNav />
 
-      <main id="mt-main">
-        {/* HERO — Split editorial with steel tin shelf illustration */}
+      <main id="mt-main" lang="fa" dir="rtl">
         <section className="mt-hero" aria-labelledby="mt-hero-title">
-          <div className="mt-wrap mt-hero-split">
+          <div className="mt-wrap mt-hero-top">
+            <p>نمایه بوتیک ۰۱ · با هماهنگی قبلی (خیالی)</p>
+            <p className="mt-status">
+              <span className="mt-status-dot" aria-hidden="true" />
+              {hero.status}
+            </p>
+          </div>
+
+          <div className="mt-wrap mt-hero-grid">
             <div className="mt-hero-copy">
               <p className="mt-eyebrow">
                 <TinMark className="mt-eyebrow-mark" />
-                <span>{hero.eyebrow}</span>
+                {hero.eyebrow}
               </p>
 
-              <h1 className="mt-display" id="mt-hero-title">
-                <span>{hero.headline}</span>{" "}
-                <span className="mt-display-accent">{hero.headlineAccent}</span>
+              <h1 id="mt-hero-title">
+                <span className="mt-h1-word">{hero.headline}</span>
+                <span className="mt-h1-accent">{hero.headlineAccent}</span>
               </h1>
 
-              <p className="mt-lede">{hero.intro}</p>
+              <p className="mt-hero-lede">{hero.intro}</p>
 
               <div className="mt-actions">
-                <a href="#showcase" className="mt-btn mt-btn--solid">
-                  Browse the edit
-                  <ArrowDownRight size={15} aria-hidden="true" />
+                <a className="mt-btn mt-btn--solid" href="#showcase">
+                  مرور مجموعه
+                  <ArrowDown size={15} aria-hidden="true" />
                 </a>
-                <a href="#contact" className="mt-btn mt-btn--line">
-                  Read the notice
-                  <ArrowUpRight size={15} aria-hidden="true" />
+                <a className="mt-btn mt-btn--line" href="#contact">
+                  مطالعه اطلاعیه
+                  <ArrowRight size={15} aria-hidden="true" />
                 </a>
               </div>
 
-              <dl className="mt-hero-meta" aria-label="Boutique overview">
+              <dl className="mt-hero-meta">
                 {heroMeta.map((item) => (
                   <div key={item.label}>
                     <dt>{item.label}</dt>
@@ -75,132 +99,290 @@ export function ModernSite() {
                   </div>
                 ))}
               </dl>
+
+              <p className="mt-demo-note">{hero.note}</p>
             </div>
 
-            <div className="mt-hero-stage">
-              <figure className="mt-stage-frame">
-                <div className="mt-stage-bar" aria-hidden="true">
-                  <span>BOUTIQUE // SHELF</span>
-                  <span>STEEL · LIGHT · PAPER</span>
-                  <span>ADULTS 18+ ONLY</span>
+            <figure className="mt-hero-art">
+              <div className="mt-hero-frame">
+                <div className="mt-frame-head">
+                  <span>قفسه / بررسی ۰۱</span>
+                  <span aria-hidden="true">18+</span>
                 </div>
-                <ModernTobaccoScene />
-                <figcaption className="mt-stage-caption">
-                  <span>{hero.caption[0]}</span>
-                  <span>{hero.caption[1]}</span>
-                </figcaption>
-              </figure>
+                <TinHero className="mt-hero-study" />
+              </div>
+              <figcaption>
+                {hero.caption.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-wrap">
+            <div className="mt-archive-rail">
+              <div>
+                <span>دسترسی</span>
+                <strong>محدودیت ۱۸+</strong>
+                <small>ویژه بزرگسالان</small>
+              </div>
+              <div>
+                <span>اشیا</span>
+                <strong>۰۳ مورد فهرست‌شده</strong>
+                <small>مجموعه تصویری</small>
+              </div>
+              <div>
+                <span>جنس</span>
+                <strong>فولاد برس‌خورده</strong>
+                <small>یک فلز، یک نور</small>
+              </div>
+              <div>
+                <span>فروش</span>
+                <strong>ندارد</strong>
+                <small>بدون موجودی یا سفارش</small>
+              </div>
             </div>
+            <p className="mt-footnote">{hero.footNote}</p>
           </div>
         </section>
 
-        {/* 01 / THE EDIT */}
+        <aside className="mt-warning" role="note" aria-label="هشدار سلامت">
+          <div className="mt-wrap mt-warning-inner">
+            <span className="mt-warning-icon" aria-hidden="true">
+              <ShieldAlert size={20} />
+            </span>
+            <div>
+              <p className="mt-warning-label">هشدار سلامت</p>
+              <p className="mt-warning-text">{healthWarning}</p>
+            </div>
+          </div>
+        </aside>
+
         <section
-          className="mt-section"
           id="showcase"
+          className="mt-section mt-edit"
           aria-labelledby="mt-edit-title"
         >
           <div className="mt-wrap">
-            <div className="mt-sec-head">
+            <div className="mt-section-head">
               <div>
-                <p className="mt-kicker">
-                  <Edit size={13} aria-hidden="true" />
-                  {edit.label}
-                </p>
-                <h2 className="mt-h2" id="mt-edit-title">
-                  {edit.title}
-                </h2>
+                <p className="mt-eyebrow">{edit.label}</p>
+                <h2 id="mt-edit-title">{edit.title}</h2>
               </div>
-              <p className="mt-sec-intro">{edit.intro}</p>
+              <p className="mt-section-lede">{edit.intro}</p>
             </div>
 
             <ModernEdit />
+
+            <p className="mt-note-line">{edit.note}</p>
           </div>
         </section>
 
-        {/* 02 / THE SHELF */}
         <section
-          className="mt-section mt-section--surface"
           id="story"
-          aria-labelledby="mt-shelf-title"
+          className="mt-section mt-story"
+          aria-labelledby="mt-story-title"
         >
           <div className="mt-wrap">
-            <div className="mt-sec-head">
+            <div className="mt-section-head">
               <div>
-                <p className="mt-kicker">{shelf.label}</p>
-                <h2 className="mt-h2" id="mt-shelf-title">
-                  {shelf.title}
-                </h2>
+                <p className="mt-eyebrow">{story.label}</p>
+                <h2 id="mt-story-title">{story.title}</h2>
               </div>
-              <p className="mt-sec-intro">{shelf.intro}</p>
+              <p className="mt-section-lede">{story.intro}</p>
             </div>
 
-            <ModernShelf />
+            <div className="mt-quote-band">
+              <p>&ldquo;{story.quote.text}&rdquo;</p>
+              <cite>{story.quote.note}</cite>
+            </div>
+
+            <div className="mt-story-grid">
+              <ol className="mt-principles">
+                {story.principles.map((principle) => (
+                  <li key={principle.title}>
+                    <span className="mt-principle-index" aria-hidden="true">
+                      {principle.index}
+                    </span>
+                    <div>
+                      <h3>{principle.title}</h3>
+                      <p>{principle.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <aside className="mt-elevation" aria-label="نمای تصویری قفسه">
+                <div className="mt-elevation-head">
+                  <div>
+                    <p className="mt-elevation-title">{story.elevation.title}</p>
+                    <p className="mt-elevation-caption">{story.elevation.caption}</p>
+                  </div>
+                  <span className="mt-elevation-code" aria-hidden="true">
+                    {story.elevation.code}
+                  </span>
+                </div>
+
+                <ShelfElevation className="mt-elevation-svg" />
+
+                <dl className="mt-elevation-rows">
+                  {story.elevation.rows.map((row) => (
+                    <div key={row.label}>
+                      <dt>{row.label}</dt>
+                      <dd>{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <p className="mt-elevation-note">{story.elevation.note}</p>
+              </aside>
+            </div>
+
+            <p className="mt-note-line">{story.note}</p>
+          </div>
+
+          <div id="stockists" className="mt-stockists">
+            <div className="mt-wrap">
+              <div className="mt-stockist-head">
+                <div>
+                  <p className="mt-eyebrow">{story.stockists.label}</p>
+                  <h3>{story.stockists.title}</h3>
+                </div>
+                <p>{story.stockists.intro}</p>
+              </div>
+
+              <ol className="mt-stockist-list">
+                {story.stockists.items.map((item, index) => (
+                  <li key={item.name}>
+                    <span className="mt-stockist-index" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="mt-stockist-name">{item.name}</span>
+                    <span className="mt-stockist-city">{item.city}</span>
+                    <span className="mt-stockist-note">{item.note}</span>
+                  </li>
+                ))}
+              </ol>
+
+              <p className="mt-stockist-disclaimer">{story.stockists.note}</p>
+            </div>
           </div>
         </section>
 
-        {/* 03 / MATERIALS */}
         <section
-          className="mt-section"
           id="materials"
+          className="mt-section mt-materials"
           aria-labelledby="mt-materials-title"
         >
           <div className="mt-wrap">
-            <div className="mt-sec-head">
+            <div className="mt-section-head">
               <div>
-                <p className="mt-kicker">{materials.label}</p>
-                <h2 className="mt-h2" id="mt-materials-title">
-                  {materials.title}
-                </h2>
+                <p className="mt-eyebrow">{materials.label}</p>
+                <h2 id="mt-materials-title">{materials.title}</h2>
               </div>
-              <p className="mt-sec-intro">{materials.intro}</p>
+              <p className="mt-section-lede">{materials.intro}</p>
             </div>
 
-            <ModernMaterials />
+            <div className="mt-material-grid">
+              {materials.items.map((item, index) => (
+                <article className="mt-material-card" key={item.name}>
+                  <div className="mt-swatch-frame">
+                    <MaterialSwatch
+                      variant={item.swatch as "steel" | "light" | "paper"}
+                      className="mt-swatch"
+                    />
+                    <span className="mt-swatch-tag" aria-hidden="true">
+                      {item.note}
+                    </span>
+                  </div>
+                  <div className="mt-material-copy">
+                    <span className="mt-material-index" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3>{item.name}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
 
-            <p className="mt-footnote">{materials.note}</p>
+            <p className="mt-note-line">{materials.note}</p>
           </div>
         </section>
 
-        {/* 04 / DETAILS — Specification & Compliance */}
         <section
-          className="mt-section mt-section--surface"
           id="specs"
+          className="mt-section mt-section--dark mt-specs"
           aria-labelledby="mt-specs-title"
         >
           <div className="mt-wrap">
-            <div className="mt-sec-head">
+            <div className="mt-section-head">
               <div>
-                <p className="mt-kicker">
-                  <ShieldAlert size={13} aria-hidden="true" />
-                  {specification.label}
-                </p>
-                <h2 className="mt-h2" id="mt-specs-title">
-                  {specification.title}
-                </h2>
+                <p className="mt-eyebrow">{specification.label}</p>
+                <h2 id="mt-specs-title">{specification.title}</h2>
               </div>
-              <p className="mt-sec-intro">{specification.intro}</p>
+              <p className="mt-section-lede">{specification.intro}</p>
             </div>
 
-            <ModernDetails />
+            <div className="mt-spec-groups">
+              {specification.groups.map((group, index) => (
+                <article className="mt-spec-group" key={group.title}>
+                  <div className="mt-spec-head">
+                    <span aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3>{group.title}</h3>
+                  </div>
+                  <dl>
+                    {group.rows.map((row) => (
+                      <div key={row.label}>
+                        <dt>{row.label}</dt>
+                        <dd>{row.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-notclaimed">
+              <div>
+                <p className="mt-mini-label">
+                  <ShieldCheck size={13} aria-hidden="true" />
+                  این صفحه چه ادعاهایی ندارد
+                </p>
+                <ul>
+                  {specification.notClaimed.map((item) => (
+                    <li key={item}>
+                      <span aria-hidden="true">×</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p className="mt-notclaimed-note">
+                {specification.notClaimedNote}
+              </p>
+            </div>
+
+            <p className="mt-note-line mt-note-line--dark">
+              {specification.note}
+            </p>
           </div>
         </section>
 
-        {/* 05 / NOTICE — Age-gated contact form */}
         <section
-          className="mt-section"
           id="contact"
+          className="mt-section mt-contact"
           aria-labelledby="mt-contact-title"
         >
           <div className="mt-wrap mt-contact-grid">
             <div className="mt-contact-copy">
-              <p className="mt-kicker">{contact.label}</p>
-              <h2 className="mt-h2" id="mt-contact-title">
-                {contact.title}
-              </h2>
-              <p className="mt-sec-intro">{contact.intro}</p>
+              <p className="mt-eyebrow">{contact.label}</p>
+              <h2 id="mt-contact-title">{contact.title}</h2>
+              <p className="mt-section-lede">{contact.intro}</p>
 
-              <dl className="mt-contact-facts" aria-label="Boutique details">
+              <dl className="mt-contact-facts">
                 {contact.facts.map((fact) => (
                   <div key={fact.label}>
                     <dt>{fact.label}</dt>
@@ -209,23 +391,46 @@ export function ModernSite() {
                 ))}
               </dl>
 
-              <div className="mt-address-grid">
-                <div>
-                  <span className="mt-meta-label">Boutique desk</span>
-                  <a href={`mailto:${contact.email}`} className="mt-mail-link">
-                    {contact.email}
-                  </a>
-                  <p className="mt-meta-sub">{contact.phone}</p>
-                </div>
-                <div>
-                  <span className="mt-meta-label">Location & hours</span>
-                  <p className="mt-meta-sub">
-                    {contact.address.join(" · ")}
-                    <br />
-                    {contact.hours}
-                  </p>
-                </div>
+              <div className="mt-bring">
+                <p className="mt-mini-label">
+                  <ShieldCheck size={13} aria-hidden="true" />
+                  موضوعات این اطلاعیه
+                </p>
+                <ul>
+                  {contact.lines.map((line) => (
+                    <li key={line}>
+                      <span aria-hidden="true">×</span>
+                      {line}
+                    </li>
+                  ))}
+                </ul>
               </div>
+
+              <blockquote className="mt-quote-block">
+                <p>&ldquo;{contact.quote}&rdquo;</p>
+                <cite>{contact.quoteNote}</cite>
+              </blockquote>
+
+              <div className="mt-contact-lines">
+                <a href={`mailto:${contact.email}`}>
+                  <Mail size={15} aria-hidden="true" />
+                  {contact.email}
+                </a>
+                <div>
+                  <MapPin size={15} aria-hidden="true" />
+                  <address>
+                    {contact.address.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </address>
+                </div>
+                <p>
+                  <Clock size={15} aria-hidden="true" />
+                  {contact.hours}
+                </p>
+              </div>
+
+              <p className="mt-contact-note">{contact.note}</p>
             </div>
 
             <ModernNotice />
@@ -234,32 +439,64 @@ export function ModernSite() {
       </main>
 
       <footer className="mt-footer">
-        <div className="mt-wrap mt-footer-top">
-          <div className="mt-footer-brand">
-            <p className="mt-brand">
-              <TinMark className="mt-brand-mark" />
-              <span className="mt-brand-word">Modern Tobacco</span>
-              <span className="mt-brand-sub">Adults 18+</span>
-            </p>
-            <p className="mt-footer-disclaimer">{contact.note}</p>
+        <div className="mt-wrap">
+          <div className="mt-footer-top">
+            <div className="mt-footer-brand">
+              <p className="mt-footer-word">
+                <TinMark className="mt-footer-mark" />
+                Modern Tobacco <span>بوتیک ۰۱</span>
+              </p>
+              <p>{footer.blurb}</p>
+              <a href="#top" className="mt-footer-back">
+                بازگشت به بالا
+                <ArrowUp size={14} aria-hidden="true" />
+              </a>
+            </div>
+
+            <div className="mt-footer-cols">
+              <div>
+                <p className="mt-footer-label">بوتیک</p>
+                <address>
+                  {contact.address.map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                </address>
+                <a href={`mailto:${contact.email}`}>
+                  <Mail size={13} aria-hidden="true" />
+                  {contact.email}
+                </a>
+              </div>
+
+              <div>
+                <p className="mt-footer-label">بخش‌ها</p>
+                {modernNav.map((item) => (
+                  <a key={item.href} href={item.href}>
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+
+              <div>
+                <p className="mt-footer-label">قالب</p>
+                <Link href="/templates/modern-tobacco">جزئیات قالب</Link>
+                <Link href="/checkout/modern-tobacco">خرید این قالب</Link>
+                <Link href="/templates">همه قالب‌ها</Link>
+              </div>
+            </div>
           </div>
 
-          <nav aria-label="Footer navigation" className="mt-footer-links">
-            {modernNav.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
+          <div className="mt-footer-warning">
+            <ShieldAlert size={17} aria-hidden="true" />
+            <p>
+              <strong>هشدار سلامت.</strong> {healthWarning}
+            </p>
+          </div>
 
-        <div className="mt-wrap mt-footer-bottom">
-          <span>
-            Modern Tobacco — fictional contemporary tobacco boutique demonstration. Adults 18+ only.
-          </span>
-          <div className="mt-footer-market">
-            <Link href="/templates/modern-tobacco">Template detail</Link>
-            <Link href="/templates">All templates</Link>
+          <div className="mt-footer-bottom">
+            <p>{footer.note}</p>
+            <p>
+              قالب از <Link href="/">Web3ite</Link>.
+            </p>
           </div>
         </div>
       </footer>

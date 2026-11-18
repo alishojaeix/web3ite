@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   const limit = rateLimit(`site-interest:${clientKey(request)}`, 5, 10 * 60 * 1000);
   if (!limit.allowed) {
     return NextResponse.json(
-      { error: "Too many requests. Please try again shortly." },
+      { error: "درخواست‌های بیش از حد. لطفاً کمی بعد دوباره تلاش کنید." },
       { status: 429, headers: { "Retry-After": String(limit.retryAfter) } }
     );
   }
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
   try {
     payload = (await request.json()) as Payload;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "بدنهٔ درخواست نامعتبر است." }, { status: 400 });
   }
 
   const site = typeof payload.site === "string" ? payload.site : "";
@@ -49,28 +49,34 @@ export async function POST(request: Request) {
   const ageConfirmed = payload.ageConfirmed === true;
 
   if (!getSiteConfig(site)) {
-    return NextResponse.json({ error: "Unknown template website." }, { status: 400 });
+    return NextResponse.json({ error: "وب‌سایت قالب ناشناخته است." }, { status: 400 });
   }
   if (name.length < 2 || name.length > 120) {
-    return NextResponse.json({ error: "Please enter a name (2–120 characters)." }, { status: 400 });
+    return NextResponse.json(
+      { error: "لطفاً یک نام وارد کنید (۲ تا ۱۲۰ نویسه)." },
+      { status: 400 }
+    );
   }
   if (!EMAIL.test(email) || email.length > 180) {
-    return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    return NextResponse.json(
+      { error: "لطفاً یک نشانی ایمیل معتبر وارد کنید." },
+      { status: 400 }
+    );
   }
   if (message.length < 5 || message.length > 2000) {
     return NextResponse.json(
-      { error: "Please enter a message between 5 and 2,000 characters." },
+      { error: "لطفاً پیامی بین ۵ تا ۲۰۰۰ نویسه وارد کنید." },
       { status: 400 }
     );
   }
 
   const template = await getTemplateById(site);
   if (!template) {
-    return NextResponse.json({ error: "Unknown template website." }, { status: 400 });
+    return NextResponse.json({ error: "وب‌سایت قالب ناشناخته است." }, { status: 400 });
   }
   if (template.ageRestricted && !ageConfirmed) {
     return NextResponse.json(
-      { error: "This site is for adults only. Please confirm you are 18 or older." },
+      { error: "این سایت مخصوص بزرگسالان است. لطفاً تأیید کنید که ۱۸ سال یا بیشتر هستید." },
       { status: 400 }
     );
   }
@@ -98,7 +104,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true }, { status: 201 });
     } catch {
       return NextResponse.json(
-        { error: "The inbox is temporarily unavailable. Please email the address on this page." },
+        { error: "صندوق ورودی موقتاً در دسترس نیست. لطفاً به نشانی ایمیل این صفحه پیام بدهید." },
         { status: 503 }
       );
     }
@@ -110,7 +116,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "This demo inbox is read-only on the current deployment. Please use the email address on this page.",
+          "این صندوق نمایشی در استقرار فعلی فقط‌خواندنی است. لطفاً از نشانی ایمیل این صفحه استفاده کنید.",
       },
       { status: 503 }
     );

@@ -8,17 +8,17 @@ import { hero, heroMeta, house, sake, visit } from "./content";
 
 export function SoraSite() {
   return (
-    <div className="sr-site" id="top">
+    <div className="sr-site" id="top" dir="rtl">
       <a className="sr-skip" href="#sr-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <SoraNav />
 
-      <main id="sr-main">
+      <main id="sr-main" lang="fa" dir="rtl">
         <section className="sr-hero" aria-labelledby="sr-hero-title">
           <div className="sr-wrap sr-hero-top">
-            <p>3 Garden Lane · London E2</p>
+            <p>کوچهٔ گاردن ۳ · لندن E2</p>
             <p className="sr-hero-status">
               <span className="sr-status-dot" aria-hidden="true" />
               {hero.status}
@@ -47,11 +47,11 @@ export function SoraSite() {
 
             <div className="sr-actions">
               <a className="sr-btn sr-btn--ink" href="#menu">
-                See the menu
+                دیدن منو
                 <ArrowDown size={15} aria-hidden="true" />
               </a>
               <a className="sr-btn sr-btn--line" href="#visit">
-                Request a table
+                درخواست میز
                 <ArrowUpRight size={15} aria-hidden="true" />
               </a>
             </div>
@@ -79,7 +79,7 @@ export function SoraSite() {
 
           <div className="sr-wrap sr-hero-foot">
             <a className="sr-scroll-cue" href="#menu">
-              Read the menu
+              خواندن منو
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -90,16 +90,16 @@ export function SoraSite() {
           <div className="sr-wrap">
             <div className="sr-section-head sr-section-head--split">
               <div>
-                <p className="sr-eyebrow">02 / The menu</p>
+                <p className="sr-eyebrow">۰۲ / منو</p>
                 <h2 id="sr-menu-title">
-                  Seasonal,{" "}
+                  فصلی،{" "}
                   <br />
-                  <em>not loud.</em>
+                  <em>بی‌هیاهو</em>
                 </h2>
               </div>
               <p className="sr-intro">
-                A compact menu of small plates and one rice finish. Sake by the
-                glass, never pushed. The kitchen cooks what the week sends.
+                منویی جمع‌وجور از بشقاب‌های کوچک و یک پایانِ برنج. ساکه به‌ازای لیوان، هرگز
+                اصرارآمیز. آشپزخانه آنچه را هفته می‌فرستد می‌پزد.
               </p>
             </div>
 
@@ -113,9 +113,9 @@ export function SoraSite() {
               <div>
                 <p className="sr-eyebrow">{house.label}</p>
                 <h2 id="sr-house-title">
-                  Pale timber,{" "}
+                  چوبِ روشن،{" "}
                   <br />
-                  <em>soft light.</em>
+                  <em>نورِ نرم</em>
                 </h2>
               </div>
               <p className="sr-intro">{house.intro}</p>
@@ -129,7 +129,7 @@ export function SoraSite() {
                   ))}
                 </div>
 
-                <ul className="sr-house-materials" aria-label="The materials of the room">
+                <ul className="sr-house-materials" aria-label="مواد اتاق">
                   {house.materials.map((material) => (
                     <li key={material.label}>
                       <span>{material.label}</span>
@@ -143,7 +143,7 @@ export function SoraSite() {
                 <RoomPlan />
                 <figcaption>
                   <span>{house.plan.note}</span>
-                  <span>Illustrative plan · not to scale</span>
+                  <span>طرح نمایشی · بدون مقیاس</span>
                 </figcaption>
               </figure>
             </div>
@@ -169,9 +169,9 @@ export function SoraSite() {
               <div>
                 <p className="sr-eyebrow">{sake.label}</p>
                 <h2 id="sr-sake-title">
-                  By the glass,{" "}
+                  به‌ازای لیوان،{" "}
                   <br />
-                  <em>never pushed.</em>
+                  <em>هرگز اصرارآمیز</em>
                 </h2>
               </div>
               <p className="sr-intro">{sake.intro}</p>
@@ -189,7 +189,7 @@ export function SoraSite() {
                   <p className="sr-sake-price">
                     <span aria-hidden="true">£</span>
                     {bottle.price}
-                    <small>glass</small>
+                    <small>لیوان</small>
                   </p>
                 </li>
               ))}
@@ -211,7 +211,7 @@ export function SoraSite() {
               <div className="sr-visit-block">
                 <p className="sr-mini-label">
                   <MapPin size={13} aria-hidden="true" />
-                  The room
+                  اتاق
                 </p>
                 <address className="sr-address">
                   {visit.address.map((line) => (
@@ -224,7 +224,7 @@ export function SoraSite() {
               <div className="sr-visit-block">
                 <p className="sr-mini-label">
                   <Clock size={13} aria-hidden="true" />
-                  Hours
+                  ساعات
                 </p>
                 <dl className="sr-hours">
                   {visit.hours.map((row) => (
@@ -237,7 +237,7 @@ export function SoraSite() {
               </div>
 
               <div className="sr-visit-block">
-                <p className="sr-mini-label">The room, by email</p>
+                <p className="sr-mini-label">اتاق، با ایمیل</p>
                 <a href={`mailto:${visit.email}`} className="sr-contact-link">
                   <Mail size={14} aria-hidden="true" />
                   {visit.email}
@@ -260,16 +260,18 @@ export function SoraSite() {
               <p className="sr-footer-word">
                 Sora <span aria-hidden="true">空</span>
               </p>
-              <p>Modern Japanese dining on Garden Lane. Seasonal plates, one rice, sake by the glass.</p>
+              <p>
+                غذاخوری ژاپنی مدرن در کوچۀ گاردن. بشقاب‌های فصلی، یک برنج، ساکه به‌ازای لیوان.
+              </p>
               <a href="#top" className="sr-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="sr-footer-cols">
               <div>
-                <p className="sr-footer-label">Visit</p>
+                <p className="sr-footer-label">بازدید</p>
                 <address>
                   {visit.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -281,29 +283,28 @@ export function SoraSite() {
                 </a>
               </div>
               <div>
-                <p className="sr-footer-label">Explore</p>
-                <a href="#menu">Menu</a>
-                <a href="#house">The house</a>
-                <a href="#sake">Sake</a>
-                <a href="#visit">Visit</a>
+                <p className="sr-footer-label">کاوش</p>
+                <a href="#menu">منو</a>
+                <a href="#house">خانه</a>
+                <a href="#sake">ساکه</a>
+                <a href="#visit">بازدید</a>
               </div>
               <div>
-                <p className="sr-footer-label">Template</p>
-                <Link href="/templates/sora-restaurant">Template details</Link>
-                <Link href="/checkout/sora-restaurant">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="sr-footer-label">قالب</p>
+                <Link href="/templates/sora-restaurant">جزئیات قالب</Link>
+                <Link href="/checkout/sora-restaurant">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="sr-footer-bottom">
             <p>
-              © 2026 Sora (fictional). A demonstration website: the venue, menu,
-              prices and imagery are illustrative. No table is held and no payment
-              is taken.
+              © ۲۰۲۶ Sora (خیالی). یک وب‌سایت نمایشی: مکان، منو، قیمت‌ها و تصویرها نمایشی‌اند.
+              هیچ میزی رزرو نمی‌شود و پولی گرفته نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

@@ -33,37 +33,37 @@ function RoomArt({ id }: { id: (typeof roomScenes)[number]["id"] }) {
 
 export function AtelierSite() {
   return (
-    <div className="at-site" id="top">
+    <div className="at-site" id="top" dir="rtl">
       <a className="at-skip" href="#at-main">
-        Skip to content
+        رفتن به محتوا
       </a>
 
       <AtelierNav />
 
-      <main id="at-main">
+      <main id="at-main" lang="fa" dir="rtl">
         <section className="at-hero" aria-labelledby="at-hero-title">
           <div className="at-wrap at-hero-grid">
             <div className="at-hero-copy">
               <p className="at-kicker">
                 <span className="at-kicker-dot" aria-hidden="true" />
-                Atelier Coffee / Slow bar — London
+                  آتلیه کافی / کافهٔ دمی — لندن
               </p>
               <h1 id="at-hero-title" className="at-display">
-                A quieter{" "}
+                قهوه‌ای آرام‌تر{" "}
                 <br />
-                <em>kind</em> of coffee.
+                <em>از</em> قهوه
               </h1>
               <p className="at-lede">
-                A twelve-seat counter for filter coffee, slow mornings and the kind
-                of conversation that outlasts the cup.
+                پیشخوانی دوازده‌نفره برای قهوهٔ دمی، صبح‌های آرام و گفت‌وگویی که
+                از فنجان قهوه طولانی‌تر می‌شود.
               </p>
               <div className="at-actions">
                 <a className="at-btn at-btn--solid" href="#coffee">
-                  Explore the coffee
+                  کاوش در قهوه‌ها
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="at-btn at-btn--quiet" href="#visit">
-                  Visit the atelier
+                  بازدید از آتلیه
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -73,7 +73,7 @@ export function AtelierSite() {
                 ))}
               </ul>
               <p className="at-demo-note">
-                Sample website concept · fictional venue, menu and imagery
+                طرح مفهومی وب‌سایت · مکان، منو و تصاویر همگی خیالی‌اند
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export function AtelierSite() {
               <div className="at-arch">
                 <PourOverArt />
               </div>
-              <aside className="at-lot-card" aria-label="Coffee on the bar this week">
+              <aside className="at-lot-card" aria-label="قهوهٔ روی بار این هفته">
                 <p className="at-mini-label">{heroLot.label}</p>
                 <p className="at-lot-name">{heroLot.name}</p>
                 <p className="at-lot-origin">{heroLot.origin}</p>
@@ -92,16 +92,16 @@ export function AtelierSite() {
                   ))}
                 </ul>
               </aside>
-              <p className="at-art-caption">Illustration · the room is a concept</p>
+              <p className="at-art-caption">تصویرسازی · فضا مفهومی است</p>
             </div>
           </div>
 
           <div className="at-wrap at-hero-foot">
             <a href="#story" className="at-scroll-cue">
-              Scroll — the bar
+              پیمایش — پیشخوان
               <ArrowDown size={14} aria-hidden="true" />
             </a>
-            <p>Counter seats are walk-in · Tue–Sun</p>
+            <p>پذیرش صندلی‌های پیشخوان بدون رزرو · سه‌شنبه تا یکشنبه</p>
           </div>
         </section>
 
@@ -120,7 +120,7 @@ export function AtelierSite() {
           <div className="at-wrap at-section-grid">
             <div className="at-section-label">
               <p className="at-eyebrow">{story.label}</p>
-              <p className="at-side-note">As told at the counter</p>
+              <p className="at-side-note">روایتی از پیشخوان</p>
             </div>
             <div>
               <h2 id="at-story-title" className="at-display at-h2">
@@ -153,13 +153,13 @@ export function AtelierSite() {
         <section id="coffee" className="at-section at-coffee" aria-labelledby="at-coffee-title">
           <div className="at-wrap">
             <div className="at-section-head">
-              <p className="at-eyebrow">02 / The list</p>
+              <p className="at-eyebrow">۰۲ / فهرست</p>
               <h2 id="at-coffee-title" className="at-display at-h2">
-                The list changes with the roast calendar, not the season.
+                فهرست با تقویم برشته‌کاری تغییر می‌کند، نه با فصل
               </h2>
               <p className="at-intro">
-                Three filter coffees, two espresso options and a small counter
-                menu. Everything is brewed to order; nothing is kept warm.
+                سه قهوهٔ دمی، دو گزینهٔ اسپرسو و منویی کوچک برای پیشخوان. همه‌چیز
+                پس از سفارش دم می‌شود و چیزی گرم نگه داشته نمی‌شود.
               </p>
             </div>
 
@@ -167,41 +167,41 @@ export function AtelierSite() {
               <CoffeeList />
 
               <aside className="at-lot-panel" aria-labelledby="at-lot-title">
-                <p className="at-mini-label">This week&apos;s open bag</p>
-                <h3 id="at-lot-title">Kenia AA</h3>
-                <p className="at-lot-panel-origin">Nyeri, Kenya</p>
+                <p className="at-mini-label">قهوهٔ باز این هفته</p>
+                <h3 id="at-lot-title">کنیا AA</h3>
+                <p className="at-lot-panel-origin">نیِری، کنیا</p>
                 <dl>
                   <div>
-                    <dt>Producer</dt>
-                    <dd>Gichathaini factory</dd>
+                    <dt>تولیدکننده</dt>
+                    <dd>کارخانهٔ گیچاتینی</dd>
                   </div>
                   <div>
-                    <dt>Altitude</dt>
-                    <dd>1,750 m</dd>
+                    <dt>ارتفاع</dt>
+                    <dd>۱٬۷۵۰ متر</dd>
                   </div>
                   <div>
-                    <dt>Process</dt>
-                    <dd>Washed</dd>
+                    <dt>فرآوری</dt>
+                    <dd>شسته</dd>
                   </div>
                   <div>
-                    <dt>Varietal</dt>
-                    <dd>SL28, SL34</dd>
+                    <dt>گونه</dt>
+                    <dd>SL28، SL34</dd>
                   </div>
                   <div>
-                    <dt>Roast</dt>
-                    <dd>Medium-light</dd>
+                    <dt>برشت</dt>
+                    <dd>متوسط-روشن</dd>
                   </div>
                 </dl>
                 <p className="at-lot-panel-notes">
-                  Blackcurrant and cane sugar, with a clean, tea-like finish. We
-                  brew it as filter and keep a second bag behind the counter for
-                  home.
+                  با نت انگورفرنگی سیاه و شکر نیشکر و پایانی تمیز و چای‌مانند. آن را
+                  به‌صورت دمی آماده می‌کنیم و بستهٔ دیگری برای مصرف خانگی پشت
+                  پیشخوان نگه می‌داریم.
                 </p>
                 <p className="at-lot-panel-price">
-                  Beans to take home <span>250 g · £14</span>
+                  دانه برای خانه <span>۲۵۰ گرم · ۱۴ پوند</span>
                 </p>
                 <a href="#visit" className="at-text-link">
-                  Ask at the counter
+                  از پیشخوان بپرسید
                   <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               </aside>
@@ -213,14 +213,14 @@ export function AtelierSite() {
           <div className="at-wrap">
             <div className="at-section-head at-section-head--split">
               <div>
-                <p className="at-eyebrow">03 / The recipe</p>
+                <p className="at-eyebrow">۰۳ / دستور دم‌آوری</p>
                 <h2 id="at-brew-title" className="at-display at-h2">
-                  A recipe you can take home.
+                  دستوری برای دم‌آوری در خانه
                 </h2>
               </div>
               <p className="at-intro">
-                The same starting points we write on the bag. Choose a brewer,
-                set the timer and change one variable at a time.
+                همان نقطهٔ شروعی که روی بسته می‌نویسیم. دم‌افزار را انتخاب کنید،
+                زمان‌سنج را تنظیم کنید و هر بار یک متغیر را تغییر دهید.
               </p>
             </div>
             <BrewGuide />
@@ -231,14 +231,14 @@ export function AtelierSite() {
           <div className="at-wrap">
             <div className="at-section-head at-section-head--split">
               <div>
-                <p className="at-eyebrow">04 / The room</p>
+                <p className="at-eyebrow">۰۴ / فضا</p>
                 <h2 id="at-room-title" className="at-display at-h2">
-                  Cream walls, pale oak, one long bench.
+                  دیوارهای کرم، بلوط روشن، نیمکتی بلند
                 </h2>
               </div>
               <p className="at-intro">
-                The room was a print workshop for forty years. We kept the light,
-                the bench and the working archive, and added a coffee bar.
+                این فضا چهل سال کارگاه چاپ بود. نور، نیمکت و آرشیو کاری را حفظ کردیم
+                و پیشخوان قهوه را افزودیم.
               </p>
             </div>
 
@@ -260,8 +260,8 @@ export function AtelierSite() {
               ))}
             </div>
             <p className="at-figure-note">
-              Illustrations, not photographs. Atelier Coffee is a fictional venue
-              created for this template.
+              تصویرسازی است، نه عکس. آتلیه کافی مکانی خیالی است که برای این قالب
+              ساخته شده است.
             </p>
           </div>
         </section>
@@ -269,13 +269,13 @@ export function AtelierSite() {
         <section id="journal" className="at-section at-journal" aria-labelledby="at-journal-title">
           <div className="at-wrap at-journal-grid">
             <div className="at-journal-head">
-              <p className="at-eyebrow">05 / Journal</p>
+              <p className="at-eyebrow">۰۵ / یادداشت‌ها</p>
               <h2 id="at-journal-title" className="at-display at-h2">
-                Notes from the counter.
+                یادداشت‌هایی از پیشخوان
               </h2>
               <p className="at-intro">
-                Occasional writing on brewing, buying and paying attention. Open a
-                note to read it here.
+                نوشته‌هایی گاه‌به‌گاه دربارهٔ دم‌آوری، خرید و توجه‌کردن. برای خواندن
+                یادداشت، آن را باز کنید.
               </p>
             </div>
 
@@ -309,20 +309,20 @@ export function AtelierSite() {
           <div className="at-wrap">
             <div className="at-visit-grid">
               <div className="at-visit-copy">
-                <p className="at-eyebrow">06 / Visit</p>
+              <p className="at-eyebrow">۰۶ / بازدید</p>
                 <h2 id="at-visit-title" className="at-display at-h2">
-                  Come sit at the counter.
+                  بیایید پشت پیشخوان بنشینید
                 </h2>
                 <p className="at-intro">
-                  No queue, no app, no reservation needed for a counter seat. Bring
-                  a question about the coffee and we will make time for it.
+                  برای نشستن پشت پیشخوان نه صف لازم است، نه اپلیکیشن و نه رزرو. پرسشی
+                  دربارهٔ قهوه بیاورید؛ برایش وقت می‌گذاریم.
                 </p>
 
                 <div className="at-visit-details">
                   <div>
                     <h3>
                       <MapPin size={16} aria-hidden="true" />
-                      Find the atelier
+                      نشانی آتلیه
                     </h3>
                     <address>
                       {visit.address.map((line) => (
@@ -334,7 +334,7 @@ export function AtelierSite() {
                   <div>
                     <h3>
                       <Clock size={16} aria-hidden="true" />
-                      Opening hours
+                      ساعت کاری
                     </h3>
                     <dl>
                       {hours.map((row) => (
@@ -357,15 +357,15 @@ export function AtelierSite() {
               <div className="at-visit-side">
                 <div className="at-map">
                   <MapArt />
-                  <p>Illustrative map · not to scale</p>
+                  <p>نقشهٔ تصویری · بدون مقیاس</p>
                 </div>
 
                 <div className="at-form-card">
-                  <p className="at-mini-label">Book a tasting</p>
-                  <h3>Tell us when, and for how many.</h3>
+                  <p className="at-mini-label">درخواست جلسهٔ چشیدن قهوه</p>
+                  <h3>زمان و تعداد نفرات را بنویسید</h3>
                   <p className="at-form-intro">
-                    Tastings for four to six people, usually on a weekday morning.
-                    We will reply within two days.
+                    جلسهٔ چشیدن برای چهار تا شش نفر، معمولاً صبح یکی از روزهای کاری.
+                    ظرف دو روز پاسخ می‌دهیم.
                   </p>
                   <InquiryForm />
                 </div>
@@ -380,18 +380,18 @@ export function AtelierSite() {
           <div className="at-footer-top">
             <div className="at-footer-brand">
               <p className="at-footer-word">
-                Atelier <em>Coffee</em>
+                Atelier <em>قهوه</em>
               </p>
-              <p>A quieter kind of coffee.</p>
+              <p>قهوه‌ای آرام‌تر.</p>
               <a href="#top" className="at-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="at-footer-cols">
               <div>
-                <p className="at-footer-label">Visit</p>
+                <p className="at-footer-label">بازدید</p>
                 <address>
                   {visit.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -403,7 +403,7 @@ export function AtelierSite() {
                 </a>
               </div>
               <div>
-                <p className="at-footer-label">Explore</p>
+                <p className="at-footer-label">کاوش</p>
                 {atelierNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -411,22 +411,21 @@ export function AtelierSite() {
                 ))}
               </div>
               <div>
-                <p className="at-footer-label">Template</p>
-                <Link href="/templates/atelier-coffee">Template details</Link>
-                <Link href="/checkout/atelier-coffee">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="at-footer-label">قالب</p>
+                <Link href="/templates/atelier-coffee">جزئیات قالب</Link>
+                <Link href="/checkout/atelier-coffee">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="at-footer-bottom">
             <p>
-              © 2026 Atelier Coffee (fictional). A demonstration website: venue,
-              menu, hours and imagery are illustrative. No orders or bookings are
-              taken.
+              © ۲۰۲۶ آتلیه کافی (خیالی). وب‌سایتی نمایشی: مکان، منو، ساعت‌ها و تصاویر
+              همگی برای نمونه هستند. سفارش یا رزروی ثبت نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

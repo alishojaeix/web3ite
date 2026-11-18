@@ -20,7 +20,7 @@ export function OnchainBrief() {
     const type = String(data.get("type") ?? "").trim();
     const detail = String(data.get("message") ?? "").trim();
 
-    const brief = [type ? `Type: ${type}` : "", detail]
+    const brief = [type ? `نوع: ${type}` : "", detail]
       .filter(Boolean)
       .join("\n\n");
 
@@ -65,7 +65,7 @@ export function OnchainBrief() {
         <span className="oc-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="oc-success-title">Brief recorded</p>
+        <p className="oc-success-title">بریف ثبت شد</p>
         <p className="oc-success-body">{message}</p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export function OnchainBrief() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another brief
+          ارسال بریف دیگر
         </button>
       </div>
     );
@@ -90,14 +90,14 @@ export function OnchainBrief() {
           <p className="oc-form-sub">{contact.form.sub}</p>
         </div>
         <span className="oc-form-code" aria-hidden="true">
-          BRIEF / 01
+          BRIEF / ۰۱
         </span>
       </div>
 
       <form className="oc-form" onSubmit={onSubmit}>
         <div className="oc-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -105,24 +105,24 @@ export function OnchainBrief() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@studio.com"
+              placeholder="you@studio.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>What do you need?</span>
+          <span>چه چیزی نیاز دارید؟</span>
           <select name="type" defaultValue={contact.form.types[0]}>
             {contact.form.types.map((option) => (
               <option key={option} value={option}>
@@ -133,13 +133,13 @@ export function OnchainBrief() {
         </label>
 
         <label>
-          <span>The brief</span>
+          <span>بریف</span>
           <textarea
             name="message"
             rows={4}
             required
             maxLength={1200}
-            placeholder="A link to the product, the network it runs on and the decision the interface has to support."
+            placeholder="پیوندی به محصول، شبکه‌ای که روی آن اجرا می‌شود و تصمیمِ رابط که باید پشتیبانی شود."
           />
         </label>
 
@@ -148,7 +148,7 @@ export function OnchainBrief() {
           className="oc-btn oc-btn--solid oc-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending brief…" : "Send the brief"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال بریف"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

@@ -1,178 +1,259 @@
 /**
- * Modern Tobacco Boutique - sample contemporary tobacco content (adults 18+).
+ * Modern Tobacco Boutique — sample boutique content.
  *
- * The boutique, tin, blends, shelf, stockists and contact are fictional.
- * No real products, sales, health claims or therapeutic benefits are represented.
- * Age-gated demonstration only.
+ * The boutique, objects, stockists and correspondence details are fictional.
+ * The page is an age-gated design demonstration for adults and sells nothing.
  */
 
+export const healthWarning =
+  "مصرف تنباکو برای سلامتی مضر است. این یک نمایش طراحی خیالی برای بزرگسالان است. مسئولیت رعایت محدودیت‌های سنی، قواعد تبلیغات و هشدارهای سلامتِ الزامی در بازار خود، بر عهدهٔ اپراتور است.";
+
 export const modernNav = [
-  { label: "The edit", href: "#showcase" },
-  { label: "The shelf", href: "#story" },
-  { label: "Materials", href: "#materials" },
-  { label: "Details", href: "#specs" },
-  { label: "Adults 18+", href: "#contact" },
+  { label: "گزیده", href: "#showcase" },
+  { label: "قفسه", href: "#story" },
+  { label: "مواد", href: "#materials" },
+  { label: "فروشگاه‌ها", href: "#stockists" },
+  { label: "اطلاعیه", href: "#contact" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Modern Tobacco / Adults 18+",
-  headline: "A different",
-  headlineAccent: "shelf.",
+  eyebrow: "Modern Tobacco / بوتیک ۰۱",
+  headline: "یک قفسهٔ",
+  headlineAccent: "دیگر",
   intro:
-    "A fictional boutique concept for adult products, built around a clean metal tin, precise typography and a clearly labelled demo catalogue.",
-  status: "Private boutique · by appointment",
-  note: "Age-gated demo · fictional products · no sales",
+    "یک مفهوم بوتیک خیالی برای محصولات بزرگسالان: یک قوطی فولادی برس‌خورده، گزیده‌ای کوتاه و قفسه‌ای که برای شیء جا باز می‌کند.",
+  status: "بزرگسالان ۱۸+ · بوتیک خیالی",
+  note: "نمایش با محدودیت سن · محصولات خیالی · بدون فروش یا ادعای سلامت",
   caption: [
-    "Brushed steel tin on powder-coated shelf",
-    "Illustrative concept · no real products or sales",
+    "مطالعهٔ قفسه ۰۱ — قوطی برس‌خورده، کارت خنثی، نور کم",
+    "اثر نمایشی · نه عکس محصول واقعی",
   ],
+  footNote: "یک قوطی · سه شیء · بدون موجودی",
 } as const;
 
 export const heroMeta = [
-  { label: "Boutique", value: "Fictional" },
-  { label: "Access", value: "18+ gate" },
-  { label: "Edit", value: "3 objects" },
+  { label: "دسترسی", value: "دروازهٔ ۱۸+" },
+  { label: "گزیده", value: "سه شیء" },
+  { label: "وضعیت", value: "تنها نمایش" },
 ] as const;
 
+export type EditVariant = "tin" | "edit" | "shelf";
+
 export const edit = {
-  label: "01 / The edit",
-  title: "Fewer objects, better presented.",
+  label: "۰۱ / گزیده",
+  title: "شیء کمتر، ارائهٔ بهتر",
   intro:
-    "A compact, fictional catalogue with neutral product cards and no lifestyle targeting. All product copy is illustrative.",
+    "سه شیء خیالی، هر کدام با کارتی ساده. برای دیدن مطالعه، یکی را انتخاب کنید. هیچ چیز قیمت‌گذاری، موجود یا فروخته نمی‌شود.",
+  note:
+    "گزیده نمایشی است. هیچ محصول، قیمت، سطح موجودی یا توصیه‌ای بازنمایی نمی‌شود.",
   items: [
     {
-      index: "01",
-      name: "The Tin",
-      spec: "Brushed steel · 50 g",
-      tags: ["Steel", "Neutral", "Object"],
-      note: "The core object — weight, seal and silence.",
+      id: "tin" as EditVariant,
+      index: "۰۱",
+      name: "قوطی",
+      spec: "فولاد برس‌خورده · ۵۰ گرم (نمایشی)",
+      body:
+        "یک قوطی فولادی برس‌خورده با درپوش کم‌عمق و برچسب ساده. مطالعه تناسب و جای درز را نشان می‌دهد، نه یک ظرف واقعی.",
+      tags: ["فولاد", "خنثی", "شیء"],
+      caption: "مطالعه ۰۱ · قوطی با درپوش نیمه‌باز",
+      tone: "#c8cbc4",
+      accent: "#4c5e54",
     },
     {
-      index: "02",
-      name: "The Edit",
-      spec: "Three blends · 10 × 2",
-      tags: ["Edit", "Paper", "Set"],
-      note: "A curated pair of sample blends on index stock.",
+      id: "edit" as EditVariant,
+      index: "۰۲",
+      name: "گزیده",
+      spec: "سه روکش · ۱۰ × ۲ (نمایشی)",
+      body:
+        "مجموعه‌ای از سه روکش کاغذی باریک، گروه‌بندی‌شده به‌عنوان یک شیء. کارت یک مطالعهٔ نمایشی است؛ محتوا نشان داده یا توصیف نمی‌شود.",
+      tags: ["گزیده", "کاغذ", "مجموعه"],
+      caption: "مطالعه ۰۲ · سه روکش خنثی",
+      tone: "#dcd5c4",
+      accent: "#7b6a4d",
     },
     {
-      index: "03",
-      name: "The Shelf",
-      spec: "Display set · powder-coated",
-      tags: ["Shelf", "Soft light", "Retail"],
-      note: "Low-profile display for quiet presentation.",
+      id: "shelf" as EditVariant,
+      index: "۰۳",
+      name: "قفسه",
+      spec: "دو طبقه · پوشش پودری",
+      body:
+        "یک قفسهٔ نمایشی کوتاه و دوطبقه با پرداخت خنثی و نرم. در این مفهوم وجود دارد تا نشان دهد اشیا در یک اتاق چگونه می‌نشینند.",
+      tags: ["قفسه", "نور نرم", "خرده‌فروشی"],
+      caption: "مطالعه ۰۳ · قفسهٔ کوتاه دوطبقه",
+      tone: "#b9bdb5",
+      accent: "#3c4a42",
     },
   ],
-  disclaimer:
-    "All items are fictional. No tobacco product, specification, material or price is real.",
 } as const;
 
-export const shelf = {
-  label: "02 / The shelf",
-  title: "Steel and soft light.",
+export const story = {
+  label: "۰۲ / قفسه",
+  title: "قفسه، نه ویترین",
   intro:
-    "The boutique language is contemporary: brushed metal, low shelving and a controlled neutral palette.",
+    "Modern Tobacco یک مفهوم بوتیک خیالی است که حول یک شیء و فضای پیرامونش شکل گرفته است. صفحه قفسه، مواد و محدودیت‌ها را نشان می‌دهد — هرگز سبد خرید را.",
+  quote: {
+    text: "قفسه استدلالی است دربارهٔ آنچه باید کنار گذاشت.",
+    note: "یادداشت قفسه ۰۱",
+  },
   principles: [
     {
-      index: "01",
-      title: "Object first",
-      body: "The tin is the hero. No lifestyle imagery, no aspirational copy — just weight, finish and seal.",
+      index: "۰۱",
+      title: "شیء کمتر",
+      body:
+        "گزیده عمداً کوتاه است. سه شیء، هر کدام با کارتی ساده و بدون ادعای سبک زندگی.",
     },
     {
-      index: "02",
-      title: "Neutral field",
-      body: "Powder-coated shelving in warm greige. Soft 3000 K wash from above. No glare, no drama.",
+      index: "۰۲",
+      title: "نور نرم، خطوط سخت",
+      body:
+        "فولاد برس‌خورده تُن را تعیین می‌کند. قفسه‌بندی کوتاه، کاغذ خنثی و یک نور نرم تکی بقیه را انجام می‌دهند.",
     },
     {
-      index: "03",
-      title: "Restrained information",
-      body: "One line of spec per object. Origin, weight, blend count. The rest is left for the reader.",
+      index: "۰۳",
+      title: "اطلاعیه می‌ماند",
+      body:
+        "تأیید سن و هشدارهای سلامت بخشی از قفسه دانسته می‌شوند، نه یادداشتی در حاشیهٔ فوتر.",
     },
   ],
-  disclaimer:
-    "This is a demonstration layout. Real operators must apply all required warnings, age gates and advertising restrictions.",
+  elevation: {
+    title: "نمای قفسه",
+    caption: "مطالعهٔ نمایشی · بدون مقیاس",
+    code: "MT / ۰۲",
+    rows: [
+      { label: "بالا", value: "قوطی + کارت رکورد" },
+      { label: "پایین", value: "گزیدهٔ سه‌روکش" },
+      { label: "پرداخت", value: "خنثی با پوشش پودری" },
+    ],
+    note:
+      "یک نقشهٔ نمایشی خیالی. هیچ فروشگاه، وسیله یا محصولی بازنمایی نمی‌شود.",
+  },
+  stockists: {
+    label: "فروشگاه‌ها",
+    title: "اتاق‌های خیالی، برای مقیاس",
+    intro:
+      "یک فهرست کوتاه و ساختگی از فروشگاه‌ها که تنها برای نشان دادن نشستن قفسه در یک اتاق استفاده شده است. هیچ خرده‌فروش، نشانی یا وابستگی واقعی بازنمایی نمی‌شود.",
+    note:
+      "همهٔ فروشگاه‌ها خیالی‌اند. هیچ چیز برای دیدن، رزرو یا خرید وجود ندارد.",
+    items: [
+      { name: "اتاق شمالی", city: "منچستر", note: "فروشندهٔ خیالی · مطالعهٔ نمایشی" },
+      { name: "کاغذ و فولاد", city: "کپنهاگ", note: "فروشندهٔ خیالی · مطالعهٔ نمایشی" },
+      { name: "آنسکس", city: "لیسبون", note: "فروشندهٔ خیالی · مطالعهٔ نمایشی" },
+      { name: "فرم / ۰۲", city: "کیوتو", note: "فروشندهٔ خیالی · مطالعهٔ نمایشی" },
+    ],
+  },
+  note:
+    "بوتیک یک نمایش طراحی است. هیچ فروشگاه، سازنده یا فروشندهٔ واقعی را توصیف نمی‌کند.",
 } as const;
 
 export const materials = {
-  label: "03 / Materials",
-  title: "Brushed steel, soft light, neutral paper.",
+  label: "۰۳ / مواد",
+  title: "فولاد، نور نرم و کاغذ خنثی",
   intro:
-    "Three surfaces define the boutique: the tin you hold, the light that reveals it, and the paper that describes it.",
+    "زبان بوتیک معاصر و عمداً محدود است: یک فلز، یک نور، یک کاغذ. هر مطالعه ترسیم شده است، نه عکاسی‌شده.",
   items: [
     {
-      name: "Brushed steel",
-      note: "The tin",
+      name: "فولاد برس‌خورده",
+      note: "قوطی",
+      body:
+        "فلزی خنک و یکنواخت با بافت ریز برس‌خورده. لبهٔ دقیق قفسه را می‌سازد، بدون پرداخت آینه‌ای.",
       swatch: "steel",
-      body: "Bead-blasted 316L with a micro-groove seal. The finish catches light without glare; the thread feels like a single continuous ridge.",
     },
     {
-      name: "Soft light",
-      note: "The shelf",
+      name: "نور نرم",
+      note: "قفسه",
+      body:
+        "یک منبع کم و تکی، برای مدل دادن به قوطی و آرام گذاشتن قفسهٔ پیرامون.",
       swatch: "light",
-      body: "Recessed 3000 K linear wash at 15° angle. CRI 95. The tin warms under it; the paper stays readable.",
     },
     {
-      name: "Neutral paper",
-      note: "The edit",
+      name: "کاغذ خنثی",
+      note: "گزیده",
+      body:
+        "کاغذ خاکستری گرم، کارت‌های ساده و خطوط نازک. کاغذ اطلاعات را حمل می‌کند، نه تزئین را.",
       swatch: "paper",
-      body: "Uncoated 120 gsm warm white. Single-colour letterpress. One spec line, one disclaimer line, nothing else.",
     },
   ],
-  note: "Illustrative material studies for layout demonstration.",
+  note: "مطالعات مواد نمایشی‌اند. هیچ نمونهٔ فیزیکی، محصول یا پرداختی ارائه نمی‌شود.",
 } as const;
 
 export const specification = {
-  label: "04 / Details",
-  title: "Restrictions are part of the design.",
+  label: "۰۴ / جزئیات",
+  title: "رکوردی ساده از این نمایش",
   intro:
-    "Age confirmation, health warnings and operator responsibility are treated as first-class interface elements, not footnotes.",
+    "این صفحه چه ارائه می‌دهد، دروازه چگونه کار می‌کند و عمداً چه چیزی را کنار می‌گذارد.",
   groups: [
     {
-      title: "Access & format",
+      title: "قالب",
       rows: [
-        { label: "Age gate", value: "18+ required" },
-        { label: "Edit size", value: "3 objects" },
-        { label: "Layout", value: "Single page + 3D" },
-        { label: "Sales", value: "None" },
+        { label: "قالب", value: "مدرن توباکو" },
+        { label: "صنعت", value: "تنباکو و سیگار" },
+        { label: "قالب صفحه", value: "تک‌صفحه" },
       ],
     },
     {
-      title: "Compliance",
+      title: "دسترسی",
       rows: [
-        { label: "Health warning", value: "Operator responsibility" },
-        { label: "Advertising", value: "Market-dependent" },
-        { label: "Age verification", value: "Cookie-based demo" },
-        { label: "Indexing", value: "Sequential 01–03" },
+        { label: "دروازهٔ سن", value: "تأیید ۱۸+" },
+        { label: "روش دروازه", value: "کوکی نشست" },
+        { label: "فرم", value: "صندوق نمایشی" },
+      ],
+    },
+    {
+      title: "گزیده",
+      rows: [
+        { label: "اشیا", value: "۳ مورد نمایشی" },
+        { label: "فروشگاه‌ها", value: "۴ مورد خیالی" },
+        { label: "فروش", value: "هیچ" },
       ],
     },
   ],
-  disclaimer:
-    "This is a demonstration template. Real operators are responsible for all applicable laws, warnings and age restrictions.",
+  notClaimed: [
+    "وجود یا فروش هر محصول",
+    "درستی هر وزن، ترکیب یا پرداخت",
+    "هر سودمندی سلامت، ترک یا درمانی",
+    "هر فروشنده، نشانی یا وابستگی واقعی",
+  ],
+  notClaimedNote:
+    "Modern Tobacco یک نمایش طراحی خیالی برای بزرگسالان است. اپراتور باید محدودیت‌های سنی، قواعد تبلیغات و هشدارهای سلامتِ بازار خود را بیفزاید.",
+  note:
+    "این صفحه یک مطالعهٔ طراحی است. فروشگاه، فهرست فروشندگان اتاق‌های واقعی یا اطلاعات سلامت نیست.",
 } as const;
 
 export const contact = {
-  label: "05 / Notice",
-  title: "Read the notice.",
+  label: "۰۵ / اطلاعیه",
+  title: "اطلاعیه را بخوانید",
   intro:
-    "Fictional demonstration. No sales, no health claims. Operators are responsible for local restrictions and required warnings.",
+    "این یک نمایش با محدودیت سنی است. برای دریافت نسخهٔ یادداشت‌های قفسهٔ خیالی، درخواست دهید؛ هیچ اطلاعات محصول، قیمت یا پیشنهادی ارسال نمی‌شود.",
   facts: [
-    { label: "Access", value: "Adults 18+" },
-    { label: "Format", value: "Edit + shelf + 3D" },
-    { label: "Products", value: "Fictional" },
-    { label: "Sales", value: "None" },
+    { label: "دسترسی", value: "بزرگسالان ۱۸+" },
+    { label: "وضعیت", value: "بوتیک خیالی" },
+    { label: "صندوق", value: "تنها نمایشی" },
+    { label: "فروش", value: "هیچ" },
   ],
+  lines: [
+    "بدون سفارش، قیمت یا ارسال",
+    "بدون ادعای سلامت یا ترک",
+    "بدون محصول، فروشگاه یا فروشندهٔ واقعی",
+  ],
+  quote: "دروازه نخستین قفسه است.",
+  quoteNote: "یادداشت قفسه ۰۲",
   email: "studio@modern-tobacco.demo",
-  phone: "+44 20 7946 0194",
-  address: ["Modern Tobacco", "By appointment only", "—"],
-  hours: "Private · no walk-in",
-  note: "Fictional demonstration. Adults 18+ only. No sales or health claims.",
-  form: {
-    title: "Request the notice",
-    sub: "Fictional boutique · no sales call · no products",
-    types: ["Boutique notice", "Stockist sheet", "Material study", "Something else"],
-    note: "Sample request form. Nothing is sent to a real boutique, no products are offered and no sales contact is made.",
-    confirmation:
-      "Your request has been recorded for this demonstration. No message is sent, no products are offered and no sales contact is made.",
-    fallback:
-      "The demo boutique is unavailable right now. Please use the email address on this page.",
-  },
+  address: ["مدرن توباکو (خیالی)", "تنها با قرار قبلی", "بدون ویترین عمومی"],
+  hours: "رکورد نمایشی · نه ساعت کاری واقعی",
+  note:
+    "نشانی ایمیل و نشانی پستی خیالی‌اند. فرم یک درخواست نمایشی را روی این سرور ذخیره می‌کند و ایمیلی ارسال نمی‌کند.",
+  formTitle: "درخواست یادداشت‌های قفسه",
+  formSub: "یک فرم نمایشی برای بوتیک خیالی. تنها بزرگسالان ۱۸+.",
+  formCode: "MT / NOTICE",
+  formOptions: ["یادداشت‌های قفسه", "بستهٔ فروشندگان", "مطبوعات و اعتبارها"],
+  formNote:
+    "فرم نمایشی · ایمیلی ارسال نمی‌شود و سفارشی ساخته نمی‌شود. اطلاعات شخصی واقعی وارد نکنید.",
+  cta: "درخواست یادداشت‌ها",
+} as const;
+
+export const footer = {
+  blurb:
+    "یک قفسهٔ دیگر: بوتیکی خیالی ساخته‌شده از یک قوطی، سه شیء و مجموعه‌ای روشن از محدودیت‌ها.",
+  note:
+    "© ۲۰۲۶ مدرن توباکو (خیالی). یک وب‌سایت نمایشی برای بزرگسالان. هیچ محصولی فروخته نمی‌شود، موجودی وجود ندارد و هیچ ادعای سلامت، ترک یا درمانی مطرح نمی‌شود.",
 } as const;

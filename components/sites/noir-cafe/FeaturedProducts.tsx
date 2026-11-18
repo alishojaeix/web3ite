@@ -25,7 +25,7 @@ export function FeaturedProducts() {
           ))}
         </ul>
         <p className="mt-7 text-xs leading-5 text-[var(--nc-muted)]">
-          Coffee collection shown as sample content. No purchase action is available.
+          کلکسیون قهوه به‌صورت محتوای نمونه نمایش داده شده است. امکان خرید وجود ندارد.
         </p>
       </div>
     </section>

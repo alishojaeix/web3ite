@@ -19,12 +19,12 @@ export function SoraNav() {
   return (
     <header className="sr-nav">
       <div className="sr-wrap sr-nav-bar">
-        <a href="#top" className="sr-brand" aria-label="Sora, back to top">
-          <span className="sr-brand-word">Sora</span>
-          <span className="sr-brand-sub">Modern Japanese dining</span>
+        <a href="#top" className="sr-brand" aria-label="Sora، بازگشت به بالا">
+          <span className="sr-brand-word">سورا</span>
+          <span className="sr-brand-sub">غذاخوری ژاپنی مدرن</span>
         </a>
 
-        <nav aria-label="Primary" className="sr-nav-links">
+        <nav aria-label="پیمایش اصلی" className="sr-nav-links">
           {soraNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -34,12 +34,12 @@ export function SoraNav() {
 
         <div className="sr-nav-tail">
           <a href="#visit" className="sr-nav-cta">
-            Request a table
+            درخواست میز
           </a>
           <button
             type="button"
             className="sr-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="sr-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -51,7 +51,7 @@ export function SoraNav() {
 
       {open ? (
         <div className="sr-mobile-wrap">
-          <nav id="sr-mobile-nav" aria-label="Mobile navigation" className="sr-mobile-nav">
+          <nav id="sr-mobile-nav" aria-label="پیمایش موبایل" className="sr-mobile-nav">
             {soraNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -59,12 +59,12 @@ export function SoraNav() {
               </a>
             ))}
             <a href="#visit" className="sr-mobile-cta" onClick={() => setOpen(false)}>
-              Request a table
+              درخواست میز
             </a>
             <p className="sr-mobile-note">
               3 Garden Lane, London E2
               <br />
-              Lunch and dinner · Tuesday to Sunday
+              ناهار و شام · سه‌شنبه تا یکشنبه
             </p>
           </nav>
         </div>

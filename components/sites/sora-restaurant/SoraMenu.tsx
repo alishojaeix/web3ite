@@ -37,7 +37,7 @@ export function SoraMenu() {
 
   return (
     <div className="sr-menu-shell">
-      <div className="sr-menu-tabs" role="tablist" aria-label="Choose a menu">
+      <div className="sr-menu-tabs" role="tablist" aria-label="یک منو انتخاب کنید">
         {tabs.map((tab, index) => (
           <button
             key={tab.id}
@@ -69,34 +69,34 @@ export function SoraMenu() {
         className="sr-menu-panel"
       >
         <div className="sr-menu-side">
-          <p className="sr-menu-side-label">The counter menu</p>
+          <p className="sr-menu-side-label">منوی کانتر</p>
           <p className="sr-menu-price">
             <span aria-hidden="true">£</span>
             {counterMenu.price}
-            <small>per guest</small>
+            <small>برای هر نفر</small>
           </p>
           <p className="sr-menu-side-copy">{counterMenu.intro}</p>
           <dl className="sr-menu-facts">
             <div>
-              <dt>Pairing</dt>
-              <dd>£{counterMenu.pairing} · four glasses</dd>
+              <dt>همراهی</dt>
+              <dd>£{counterMenu.pairing} · چهار لیوان</dd>
             </div>
             <div>
-              <dt>Seats</dt>
-              <dd>Ten at the counter</dd>
+              <dt>صندلی</dt>
+              <dd>ده نفر در کانتر</dd>
             </div>
             <div>
-              <dt>Dietary</dt>
-              <dd>48 hours&rsquo; notice</dd>
+              <dt>رژیم غذایی</dt>
+              <dd>اطلاع ۴۸ ساعت قبل</dd>
             </div>
           </dl>
           <a className="sr-text-link" href="#visit">
-            Request the counter
+            درخواست کانتر
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>
         </div>
 
-        <ol className="sr-courses" aria-label="The counter menu courses">
+        <ol className="sr-courses" aria-label="دوره‌های منوی کانتر">
           {counterMenu.courses.map((course) => (
             <li key={course.name} className="sr-course">
               <span className="sr-course-numeral" aria-hidden="true">
@@ -121,28 +121,28 @@ export function SoraMenu() {
         className="sr-menu-panel"
       >
         <div className="sr-menu-side">
-          <p className="sr-menu-side-label">The table menu</p>
+          <p className="sr-menu-side-label">منوی میز</p>
           <p className="sr-menu-price">
-            <span aria-hidden="true">£</span>6
-            <small>plates from</small>
+            <span aria-hidden="true">£</span>۶
+            <small>بشقاب از</small>
           </p>
           <p className="sr-menu-side-copy">{tableMenu.intro}</p>
           <dl className="sr-menu-facts">
             <div>
-              <dt>Order</dt>
-              <dd>Two or three plates each</dd>
+              <dt>سفارش</dt>
+              <dd>دو یا سه بشقاب برای هر نفر</dd>
             </div>
             <div>
-              <dt>Rice</dt>
-              <dd>One pot for the table</dd>
+              <dt>برنج</dt>
+              <dd>یک دیگ برای میز</dd>
             </div>
             <div>
-              <dt>Course</dt>
-              <dd>Arrives as it is ready</dd>
+              <dt>دوره</dt>
+              <dd>به‌محض آماده‌شدن می‌رسد</dd>
             </div>
           </dl>
           <a className="sr-text-link" href="#visit">
-            Request a table
+            درخواست میز
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>
         </div>
@@ -169,7 +169,7 @@ export function SoraMenu() {
                             <span className="sr-veg-mark" aria-hidden="true">
                               <Leaf size={9} />
                             </span>
-                            <span className="sr-sr-only">Vegetarian</span>
+                            <span className="sr-sr-only">گیاهی</span>
                           </>
                         ) : null}
                       </p>
@@ -188,8 +188,8 @@ export function SoraMenu() {
       </div>
 
       <p className="sr-menu-note">
-        Sample menu. Dishes, prices and availability are illustrative. The card
-        changes with the market; tell the kitchen about allergies when you book.
+        منوی نمونه. غذاها، قیمت‌ها و موجودی نمایشی‌اند. کارت با بازار تغییر می‌کند؛ هنگام
+        رزرو، آلرژی‌ها را به آشپزخانه بگویید.
       </p>
     </div>
   );

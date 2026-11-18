@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { OnchainSite } from "@/components/sites/onchain-studio/OnchainSite";
 import "./onchain.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Onchain Studio — Onchain, made legible.";
+const title = "آن‌چین استودیو — آن‌چین، خوانا شده";
 const description =
-  "A sample Web3 product-studio website: an isometric ledger sculpture, capability index, three illustrative case studies, a public working file and a project brief form. Fictional studio built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای استودیوی محصول آن‌چین: سه مسئله و سه رابط، روش کاری، یادداشت نمونه و فرم بریف. استودیوی خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=onchain-studio",
         width: 1200,
         height: 630,
-        alt: "Onchain Studio website preview",
+        alt: "پیش‌نمایش وب‌سایت آن‌چین استودیو",
       },
     ],
   },

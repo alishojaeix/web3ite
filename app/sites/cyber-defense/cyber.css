@@ -27,8 +27,8 @@
   --cd-display: var(--font-display), "Inter", system-ui, sans-serif;
   --cd-body: var(--font-body), "Source Sans 3", system-ui, sans-serif;
   --cd-serif: var(--font-editorial), "Iowan Old Style", Georgia, serif;
-  --cd-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Mono", ui-monospace,
-    monospace;
+  --cd-mono: var(--font-body), "SFMono-Regular", "JetBrains Mono",
+    "Cascadia Mono", ui-monospace, monospace;
   --cd-radius: 2px;
 
   min-height: 100vh;
@@ -116,7 +116,7 @@
 .cd-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 140;
   display: inline-flex;
   align-items: center;
@@ -128,9 +128,8 @@
   background: var(--cd-surface);
   color: var(--cd-ink);
   font-family: var(--cd-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   transition: transform 180ms ease;
 }
 
@@ -149,9 +148,8 @@
   gap: 8px;
   margin: 0;
   font-family: var(--cd-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--cd-accent);
 }
 
@@ -182,7 +180,6 @@
   font-size: 8.5px;
   line-height: 1.75;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -192,7 +189,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -220,7 +216,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -277,7 +272,7 @@
   font-size: clamp(2.15rem, 7.6vw, 3.9rem);
   font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink);
   text-wrap: balance;
 }
@@ -335,17 +330,16 @@
   font-family: var(--cd-display);
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .cd-brand-sub {
   display: none;
-  padding-left: 9px;
-  border-left: 1px solid var(--cd-line-strong);
+  padding-inline-start: 9px;
+  border-inline-start: 1px solid var(--cd-line-strong);
   font-family: var(--cd-mono);
   font-size: 8px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
   white-space: nowrap;
 }
@@ -363,7 +357,6 @@
   font-family: var(--cd-mono);
   font-size: 9.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--cd-muted);
   transition: color 180ms ease;
 }
@@ -387,9 +380,8 @@
   border: 1px solid var(--cd-line-strong);
   border-radius: var(--cd-radius);
   font-family: var(--cd-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-ink);
   transition:
     border-color 180ms ease,
@@ -435,9 +427,8 @@
   min-height: 52px;
   border-bottom: 1px solid var(--cd-line);
   font-family: var(--cd-mono);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-ink-soft);
 }
 
@@ -467,7 +458,6 @@
   font-size: 8.5px;
   line-height: 1.8;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -511,7 +501,6 @@
   font-family: var(--cd-mono);
   font-size: 8.5px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -549,7 +538,7 @@
   font-size: clamp(3.2rem, 13vw, 7rem);
   font-weight: 600;
   line-height: 0.9;
-  letter-spacing: -0.055em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink);
   text-wrap: balance;
 }
@@ -561,7 +550,7 @@
   font-size: 0.92em;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   line-height: 0.98;
   color: var(--cd-accent);
 }
@@ -588,14 +577,13 @@
 }
 
 .cd-hero-meta > div + div {
-  border-left: 1px solid var(--cd-line);
+  border-inline-start: 1px solid var(--cd-line);
 }
 
 .cd-hero-meta dt {
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -604,7 +592,7 @@
   font-family: var(--cd-display);
   font-size: 12.5px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
 }
 
@@ -648,7 +636,6 @@
   font-size: 7.5px;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -667,7 +654,6 @@
   font-size: 8px;
   line-height: 1.7;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -712,7 +698,6 @@
   font-family: var(--cd-mono);
   font-size: 8px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--cd-muted);
 }
 
@@ -724,7 +709,7 @@
 }
 
 .cd-strip li + li {
-  margin-left: 12px;
+  margin-inline-start: 12px;
 }
 
 /* --------------------------------------------------------------------------
@@ -781,7 +766,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -790,7 +774,7 @@
   font-family: var(--cd-display);
   font-size: 25px;
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink);
 }
 
@@ -831,7 +815,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--cd-accent);
 }
 
@@ -840,7 +823,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -854,7 +836,6 @@
   font-family: var(--cd-mono);
   font-size: 7px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--cd-muted);
   white-space: nowrap;
 }
@@ -888,7 +869,7 @@
   font-family: var(--cd-display);
   font-size: 13.5px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
 }
 
@@ -897,7 +878,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -911,7 +891,6 @@
   font-family: var(--cd-mono);
   font-size: 6.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-accent);
 }
 
@@ -923,7 +902,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -942,7 +920,7 @@
   font-size: clamp(1.8rem, 6vw, 2.7rem);
   font-style: italic;
   line-height: 1.08;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
 }
 
@@ -950,7 +928,6 @@
   font-family: var(--cd-mono);
   font-size: 8px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -999,7 +976,7 @@
   font-family: var(--cd-display);
   font-size: 19px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink);
 }
 
@@ -1034,7 +1011,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-ink);
 }
 
@@ -1043,7 +1019,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1069,7 +1044,7 @@
   content: "";
   position: absolute;
   top: 21px;
-  left: 40px;
+  inset-inline-start: 40px;
   width: 5px;
   height: 5px;
   transform: rotate(45deg);
@@ -1082,7 +1057,7 @@
   position: absolute;
   top: 28px;
   bottom: -2px;
-  left: 42.5px;
+  inset-inline-start: 42.5px;
   width: 1px;
   background: rgba(236, 155, 121, 0.22);
 }
@@ -1090,7 +1065,7 @@
 .cd-clock-time {
   padding-top: 1px;
   font-family: var(--cd-mono);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
   color: var(--cd-accent);
 }
@@ -1099,7 +1074,7 @@
   font-family: var(--cd-display);
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
 }
 
@@ -1118,7 +1093,6 @@
   font-size: 7px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1163,7 +1137,7 @@
 
 .cd-swatch-tag {
   position: absolute;
-  right: 12px;
+  inset-inline-end: 12px;
   bottom: 12px;
   padding: 5px 9px;
   border: 1px solid var(--cd-line-strong);
@@ -1172,7 +1146,6 @@
   font-family: var(--cd-mono);
   font-size: 7px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-muted);
 }
 
@@ -1191,7 +1164,7 @@
   font-family: var(--cd-display);
   font-size: 21px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink);
 }
 
@@ -1232,12 +1205,12 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--cd-line);
-  border-left: 1px solid var(--cd-line);
+  border-inline-start: 1px solid var(--cd-line);
 }
 
 .cd-facts > div {
   padding: 16px;
-  border-right: 1px solid var(--cd-line);
+  border-inline-end: 1px solid var(--cd-line);
   border-bottom: 1px solid var(--cd-line);
 }
 
@@ -1245,7 +1218,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1254,7 +1226,7 @@
   font-family: var(--cd-display);
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
 }
 
@@ -1264,7 +1236,6 @@
   font-family: var(--cd-mono);
   font-size: 7px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-accent-deep);
 }
 
@@ -1285,7 +1256,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-muted);
 }
 
@@ -1319,9 +1289,9 @@
 
 .cd-spec-rows dd {
   font-family: var(--cd-mono);
-  font-size: 10px;
+  font-size: 0.8125rem;
   letter-spacing: 0.04em;
-  text-align: right;
+  text-align: end;
   color: var(--cd-accent);
 }
 
@@ -1330,7 +1300,6 @@
   margin-top: 3px;
   font-size: 7px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1378,7 +1347,6 @@
   font-size: 7.5px;
   line-height: 1.75;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1407,12 +1375,12 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 26px;
   border-top: 1px solid var(--cd-line);
-  border-left: 1px solid var(--cd-line);
+  border-inline-start: 1px solid var(--cd-line);
 }
 
 .cd-contact-facts > div {
   padding: 13px 14px;
-  border-right: 1px solid var(--cd-line);
+  border-inline-end: 1px solid var(--cd-line);
   border-bottom: 1px solid var(--cd-line);
 }
 
@@ -1420,7 +1388,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1429,7 +1396,7 @@
   font-family: var(--cd-display);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
 }
 
@@ -1472,7 +1439,7 @@
   font-size: 26px;
   font-style: italic;
   line-height: 1.14;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink-soft);
   text-wrap: balance;
 }
@@ -1484,7 +1451,6 @@
   font-size: 7.5px;
   font-style: normal;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1534,7 +1500,6 @@
   font-size: 7.5px;
   line-height: 1.7;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1579,7 +1544,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-accent);
 }
 
@@ -1619,7 +1583,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
   color: var(--cd-muted);
 }
 
@@ -1641,7 +1604,7 @@
 
 .cd-form select {
   appearance: none;
-  padding-right: 38px;
+  padding-inline-end: 38px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b8a59c' stroke-width='1.2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 15px center;
@@ -1692,7 +1655,6 @@
   font-size: 7px;
   line-height: 1.75;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1722,7 +1684,6 @@
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-accent);
 }
 
@@ -1760,7 +1721,7 @@
   font-family: var(--cd-display);
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--cd-ink);
 }
 
@@ -1792,7 +1753,6 @@
   font-family: var(--cd-mono);
   font-size: 8.5px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--cd-accent);
 }
 
@@ -1818,7 +1778,6 @@
   font-family: var(--cd-mono);
   font-size: 7.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--cd-quiet);
 }
 
@@ -1983,7 +1942,7 @@
 
   .cd-quote-note {
     padding-bottom: 6px;
-    text-align: right;
+    text-align: end;
   }
 
   .cd-board-list li {
@@ -2041,9 +2000,9 @@
   }
 
   .cd-timeline li:nth-child(2n) {
-    padding-left: 26px;
-    padding-right: 0;
-    border-left: 1px solid var(--cd-line);
+    padding-inline-start: 26px;
+    padding-inline-end: 0;
+    border-inline-start: 1px solid var(--cd-line);
   }
 
   .cd-timeline li:nth-last-child(-n + 2) {
@@ -2109,7 +2068,7 @@
   }
 
   .cd-strip li + li {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 
   .cd-timeline {
@@ -2119,13 +2078,13 @@
   .cd-timeline li,
   .cd-timeline li:nth-child(2n) {
     padding: 26px 24px 30px 0;
-    border-left: 0;
+    border-inline-start: 0;
     border-bottom: 0;
   }
 
   .cd-timeline li + li {
-    padding-left: 24px;
-    border-left: 1px solid var(--cd-line);
+    padding-inline-start: 24px;
+    border-inline-start: 1px solid var(--cd-line);
   }
 
   .cd-quote-band {
@@ -2195,11 +2154,11 @@
 
   .cd-timeline li,
   .cd-timeline li:nth-child(2n) {
-    padding-right: 28px;
+    padding-inline-end: 28px;
   }
 
   .cd-timeline li + li {
-    padding-left: 28px;
+    padding-inline-start: 28px;
   }
 
   .cd-timeline h3 {

@@ -17,7 +17,9 @@ export function MenuBoard() {
       <div className="ek-menu-toolbar">
         <div>
           <p className="ek-menu-date">{menu.date}</p>
-          <p className="ek-menu-service">One seating · four snacks, three plates, two to share</p>
+          <p className="ek-menu-service">
+            یک نشست · چهار خوراک کوچک، سه بشقاب، دو مورد برای تقسیم
+          </p>
         </div>
         <label className="ek-toggle">
           <input
@@ -30,15 +32,15 @@ export function MenuBoard() {
           </span>
           <span className="ek-toggle-label">
             <Leaf size={13} aria-hidden="true" />
-            Vegetarian only
+            فقط گیاهی
           </span>
         </label>
       </div>
 
       <p className="ek-menu-count" role="status" aria-live="polite">
         {vegetarianOnly
-          ? `Showing ${vegetarianCount} vegetarian dishes of ${totalCount}.`
-          : `${totalCount} dishes on tonight's card · ${vegetarianCount} vegetarian.`}
+          ? `نمایش ${vegetarianCount} غذای گیاهی از ${totalCount}.`
+          : `${totalCount} غذا در کارت امشب · ${vegetarianCount} گیاهی.`}
       </p>
 
       <div className="ek-menu-groups">
@@ -73,7 +75,7 @@ export function MenuBoard() {
                             V
                           </span>
                         ) : null}
-                        {item.vegetarian ? <span className="ek-sr-only">Vegetarian</span> : null}
+                        {item.vegetarian ? <span className="ek-sr-only">گیاهی</span> : null}
                       </p>
                       <p className="ek-dish-desc">{item.description}</p>
                     </div>
@@ -91,7 +93,7 @@ export function MenuBoard() {
 
       <div className="ek-menu-foot">
         <p>{menu.note}</p>
-        <p className="ek-menu-foot-right">Prices in GBP · Bread and water included</p>
+        <p className="ek-menu-foot-right">قیمت‌ها به پوند · نان و آب شامل است</p>
       </div>
     </div>
   );

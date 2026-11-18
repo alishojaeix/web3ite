@@ -18,17 +18,17 @@ import { booking, hero, heroMeta, menu, room, visit } from "./content";
 
 export function EmberSite() {
   return (
-    <div className="ek-site" id="top">
+    <div className="ek-site" id="top" dir="rtl">
       <a className="ek-skip" href="#ek-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <EmberNav />
 
-      <main id="ek-main">
+      <main id="ek-main" lang="fa" dir="rtl">
         <section className="ek-hero" aria-labelledby="ek-hero-title">
           <div className="ek-wrap ek-hero-top">
-            <p>Live fire / London E2</p>
+            <p>آتش زنده / لندن E2</p>
             <p className="ek-hero-status">
               <span className="ek-status-dot" aria-hidden="true" />
               {hero.status}
@@ -49,11 +49,11 @@ export function EmberSite() {
 
               <div className="ek-actions">
                 <a className="ek-btn ek-btn--ember" href="#menu">
-                  See tonight&apos;s card
+                  کارت امشب را ببینید
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="ek-btn ek-btn--ghost" href="#book">
-                  Book the counter
+                  رزرو کانتر
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -82,7 +82,7 @@ export function EmberSite() {
 
           <div className="ek-wrap ek-hero-foot">
             <a className="ek-scroll-cue" href="#menu">
-              Read the card
+              خواندن کارت
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -95,9 +95,9 @@ export function EmberSite() {
               <div>
                 <p className="ek-eyebrow">{menu.label}</p>
                 <h2 id="ek-menu-title">
-                  The card is written{" "}
+                  کارت{" "}
                   <br />
-                  <em>at the pass.</em>
+                  <em>در پاس نوشته می‌شود</em>
                 </h2>
               </div>
               <p className="ek-intro">{menu.intro}</p>
@@ -117,9 +117,9 @@ export function EmberSite() {
               <div>
                 <p className="ek-eyebrow">{room.label}</p>
                 <h2 id="ek-room-title">
-                  The best seat{" "}
+                  بهترین صندلی{" "}
                   <br />
-                  <em>is nearest the fire.</em>
+                  <em>نزدیک‌ترین به آتش است</em>
                 </h2>
               </div>
               <p className="ek-intro">{room.intro}</p>
@@ -128,8 +128,8 @@ export function EmberSite() {
             <figure className="ek-room-figure">
               <RoomScene />
               <figcaption>
-                <span>The room at 17:20 · before service</span>
-                <span>Charred oak · blackened iron · concrete</span>
+                <span>اتاق در ۱۷:۲۰ · پیش از سرویس</span>
+                <span>بلوطِ سوخته · آهنِ سیاه‌شده · بتن</span>
               </figcaption>
             </figure>
 
@@ -141,7 +141,7 @@ export function EmberSite() {
                   ))}
                 </div>
 
-                <ul className="ek-seats" aria-label="Where to sit">
+                <ul className="ek-seats" aria-label="کجا بنشینیم">
                   {room.seats.map((seat) => (
                     <li key={seat.label}>
                       <h3>{seat.label}</h3>
@@ -151,7 +151,7 @@ export function EmberSite() {
                 </ul>
               </div>
 
-              <aside className="ek-room-side" aria-label="The room in numbers">
+              <aside className="ek-room-side" aria-label="اتاق در اعداد">
                 <dl className="ek-room-facts">
                   {room.facts.map((fact) => (
                     <div key={fact.label}>
@@ -162,7 +162,7 @@ export function EmberSite() {
                 </dl>
 
                 <div className="ek-materials">
-                  <p className="ek-mini-label">The materials</p>
+                  <p className="ek-mini-label">مواد</p>
                   <ul>
                     {room.materials.map((material) => (
                       <li key={material.label}>
@@ -174,7 +174,7 @@ export function EmberSite() {
                 </div>
 
                 <a className="ek-text-link" href="#book">
-                  Choose a seat
+                  انتخاب صندلی
                   <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               </aside>
@@ -182,13 +182,13 @@ export function EmberSite() {
           </div>
         </section>
 
-        <section className="ek-quote-band" aria-label="The kitchen philosophy">
+        <section className="ek-quote-band" aria-label="فلسفهٔ آشپزخانه">
           <div className="ek-wrap">
             <p className="ek-quote-mark" aria-hidden="true">
               “
             </p>
             <p className="ek-quote-line">{hero.closing}</p>
-            <p className="ek-quote-credit">Ember Kitchen · Kiln Street</p>
+            <p className="ek-quote-credit">امبر کیچن · خیابان کیلن</p>
           </div>
         </section>
 
@@ -201,7 +201,7 @@ export function EmberSite() {
             <div className="ek-section-head">
               <p className="ek-eyebrow">{visit.label}</p>
               <h2 id="ek-visit-title">
-                Find <em>the fire.</em>
+                <em>آتش</em> را پیدا کنید
               </h2>
             </div>
 
@@ -214,7 +214,7 @@ export function EmberSite() {
                 </address>
                 <p className="ek-transport">{visit.transport}</p>
 
-                <ol className="ek-route" aria-label="Walking directions from Hoxton">
+                <ol className="ek-route" aria-label="مسیر پیاده از هاکستون">
                   {visit.steps.map((step) => (
                     <li key={step.number}>
                       <span className="ek-route-number" aria-hidden="true">
@@ -233,7 +233,7 @@ export function EmberSite() {
                 <div className="ek-hours">
                   <p className="ek-mini-label">
                     <Clock size={13} aria-hidden="true" />
-                    Hours
+                    ساعات
                   </p>
                   <dl>
                     {visit.hours.map((row) => (
@@ -244,15 +244,15 @@ export function EmberSite() {
                     ))}
                   </dl>
                   <p className="ek-hours-note">
-                    The door opens at {booking.sitting.split("–")[0]?.trim()}. The
-                    fire is lit an hour before.
+                    در ساعت {booking.sitting.split("–")[0]?.trim()} باز می‌شود. آتش یک ساعت
+                    پیش از آن روشن می‌شود.
                   </p>
                 </div>
 
                 <div className="ek-visit-contact">
                   <p className="ek-mini-label">
                     <MapPin size={13} aria-hidden="true" />
-                    The kitchen
+                    آشپزخانه
                   </p>
                   <a href={`mailto:${visit.email}`}>
                     <Mail size={14} aria-hidden="true" />
@@ -267,7 +267,7 @@ export function EmberSite() {
                 <p className="ek-visit-note">{visit.note}</p>
 
                 <a className="ek-btn ek-btn--ember ek-btn--block" href="#book">
-                  Book before you travel
+                  پیش از حرکت رزرو کنید
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </aside>
@@ -282,18 +282,18 @@ export function EmberSite() {
             <div className="ek-footer-brand">
               <p className="ek-footer-word">
                 Ember
-                <span>Kitchen</span>
+                <span>آشپزخانه</span>
               </p>
-              <p>One fire, one menu, eighteen counter seats. London E2.</p>
+              <p>یک آتش، یک منو، هجده صندلی کانتر. لندن E2.</p>
               <a href="#top" className="ek-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="ek-footer-cols">
               <div>
-                <p className="ek-footer-label">Visit</p>
+                <p className="ek-footer-label">بازدید</p>
                 <address>
                   {visit.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -305,29 +305,28 @@ export function EmberSite() {
                 </a>
               </div>
               <div>
-                <p className="ek-footer-label">Explore</p>
-                <a href="#menu">Tonight</a>
-                <a href="#hearth">The hearth</a>
-                <a href="#room">The room</a>
-                <a href="#visit">Visit</a>
+                <p className="ek-footer-label">کاوش</p>
+                <a href="#menu">امشب</a>
+                <a href="#hearth">اجاق</a>
+                <a href="#room">اتاق</a>
+                <a href="#visit">بازدید</a>
               </div>
               <div>
-                <p className="ek-footer-label">Template</p>
-                <Link href="/templates/ember-kitchen">Template details</Link>
-                <Link href="/checkout/ember-kitchen">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="ek-footer-label">قالب</p>
+                <Link href="/templates/ember-kitchen">جزئیات قالب</Link>
+                <Link href="/checkout/ember-kitchen">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="ek-footer-bottom">
             <p>
-              © 2026 Ember Kitchen (fictional). A demonstration website: the venue,
-              menu, prices and imagery are illustrative. No table is held and no
-              payment is taken.
+              © ۲۰۲۶ امبر کیچن (خیالی). یک وب‌سایت نمایشی: مکان، منو، قیمت‌ها و تصویرها
+              نمایشی‌اند. هیچ میزی رزرو نمی‌شود و پولی گرفته نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

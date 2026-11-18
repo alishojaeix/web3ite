@@ -15,31 +15,28 @@ import type {
   TimelineItem,
 } from "@/lib/sites/types";
 import type { Template } from "@/types/template";
+import { faCurrency } from "@/lib/i18n/format";
 
 const CATEGORY_TITLE: Record<Template["category"], string> = {
-  cafe: "Café & coffee",
-  restaurant: "Restaurant",
-  ai: "AI & technology",
-  security: "Security & onchain",
-  automotive: "Automotive",
-  tobacco: "Tobacco & cigars",
+  cafe: "کافه و قهوه",
+  restaurant: "رستوران",
+  ai: "هوش مصنوعی و فناوری",
+  security: "امنیت و آن‌چین",
+  automotive: "خودرو",
+  tobacco: "تنباکو و سیگار برگ",
 };
 
 const CONTACT_TITLE: Record<Template["category"], string> = {
-  cafe: "Visit the room.",
-  restaurant: "Visit the table.",
-  ai: "Start a conversation.",
-  security: "Start a conversation.",
-  automotive: "Plan a visit.",
-  tobacco: "Notice & contact.",
+  cafe: "به کافه سر بزنید",
+  restaurant: "میزتان را رزرو کنید",
+  ai: "گفت‌وگو را آغاز کنید",
+  security: "گفت‌وگو را آغاز کنید",
+  automotive: "برای بازدید برنامه‌ریزی کنید",
+  tobacco: "اطلاعیه و تماس",
 };
 
 function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(price);
+  return faCurrency(price);
 }
 
 function pricePrefix(layout: string) {
@@ -295,7 +292,7 @@ function StorySection({
         {template.content.chapters.map((chapter, index) => (
           <article key={chapter.title} className="site-chapter">
             <p className="site-chapter-label">
-              {chapter.label || `${String(index + 1).padStart(2, "0")} / Chapter`}
+              {chapter.label || `${String(index + 1).padStart(2, "0")} / فصل`}
             </p>
             <h3>{chapter.title}</h3>
             <p>{chapter.body}</p>
@@ -309,7 +306,7 @@ function StorySection({
 function MaterialsSection({ config }: { config: SiteConfig }) {
   return (
     <div className="site-materials-wrap">
-      <SectionHead label={config.labels.materials} title="Materials & atmosphere." />
+      <SectionHead label={config.labels.materials} title="مواد و حال‌وهوا" />
       <ul className="site-materials">
         {config.materials.map((material, index) => (
           <li key={material.label}>
@@ -350,28 +347,28 @@ function ContactSection({
 
         <dl className="site-contact-details">
           <div>
-            <dt>Email</dt>
+            <dt>ایمیل</dt>
             <dd>
               <a href={`mailto:${config.contact.email}`}>{config.contact.email}</a>
             </dd>
           </div>
           <div>
-            <dt>Phone</dt>
+            <dt>تلفن</dt>
             <dd>{config.contact.phone}</dd>
           </div>
           <div>
-            <dt>Address</dt>
+            <dt>نشانی</dt>
             <dd>{config.contact.address}</dd>
           </div>
           <div>
-            <dt>Hours</dt>
+            <dt>ساعات کاری</dt>
             <dd>{config.contact.hours}</dd>
           </div>
         </dl>
 
         {catalogueHref ? (
           <AnchorLink href={catalogueHref} className="site-btn site-btn--primary site-catalogue-link">
-            Open the standalone catalogue
+            مشاهده کاتالوگ مستقل
             <ArrowUpRight aria-hidden />
           </AnchorLink>
         ) : null}
@@ -465,7 +462,7 @@ function Hero({
         </AnchorLink>
         {catalogueHref ? (
           <AnchorLink href={catalogueHref} className="site-btn site-btn--ghost">
-            Open catalogue
+            مشاهده کاتالوگ
             <ArrowUpRight aria-hidden />
           </AnchorLink>
         ) : null}
@@ -514,8 +511,8 @@ function Hero({
       )}
 
       <p className="site-hero-note">
-        Demonstration website · fictional {CATEGORY_TITLE[template.category].toLowerCase()}{" "}
-        business · <Link href={`/checkout/${siteId}`}>buy this template</Link>
+        وب‌سایت نمایشی · کسب‌وکار فرضی در حوزهٔ {CATEGORY_TITLE[template.category]} ·{" "}
+        <Link href={`/checkout/${siteId}`}>خرید این قالب</Link>
       </p>
     </section>
   );
@@ -550,6 +547,7 @@ export function TemplateWebsite({
   return (
     <div
       className="site-shell"
+      dir="rtl"
       style={style}
       data-layout={config.layout}
       data-category={template.category}
@@ -560,12 +558,12 @@ export function TemplateWebsite({
       <div className="site-demo-bar">
         <p>
           <span className="site-demo-dot" aria-hidden />
-          Web3ite demo · fictional {CATEGORY_TITLE[template.category].toLowerCase()} website
+          پیش‌نمایش Web3ite · وب‌سایتی فرضی در حوزهٔ {CATEGORY_TITLE[template.category]}
         </p>
         <div className="site-demo-links">
-          <Link href={`/templates/${template.id}`}>Template details</Link>
+          <Link href={`/templates/${template.id}`}>جزئیات قالب</Link>
           <Link href={`/checkout/${template.id}`} className="site-demo-buy">
-            Get this template · {formatPrice(template.price)}
+            خرید این قالب · {formatPrice(template.price)}
           </Link>
         </div>
       </div>
@@ -587,9 +585,9 @@ export function TemplateWebsite({
         />
 
         {template.ageRestricted ? (
-          <aside className="site-age-notice" aria-label="Age restriction notice">
+          <aside className="site-age-notice" aria-label="محدودیت سنی">
             <div>
-              <p className="site-age-notice-title">Adults 18+ only</p>
+              <p className="site-age-notice-title">ویژهٔ افراد بالای ۱۸ سال</p>
               <p>{template.healthWarning}</p>
             </div>
             <span className="site-age-badge">18+</span>
@@ -651,7 +649,7 @@ export function TemplateWebsite({
           </div>
 
           <div>
-            <p className="site-footer-label">Sections</p>
+            <p className="site-footer-label">بخش‌ها</p>
             <ul>
               {config.nav.map((item) => (
                 <li key={item.href}>
@@ -662,25 +660,25 @@ export function TemplateWebsite({
           </div>
 
           <div>
-            <p className="site-footer-label">Platform</p>
+            <p className="site-footer-label">پلتفرم</p>
             <ul>
               <li>
-                <Link href={`/templates/${template.id}`}>Template details</Link>
+                <Link href={`/templates/${template.id}`}>جزئیات قالب</Link>
               </li>
               <li>
-                <Link href={`/checkout/${template.id}`}>Buy this template</Link>
+                <Link href={`/checkout/${template.id}`}>خرید این قالب</Link>
               </li>
               <li>
-                <Link href="/templates">All templates</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </li>
               <li>
-                <Link href="/legal">Demo & age policy</Link>
+                <Link href="/legal">سیاست پیش‌نمایش و محدودیت سنی</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <p className="site-footer-label">Contact</p>
+            <p className="site-footer-label">تماس</p>
             <ul>
               <li>
                 <a href={`mailto:${config.contact.email}`}>{config.contact.email}</a>
@@ -698,8 +696,8 @@ export function TemplateWebsite({
         <div className="site-footer-bottom">
           <p>{config.footerNote}</p>
           <p>
-            A Web3ite demonstration · not a real business.{" "}
-            <a href="#top">Back to top</a>
+            پیش‌نمایشی از Web3ite · این کسب‌وکار واقعی نیست.{" "}
+            <a href="#top">بازگشت به بالا</a>
           </p>
         </div>
       </footer>
@@ -707,7 +705,7 @@ export function TemplateWebsite({
       {isCatalogue ? (
         <div className="site-float-buy">
           <Link href={`/checkout/${template.id}`}>
-            Buy this template
+            خرید این قالب
             <ArrowUpRight aria-hidden />
           </Link>
         </div>

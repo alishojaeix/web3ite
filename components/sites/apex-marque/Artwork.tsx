@@ -121,7 +121,7 @@ export function WheelStudy({ size = 168 }: { size?: number }) {
       height={size}
       viewBox="0 0 240 240"
       role="img"
-      aria-label="Illustration of a forged 21-inch wheel with a machined face, drawn in warm alloy on a dark ground."
+      aria-label="تصویر یک چرخ ۲۱ اینچی فورج با رویهٔ تراش‌خورده، با آلیاژ گرم روی زمینه‌ای تیره."
     >
       <rect width="240" height="240" fill="#0a0706" />
       <g stroke="rgba(246,237,228,0.05)">
@@ -144,7 +144,7 @@ export function GrandTourer() {
       className="ap-car"
       viewBox="0 0 1200 600"
       role="img"
-      aria-label="An illustrative side-profile grand tourer in warm champagne metal, under a single key light on a dark showroom floor."
+      aria-label="نمای جانبی نمایشی یک خودروی تور بزرگ با فلز شامپاینی گرم، زیر یک نور کلیدی روی کف نمایشگاه تیره."
     >
       <defs>
         <radialGradient id="apx-halo" cx="50%" cy="14%" r="68%">
@@ -386,7 +386,7 @@ export function GrandTourer() {
         fontSize="9"
         letterSpacing="2.4"
       >
-        WHEELBASE 2,720 MM
+        فاصلهٔ محوری ۲٬۷۲۰ میلی‌متر
       </text>
 
       {/* Labels */}
@@ -396,10 +396,10 @@ export function GrandTourer() {
         fontSize="9.5"
         letterSpacing="2.2"
       >
-        <text x="40" y="46">APEX GT / PROFILE STUDY</text>
-        <text x="1160" y="46" textAnchor="end">MODEL YEAR 2026 / SAMPLE</text>
-        <text x="40" y="578">APEX MARQUE</text>
-        <text x="1160" y="578" textAnchor="end">DRAWN TO NO SCALE</text>
+        <text x="40" y="46">اپکس GT / مطالعهٔ نمای جانبی</text>
+        <text x="1160" y="46" textAnchor="end">سال مدل ۲۰۲۶ / نمونه</text>
+        <text x="40" y="578">اپکس مارک</text>
+        <text x="1160" y="578" textAnchor="end">ترسیم بدون مقیاس</text>
       </g>
       <g
         fill="#8a7a70"
@@ -407,8 +407,8 @@ export function GrandTourer() {
         fontSize="8"
         letterSpacing="1.6"
       >
-        <text x="40" y="62">ILLUSTRATIVE — NOT A PRODUCTION VEHICLE</text>
-        <text x="1160" y="62" textAnchor="end">ONE KEY LIGHT</text>
+        <text x="40" y="62">نمایشی — نه خودروی تولیدی</text>
+        <text x="1160" y="62" textAnchor="end">یک نور کلیدی</text>
       </g>
       <g fill="#e7794c">
         <circle cx="352" cy="46" r="2" />
@@ -433,7 +433,7 @@ export function MaterialSwatch({ variant }: { variant: "paint" | "alloy" | "leat
         className="ap-swatch"
         viewBox="0 0 220 160"
         role="img"
-        aria-label="Illustration of a warm metallic paint panel under a single key light."
+        aria-label="تصویر پنلی از رنگ فلزی گرم زیر یک نور کلیدی تکی."
       >
         <defs>
           <linearGradient id="ap-sw-paint" x1="0" y1="0" x2="1" y2="1">
@@ -460,10 +460,10 @@ export function MaterialSwatch({ variant }: { variant: "paint" | "alloy" | "leat
         ))}
         <rect x="18" y="16" width="184" height="128" fill="none" stroke="rgba(246,237,228,0.24)" />
         <text x="28" y="136" fill="#f6ede4" fontFamily="var(--ap-body), sans-serif" fontSize="6.5" letterSpacing="1.6">
-          PAINT / ONE KEY
+          رنگ / یک نور
         </text>
         <text x="192" y="136" textAnchor="end" fill="#f6ede4" fontFamily="var(--ap-body), sans-serif" fontSize="6.5" letterSpacing="1.4" opacity="0.7">
-          SAMPLE
+          نمونه
         </text>
       </svg>
     );
@@ -475,7 +475,7 @@ export function MaterialSwatch({ variant }: { variant: "paint" | "alloy" | "leat
         className="ap-swatch"
         viewBox="0 0 220 160"
         role="img"
-        aria-label="Illustration of a forged alloy wheel with a machined face."
+        aria-label="تصویر یک چرخ آلیاژی فورج با رویهٔ تراش‌خورده."
       >
         <defs>
           <linearGradient id="ap-sw-rim" x1="0" y1="0" x2="1" y2="1">
@@ -512,10 +512,10 @@ export function MaterialSwatch({ variant }: { variant: "paint" | "alloy" | "leat
         <path d="M 110 71 L 115 76 L 110 81 L 105 76 Z" fill="#c9a98b" opacity="0.8" />
         <path d="M 88 56 A 34 34 0 0 1 104 44" stroke="#b8562f" strokeWidth="4" fill="none" strokeLinecap="round" />
         <text x="18" y="148" fill="#b6a79c" fontFamily="var(--ap-body), sans-serif" fontSize="6.5" letterSpacing="1.6">
-          ALLOY / FORGED
+          آلیاژ / فورج
         </text>
         <text x="202" y="148" textAnchor="end" fill="#8a7a70" fontFamily="var(--ap-body), sans-serif" fontSize="6.5" letterSpacing="1.4">
-          21-INCH
+          ۲۱ اینچ
         </text>
       </svg>
     );
@@ -526,7 +526,7 @@ export function MaterialSwatch({ variant }: { variant: "paint" | "alloy" | "leat
       className="ap-swatch"
       viewBox="0 0 220 160"
       role="img"
-      aria-label="Illustration of natural saddle leather with unbleached stitching."
+      aria-label="تصویر چرم طبیعی زینی با دوخت وایت‌بلچ."
     >
       <defs>
         <linearGradient id="ap-sw-hide" x1="0" y1="0" x2="1" y2="1">
@@ -566,10 +566,10 @@ export function MaterialSwatch({ variant }: { variant: "paint" | "alloy" | "leat
         <path d="M -4 1 H 4" stroke="#d8c3a5" strokeWidth="0.8" opacity="0.7" />
       </g>
       <text x="26" y="139" fill="#e9dccb" fontFamily="var(--ap-body), sans-serif" fontSize="6.5" letterSpacing="1.6">
-        LEATHER / NATURAL
+        چرم / طبیعی
       </text>
       <text x="194" y="139" textAnchor="end" fill="#e9dccb" fontFamily="var(--ap-body), sans-serif" fontSize="6.5" letterSpacing="1.4" opacity="0.65">
-        SAMPLE
+        نمونه
       </text>
     </svg>
   );

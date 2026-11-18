@@ -42,9 +42,9 @@ export function EmberHearth() {
         <div>
           <p className="ek-eyebrow">{hearth.label}</p>
           <h2 id="ek-hearth-title">
-            One fire.{" "}
+            یک آتش.{" "}
             <br />
-            <em>Every plate.</em>
+            <em>هر بشقاب</em>
           </h2>
         </div>
         <p className="ek-intro">{hearth.intro}</p>
@@ -56,8 +56,8 @@ export function EmberHearth() {
             <HearthDiagram active={station.id as Zone} />
           </div>
           <figcaption>
-            <span>Section A–A · the hearth</span>
-            <span>Illustrative drawing · not to scale</span>
+            <span>مقطع A–A · اجاق</span>
+            <span>طراحی نمایشی · بدون مقیاس</span>
           </figcaption>
         </figure>
 
@@ -65,7 +65,7 @@ export function EmberHearth() {
           <div
             className="ek-hearth-tabs"
             role="tablist"
-            aria-label="Stations of the hearth"
+            aria-label="ایستگاه‌های اجاق"
             aria-orientation="horizontal"
           >
             {hearth.stations.map((item, index) => (
@@ -103,13 +103,13 @@ export function EmberHearth() {
             </p>
             <h3>{station.title}</h3>
             <p>{station.body}</p>
-            <ul className="ek-hearth-details" aria-label={`${station.label} details`}>
+            <ul className="ek-hearth-details" aria-label={`جزئیات ${station.label}`}>
               {station.details.map((detail) => (
                 <li key={detail}>{detail}</li>
               ))}
             </ul>
             <a className="ek-text-link" href="#book">
-              Book a seat at the counter
+              رزرو صندلی در کانتر
               <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>

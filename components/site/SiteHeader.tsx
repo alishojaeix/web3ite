@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { fa } from "@/lib/i18n/fa";
 
 const links = [
-  { href: "/templates", label: "Templates" },
-  { href: "/#industries", label: "Industries" },
-  { href: "/#studio", label: "How it works" },
+  { href: "/templates", label: fa.nav.templates },
+  { href: "/#industries", label: fa.nav.industries },
+  { href: "/#studio", label: fa.nav.howItWorks },
 ];
 
 export function SiteHeader() {
@@ -53,43 +54,43 @@ export function SiteHeader() {
             : "border-transparent bg-transparent"
         }`}
       >
-        <Link href="/" className="group flex items-center gap-3" aria-label="Web3ite home">
-          <span className="grid h-8 w-8 place-items-center rounded-sm border border-[#d4af7a]/35 bg-[#1a140c] font-display text-[12px] tracking-[-0.04em] text-[#f0d9a8] transition-colors group-hover:border-[#d4af7a]/60">
+        <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label={fa.nav.home}>
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm border border-[#d4af7a]/35 bg-[#1a140c] font-display text-[13px] font-semibold tracking-[0.01em] text-[#f0d9a8] transition-colors group-hover:border-[#d4af7a]/60">
             W3
           </span>
-          <span className="font-display text-[18px] tracking-[-0.04em] text-[#f6f1ea]">
+          <span className="whitespace-nowrap font-display text-[19px] font-semibold tracking-[0.01em] text-[#f6f1ea] sm:text-[20px]">
             Web3ite
           </span>
-          <span className="hidden rounded-full border border-white/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.18em] text-[#8a847c] sm:inline">
-            Studio
+          <span className="hidden whitespace-nowrap rounded-full border border-white/10 px-2.5 py-1 text-[12px] font-medium text-[#8a847c] md:inline">
+            {fa.brand.studio}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 md:flex" aria-label={fa.nav.primary}>
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[11px] uppercase tracking-[0.18em] text-[#a7a198] transition-colors hover:text-[#f6f1ea]"
+              className="whitespace-nowrap text-[15px] font-medium text-[#a7a198] transition-colors hover:text-[#f6f1ea]"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <Link
             href={user ? "/account" : "/login"}
-            className="hidden min-h-10 items-center text-[11px] uppercase tracking-[0.18em] text-[#a7a198] transition-colors hover:text-[#f6f1ea] sm:inline-flex"
+            className="hidden min-h-10 items-center whitespace-nowrap text-[14px] font-medium text-[#a7a198] transition-colors hover:text-[#f6f1ea] sm:inline-flex"
           >
-            {user ? "Account" : "Sign in"}
+            {user ? fa.nav.account : fa.nav.signIn}
           </Link>
           <Link
             href="/templates"
-            className="group hidden items-center gap-2 rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[12px] font-medium text-[#111] transition-colors hover:bg-white sm:inline-flex"
+            className="group hidden items-center gap-2 whitespace-nowrap rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[15px] font-semibold text-[#111] transition-colors hover:bg-white sm:inline-flex"
           >
-            Browse the floor
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            {fa.nav.browse}
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
           <button
             type="button"
@@ -97,9 +98,9 @@ export function SiteHeader() {
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? fa.nav.closeMenu : fa.nav.openMenu}
           >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
@@ -109,33 +110,33 @@ export function SiteHeader() {
           id="mobile-menu"
           className="pointer-events-auto mx-auto mt-2 max-w-[1440px] rounded-lg border border-white/10 bg-[#07080b]/95 p-5 shadow-2xl backdrop-blur-xl md:hidden"
         >
-          <nav className="flex flex-col" aria-label="Mobile">
+          <nav className="flex flex-col" aria-label={fa.nav.mobile}>
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between border-b border-white/[0.06] py-4 text-[15px] text-[#e8e4dc]"
+                className="flex items-center justify-between gap-4 border-b border-white/[0.06] py-4 text-[16px] font-medium text-[#e8e4dc]"
               >
                 {link.label}
-                <ArrowUpRight className="h-4 w-4 text-[#8a847c]" />
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-[#8a847c]" />
               </Link>
             ))}
             <Link
               href={user ? "/account" : "/login"}
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between border-b border-white/[0.06] py-4 text-[15px] text-[#e8e4dc]"
+              className="flex items-center justify-between gap-4 border-b border-white/[0.06] py-4 text-[16px] font-medium text-[#e8e4dc]"
             >
-              {user ? "Your account" : "Sign in / create account"}
-              <ArrowUpRight className="h-4 w-4 text-[#8a847c]" />
+              {user ? fa.nav.yourAccount : fa.nav.signInOrRegister}
+              <ArrowUpRight className="h-5 w-5 shrink-0 text-[#8a847c]" />
             </Link>
           </nav>
           <Link
             href="/templates"
             onClick={() => setOpen(false)}
-            className="mt-5 flex items-center justify-center rounded-sm bg-[#f4efe6] px-4 py-3 text-[13px] font-medium text-[#111]"
+            className="mt-5 flex items-center justify-center whitespace-nowrap rounded-sm bg-[#f4efe6] px-4 py-3 text-[15px] font-semibold text-[#111]"
           >
-            Browse the floor
+            {fa.nav.browse}
           </Link>
         </div>
       ) : null}

@@ -7,30 +7,30 @@
  */
 
 export const emberNav = [
-  { label: "Tonight", href: "#menu" },
-  { label: "The hearth", href: "#hearth" },
-  { label: "The room", href: "#room" },
-  { label: "Book", href: "#book" },
+  { label: "امشب", href: "#menu" },
+  { label: "اجاق", href: "#hearth" },
+  { label: "اتاق", href: "#room" },
+  { label: "رزرو", href: "#book" },
 ] as const;
 
 export const heroMeta = [
-  { label: "Counter seats", value: "18" },
-  { label: "Hearth", value: "One" },
-  { label: "Service", value: "Tue–Sat" },
+  { label: "صندلی کانتر", value: "۱۸" },
+  { label: "اجاق", value: "یکی" },
+  { label: "سرویس", value: "سه‌شنبه تا شنبه" },
 ];
 
 export const hero = {
-  eyebrow: "Ember Kitchen / Live-fire dining",
-  headline: "Cooked",
-  headlineAccent: "by fire.",
-  subline: "Eaten in its light.",
+  eyebrow: "امبر کیچن / غذاخوری با آتشِ زنده",
+  headline: "پخته‌شده",
+  headlineAccent: "با آتش",
+  subline: "خورده‌شده در نورِ آن",
   intro:
-    "One oak hearth, eighteen counter seats and a menu written at the pass. Dinner at Ember begins when the coals are ready and ends when the room is.",
-  note: "Sample website concept · fictional kitchen, menu and imagery",
-  status: "The fire is lit · service from 17:30",
-  caption: ["The hearth at 16:30, before service", "Oak, ash and one iron grate"],
-  footNote: "Four snacks · three plates · two to share",
-  closing: "No gas. No second oven. One fire, all night.",
+    "یک اجاقِ بلوطی، هجده صندلی کانتر و منویی که در پاس نوشته می‌شود. شام در امبر زمانی آغاز می‌شود که زغال‌ها آماده‌اند و زمانی پایان می‌یابد که اتاق پایان یافته است.",
+  note: "مفهوم وب‌سایت نمونه · آشپزخانه، منو و تصویر خیالی",
+  status: "آتش روشن است · سرویس از ۱۷:۳۰",
+  caption: ["اجاق در ۱۶:۳۰، پیش از سرویس", "بلوط، خاکستر و یک توریِ آهنی"],
+  footNote: "چهار خوراکِ کوچک · سه بشقاب · دو مورد برای تقسیم",
+  closing: "گاز نه. فر دوم نه. یک آتش، تمام شب.",
 };
 
 export type EmberDish = {
@@ -49,29 +49,29 @@ export type EmberMenuGroup = {
 };
 
 export const menu = {
-  label: "01 / Tonight",
-  title: "The card is written at the pass.",
+  label: "۰۱ / امشب",
+  title: "کارت در پاس نوشته می‌شود",
   intro:
-    "Four snacks, three plates from the fire and two things to share. The menu moves with the market and the mood of the coals, so it is never quite the same twice.",
-  date: "Tuesday 11 November",
-  note: "Sample menu. Dishes, prices and availability are illustrative. Tell the kitchen about allergies when you book; most plates can be adjusted.",
+    "چهار خوراکِ کوچک، سه بشقاب از آتش و دو چیز برای تقسیم. منو با بازار و حال‌وهوای زغال‌ها جابه‌جا می‌شود، پس هرگز دو بار یکسان نیست.",
+  date: "سه‌شنبه ۱۱ نوامبر",
+  note: "منوی نمونه. غذاها، قیمت‌ها و موجودی نمایشی‌اند. هنگام رزرو، آلرژی‌ها را به آشپزخانه بگویید؛ بیشتر بشقاب‌ها قابل تطبیق‌اند.",
   groups: [
     {
       id: "snacks",
       numeral: "I",
-      title: "Snacks",
-      note: "While the coals settle",
+      title: "خوراک‌های کوچک",
+      note: "در حالی که زغال‌ها جا می‌افتند",
       items: [
         {
-          name: "Ember flatbread, smoked butter",
-          description: "Blistered at the hearth, torn at the table.",
-          price: "6",
+          name: "نانِ تختِ Ember، کرهٔ دودی",
+          description: "در اجاق حباب‌زده، سرِ میز پاره‌شده.",
+          price: "۶",
           vegetarian: true,
         },
         {
-          name: "Charred olives, orange",
-          description: "Warm, salty, bright.",
-          price: "5",
+          name: "زیتونِ کبابی، پرتقال",
+          description: "گرم، شور، روشن.",
+          price: "۵",
           vegetarian: true,
         },
       ],
@@ -79,42 +79,42 @@ export const menu = {
     {
       id: "fire",
       numeral: "II",
-      title: "From the fire",
-      note: "Cooked over oak and ash",
+      title: "از آتش",
+      note: "پخته‌شده روی بلوط و خاکستر",
       items: [
         {
-          name: "Grilled leek, romesco",
-          description: "Soft inside, black at the edges.",
-          price: "12",
+          name: "تره‌فرنگیِ کبابی، رومسکو",
+          description: "نرم در درون، سیاه در لبه‌ها.",
+          price: "۱۲",
           vegetarian: true,
         },
         {
-          name: "Wood-fired squid, nduja",
-          description: "Quick over the coals, finished with lemon.",
-          price: "16",
+          name: "اسکوییدِ هیزمی، ندوجا",
+          description: "سریع روی زغال‌ها، تمام‌شده با لیمو.",
+          price: "۱۶",
         },
         {
-          name: "Mackerel, rhubarb, fennel",
-          description: "Whole, scored, cooked hard and fast.",
-          price: "15",
+          name: "ماهی خال‌مخالی، ریواس، رازیانه",
+          description: "درسته، برش‌خورده، تند و سریع پخته‌شده.",
+          price: "۱۵",
         },
       ],
     },
     {
       id: "share",
       numeral: "III",
-      title: "To share",
-      note: "Two or three plates between you",
+      title: "برای تقسیم",
+      note: "دو یا سه بشقاب میان شما",
       items: [
         {
-          name: "Aged rib, fermented chilli",
-          description: "For two. Rest twenty minutes.",
-          price: "48",
+          name: "دندهٔ کهنه، فلفلِ تخمیرشده",
+          description: "برای دو نفر. بیست دقیقه استراحت.",
+          price: "۴۸",
         },
         {
-          name: "Hispi cabbage, brown butter",
-          description: "The whole room orders it.",
-          price: "14",
+          name: "کلمِ هیسپی، کرهٔ قهوه‌ای",
+          description: "تمام اتاق آن را سفارش می‌دهد.",
+          price: "۱۴",
           vegetarian: true,
         },
       ],
@@ -122,19 +122,19 @@ export const menu = {
     {
       id: "finish",
       numeral: "IV",
-      title: "To finish",
-      note: "One cold thing, one warm thing",
+      title: "برای پایان",
+      note: "یک چیز سرد، یک چیز گرم",
       items: [
         {
-          name: "Burnt honey tart",
-          description: "Cold cream, no fuss.",
-          price: "9",
+          name: "تارتِ عسلِ سوخته",
+          description: "خامهٔ سرد، بدون تشریفات.",
+          price: "۹",
           vegetarian: true,
         },
         {
-          name: "Ash-baked pear, bay cream",
-          description: "Buried in the embers until soft.",
-          price: "8",
+          name: "گلابیِ پخته در خاکستر، خامهٔ برگ‌بو",
+          description: "در میان اخگرها دفن‌شده تا نرم شود.",
+          price: "۸",
           vegetarian: true,
         },
       ],
@@ -143,127 +143,127 @@ export const menu = {
 };
 
 export const hearth = {
-  label: "02 / The hearth",
-  title: "One fire. Every plate.",
+  label: "۰۲ / اجاق",
+  title: "یک آتش. هر بشقاب",
   intro:
-    "There is no gas in the kitchen and no second oven. Everything that leaves the pass has spent time over the same oak fire, and the room is arranged so you can watch it happen.",
+    "در آشپزخانه گازی نیست و فر دومی هم نیست. هر چیزی که از پاس بیرون می‌آید، زمانی را روی همان آتشِ بلوطی گذرانده و اتاق به‌گونه‌ای چیده شده که بتوانید تماشا کنید.",
   stations: [
     {
       id: "coals",
-      numeral: "01",
-      label: "The coals",
-      title: "Everything starts here.",
-      body: "Oak and ash burn down for two hours before service. The coals are raked under the grill and kept alive all night; the temperature is read by hand, not by dial.",
-      details: ["Oak and ash", "Two-hour burn", "Raked by hand"],
+      numeral: "۰۱",
+      label: "زغال‌ها",
+      title: "همه‌چیز از اینجا آغاز می‌شود",
+      body: "بلوط و خاکستر دو ساعت پیش از سرویس می‌سوزند. زغال‌ها زیر توری جارو می‌شوند و تمام شب زنده نگه داشته می‌شوند؛ دما با دست خوانده می‌شود، نه با پیچ.",
+      details: ["بلوط و خاکستر", "سوختنِ دو ساعته", "جارو با دست"],
     },
     {
       id: "grill",
-      numeral: "02",
-      label: "The grill",
-      title: "Hard heat, quick hands.",
-      body: "The grill sits closest to the coals. Leeks, squid and the whole mackerel pass over it in minutes; the rib starts here and finishes in the residual heat of the oven.",
-      details: ["Iron bars", "High heat", "Minutes, not hours"],
+      numeral: "۰۲",
+      label: "توری",
+      title: "حرارتِ سخت، دست‌های سریع",
+      body: "توری به زغال‌ها نزدیک‌ترین است. تره‌فرنگی، اسکویید و کلِ ماهی خال‌مخالی در چند دقیقه از روی آن می‌گذرند؛ دنده از اینجا آغاز می‌شود و در حرارتِ باقی‌ماندهٔ فر تمام می‌شود.",
+      details: ["میله‌های آهنی", "حرارت بالا", "دقیقه‌ها، نه ساعت‌ها"],
     },
     {
       id: "oven",
-      numeral: "03",
-      label: "The oven",
-      title: "The slow side of the fire.",
-      body: "A brick chamber beside the firebox holds the heat after the flames have moved on. Flatbread, cabbage and the pear bake here while the grill does the fast work.",
-      details: ["Brick chamber", "Residual heat", "Bread and roots"],
+      numeral: "۰۳",
+      label: "فر",
+      title: "جانبِ آرامِ آتش",
+      body: "اتاقکی آجری کنارِ آتشدان، پس از رفتنِ شعله‌ها حرارت را نگه می‌دارد. نانِ تخت، کلم و گلابی اینجا می‌پزند، در حالی که توری کارِ سریع را انجام می‌دهد.",
+      details: ["اتاقکِ آجری", "حرارتِ باقی‌مانده", "نان و ریشه‌ها"],
     },
     {
       id: "chimney",
-      numeral: "04",
-      label: "The chimney",
-      title: "Air is the third ingredient.",
-      body: "The damper and the door vents steer the fire. A little more air and the coals wake up; a little less and the oven holds its heat. The chimney is the quietest station in the kitchen.",
-      details: ["Hand damper", "Draft control", "No dials"],
+      numeral: "۰۴",
+      label: "دودکش",
+      title: "هوا مادهٔ سوم است",
+      body: "دمپر و دریچه‌های تهویه، آتش را هدایت می‌کنند. کمی هوای بیشتر، زغال‌ها را بیدار می‌کند؛ کمی کمتر، حرارتِ فر را نگه می‌دارد. دودکش ساکت‌ترین ایستگاه آشپزخانه است.",
+      details: ["دمپرِ دستی", "کنترلِ کشش", "بدون پیچ"],
     },
   ],
-  note: "Illustrative section. The hearth, kitchen and service shown here are part of a fictional demonstration venue.",
+  note: "بخش نمایشی. اجاق، آشپزخانه و سرویسی که در اینجا نشان داده می‌شود، بخشی از یک مکانِ خیالیِ نمایشی است.",
 };
 
 export const room = {
-  label: "03 / The room",
-  title: "The best seat is nearest the fire.",
+  label: "۰۳ / اتاق",
+  title: "بهترین صندلی، نزدیک‌ترین به آتش است",
   intro:
-    "The room was a metal workshop before it was a restaurant. We kept the concrete floor, added a long counter and built the hearth into the back wall. There is no music; the fire does the talking.",
+    "این اتاق پیش از رستوران شدن، کارگاهِ فلزکاری بود. کفِ بتنی را نگه داشتیم، یک کانترِ بلند افزودیم و اجاق را در دیوارِ پشتی ساختیم. موسیقی نیست؛ آتش حرف می‌زند.",
   paragraphs: [
-    "Eighteen stools face the fire. Six more sit at the pass table, close enough to hear the kitchen call the tickets. The room is small on purpose: one seating, one fire, one menu.",
-    "The counter is charred oak, sealed with oil and left to mark. The stools are iron and leather. Everything in the room is meant to age, including the floor.",
+    "هجده چهارپایه رو به آتش است. شش تای دیگر روی میزِ پاس می‌نشینند، به‌قدر کافی نزدیک تا صدای خواندنِ فیش‌ها را از آشپزخانه بشنوند. اتاق عمداً کوچک است: یک نشست، یک آتش، یک منو.",
+    "کانتر از بلوطِ سوخته است، با روغن پوشیده و رها شده تا رد بگیرد. چهارپایه‌ها آهنی و چرمی‌اند. هر چیزی در اتاق قرار است کهنه شود، از جمله کف.",
   ],
   facts: [
-    { label: "Seats", value: "24" },
-    { label: "At the counter", value: "18" },
-    { label: "At the pass", value: "6" },
-    { label: "Hearths", value: "One" },
+    { label: "صندلی", value: "۲۴" },
+    { label: "در کانتر", value: "۱۸" },
+    { label: "در پاس", value: "۶" },
+    { label: "اجاق", value: "یکی" },
   ],
   seats: [
     {
-      label: "The counter",
-      note: "Eighteen stools along the fire. The full menu, cooked in front of you.",
+      label: "کانتر",
+      note: "هجده چهارپایه در امتداد آتش. منوی کامل، پخته‌شده روبه‌روی شما.",
     },
     {
-      label: "The pass",
-      note: "One table for six at the end of the kitchen. Best for groups who want the whole show.",
+      label: "میزِ پاس",
+      note: "یک میز برای شش نفر در انتهای آشپزخانه. بهترین گزینه برای گروه‌هایی که کل نمایش را می‌خواهند.",
     },
     {
-      label: "The buyout",
-      note: "The whole room can be taken on a Monday or Tuesday. Ask for the buyout card.",
+      label: "اجارهٔ کامل",
+      note: "کل اتاق را می‌توان دوشنبه یا سه‌شنبه گرفت. کارتِ اجارهٔ کامل را بخواهید.",
     },
   ],
   materials: [
-    { label: "Charred oak", note: "Counter, boards, the fire" },
-    { label: "Blackened iron", note: "Grill, stools, door pulls" },
-    { label: "Concrete", note: "Floor, walls, the old workshop" },
+    { label: "بلوطِ سوخته", note: "کانتر، تخته‌ها، آتش" },
+    { label: "آهنِ سیاه‌شده", note: "توری، چهارپایه‌ها، دستگیره‌ها" },
+    { label: "بتن", note: "کف، دیوارها، کارگاهِ قدیمی" },
   ],
 };
 
 export type PartySize = "1" | "2" | "3" | "4" | "5" | "6" | "private";
 
 export const booking = {
-  label: "04 / Book",
-  title: "Take a seat by the fire.",
+  label: "۰۴ / رزرو",
+  title: "کنار آتش بنشینید",
   intro:
-    "Counter seats are released each morning for the same evening. Tell us the date, the size of your party and where you would rather sit; the kitchen replies by email within one working day.",
-  sitting: "17:30 – 22:00",
-  lastOrders: "21:45",
+    "صندلی‌های کانتر هر صبح برای همان شب آزاد می‌شوند. تاریخ، اندازهٔ گروه و جای دلخواهتان را بگویید؛ آشپزخانه در یک روز کاری با ایمیل پاسخ می‌دهد.",
+  sitting: "۱۷:۳۰ – ۲۲:۰۰",
+  lastOrders: "۲۱:۴۵",
   partySizes: [
-    { value: "1" as PartySize, label: "One guest" },
-    { value: "2" as PartySize, label: "Two guests" },
-    { value: "3" as PartySize, label: "Three guests" },
-    { value: "4" as PartySize, label: "Four guests" },
-    { value: "5" as PartySize, label: "Five guests" },
-    { value: "6" as PartySize, label: "Six guests" },
-    { value: "private" as PartySize, label: "Private buyout" },
+    { value: "1" as PartySize, label: "یک مهمان" },
+    { value: "2" as PartySize, label: "دو مهمان" },
+    { value: "3" as PartySize, label: "سه مهمان" },
+    { value: "4" as PartySize, label: "چهار مهمان" },
+    { value: "5" as PartySize, label: "پنج مهمان" },
+    { value: "6" as PartySize, label: "شش مهمان" },
+    { value: "private" as PartySize, label: "اجارهٔ کامل" },
   ],
   preferences: [
-    { value: "counter" as const, label: "The counter" },
-    { value: "pass" as const, label: "The pass table" },
-    { value: "either" as const, label: "Either is fine" },
+    { value: "counter" as const, label: "کانتر" },
+    { value: "pass" as const, label: "میزِ پاس" },
+    { value: "either" as const, label: "هر دو مناسب است" },
   ],
-  note: "Sample booking form. No table is held, no deposit is taken and no email is sent.",
+  note: "فرم رزرو نمونه. هیچ میزی رزرو نمی‌شود، بیعانه‌ای گرفته نمی‌شود و ایمیلی فرستاده نمی‌شود.",
   confirmation:
-    "Your request has been recorded for this demonstration. No table is held, no deposit is taken and no email is sent.",
+    "درخواست شما برای این نمایش ثبت شد. هیچ میزی رزرو نمی‌شود، بیعانه‌ای گرفته نمی‌شود و ایمیلی فرستاده نمی‌شود.",
 };
 
 export const visit = {
-  label: "05 / Visit",
-  title: "Find the fire.",
-  address: ["Ember Kitchen", "22 Kiln Street", "London E2 8HD"],
+  label: "۰۵ / بازدید",
+  title: "آتش را پیدا کنید",
+  address: ["امبر کیچن", "22 خیابان کیلن", "لندن E2 8HD"],
   transport:
-    "Overground to Hoxton, then six minutes on foot. The door is the black steel one under the extractor hood; press the bell marked Ember.",
+    "متروی هوایی تا هاکستون، سپس شش دقیقه پیاده. در، همان درِ فولادیِ سیاه زیر هودِ تهویه است؛ زنگِ امبر را بزنید.",
   hours: [
-    { day: "Tuesday – Saturday", time: "17:30 – late" },
-    { day: "Sunday – Monday", time: "Closed" },
+    { day: "سه‌شنبه – شنبه", time: "۱۷:۳۰ – دیروقت" },
+    { day: "یکشنبه – دوشنبه", time: "بسته" },
   ],
   email: "fire@ember-kitchen.demo",
   phone: "+44 20 7946 0000",
-  note: "Fictional venue. The address, telephone number and opening hours are illustrative.",
+  note: "مکان خیالی. نشانی، شمارهٔ تلفن و ساعات باز بودن نمایشی‌اند.",
   steps: [
-    { number: "01", label: "Hoxton Overground", note: "Leave by the Geffrye Museum exit." },
-    { number: "02", label: "Kiln Street", note: "Walk south, past the old brass foundry." },
-    { number: "03", label: "The black door", note: "Under the hood, beside the wood store." },
+    { number: "۰۱", label: "متروی هوایی Hoxton", note: "از خروجی موزهٔ Geffrye بیرون بروید." },
+    { number: "۰۲", label: "خیابان Kiln", note: "به سمت جنوب بروید، از کنار ریخته‌گریِ برنجِ قدیمی." },
+    { number: "۰۳", label: "درِ سیاه", note: "زیر هود، کنار انبارِ چوب." },
   ],
 };

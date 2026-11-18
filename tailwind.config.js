@@ -90,120 +90,124 @@ module.exports = {
 
       fontSize: {
         hero: [
-          "64px",
+          "var(--type-hero)",
           {
-            lineHeight: "1.02",
-            letterSpacing: "-0.04em",
-            fontWeight: "300",
+            lineHeight: "var(--leading-hero)",
+            letterSpacing: "var(--tracking-fa)",
+            fontWeight: "600",
           },
         ],
 
         "display-lg": [
-          "48px",
+          "var(--type-hero)",
           {
-            lineHeight: "1.05",
-            letterSpacing: "-0.03em",
-            fontWeight: "300",
+            lineHeight: "var(--leading-hero)",
+            letterSpacing: "var(--tracking-fa)",
+            fontWeight: "600",
           },
         ],
 
         "display-md": [
-          "36px",
+          "var(--type-section)",
           {
-            lineHeight: "1.10",
-            letterSpacing: "-0.02em",
-            fontWeight: "400",
+            lineHeight: "var(--leading-heading)",
+            letterSpacing: "var(--tracking-fa)",
+            fontWeight: "600",
           },
         ],
 
         h1: [
-          "30px",
+          "var(--type-section)",
           {
-            lineHeight: "1.15",
-            letterSpacing: "-0.015em",
-            fontWeight: "400",
+            lineHeight: "var(--leading-heading)",
+            letterSpacing: "var(--tracking-fa)",
+            fontWeight: "600",
           },
         ],
 
         h2: [
-          "24px",
+          "var(--type-card)",
           {
-            lineHeight: "1.20",
-            fontWeight: "500",
+            lineHeight: "var(--leading-heading)",
+            letterSpacing: "var(--tracking-fa)",
+            fontWeight: "600",
           },
         ],
 
         h3: [
-          "20px",
+          "var(--type-card-sm)",
           {
-            lineHeight: "1.30",
-            fontWeight: "500",
+            lineHeight: "var(--leading-heading)",
+            letterSpacing: "var(--tracking-fa)",
+            fontWeight: "600",
           },
         ],
 
         "body-lg": [
-          "18px",
+          "var(--type-lead)",
           {
-            lineHeight: "1.60",
+            lineHeight: "var(--leading-body)",
           },
         ],
 
         body: [
-          "16px",
+          "var(--type-body)",
           {
-            lineHeight: "1.55",
+            lineHeight: "var(--leading-body)",
           },
         ],
 
         "body-sm": [
-          "14px",
+          "var(--type-secondary)",
           {
-            lineHeight: "1.50",
+            lineHeight: "var(--leading-tight)",
           },
         ],
 
         caption: [
-          "13px",
+          "var(--type-meta)",
           {
-            lineHeight: "1.45",
+            lineHeight: "var(--leading-tight)",
           },
         ],
 
         label: [
-          "12px",
+          "var(--type-meta)",
           {
-            lineHeight: "1.40",
-            letterSpacing: "0.01em",
+            lineHeight: "1.5",
+            letterSpacing: "var(--tracking-fa)",
             fontWeight: "500",
           },
         ],
 
         micro: [
-          "11px",
+          "var(--type-micro)",
           {
-            lineHeight: "1.35",
-            letterSpacing: "0.02em",
+            lineHeight: "1.5",
+            letterSpacing: "var(--tracking-fa)",
           },
         ],
 
         button: [
-          "14px",
+          "var(--type-button)",
           {
-            lineHeight: "1",
+            lineHeight: "1.5",
             fontWeight: "500",
+            letterSpacing: "var(--tracking-fa)",
           },
         ],
 
         "button-lg": [
-          "16px",
+          "1rem",
           {
-            lineHeight: "1",
+            lineHeight: "1.5",
             fontWeight: "500",
+            letterSpacing: "var(--tracking-fa)",
           },
         ],
 
         code: [
-          "13px",
+          "0.875rem",
           {
             lineHeight: "1.65",
           },

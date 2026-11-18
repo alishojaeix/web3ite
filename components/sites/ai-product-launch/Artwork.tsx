@@ -29,7 +29,7 @@ export function PrismStage() {
       viewBox="0 0 1200 780"
       preserveAspectRatio="xMidYMid slice"
       role="img"
-      aria-label="A cinematic render of the Prism 01: a tall smoked-glass monolith with a warm light seam, standing on a dark plinth under a single spotlight."
+      aria-label="رندر سینمایی Prism 01: یک مونو لیت شیشه‌ای دودی بلند با درزِ گرم نور، روی سکویی تیره زیر یک نورپردازی تکی."
     >
       <defs>
         <radialGradient id="la-halo" cx="50%" cy="50%" r="50%">
@@ -160,16 +160,16 @@ export function PrismStage() {
       </g>
 
       <g fill="#b3a99c" fontFamily="var(--la-mono), ui-monospace, monospace" fontSize="10" letterSpacing="2.2">
-        <text x="368" y="270" textAnchor="end">01 / PRISM</text>
-        <text x="368" y="310" textAnchor="end" fontSize="8.5" fill="#766c60">GLASS + METAL</text>
-        <text x="846" y="284">02 / INNER CORE</text>
-        <text x="846" y="304" fontSize="8.5" fill="#766c60">LOCAL INFERENCE</text>
-        <text x="920" y="368">03 / LIGHT SEAM</text>
-        <text x="920" y="388" fontSize="8.5" fill="#766c60">SOLE INDICATOR</text>
-        <text x="906" y="516">04 / PLINTH</text>
-        <text x="906" y="536" fontSize="8.5" fill="#766c60">SERVICEABLE</text>
+        <text x="368" y="270" textAnchor="end">۰۱ / PRISM</text>
+        <text x="368" y="310" textAnchor="end" fontSize="8.5" fill="#766c60">شیشه + فلز</text>
+        <text x="846" y="284">۰۲ / هستهٔ درونی</text>
+        <text x="846" y="304" fontSize="8.5" fill="#766c60">استنتاج محلی</text>
+        <text x="920" y="368">۰۳ / درز نور</text>
+        <text x="920" y="388" fontSize="8.5" fill="#766c60">تنها نشانگر</text>
+        <text x="906" y="516">۰۴ / سکو</text>
+        <text x="906" y="536" fontSize="8.5" fill="#766c60">قابل سرویس</text>
         <text x="240" y="516" textAnchor="end">PRISM 01</text>
-        <text x="240" y="536" textAnchor="end" fontSize="8.5" fill="#766c60">FIRST EDITION</text>
+        <text x="240" y="536" textAnchor="end" fontSize="8.5" fill="#766c60">ویراست نخست</text>
       </g>
 
       <g fill="#f0c487" fontFamily="var(--la-mono), ui-monospace, monospace" fontSize="9" letterSpacing="2.4">
@@ -187,8 +187,8 @@ export function PrismStage() {
       </g>
 
       <g fill="#766c60" fontFamily="var(--la-mono), ui-monospace, monospace" fontSize="8.5" letterSpacing="1.8">
-        <text x="30" y="700">PRISM 01 / STUDIO RENDER</text>
-        <text x="1170" y="700" textAnchor="end">ILLUSTRATIVE · NOT A PRODUCT PHOTO</text>
+        <text x="30" y="700">PRISM 01 / رندر استودیویی</text>
+        <text x="1170" y="700" textAnchor="end">نمایشی · نه عکس محصول</text>
       </g>
     </svg>
   );
@@ -200,7 +200,7 @@ export function SectionStack() {
       className="la-stack"
       viewBox="0 0 520 440"
       role="img"
-      aria-label="An exploded technical view of the Prism 01: glass shell, compute board and anodised base."
+      aria-label="نمای فنی بازشدهٔ Prism 01: پوستهٔ شیشه‌ای، برد پردازش و پایهٔ آنودایز."
     >
       <g fill="none" stroke="rgba(247,240,230,0.4)" strokeWidth="1">
         <rect x="70" y="34" width="380" height="92" rx="10" />
@@ -211,12 +211,12 @@ export function SectionStack() {
       </g>
 
       <g fill="#b3a99c" fontFamily="var(--la-mono), ui-monospace, monospace" fontSize="9" letterSpacing="1.8">
-        <text x="70" y="22">A / GLASS SHELL</text>
-        <text x="450" y="22" textAnchor="end" fill="#766c60">SMOKED</text>
-        <text x="70" y="162">B / COMPUTE BOARD</text>
-        <text x="450" y="162" textAnchor="end" fill="#766c60">LOCAL</text>
-        <text x="70" y="302">C / ANODISED BASE</text>
-        <text x="450" y="302" textAnchor="end" fill="#766c60">SERVICEABLE</text>
+        <text x="70" y="22">الف / پوستهٔ شیشه‌ای</text>
+        <text x="450" y="22" textAnchor="end" fill="#766c60">دودی</text>
+        <text x="70" y="162">ب / برد پردازش</text>
+        <text x="450" y="162" textAnchor="end" fill="#766c60">محلی</text>
+        <text x="70" y="302">ج / پایهٔ آنودایز</text>
+        <text x="450" y="302" textAnchor="end" fill="#766c60">قابل سرویس</text>
       </g>
 
       {/* Glass shell */}

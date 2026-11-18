@@ -33,13 +33,13 @@ export function CafeHero() {
               href="#menu"
               className="inline-flex min-h-12 items-center justify-center bg-[var(--nc-brass)] px-6 text-sm font-medium text-[var(--nc-ink)] transition-colors hover:bg-[var(--nc-cream)] focus-visible:outline-offset-4"
             >
-              Explore the coffee menu
+              دیدن منوی قهوه
             </Link>
             <Link
               href="#visit"
               className="min-h-12 content-center border-b border-white/50 text-sm text-white/90 transition-colors hover:border-[var(--nc-brass)] hover:text-[var(--nc-brass)]"
             >
-              About the visit
+              دربارهٔ بازدید
             </Link>
           </div>
           <p className="mt-10 max-w-sm border-l border-[var(--nc-brass)]/70 pl-4 text-xs leading-5 text-white/65">

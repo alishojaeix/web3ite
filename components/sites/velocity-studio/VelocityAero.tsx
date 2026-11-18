@@ -33,7 +33,7 @@ export function VelocityAero() {
         <div
           className="vs-mode-tabs"
           role="tablist"
-          aria-label="Aerodynamic tunnel modes"
+          aria-label="حالت‌های تونل آیرودینامیک"
         >
           {study.modes.map((mode) => {
             const isSelected = mode.id === active.id;
@@ -60,7 +60,7 @@ export function VelocityAero() {
             className="vs-flap-svg"
             viewBox="0 0 640 210"
             role="img"
-            aria-label={`${active.name} mode diagram showing front flap at ${active.front}, rear wing at ${active.rear}, and ${active.downforce} illustrative downforce.`}
+            aria-label={`${active.name} نمودار حالت: فلپ جلو در ${active.front}، بال عقب در ${active.rear} و نیروی پایین‌فشار نمایشی ${active.downforce}.`}
           >
             <rect width="640" height="210" fill="#0b090b" />
             <g stroke="rgba(245,236,235,0.06)">
@@ -115,7 +115,7 @@ export function VelocityAero() {
               fontSize="8.5"
               letterSpacing="1.6"
             >
-              {`MODE // ${active.name.toUpperCase()} (${active.note.toUpperCase()})`}
+              {`حالت // ${active.name} (${active.note})`}
             </text>
             <text
               x="616"
@@ -126,7 +126,7 @@ export function VelocityAero() {
               fontSize="8.5"
               letterSpacing="1.6"
             >
-              {`FRONT ${active.front} · REAR ${active.rear}`}
+              {`جلو ${active.front} · عقب ${active.rear}`}
             </text>
             <text
               x="24"
@@ -136,7 +136,7 @@ export function VelocityAero() {
               fontSize="8"
               letterSpacing="1.5"
             >
-              {`BALANCE ${active.balance} F/R`}
+              {`تعادل ${active.balance} جلو/عقب`}
             </text>
             <text
               x="616"
@@ -147,7 +147,7 @@ export function VelocityAero() {
               fontSize="8"
               letterSpacing="1.5"
             >
-              {`${active.downforce} // ${active.drag} (SAMPLE)`}
+              {`${active.downforce} // ${active.drag} (نمونه)`}
             </text>
           </svg>
 
@@ -157,7 +157,7 @@ export function VelocityAero() {
           <div className="vs-meters">
             <div className="vs-meter">
               <div className="vs-meter-top">
-                <span>Downforce load (illustrative)</span>
+                <span>بار نیروی پایین‌فشار (نمایشی)</span>
                 <strong>{active.downforce}</strong>
               </div>
               <div className="vs-meter-track" aria-hidden="true">
@@ -169,7 +169,7 @@ export function VelocityAero() {
             </div>
             <div className="vs-meter">
               <div className="vs-meter-top">
-                <span>Drag index (illustrative)</span>
+                <span>شاخص پسا (نمایشی)</span>
                 <strong>{active.drag}</strong>
               </div>
               <div className="vs-meter-track" aria-hidden="true">
@@ -183,15 +183,15 @@ export function VelocityAero() {
 
           <dl className="vs-mode-readout">
             <div>
-              <dt>Front flap</dt>
+              <dt>فلپ جلو</dt>
               <dd>{active.front}</dd>
             </div>
             <div>
-              <dt>Rear wing</dt>
+              <dt>بال عقب</dt>
               <dd>{active.rear}</dd>
             </div>
             <div>
-              <dt>Aero balance</dt>
+              <dt>تعادل آیرو</dt>
               <dd>{active.balance}</dd>
             </div>
           </dl>
@@ -201,12 +201,12 @@ export function VelocityAero() {
       </div>
 
       {/* Right: Interactive Launch Film Timecode Frame Inspector */}
-      <aside className="vs-reel-console" aria-label="Launch film storyboard inspector">
+      <aside className="vs-reel-console" aria-label="بازبینی استوری‌بورد فیلم رونمایی">
         <div className="vs-console-head">
           <div>
             <p className="vs-kicker">
               <Film size={13} aria-hidden="true" />
-              Storyboard timecode
+              کد زمان استوری‌بورد
             </p>
             <h3 className="vs-h3">{reel.title}</h3>
           </div>
@@ -225,17 +225,17 @@ export function VelocityAero() {
           </div>
           <div className="vs-reel-meta">
             <div>
-              <span>Camera rig</span>
+              <span>دوربین</span>
               <strong>{currentFrame.camera}</strong>
             </div>
             <div>
-              <span>Aero sync</span>
+              <span>همگامی آیرو</span>
               <strong>{currentFrame.telemetry}</strong>
             </div>
           </div>
         </div>
 
-        <div className="vs-reel-strip" role="tablist" aria-label="Launch film timecode cues">
+        <div className="vs-reel-strip" role="tablist" aria-label="نشانه‌های کد زمان فیلم رونمایی">
           {reel.frames.map((frame, index) => {
             const activeFrame = index === frameIndex;
             return (

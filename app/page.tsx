@@ -6,6 +6,8 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { FeaturedTemplates } from "@/components/templates/FeaturedTemplates";
 import { getFeaturedTemplates, listTemplates } from "@/lib/templates";
+import { getSessionUser } from "@/lib/server/auth";
+import { listPurchasedTemplateIds } from "@/lib/server/purchases";
 import type { Template } from "@/types/template";
 
 /**
@@ -60,6 +62,13 @@ export default async function HomePage() {
   const studioTemplate = showroom[0] ?? catalog[0];
   const categoryCount = new Set(catalog.map((template) => template.category)).size;
 
+  // The homepage hero reads the session for the account link, so ownership is
+  // resolved here too and handed to the featured cards.
+  const user = await getSessionUser();
+  const ownedIds = user
+    ? await listPurchasedTemplateIds(user.id).catch(() => [] as string[])
+    : [];
+
   return (
     <>
       <SiteHeader />
@@ -69,7 +78,11 @@ export default async function HomePage() {
           templateCount={catalog.length}
           categoryCount={categoryCount}
         />
-        <FeaturedTemplates templates={homepage} total={catalog.length} />
+        <FeaturedTemplates
+          templates={homepage}
+          total={catalog.length}
+          ownedIds={ownedIds}
+        />
         <IndustryRail templates={catalog} />
         {studioTemplate ? <StudioStrip template={studioTemplate} /> : null}
         <Waitlist />

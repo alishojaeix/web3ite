@@ -18,7 +18,7 @@ import { CATEGORY_LABELS, type Template } from "@/types/template";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Checkout result",
+  title: "نتیجهٔ پرداخت",
   robots: { index: false, follow: false },
 };
 
@@ -50,7 +50,7 @@ function Panel({
       <div className="flex items-start gap-3">
         <span className="mt-0.5">{icon}</span>
         <div>
-          <h1 className="font-display text-[clamp(1.8rem,4vw,2.6rem)] leading-[1.02] tracking-[-0.04em] text-[#f6f1ea]">
+          <h1 className="font-display text-[clamp(1.8rem,4vw,2.6rem)] leading-[1.02] tracking-[0.01em] text-[#f6f1ea]">
             {title}
           </h1>
           <div className="mt-3 text-[13px] leading-6 text-[#c7c1b8]">{children}</div>
@@ -67,8 +67,8 @@ async function resolveResult(
   if (!stripeConfigured()) {
     return {
       kind: "error",
-      title: "Payments are not configured.",
-      body: "This deployment has no Stripe credentials, so no payment could be made and nothing was recorded.",
+      title: "پرداخت پیکربندی نشده است.",
+      body: "این استقرار اطلاعات ورود Stripe ندارد، بنابراین پرداختی انجام نشد و چیزی ثبت نشد.",
     };
   }
 
@@ -78,8 +78,8 @@ async function resolveResult(
   } catch {
     return {
       kind: "error",
-      title: "We could not verify this payment.",
-      body: "Stripe did not return a verifiable checkout session. Nothing was recorded. If you were charged, keep this page reference and contact support before retrying.",
+      title: "نتوانستیم این پرداخت را تأیید کنیم.",
+      body: "Stripe نشست پرداخت قابل تأییدی برنگرداند. چیزی ثبت نشد. اگر مبلغی از حساب شما کسر شده، این ارجاع صفحه را نگه دارید و پیش از تلاش دوباره با پشتیبانی تماس بگیرید.",
     };
   }
 
@@ -88,8 +88,8 @@ async function resolveResult(
   if (!template) {
     return {
       kind: "error",
-      title: "This checkout does not match a template.",
-      body: "The payment session has no valid template reference. Nothing was recorded.",
+      title: "این پرداخت با هیچ قالبی مطابقت ندارد.",
+      body: "نشست پرداخت ارجاع معتبری به قالب ندارد. چیزی ثبت نشد.",
     };
   }
 
@@ -99,8 +99,8 @@ async function resolveResult(
   ) {
     return {
       kind: "error",
-      title: "This payment is not linked to your account.",
-      body: "The checkout session belongs to a different account. Sign in with the account used at checkout, or contact support with the reference below.",
+      title: "این پرداخت به حساب شما پیوند ندارد.",
+      body: "نشست پرداخت متعلق به حساب دیگری است. با همان حسابی وارد شوید که در پرداخت استفاده کردید، یا با استفاده از ارجاع زیر با پشتیبانی تماس بگیرید.",
     };
   }
 
@@ -151,8 +151,8 @@ export default async function CheckoutSuccessPage({
     ? await resolveResult(sessionId, user.id)
     : {
         kind: "error",
-        title: "No checkout session was provided.",
-        body: "This page verifies a real Stripe checkout. Open it from the Stripe redirect, or start checkout from a template.",
+        title: "هیچ نشست پرداختی ارائه نشده است.",
+        body: "این صفحه یک پرداخت واقعی Stripe را تأیید می‌کند. آن را از تغییرمسیر Stripe باز کنید یا پرداخت را از یک قالب آغاز کنید.",
       };
 
   return (
@@ -165,18 +165,18 @@ export default async function CheckoutSuccessPage({
               <Panel
                 tone="success"
                 icon={<CheckCircle2 className="h-6 w-6" aria-hidden />}
-                title="Payment confirmed."
+                title="پرداخت تأیید شد."
               >
                 <p>
-                  {result.template.title} has been added to your account for{" "}
-                  {result.paid}. The purchase was verified with Stripe.
+                  {result.template.title} با مبلغ {result.paid} به حساب شما
+                  اضافه شد. خرید با Stripe تأیید شده است.
                 </p>
               </Panel>
               <div className="mt-6 rounded-lg border border-white/[0.08] bg-[#0b0d11] p-6 sm:p-8">
-                <p className="text-[10px] uppercase tracking-[0.16em] text-[#8a847c]">
-                  {CATEGORY_LABELS[result.template.category]} template
+                <p className="text-[13px] tracking-[0.16em] text-[#8a847c]">
+                  قالب {CATEGORY_LABELS[result.template.category]}
                 </p>
-                <h2 className="mt-2 font-display text-[28px] tracking-[-0.03em] text-[#f6f1ea]">
+                <h2 className="mt-2 font-display text-[28px] tracking-[0.01em] text-[#f6f1ea]">
                   {result.template.title}
                 </h2>
                 <p className="mt-3 max-w-lg text-[13px] leading-6 text-[#a7a198]">
@@ -187,7 +187,7 @@ export default async function CheckoutSuccessPage({
                     href="/account"
                     className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[12px] font-medium text-[#111] hover:bg-white"
                   >
-                    Open your dashboard
+                    باز کردن داشبورد
                     <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
                   </Link>
                   {getSitePreviewRoute(result.template.id) ? (
@@ -195,13 +195,13 @@ export default async function CheckoutSuccessPage({
                       href={getSitePreviewRoute(result.template.id)!}
                       className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-white/15 px-4 py-2.5 text-[12px] text-[#f6f1ea] hover:border-white/30"
                     >
-                      View the website
+                      دیدن وب‌سایت
                     </Link>
                   ) : null}
                 </div>
-                <p className="mt-5 text-[10px] leading-5 text-[#6f6a62]">
-                  This demonstration does not deliver source files automatically.
-                  Your account records the purchase for follow-up.
+                <p className="mt-5 text-[13px] leading-5 text-[#6f6a62]">
+                  این نسخهٔ نمایشی فایل‌های منبع را به‌صورت خودکار تحویل نمی‌دهد.
+                  حساب شما خرید را برای پیگیری ثبت می‌کند.
                 </p>
               </div>
             </>
@@ -212,12 +212,12 @@ export default async function CheckoutSuccessPage({
               <Panel
                 tone="pending"
                 icon={<Clock className="h-6 w-6" aria-hidden />}
-                title="Payment is still processing."
+                title="پرداخت هنوز در حال پردازش است."
               >
                 <p>
-                  Stripe has not confirmed this payment yet. No purchase has been
-                  recorded. Check your account shortly — a completed payment appears
-                  automatically, usually within a minute.
+                  Stripe هنوز این پرداخت را تأیید نکرده است. هیچ خریدی ثبت نشده.
+                  کمی بعد حساب خود را بررسی کنید — پرداخت کامل معمولاً در عرض یک
+                  دقیقه به‌صورت خودکار نمایش داده می‌شود.
                 </p>
               </Panel>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -225,13 +225,13 @@ export default async function CheckoutSuccessPage({
                   href="/account"
                   className="inline-flex min-h-11 items-center rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[12px] font-medium text-[#111] hover:bg-white"
                 >
-                  Check your account
+                  بررسی حساب
                 </Link>
                 <Link
                   href="/templates"
                   className="inline-flex min-h-11 items-center rounded-sm border border-white/15 px-4 py-2.5 text-[12px] text-[#f6f1ea] hover:border-white/30"
                 >
-                  Back to templates
+                  بازگشت به قالب‌ها
                 </Link>
               </div>
             </>
@@ -245,9 +245,9 @@ export default async function CheckoutSuccessPage({
                 title={result.title}
               >
                 <p>{result.body}</p>
-                <p className="mt-3 text-[11px] text-[#8a847c]">
-                  Checkout session reference:{" "}
-                  <span className="font-mono text-[#c7c1b8]">
+                <p className="mt-3 text-[13px] text-[#8a847c]">
+                  ارجاع نشست پرداخت:{" "}
+                  <span dir="ltr" className="font-mono text-[#c7c1b8]">
                     {sessionId || "none provided"}
                   </span>
                 </p>
@@ -257,13 +257,13 @@ export default async function CheckoutSuccessPage({
                   href="/account"
                   className="inline-flex min-h-11 items-center rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[12px] font-medium text-[#111] hover:bg-white"
                 >
-                  Open your account
+                  باز کردن حساب
                 </Link>
                 <Link
                   href="/templates"
                   className="inline-flex min-h-11 items-center rounded-sm border border-white/15 px-4 py-2.5 text-[12px] text-[#f6f1ea] hover:border-white/30"
                 >
-                  Back to templates
+                  بازگشت به قالب‌ها
                 </Link>
               </div>
             </>
@@ -274,14 +274,14 @@ export default async function CheckoutSuccessPage({
               <Panel
                 tone="error"
                 icon={<AlertTriangle className="h-6 w-6" aria-hidden />}
-                title="Paid, but not yet added to your account."
+                title="پرداخت شد، اما هنوز به حساب شما اضافه نشده است."
               >
                 <p>
-                  Stripe confirmed the payment for {result.template.title}, but this
-                  deployment could not write the purchase record. Nothing is hidden:
-                  your payment reference is below. Do not pay again.
+                  Stripe پرداخت {result.template.title} را تأیید کرد، اما این
+                  استقرار نتوانست رکورد خرید را بنویسد. چیزی پنهان نشده است:
+                  ارجاع پرداخت شما در زیر آمده. دوباره پرداخت نکنید.
                 </p>
-                <p className="mt-3 font-mono text-[11px] text-[#f6f1ea]">
+                <p dir="ltr" className="mt-3 font-mono text-[13px] text-[#f6f1ea]">
                   {result.sessionId}
                 </p>
               </Panel>
@@ -290,13 +290,13 @@ export default async function CheckoutSuccessPage({
                   href="/account"
                   className="inline-flex min-h-11 items-center rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[12px] font-medium text-[#111] hover:bg-white"
                 >
-                  Check your account
+                  بررسی حساب
                 </Link>
                 <Link
                   href="/legal"
                   className="inline-flex min-h-11 items-center rounded-sm border border-white/15 px-4 py-2.5 text-[12px] text-[#f6f1ea] hover:border-white/30"
                 >
-                  Payment policy
+                  سیاست پرداخت
                 </Link>
               </div>
             </>

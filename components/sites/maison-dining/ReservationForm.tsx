@@ -29,14 +29,14 @@ export function ReservationForm() {
 
     if (!date) {
       setStatus("error");
-      setMessage("Please choose a preferred date.");
+      setMessage("لطفاً تاریخ مورد نظر را انتخاب کنید.");
       return;
     }
 
     const partyLabel =
       reservation.partySizes.find((option) => option.value === party)?.label ??
-      `${party} guests`;
-    const dateLabel = new Date(`${date}T12:00:00`).toLocaleDateString("en-GB", {
+      `${party} مهمان`;
+    const dateLabel = new Date(`${date}T12:00:00`).toLocaleDateString("fa-IR", {
       weekday: "long",
       day: "numeric",
       month: "long",
@@ -54,8 +54,8 @@ export function ReservationForm() {
           site: "maison-dining",
           name,
           email,
-          message: `Table request — ${partyLabel}, ${dateLabel}. Dietary: ${
-            dietary || "none noted"
+          message: `درخواست میز — ${partyLabel}، ${dateLabel}. رژیم غذایی: ${
+            dietary || "ذکر نشده"
           }.`,
           ageConfirmed: false,
         }),
@@ -64,7 +64,7 @@ export function ReservationForm() {
 
       if (!response.ok) {
         setStatus("error");
-        setMessage(payload.error ?? "The request could not be stored. Please try again.");
+        setMessage(payload.error ?? "ثبت درخواست ممکن نشد. لطفاً دوباره تلاش کنید.");
         return;
       }
 
@@ -73,7 +73,7 @@ export function ReservationForm() {
       setMessage(reservation.confirmation);
     } catch {
       setStatus("error");
-      setMessage("The request could not be sent. Check your connection and try again.");
+      setMessage("ارسال درخواست ممکن نشد. اتصال خود را بررسی و دوباره تلاش کنید.");
     }
   }
 
@@ -82,9 +82,9 @@ export function ReservationForm() {
       <div className="md-reserve-copy">
         <p className="md-eyebrow">{reservation.label}</p>
         <h2 id="md-reserve-title">
-          Reserve{" "}
+          رزرو{" "}
           <br />
-          <em>the room.</em>
+          <em>اتاق</em>
         </h2>
         <p className="md-intro">{reservation.intro}</p>
 
@@ -92,26 +92,26 @@ export function ReservationForm() {
           <div>
             <dt>
               <Clock size={14} aria-hidden="true" />
-              Seating
+              سِرویس
             </dt>
             <dd>{reservation.sitting}</dd>
           </div>
           <div>
-            <dt>Menu</dt>
+            <dt>منو</dt>
             <dd>€{reservation.price}</dd>
           </div>
           <div>
-            <dt>Pairing</dt>
+            <dt>همراهی</dt>
             <dd>€{reservation.pairing}</dd>
           </div>
           <div>
-            <dt>Party</dt>
-            <dd>Two to twelve</dd>
+            <dt>تعداد مهمان</dt>
+            <dd>دو تا دوازده</dd>
           </div>
         </dl>
 
         <div className="md-reserve-contact">
-          <p className="md-mini-label">The reservations desk</p>
+          <p className="md-mini-label">میز رزرو</p>
           <a href={`mailto:${visit.email}`}>
             <Mail size={14} aria-hidden="true" />
             {visit.email}
@@ -125,11 +125,11 @@ export function ReservationForm() {
 
       <div className="md-reserve-card">
         <form className="md-form" onSubmit={onSubmit} noValidate={false}>
-          <p className="md-form-heading">Request a table</p>
+          <p className="md-form-heading">درخواست میز</p>
 
           <div className="md-form-row">
             <label>
-              <span>Name</span>
+              <span>نام</span>
               <input
                 name="name"
                 type="text"
@@ -137,29 +137,29 @@ export function ReservationForm() {
                 required
                 minLength={2}
                 maxLength={120}
-                placeholder="Your name"
+                placeholder="نام شما"
               />
             </label>
             <label>
-              <span>Email</span>
+              <span>ایمیل</span>
               <input
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
                 maxLength={180}
-                placeholder="you@example.com"
+                placeholder="you@example.com" dir="ltr"
               />
             </label>
           </div>
 
           <div className="md-form-row">
             <label>
-              <span>Preferred date</span>
+              <span>تاریخ مورد نظر</span>
               <input name="date" type="date" required min={minDate} />
             </label>
             <label>
-              <span>Party</span>
+              <span>تعداد مهمان</span>
               <select name="party" defaultValue="2" required>
                 {reservation.partySizes.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -171,17 +171,17 @@ export function ReservationForm() {
           </div>
 
           <label className="md-field-full">
-            <span>Dietary requirements or notes</span>
+            <span>رژیم غذایی یا یادداشت‌ها</span>
             <textarea
               name="dietary"
               rows={4}
               maxLength={500}
-              placeholder="Allergies, celebrations, access needs (optional)"
+              placeholder="حساسیت‌ها، مناسبت‌ها، نیازهای دسترسی (اختیاری)"
             />
           </label>
 
           <button type="submit" className="md-btn md-btn--copper" disabled={status === "sending"}>
-            {status === "sending" ? "Sending…" : "Request a table"}
+            {status === "sending" ? "در حال ارسال…" : "درخواست میز"}
             <ArrowUpRight size={15} aria-hidden="true" />
           </button>
 

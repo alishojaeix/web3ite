@@ -2,54 +2,55 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { faNumber } from "@/lib/i18n/format";
 
 export const metadata: Metadata = {
-  title: "Demo & age policy",
+  title: "سیاست نمایشی و سنی",
   description:
-    "How the Web3ite demo catalog works: fictional businesses, adult-only tobacco demonstrations, membership data, age confirmation and payment configuration.",
+    "شیوهٔ کار کاتالوگ نمایشی Web3ite: کسب‌وکارهای خیالی، نمایش‌های توتون مخصوص بزرگسالان، داده‌های عضویت، تأیید سن و پیکربندی پرداخت.",
   alternates: { canonical: "/legal" },
 };
 
 const sections = [
   {
-    title: "This is a demonstration catalog",
+    title: "این یک کاتالوگ نمایشی است",
     body: [
-      "Web3ite is a design and engineering demonstration. Every business, menu, address, price, claim and testimonial shown inside a template website is fictional. No venue takes bookings, no product is sold by those fictional businesses, and no message sent through a template website reaches a real venue.",
-      "Template prices shown on this site refer to the design product, not to anything sold by the fictional businesses inside the templates.",
+      "Web3ite یک نمایش طراحی و مهندسی است. هر کسب‌وکار، منو، نشانی، قیمت، ادعا و نظر مشتری که در وب‌سایت قالب‌ها نمایش داده می‌شود خیالی است. هیچ مکانی رزرو نمی‌پذیرد، هیچ محصولی توسط این کسب‌وکارهای خیالی فروخته نمی‌شود و هیچ پیامی که از فرم یک وب‌سایت قالب ارسال شود به مکان واقعی نمی‌رسد.",
+      "قیمت قالب‌های نمایش داده‌شده در این سایت به محصول طراحی اشاره دارد، نه به چیزی که کسب‌وکارهای خیالی داخل قالب‌ها می‌فروشند.",
     ],
   },
   {
-    title: "Tobacco and cigar content",
+    title: "محتوای توتون و سیگار برگ",
     body: [
-      "The Aldane & Voss, Cigar Atelier and Modern Tobacco websites are fictional adult-only design demonstrations. They are behind an 18+ confirmation gate and are excluded from the sitemap and from the homepage showroom.",
-      "They contain no tobacco products for sale and make no health or therapeutic claims. Tobacco use is harmful to health. Operators who adapt these designs are responsible for applicable age restrictions, advertising rules and required health warnings in their market.",
+      "وب‌سایت‌های آلدین و واس، سیگار آتلیه و مدرن توباکو نمایش‌های طراحی خیالی و مخصوص بزرگسالان هستند. آن‌ها پشت دروازهٔ تأیید ۱۸+ قرار دارند و از نقشهٔ سایت و نمایشگاه صفحهٔ اصلی حذف شده‌اند.",
+      "این وب‌سایت‌ها هیچ محصول توتونی برای فروش ندارند و هیچ ادعای سلامتی یا درمانی نمی‌کنند. مصرف توتون برای سلامت مضر است. بهره‌بردارانی که این طراحی‌ها را اقتباس می‌کنند مسئول محدودیت‌های سنی، قوانین تبلیغات و هشدارهای سلامت لازم در بازار خود هستند.",
     ],
   },
   {
-    title: "Age confirmation",
+    title: "تأیید سن",
     body: [
-      "Confirming that you are 18 or older stores a first-party cookie on your device for 30 days so the gate does not appear on every page. Declining does not set the cookie and returns you to the general catalog. The cookie is an acknowledgement, not identity verification.",
+      "با تأیید اینکه ۱۸ سال یا بیشتر هستید، یک کوکی متعلق به همین سایت برای ۳۰ روز روی دستگاه شما ذخیره می‌شود تا دروازه در هر صفحه دوباره نمایش داده نشود. رد کردن، کوکی را تنظیم نمی‌کند و شما را به کاتالوگ عمومی بازمی‌گرداند. این کوکی فقط یک اعلام آگاهی است، نه احراز هویت.",
     ],
   },
   {
-    title: "Membership and data",
+    title: "عضویت و داده‌ها",
     body: [
-      "Creating an account stores your email address and a scrypt password hash in this deployment's local data store. Sessions use a signed, HttpOnly cookie. Passwords are never stored in plain text.",
-      "Messages sent through template website forms are stored on the server when the demo inbox is writable. Do not submit real personal or sensitive information through the demonstration forms. Checkout, when enabled, is handled by Stripe; card details are never sent to or stored by Web3ite.",
+      "با ساخت حساب، نشانی ایمیل شما و هش گذرواژه با الگوریتم scrypt در انبار دادهٔ محلی همین استقرار ذخیره می‌شود. نشست‌ها از کوکی امضاشده و HttpOnly استفاده می‌کنند. گذرواژه‌ها هرگز به شکل متن ساده ذخیره نمی‌شوند.",
+      "پیام‌هایی که از فرم‌های وب‌سایت قالب ارسال می‌شوند، زمانی که صندوق نمایشی قابل نوشتن باشد روی سرور ذخیره می‌شوند. اطلاعات شخصی یا حساس واقعی را از طریق فرم‌های نمایشی ارسال نکنید. پرداخت، در صورت فعال بودن، توسط Stripe انجام می‌شود؛ جزئیات کارت هرگز به Web3ite ارسال یا ذخیره نمی‌شود.",
     ],
   },
   {
-    title: "Payments",
+    title: "پرداخت‌ها",
     body: [
-      "Checkout is only available when Stripe credentials are configured. When they are not, the checkout page says so and no payment can be taken. A purchase is never reported as successful without a confirmed Stripe payment.",
-      "A completed purchase grants a licence to use the selected template for one commercial website project. It does not grant resale rights or permission to redistribute the template as a template. This demo deployment may not provide automated source delivery; your account lists the purchase for follow-up.",
+      "تکمیل خرید فقط زمانی در دسترس است که اطلاعات ورود Stripe پیکربندی شده باشد. در غیر این صورت صفحهٔ پرداخت همین را اعلام می‌کند و مبلغی دریافت نمی‌شود. هیچ خریدی بدون تأیید پرداخت Stripe موفق گزارش نمی‌شود.",
+      "خرید کامل، مجوز استفاده از قالب انتخاب‌شده را برای یک پروژهٔ وب‌سایت تجاری می‌دهد. این مجوز حق فروش مجدد یا اجازهٔ بازتوزیع قالب به‌عنوان قالب را نمی‌دهد. ممکن است این استقرار نمایشی تحویل خودکار فایل منبع ارائه نکند؛ حساب شما خرید را برای پیگیری ثبت می‌کند.",
     ],
   },
   {
-    title: "Content and contact",
+    title: "محتوا و تماس",
     body: [
-      "The template content is original fictional editorial material. The visual scenes and posters are generated by this project. No third-party brand, logo, photograph or testimonial is presented as real.",
-      "For corrections, data questions or security reports, use the project repository linked in the footer. This is a demonstration policy, not a substitute for legal advice.",
+      "محتوای قالب‌ها مطالب تحریریهٔ خیالی و اصیل است. صحنه‌ها و پوسترهای بصری توسط همین پروژه تولید شده‌اند. هیچ برند، لوگو، عکس یا نظر مشتری متعلق به شخص ثالث به‌عنوان واقعی ارائه نشده است.",
+      "برای اصلاحات، پرسش‌های داده‌ای یا گزارش‌های امنیتی، از مخزن پروژه که در پاورقی پیوند شده است استفاده کنید. این یک سیاست نمایشی است و جای مشاورهٔ حقوقی را نمی‌گیرد.",
     ],
   },
 ];
@@ -62,25 +63,29 @@ export default function LegalPage() {
         <div className="mx-auto max-w-[900px]">
           <p className="eyebrow flex items-center gap-3 text-[#8a847c]">
             <span className="h-px w-8 bg-[#d4af7a]/60" />
-            Policy
+            سیاست
           </p>
           <h1 className="display-face mt-6 text-[clamp(2.8rem,6vw,4.8rem)] leading-[0.95] text-[#f6f1ea]">
-            Demo & age policy
+            سیاست نمایشی و سنی
           </h1>
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[#a7a198]">
-            What is real in this catalog, what is fictional, and how the demo
-            handles age confirmation, accounts, inquiries and payments.
+            چه چیزی در این کاتالوگ واقعی است، چه چیزی خیالی است، و این نسخهٔ
+            نمایشی چگونه تأیید سن، حساب‌ها، درخواست‌ها و پرداخت‌ها را مدیریت
+            می‌کند.
           </p>
 
           <div className="mt-14 space-y-12">
             {sections.map((section, index) => (
               <section key={section.title} className="border-t border-white/[0.08] pt-8">
                 <div className="grid gap-5 md:grid-cols-[64px_minmax(0,1fr)]">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#8a847c]">
-                    {String(index + 1).padStart(2, "0")}
+                  <p className="text-[13px] tracking-[0.18em] text-[#8a847c]">
+                    {faNumber(index + 1, {
+                      minimumIntegerDigits: 2,
+                      useGrouping: false,
+                    })}
                   </p>
                   <div>
-                    <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-light tracking-[-0.03em] text-[#f6f1ea]">
+                    <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-light tracking-[0.01em] text-[#f6f1ea]">
                       {section.title}
                     </h2>
                     <div className="mt-4 space-y-4">
@@ -101,21 +106,21 @@ export default function LegalPage() {
 
           <div className="mt-14 rounded-lg border border-white/[0.08] bg-white/[0.02] p-6">
             <p className="text-[13px] leading-relaxed text-[#b8b3aa]">
-              See the catalog, or read how age confirmation works before opening an
-              adult-only demonstration.
+              کاتالوگ را ببینید یا پیش از باز کردن یک نمایش مخصوص بزرگسالان،
+              نحوهٔ کار تأیید سن را بخوانید.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
                 href="/templates"
                 className="inline-flex min-h-11 items-center rounded-sm bg-[#f4efe6] px-4 py-2.5 text-[12px] font-medium text-[#111] hover:bg-white"
               >
-                Template catalog
+                کاتالوگ قالب‌ها
               </Link>
               <Link
                 href="/age-gate"
                 className="inline-flex min-h-11 items-center rounded-sm border border-white/15 px-4 py-2.5 text-[12px] text-[#f6f1ea] hover:border-white/30"
               >
-                Age gate
+                دروازهٔ سن
               </Link>
             </div>
           </div>

@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-vazirmatn.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-vazirmatn.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretest": "node scripts/sync-vazirmatn.mjs",
+    "test": "node scripts/verify-typography.mjs",
+    "pretypecheck": "node scripts/sync-vazirmatn.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@fontsource/geist": "^5.3.0",

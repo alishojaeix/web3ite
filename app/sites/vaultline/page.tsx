@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { VaultSite } from "@/components/sites/vaultline/VaultSite";
 import "./vault.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Vaultline — Security you can inspect.";
+const title = "والت‌لاین — امنیتی که می‌توانید بازبینی کنید";
 const description =
-  "A sample custody-infrastructure website: layered vault artwork, documented controls, an illustrative dated audit record and a direct disclosure request form. Fictional platform built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای زیرساخت نگه‌داری داده: مدل حضانت لایه‌ای، مقایسهٔ طرح‌ها، گزارش بازبینی و فرم درخواست دسترسی. شرکت خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=vaultline",
         width: 1200,
         height: 630,
-        alt: "Vaultline website preview",
+        alt: "پیش‌نمایش وب‌سایت والت‌لاین",
       },
     ],
   },

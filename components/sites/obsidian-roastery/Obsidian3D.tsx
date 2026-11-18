@@ -25,19 +25,19 @@ export function Obsidian3D() {
     <div className="ob-3d" data-3d>
       {!requested ? (
         <div className="ob-3d-poster">
-          <CanisterArt prefix="ob-object-art" number="01" name="Kenia AA" origin="Nyeri, Kenya" />
+          <CanisterArt prefix="ob-object-art" number="۰۱" name="کنیا AA" origin="نیِری، کنیا" />
           <button type="button" className="ob-3d-trigger" onClick={() => setRequested(true)}>
             <Box size={16} aria-hidden="true" />
-            Inspect the canister in 3D
+            بازرسی قوطی در سه‌بعدی
           </button>
-          <p className="ob-3d-note">Optional · the site works without it</p>
+          <p className="ob-3d-note">اختیاری · سایت بدون آن هم کار می‌کند</p>
         </div>
       ) : (
         <div className="ob-3d-stage">
           <CanisterCanvas
             scene="obsidian-roastery"
             theme={obsidianRoastery.theme}
-            label="Obsidian Roastery canister"
+            label="قوطی Obsidian Roastery"
             variant="detail"
             interactive
             autoRotate
@@ -47,11 +47,11 @@ export function Obsidian3D() {
             type="button"
             className="ob-3d-close"
             onClick={() => setRequested(false)}
-            aria-label="Close the 3D canister"
+            aria-label="بستن قوطی سه‌بعدی"
           >
             <X size={16} aria-hidden="true" />
           </button>
-          <p className="ob-3d-drag">Drag to turn the canister</p>
+          <p className="ob-3d-drag">برای چرخاندن قوطی بکشید</p>
         </div>
       )}
     </div>

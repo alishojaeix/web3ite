@@ -23,43 +23,42 @@ import {
 
 export function ObsidianSite() {
   return (
-    <div className="ob-site" id="top">
+    <div className="ob-site" id="top" dir="rtl">
       <a className="ob-skip" href="#ob-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <ObsidianNav />
 
-      <main id="ob-main">
+      <main id="ob-main" lang="fa" dir="rtl">
         <section className="ob-hero" aria-labelledby="ob-hero-title">
           <div className="ob-wrap ob-hero-top">
-            <p>Small batch coffee / London E9</p>
-            <p>One roast day · Thursday</p>
+            <p>قهوهٔ خُرد‌دست / لندن E9</p>
+            <p>یک روز بو دادن · پنجشنبه</p>
           </div>
 
           <div className="ob-wrap ob-hero-grid">
             <div className="ob-hero-copy">
               <p className="ob-kicker">
                 <span aria-hidden="true" />
-                Obsidian Roastery / Established 2021
+                رُستری ابسیدین / تأسیس ۲۰۲۱
               </p>
               <h1 id="ob-hero-title">
-                Roasted in{" "}
+                بوداده‌شده در{" "}
                 <br />
-                the <em>dark.</em>
+                <em>تاریکی</em>
               </h1>
               <p className="ob-lede">
-                Three coffees, one roast day, and a canister that tells you
-                everything you need to know. Small-batch coffee from a former kiln
-                yard in East London.
+                سه قهوه، یک روز بو دادن و قوطی‌ای که همهٔ آنچه باید بدانید را
+                می‌گوید. قهوهٔ خُرد‌دست از یک کارخانهٔ آجرپزی سابق در شرق لندن.
               </p>
               <div className="ob-actions">
                 <a className="ob-btn ob-btn--brass" href="#roasts">
-                  See the roasts
+                  دیدن بو داده‌ها
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="ob-btn ob-btn--ghost" href="#roastery">
-                  Inside the roastery
+                  درون رُستری
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -73,7 +72,7 @@ export function ObsidianSite() {
                 ))}
               </dl>
               <p className="ob-demo-note">
-                Sample website concept · fictional roastery, coffees and imagery
+                طرح نمایشی وب‌سایت · رُستری، قهوه‌ها و تصویرها خیالی‌اند
               </p>
             </div>
 
@@ -81,22 +80,22 @@ export function ObsidianSite() {
               <div className="ob-hero-art">
                 <CanisterArt prefix="ob-hero-visual" />
               </div>
-              <aside className="ob-hero-tag" aria-label="Coffee currently roasting">
-                <p className="ob-mini-label">Now roasting</p>
-                <p className="ob-hero-tag-name">No. 01 / Kenia AA</p>
-                <p className="ob-hero-tag-notes">Blackcurrant · cane sugar · clean</p>
-                <p className="ob-hero-tag-lot">Lot 04 · roasted Thursday</p>
+              <aside className="ob-hero-tag" aria-label="قهوهٔ در حال بو دادن">
+                <p className="ob-mini-label">در حال بو دادن</p>
+                <p className="ob-hero-tag-name">شمارهٔ ۰۱ / کنیا AA</p>
+                <p className="ob-hero-tag-notes">انگورفرنگی سیاه · شکر نیشکر · تمیز</p>
+                <p className="ob-hero-tag-lot">دستهٔ ۰۴ · بوداده در پنجشنبه</p>
               </aside>
-              <p className="ob-hero-side">Small batch / 12 kg drum</p>
+              <p className="ob-hero-side">خُرد‌دست / درام ۱۲ کیلو</p>
             </div>
           </div>
 
           <div className="ob-wrap ob-hero-foot">
             <a href="#roasts" className="ob-scroll-cue">
-              Scroll to the shelf
+              رفتن به قفسه
               <ArrowDown size={14} aria-hidden="true" />
             </a>
-            <p>Rest 7–14 days · roast date on the base</p>
+            <p>استراحت ۷ تا ۱۴ روز · تاریخ بو دادن روی قوطی</p>
           </div>
         </section>
 
@@ -115,17 +114,17 @@ export function ObsidianSite() {
           <div className="ob-wrap">
             <div className="ob-section-head ob-section-head--split">
               <div>
-                <p className="ob-eyebrow">01 / The shelf</p>
+                <p className="ob-eyebrow">۰۱ / قفسه</p>
                 <h2 id="ob-roasts-title">
-                  Three coffees.
+                  سه قهوه،
                   <br />
-                  <em>One roast day.</em>
+                  <em>یک روز بو دادن</em>
                 </h2>
               </div>
               <p className="ob-intro">
-                The whole catalogue is three lots. Each is bought green, roasted on
-                Thursday and rested before it reaches the shelf. Choose one to read
-                the lot sheet.
+                کل کاتالوگ سه دسته است. هر کدام سبز خریداری می‌شود، پنجشنبه
+                بوداده و پیش از رسیدن به قفسه استراحت می‌کند. یکی را انتخاب کنید تا
+                برگهٔ دسته را بخوانید.
               </p>
             </div>
             <RoastIndex />
@@ -136,11 +135,11 @@ export function ObsidianSite() {
           <div className="ob-wrap">
             <div className="ob-section-head ob-section-head--split">
               <div>
-                <p className="ob-eyebrow">02 / The object</p>
+                <p className="ob-eyebrow">۰۲ / این شیء</p>
                 <h2 id="ob-object-title">
-                  A canister
+                  قوطی‌ای
                   <br />
-                  <em>worth keeping.</em>
+                  <em>که ارزش نگه‌داشتن دارد</em>
                 </h2>
               </div>
               <p className="ob-intro">{object.intro}</p>
@@ -153,9 +152,9 @@ export function ObsidianSite() {
                 <div className="ob-seal-row">
                   <SealMark number="01" />
                   <div>
-                    <p className="ob-mini-label">The brass seal</p>
+                    <p className="ob-mini-label">مهر برنجی</p>
                     <p className="ob-seal-copy">
-                      Machined in Sheffield. Debossed with one line, not printed.
+                      ماشین‌کاری در شفیلد. یک خط به‌صورت فرورفته، بدون چاپ.
                     </p>
                   </div>
                 </div>
@@ -183,8 +182,8 @@ export function ObsidianSite() {
             <figure className="ob-drawing-card">
               <CanisterDrawing />
               <figcaption>
-                <span>Canister 01 / 250 g</span>
-                <span>Matte steel · brass · printed paper</span>
+                <span>قوطی ۰۱ / ۲۵۰ گرم</span>
+                <span>فولاد مات · برنج · کاغذ چاپی</span>
               </figcaption>
             </figure>
           </div>
@@ -198,14 +197,14 @@ export function ObsidianSite() {
           <div className="ob-wrap">
             <div className="ob-roastery-top">
               <div>
-                <p className="ob-eyebrow">03 / The roastery</p>
+                <p className="ob-eyebrow">۰۳ / رُستری</p>
                 <h2 id="ob-roastery-title">
-                  The rest of the week belongs to{" "}
-                  <em>the coffee.</em>
+                  بقیهٔ هفته از آنِ{" "}
+                  <em>قهوه است</em>
                 </h2>
                 <p className="ob-roastery-quote">
-                  “Roast less. Put the date on everything. Let the coffee finish the
-                  sentence.”
+                  «کمتر بو بده. تاریخ را روی همه‌چیز بگذار. بگذار قهوه جمله را
+                  تمام کند.»
                 </p>
               </div>
               <div className="ob-prose">
@@ -218,13 +217,13 @@ export function ObsidianSite() {
             <div className="ob-roastery-grid">
               <figure className="ob-curve-card">
                 <div className="ob-curve-head">
-                  <p className="ob-mini-label">Profile / No. 01</p>
-                  <p>12 kg · 12 min</p>
+                  <p className="ob-mini-label">پروفایل / شمارهٔ ۰۱</p>
+                  <p>۱۲ کیلوگرم · ۱۲ دقیقه</p>
                 </div>
                 <RoastCurve />
                 <figcaption>
-                  Illustrative roast profile. Every batch is logged and cupped
-                  before it leaves the roastery.
+                  پروفایل نمایشی بو دادن. هر دسته ثبت و پیش از خروج از رُستری
+                  چشیده می‌شود.
                 </figcaption>
               </figure>
 
@@ -238,7 +237,7 @@ export function ObsidianSite() {
               </dl>
             </div>
 
-            <ol className="ob-process" aria-label="From source to ship">
+            <ol className="ob-process" aria-label="از مبدأ تا ارسال">
               {roastery.process.map((step) => (
                 <li key={step.number}>
                   <span aria-hidden="true">{step.number}</span>
@@ -258,11 +257,11 @@ export function ObsidianSite() {
           <div className="ob-wrap">
             <div className="ob-subscribe-head">
               <div>
-                <p className="ob-eyebrow">04 / The roast list</p>
+                <p className="ob-eyebrow">۰۴ / فهرست بو داده</p>
                 <h2 id="ob-subscribe-title">
-                  Keep the counter
+                  پیشخوان را
                   <br />
-                  <em>stocked.</em>
+                  <em>پر نگه دارید</em>
                 </h2>
               </div>
               <p className="ob-intro">{subscription.intro}</p>
@@ -275,23 +274,22 @@ export function ObsidianSite() {
           <div className="ob-wrap">
             <div className="ob-visit-grid">
               <div className="ob-visit-copy">
-                <p className="ob-eyebrow">05 / Visit</p>
+                <p className="ob-eyebrow">۰۵ / بازدید</p>
                 <h2 id="ob-visit-title">
-                  Come and taste
+                  بیایید و بچشید
                   <br />
-                  <em>the week.</em>
+                  <em>قهوهٔ هفته را</em>
                 </h2>
                 <p className="ob-intro">
-                  The roastery opens three days a week. There is a small tasting
-                  counter, the current filter on brew, and usually a bag or two
-                  resting on the shelf.
+                  رُستری سه روز در هفته باز است. یک پیشخوان چشایی کوچک، فیلتر
+                  روز روی دَم و معمولاً یک یا دو کیسه روی قفسه استراحت می‌کنند.
                 </p>
 
                 <div className="ob-visit-details">
                   <div>
                     <h3>
                       <MapPin size={16} aria-hidden="true" />
-                      Find the yard
+                      حیاط را پیدا کنید
                     </h3>
                     <address>
                       {visit.address.map((line) => (
@@ -303,7 +301,7 @@ export function ObsidianSite() {
                   <div>
                     <h3>
                       <Clock size={16} aria-hidden="true" />
-                      Opening hours
+                      ساعات بازدید
                     </h3>
                     <dl>
                       {visit.hours.map((row) => (
@@ -327,20 +325,20 @@ export function ObsidianSite() {
                 <figure className="ob-yard">
                   <YardPlan />
                   <figcaption>
-                    <span>8 Kiln Yard / E9</span>
-                    <span>Illustrative plan · not to scale</span>
+                    <span>کیلن‌یارد ۸ / محلهٔ E9</span>
+                    <span>طرح نمایشی · بدون مقیاس</span>
                   </figcaption>
                 </figure>
                 <div className="ob-visit-card">
-                  <p className="ob-mini-label">Thursday, 09:00</p>
-                  <p className="ob-visit-card-title">The week&apos;s filter is on.</p>
+                  <p className="ob-mini-label">پنجشنبه، ۰۹:۰۰</p>
+                  <p className="ob-visit-card-title">فیلتر این هفته دم است</p>
                   <p>
-                    Come early for the first cup after roasting. Bring a home brewer
-                    and we will set the grind.
+                    برای نخستین فنجان پس از بو دادن زود بیایید. یک دستگاه دم‌آوری
+                    خانگی بیاورید تا درجهٔ آسیاب را تنظیم کنیم.
                   </p>
                   <a href={`mailto:${visit.email}`} className="ob-text-link">
                     <Mail size={14} aria-hidden="true" />
-                    Email the roastery
+                    ایمیل رُستری
                   </a>
                 </div>
               </div>
@@ -354,16 +352,16 @@ export function ObsidianSite() {
           <div className="ob-footer-top">
             <div className="ob-footer-brand">
               <p className="ob-footer-word">OBSIDIAN</p>
-              <p>Roasted in the dark. London E9.</p>
+              <p>بوداده در تاریکی. لندن E9.</p>
               <a href="#top" className="ob-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="ob-footer-cols">
               <div>
-                <p className="ob-footer-label">Visit</p>
+                <p className="ob-footer-label">بازدید</p>
                 <address>
                   {visit.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -375,7 +373,7 @@ export function ObsidianSite() {
                 </a>
               </div>
               <div>
-                <p className="ob-footer-label">Explore</p>
+                <p className="ob-footer-label">کاوش</p>
                 {obsidianNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -383,22 +381,22 @@ export function ObsidianSite() {
                 ))}
               </div>
               <div>
-                <p className="ob-footer-label">Template</p>
-                <Link href="/templates/obsidian-roastery">Template details</Link>
-                <Link href="/checkout/obsidian-roastery">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="ob-footer-label">قالب</p>
+                <Link href="/templates/obsidian-roastery">جزئیات قالب</Link>
+                <Link href="/checkout/obsidian-roastery">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="ob-footer-bottom">
             <p>
-              © 2026 Obsidian Roastery (fictional). A demonstration website: the
-              roastery, coffees, prices and imagery are illustrative. No orders or
-              subscriptions are taken.
+              © ۲۰۲۶ رُستری ابسیدین (خیالی). یک وب‌سایت نمایشی: رُستری،
+              قهوه‌ها، قیمت‌ها و تصویرها نمایشی‌اند. هیچ سفارش یا اشتراکی
+              پذیرفته نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

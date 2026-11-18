@@ -10,7 +10,7 @@ const NoirCafeSceneCanvas = dynamic(
     ssr: false,
     loading: () => (
       <div className="grid aspect-[4/3] place-items-center bg-[#090806] text-sm text-[#b8ad9f]" role="status">
-        Preparing the coffee scene…
+        آماده‌سازی صحنهٔ قهوه…
       </div>
     ),
   }
@@ -23,9 +23,9 @@ export function NoirCafe3DFeature() {
     <section className="bg-[var(--nc-ink)] px-6 pb-20 sm:px-10 lg:px-16" aria-labelledby="noir-3d-heading">
       <div className="mx-auto grid max-w-[1280px] items-center gap-8 border-t border-[var(--nc-line)] pt-10 md:grid-cols-[1fr_auto]">
         <div>
-          <h2 id="noir-3d-heading" className="font-editorial text-3xl text-[var(--nc-cream)]">A closer look at the cup</h2>
+          <h2 id="noir-3d-heading" className="font-editorial text-3xl text-[var(--nc-cream)]">نگاهی نزدیک‌تر به فنجان</h2>
           <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--nc-muted)]">
-            Optional interactive 3D. The café website remains complete without it.
+            سه‌بعدی تعاملی و اختیاری. وب‌سایت کافه بدون آن هم کامل است.
           </p>
         </div>
         {!requested ? (
@@ -35,7 +35,7 @@ export function NoirCafe3DFeature() {
             className="inline-flex min-h-12 w-fit items-center justify-center gap-3 border border-[var(--nc-brass)]/70 px-5 text-sm text-[var(--nc-cream)] transition-colors hover:bg-[var(--nc-brass)] hover:text-[var(--nc-ink)] focus-visible:outline-offset-4"
           >
             <Box size={17} aria-hidden="true" />
-            Explore in 3D
+            کاوش در سه‌بعدی
           </button>
         ) : null}
         {requested ? <div className="md:col-span-2"><NoirCafeSceneCanvas /></div> : null}

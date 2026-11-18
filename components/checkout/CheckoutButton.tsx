@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Loader2 } from "lucide-react";
+import { fa } from "@/lib/i18n/fa";
 
 export function CheckoutButton({ templateId }: { templateId: string }) {
   const [pending, setPending] = useState(false);
@@ -27,12 +28,12 @@ export function CheckoutButton({ templateId }: { templateId: string }) {
         return;
       }
       if (!response.ok || !payload.url) {
-        setError(payload.error ?? "Checkout could not be started. No payment was taken.");
+        setError(payload.error ?? fa.checkout.error);
         return;
       }
       window.location.assign(payload.url);
     } catch {
-      setError("Checkout could not be started. Check your connection and try again.");
+      setError(fa.errors.network);
     } finally {
       setPending(false);
     }
@@ -49,11 +50,11 @@ export function CheckoutButton({ templateId }: { templateId: string }) {
         {pending ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-            Starting secure checkout…
+            {fa.checkout.processing}
           </>
         ) : (
           <>
-            Continue to secure checkout
+            ادامه به پرداخت امن
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </>
         )}
@@ -61,9 +62,9 @@ export function CheckoutButton({ templateId }: { templateId: string }) {
       <p role="alert" aria-live="polite" className="mt-3 min-h-[16px] text-[12px] leading-5 text-[#f2b6b0]">
         {error}
       </p>
-      <p className="mt-2 text-[10px] leading-5 text-[#6f6a62]">
-        You will be redirected to Stripe. Card details are handled by Stripe and
-        never stored by Web3ite.
+      <p className="mt-2 text-[13px] leading-5 text-[#6f6a62]">
+        پرداخت آنلاین در این نسخه از سایت فعال نیست؛ این دکمه هیچ مبلغی دریافت
+        نمی‌کند و سفارشی ثبت نمی‌شود.
       </p>
     </div>
   );

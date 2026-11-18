@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { fa } from "@/lib/i18n/fa";
 
 export function AuthForm({
   mode,
@@ -24,7 +25,7 @@ export function AuthForm({
     const password = String(data.get("password") ?? "");
 
     if (isRegister && password !== String(data.get("confirm") ?? "")) {
-      setError("The passwords do not match.");
+      setError("گذرواژه‌ها یکسان نیستند.");
       return;
     }
 
@@ -39,13 +40,13 @@ export function AuthForm({
         error?: string;
       };
       if (!response.ok) {
-        setError(payload.error ?? "The account request failed. Please try again.");
+        setError(payload.error ?? fa.auth.genericError);
         return;
       }
       router.push(next);
       router.refresh();
     } catch {
-      setError("The account request could not be sent. Check your connection.");
+      setError(fa.errors.network);
     } finally {
       setPending(false);
     }
@@ -54,17 +55,17 @@ export function AuthForm({
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <div>
-        <p className="text-[10px] uppercase tracking-[0.2em] text-[#8a847c]">
-          {isRegister ? "Create your account" : "Welcome back"}
+        <p className="text-[13px] tracking-[0.2em] text-[#8a847c]">
+          {isRegister ? "ساخت حساب شما" : "خوش برگشتید"}
         </p>
-        <h2 className="mt-2 font-display text-[26px] tracking-[-0.03em] text-[#f6f1ea]">
-          {isRegister ? "One account, every purchase." : "Sign in to continue."}
+        <h2 className="mt-2 font-display text-[26px] tracking-[0.01em] text-[#f6f1ea]">
+          {isRegister ? "یک حساب، همهٔ خریدها." : "برای ادامه وارد شوید."}
         </h2>
       </div>
 
       <label className="block">
-        <span className="mb-2 block text-[10px] uppercase tracking-[0.16em] text-[#8a847c]">
-          Email
+        <span className="mb-2 block text-[13px] tracking-[0.16em] text-[#8a847c]">
+          {fa.auth.email}
         </span>
         <input
           name="email"
@@ -72,14 +73,15 @@ export function AuthForm({
           required
           autoComplete="email"
           maxLength={180}
-          placeholder="you@example.com"
-          className="min-h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/60"
+          dir="ltr"
+          placeholder={fa.auth.emailPlaceholder}
+          className="min-h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-start text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/60"
         />
       </label>
 
       <label className="block">
-        <span className="mb-2 block text-[10px] uppercase tracking-[0.16em] text-[#8a847c]">
-          Password
+        <span className="mb-2 block text-[13px] tracking-[0.16em] text-[#8a847c]">
+          {fa.auth.password}
         </span>
         <input
           name="password"
@@ -88,15 +90,15 @@ export function AuthForm({
           minLength={8}
           maxLength={200}
           autoComplete={isRegister ? "new-password" : "current-password"}
-          placeholder={isRegister ? "At least 8 characters" : "Your password"}
+          placeholder={isRegister ? "حداقل ۸ نویسه" : "گذرواژهٔ شما"}
           className="min-h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/60"
         />
       </label>
 
       {isRegister ? (
         <label className="block">
-          <span className="mb-2 block text-[10px] uppercase tracking-[0.16em] text-[#8a847c]">
-            Confirm password
+          <span className="mb-2 block text-[13px] tracking-[0.16em] text-[#8a847c]">
+            تکرار گذرواژه
           </span>
           <input
             name="confirm"
@@ -105,7 +107,7 @@ export function AuthForm({
             minLength={8}
             maxLength={200}
             autoComplete="new-password"
-            placeholder="Repeat your password"
+            placeholder="گذرواژه را دوباره وارد کنید"
             className="min-h-12 w-full rounded-sm border border-white/[0.1] bg-black/35 px-4 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/60"
           />
         </label>
@@ -122,18 +124,18 @@ export function AuthForm({
       >
         {pending
           ? isRegister
-            ? "Creating account…"
-            : "Signing in…"
+            ? "در حال ساخت حساب…"
+            : "در حال ورود…"
           : isRegister
-            ? "Create account"
-            : "Sign in"}
+            ? "ساخت حساب"
+            : "ورود"}
         {!pending ? <ArrowUpRight className="h-4 w-4" aria-hidden /> : null}
       </button>
 
-      <p className="text-[10px] leading-5 text-[#6f6a62]">
+      <p className="text-[13px] leading-5 text-[#6f6a62]">
         {isRegister
-          ? "No marketing email is sent. Your session uses a signed HttpOnly cookie."
-          : "Sign-in attempts are rate limited. Sessions last 30 days."}
+          ? "هیچ ایمیل بازاریابی ارسال نمی‌شود. نشست شما از یک کوکی امضاشدهٔ HttpOnly استفاده می‌کند."
+          : "تلاش‌های ورود محدود به نرخ هستند. نشست‌ها ۳۰ روز دوام دارند."}
       </p>
     </form>
   );

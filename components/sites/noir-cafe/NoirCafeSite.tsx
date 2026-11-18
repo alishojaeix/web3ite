@@ -23,9 +23,9 @@ export function NoirCafeSite() {
   } as CSSProperties;
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-[var(--nc-ink)] text-[var(--nc-cream)]" style={style}>
+    <div className="noir-cafe-site min-h-screen overflow-x-clip bg-[var(--nc-ink)] text-[var(--nc-cream)]" style={style} dir="rtl">
       <CafeNavigation />
-      <main>
+      <main lang="fa" dir="rtl">
         <CafeHero />
         <BrandStory />
         <CoffeeMenu />

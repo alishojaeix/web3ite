@@ -20,7 +20,7 @@ export function CyberBrief() {
     const type = String(data.get("type") ?? "").trim();
     const detail = String(data.get("message") ?? "").trim();
 
-    const brief = [type ? `Type: ${type}` : "", detail]
+    const brief = [type ? `نوع: ${type}` : "", detail]
       .filter(Boolean)
       .join("\n\n");
 
@@ -65,7 +65,7 @@ export function CyberBrief() {
         <span className="cd-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="cd-success-title">Brief recorded</p>
+        <p className="cd-success-title">بریف ثبت شد</p>
         <p className="cd-success-body">{message}</p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export function CyberBrief() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another brief
+          ارسال بریف دیگر
         </button>
       </div>
     );
@@ -90,14 +90,14 @@ export function CyberBrief() {
           <p className="cd-form-sub">{contact.form.sub}</p>
         </div>
         <span className="cd-form-code" aria-hidden="true">
-          BRIEF / 01
+          BRIEF / ۰۱
         </span>
       </div>
 
       <form className="cd-form" onSubmit={onSubmit}>
         <div className="cd-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -105,24 +105,24 @@ export function CyberBrief() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@company.com"
+              placeholder="you@company.com" dir="ltr"
             />
           </label>
         </div>
 
         <label>
-          <span>What do you need?</span>
+          <span>چه چیزی نیاز دارید؟</span>
           <select name="type" defaultValue={contact.form.types[0]}>
             {contact.form.types.map((option) => (
               <option key={option} value={option}>
@@ -133,13 +133,13 @@ export function CyberBrief() {
         </label>
 
         <label>
-          <span>The brief</span>
+          <span>بریف</span>
           <textarea
             name="message"
             rows={4}
             required
             maxLength={1200}
-            placeholder="The decision your response plan has to support, the team in the path and the constraint you cannot move."
+            placeholder="تصمیمی که نقشهٔ پاسخ شما باید پشتیبانی کند، تیمِ در مسیر و محدودیتی که نمی‌توانید جابه‌جا کنید."
           />
         </label>
 
@@ -148,7 +148,7 @@ export function CyberBrief() {
           className="cd-btn cd-btn--solid cd-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending brief…" : "Send the brief"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال بریف"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 

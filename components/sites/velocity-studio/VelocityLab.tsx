@@ -12,13 +12,13 @@ export function VelocityLab() {
     <div className="vs-lab">
       <div className="vs-lab-visual">
         <div className="vs-lab-visual-head">
-          <span>Pressure plan / {current.name}</span>
-          <span>Illustrative</span>
+          <span>نقشهٔ فشار / {current.name}</span>
+          <span>نمایشی</span>
         </div>
         <AeroPlan mode={mode} />
         <div className="vs-lab-visual-foot">
-          <span>Flow →</span>
-          <span>{current.balance} balance</span>
+          <span>جریان</span>
+          <span>تعادل {current.balance}</span>
         </div>
       </div>
 
@@ -52,20 +52,20 @@ export function VelocityLab() {
 
         <div className="vs-readout" aria-live="polite">
           <div className="vs-readout-top">
-            <p>Mode / {current.name}</p>
+            <p>حالت / {current.name}</p>
             <p>{current.note}</p>
           </div>
 
           <div className="vs-metrics">
             <div>
-              <span>Downforce</span>
+              <span>نیروی پایین‌فشار</span>
               <strong>{current.downforce}</strong>
               <div className="vs-bar" aria-hidden="true">
                 <i style={{ width: `${current.downforceValue}%` }} />
               </div>
             </div>
             <div>
-              <span>Drag</span>
+              <span>پسا</span>
               <strong>{current.drag}</strong>
               <div className="vs-bar" aria-hidden="true">
                 <i style={{ width: `${current.dragValue}%` }} />
@@ -77,15 +77,15 @@ export function VelocityLab() {
 
           <dl className="vs-mode-rows">
             <div>
-              <dt>Front flap</dt>
+              <dt>فلپ جلو</dt>
               <dd>{current.front}</dd>
             </div>
             <div>
-              <dt>Rear wing</dt>
+              <dt>بال عقب</dt>
               <dd>{current.rear}</dd>
             </div>
             <div>
-              <dt>Balance</dt>
+              <dt>تعادل</dt>
               <dd>{current.balance}</dd>
             </div>
           </dl>

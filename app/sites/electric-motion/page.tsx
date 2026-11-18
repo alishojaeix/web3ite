@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ElectricSite } from "@/components/sites/electric-motion/ElectricSite";
 import "./electric.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Electric Motion — Forward, quietly.";
+const title = "الکتریک موشن — به پیش، بی‌صدا";
 const description =
-  "Electric Motion is a fictional urban electric mobility concept website featuring a compact four-seat city pod, a semicircular charging arch, an interactive city trip & charge explainer, and a pilot hub directory.";
+  "یک صفحهٔ محصول نمونه برای خودروی برقی شهری: کپسول چهارنفره، طاق شارژ، فهرست ایستگاه‌ها، مشخصات نمایشی و فرم رانندگی آزمایشی. برند خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=electric-motion",
         width: 1200,
         height: 630,
-        alt: "Electric Motion — urban electric mobility preview",
+        alt: "پیش‌نمایش وب‌سایت الکتریک موشن — حمل‌ونقل برقی شهری",
       },
     ],
   },

@@ -42,7 +42,7 @@ export function SubscriptionBuilder() {
           site: "obsidian-roastery",
           name: String(data.get("name") ?? ""),
           email: String(data.get("email") ?? ""),
-          message: `Roast list request — ${summary}.`,
+          message: `درخواست فهرست بو داده — ${summary}.`,
           ageConfirmed: false,
         }),
       });
@@ -50,18 +50,18 @@ export function SubscriptionBuilder() {
 
       if (!response.ok) {
         setStatus("error");
-        setMessage(payload.error ?? "The request could not be stored. Please try again.");
+        setMessage(payload.error ?? "ثبت درخواست ممکن نشد. لطفاً دوباره تلاش کنید.");
         return;
       }
 
       form.reset();
       setStatus("success");
       setMessage(
-        "You are on the demonstration roast list. No payment was taken and no coffee will be shipped."
+        "شما در فهرست نمایشی رست ثبت شدید؛ هیچ پرداختی انجام نشد و قهوه‌ای ارسال نخواهد شد."
       );
     } catch {
       setStatus("error");
-      setMessage("The request could not be sent. Check your connection and try again.");
+      setMessage("ارسال درخواست ممکن نشد. اتصال خود را بررسی و دوباره تلاش کنید.");
     }
   }
 
@@ -69,7 +69,7 @@ export function SubscriptionBuilder() {
     <div className="ob-subscribe-grid">
       <div className="ob-builder">
         <fieldset className="ob-fieldset">
-          <legend>Cadence</legend>
+          <legend>دوره</legend>
           <div className="ob-options">
             {subscription.cadences.map((option) => (
               <label key={option.id} className="ob-option">
@@ -90,7 +90,7 @@ export function SubscriptionBuilder() {
         </fieldset>
 
         <fieldset className="ob-fieldset">
-          <legend>Grind</legend>
+          <legend>آسیاب</legend>
           <div className="ob-options ob-options--three">
             {subscription.grinds.map((option) => (
               <label key={option.id} className="ob-option">
@@ -111,7 +111,7 @@ export function SubscriptionBuilder() {
         </fieldset>
 
         <fieldset className="ob-fieldset">
-          <legend>Size</legend>
+          <legend>اندازه</legend>
           <div className="ob-options">
             {subscription.sizes.map((option) => (
               <label key={option.id} className="ob-option">
@@ -132,37 +132,37 @@ export function SubscriptionBuilder() {
         </fieldset>
 
         <form className="ob-subscribe-form" onSubmit={onSubmit}>
-          <p className="ob-mini-label">Join the list</p>
+          <p className="ob-mini-label">عضویت در فهرست</p>
           <div className="ob-subscribe-fields">
             <label>
-              <span>Name</span>
+              <span>نام</span>
               <input
                 name="name"
                 type="text"
                 autoComplete="name"
                 required
                 maxLength={120}
-                placeholder="Your name"
+                placeholder="نام شما"
               />
             </label>
             <label>
-              <span>Email</span>
+              <span>ایمیل</span>
               <input
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
                 maxLength={180}
-                placeholder="you@example.com"
+                placeholder="you@example.com" dir="ltr"
               />
             </label>
           </div>
           <button type="submit" className="ob-btn ob-btn--brass" disabled={status === "sending"}>
-            {status === "sending" ? "Sending…" : "Request the roast list"}
+            {status === "sending" ? "در حال ارسال…" : "دریافت فهرست رست"}
             <ArrowUpRight size={15} aria-hidden="true" />
           </button>
           <p className="ob-form-note">
-            Demo form · no email is sent. Please do not submit real personal details.
+            فرم نمایشی است و ایمیلی ارسال نمی‌شود. لطفاً اطلاعات شخصی واقعی وارد نکنید.
           </p>
           <p className={`ob-form-status ob-form-status--${status}`} role="status" aria-live="polite">
             {message}
@@ -171,11 +171,11 @@ export function SubscriptionBuilder() {
       </div>
 
       <aside className="ob-plan" aria-labelledby="ob-plan-title">
-        <p className="ob-mini-label">Your selection</p>
+        <p className="ob-mini-label">انتخاب شما</p>
         <h3 id="ob-plan-title">
           <span aria-hidden="true">£</span>
           {selectedSize.price}
-          <small>/ {cadence === "weekly" ? "week" : "fortnight"}</small>
+          <small>/ {cadence === "weekly" ? "هفته" : "دو هفته"}</small>
         </h3>
         <p className="ob-plan-summary">{summary}</p>
 
@@ -189,11 +189,11 @@ export function SubscriptionBuilder() {
         </ul>
 
         <div className="ob-plan-next">
-          <p className="ob-mini-label">Next roast</p>
-          <p>Thursday · No. 01 Kenia AA</p>
+          <p className="ob-mini-label">رست بعدی</p>
+          <p>پنجشنبه · شمارهٔ ۰۱ کنیا AA</p>
           <p className="ob-plan-next-note">
-            You can change the coffee after the first delivery. The roast list is
-            chosen by the roastery, not the algorithm.
+            پس از نخستین ارسال می‌توانید قهوه را عوض کنید. فهرست بو داده را
+            رُستری انتخاب می‌کند، نه الگوریتم.
           </p>
         </div>
 

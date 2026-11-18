@@ -31,7 +31,7 @@ export function CoffeeList() {
 
   return (
     <div className="at-menu">
-      <div className="at-tabs" role="tablist" aria-label="Coffee list">
+      <div className="at-tabs" role="tablist" aria-label="فهرست قهوه">
         {menuGroups.map((item, index) => (
           <button
             key={item.id}
@@ -84,8 +84,8 @@ export function CoffeeList() {
             ))}
           </ul>
           <p className="at-menu-foot">
-            Oat milk is our house milk. Prices include service; no card fee. Menu is
-            illustrative.
+            شیر جو، شیر پیشنهادی ماست. قیمت‌ها شامل سرویس است؛ کارمزد
+            کارت گرفته نمی‌شود. منو نمایشی است.
           </p>
         </div>
       ))}

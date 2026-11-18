@@ -5,14 +5,20 @@ import { Search, SlidersHorizontal, X } from "lucide-react";
 import { CATEGORY_LABELS, TEMPLATE_CATEGORIES } from "@/types/template";
 import type { Template, TemplateCategory } from "@/types/template";
 import { TemplateCard } from "./TemplateCard";
+import { fa } from "@/lib/i18n/fa";
+import { faNumber } from "@/lib/i18n/format";
 
 export function TemplateGrid({
   templates,
   initialCategory = "all",
+  ownedIds = [],
 }: {
   templates: Template[];
   initialCategory?: TemplateCategory | "all";
+  /** Template ids the signed-in visitor already owns. */
+  ownedIds?: string[];
 }) {
+  const owned = useMemo(() => new Set(ownedIds), [ownedIds]);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<TemplateCategory | "all">(initialCategory);
   const deferredQuery = useDeferredValue(query);
@@ -47,21 +53,21 @@ export function TemplateGrid({
       <div className="sticky top-[5.25rem] z-30 -mx-2 mb-6 rounded-lg border border-white/[0.07] bg-[#07080b]/82 p-2.5 backdrop-blur-xl">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
           <label className="relative flex-1">
-            <span className="sr-only">Search templates</span>
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6f6a62]" />
+            <span className="sr-only">{fa.catalog.searchLabel}</span>
+            <Search className="pointer-events-none absolute start-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6f6a62]" />
             <input
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search by name, industry or capability"
-              className="h-11 w-full rounded-sm border border-white/[0.08] bg-black/25 pl-10 pr-10 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/45"
+              placeholder={fa.catalog.searchPlaceholder}
+              className="h-11 w-full rounded-sm border border-white/[0.08] bg-black/25 pe-10 ps-10 text-[14px] text-[#f6f1ea] outline-none transition-colors placeholder:text-[#5f5b54] focus:border-[#d4af7a]/45"
             />
             {query ? (
               <button
                 type="button"
                 onClick={() => setQuery("")}
-                className="absolute right-2.5 top-1/2 grid h-6 w-6 -translate-y-1/2 place-items-center rounded-full text-[#8a847c] hover:bg-white/[0.06] hover:text-[#f6f1ea]"
-                aria-label="Clear search"
+                className="absolute end-2.5 top-1/2 grid h-6 w-6 -translate-y-1/2 place-items-center rounded-full text-[#8a847c] hover:bg-white/[0.06] hover:text-[#f6f1ea]"
+                aria-label={fa.catalog.clearSearch}
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -69,16 +75,16 @@ export function TemplateGrid({
           </label>
 
           <div className="flex items-center gap-2 overflow-x-auto pb-0.5">
-            <span className="hidden items-center gap-1.5 pl-1 pr-2 text-[10px] uppercase tracking-[0.16em] text-[#6f6a62] lg:flex">
+            <span className="hidden items-center gap-1.5 ps-1 pe-2 text-[13px] tracking-[0.16em] text-[#6f6a62] lg:flex">
               <SlidersHorizontal className="h-3 w-3" />
-              Filter
+              {fa.catalog.filters}
             </span>
             <Chip
               active={category === "all"}
               onClick={() => setCategory("all")}
               count={templates.length}
             >
-              All
+              {fa.catalog.all}
             </Chip>
             {TEMPLATE_CATEGORIES.map((id) => (
               <Chip
@@ -95,8 +101,8 @@ export function TemplateGrid({
       </div>
 
       <div className="mb-6 flex items-center justify-between gap-4">
-        <p className="text-[11px] uppercase tracking-[0.16em] text-[#7f7a72]">
-          {visible.length} of {templates.length} templates
+        <p className="text-[13px] tracking-[0.16em] text-[#7f7a72]">
+          {faNumber(visible.length)} از {faNumber(templates.length)} قالب
           {category !== "all" ? (
             <span className="text-[#b8b3aa]"> · {CATEGORY_LABELS[category]}</span>
           ) : null}
@@ -108,21 +114,20 @@ export function TemplateGrid({
               setQuery("");
               setCategory("all");
             }}
-            className="text-[10px] uppercase tracking-[0.16em] text-[#d4af7a] hover:text-[#f0d9a8]"
+            className="text-[13px] tracking-[0.16em] text-[#d4af7a] hover:text-[#f0d9a8]"
           >
-            Reset
+            {fa.catalog.clearFilters}
           </button>
         ) : null}
       </div>
 
       {visible.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.015] px-6 py-24 text-center">
-          <p className="font-display text-[30px] tracking-[-0.03em] text-[#f6f1ea]">
-            Nothing on this aisle
+          <p className="font-display text-[30px] tracking-[0.01em] text-[#f6f1ea]">
+            {fa.catalog.noResults}
           </p>
           <p className="mt-3 max-w-sm text-[14px] leading-relaxed text-[#9a958c]">
-            Clear the search or choose another industry. New rooms are added to the
-            catalog as they are finished.
+            {fa.catalog.noResultsBody}
           </p>
           <button
             type="button"
@@ -132,13 +137,18 @@ export function TemplateGrid({
             }}
             className="mt-7 rounded-sm bg-[#f4efe6] px-5 py-3 text-[13px] font-medium text-[#111]"
           >
-            Reset filters
+            پاک کردن فیلترها
           </button>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {visible.map((template, index) => (
-            <TemplateCard key={template.id} template={template} index={index} />
+            <TemplateCard
+              key={template.id}
+              template={template}
+              index={index}
+              owned={owned.has(template.id)}
+            />
           ))}
         </div>
       )}
@@ -162,14 +172,16 @@ function Chip({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-[10px] uppercase tracking-[0.14em] transition-colors ${
+      className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-[13px] tracking-[0.14em] transition-colors ${
         active
           ? "border-[#d4af7a]/45 bg-[#d4af7a]/12 text-[#f0d9a8]"
           : "border-white/[0.08] text-[#8f8a81] hover:border-white/[0.16] hover:text-[#e8e4dc]"
       }`}
     >
       {children}
-      <span className={active ? "text-[#d4af7a]/70" : "text-[#5f5b54]"}>{count}</span>
+      <span className={active ? "text-[#d4af7a]/70" : "text-[#5f5b54]"}>
+        {faNumber(count)}
+      </span>
     </button>
   );
 }

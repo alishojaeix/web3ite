@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { MaisonSite } from "@/components/sites/maison-dining/MaisonSite";
 import "./maison.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Maison Dining — A table set for the evening";
+const title = "مزون داینینگ — میزی چیده‌شده برای شب";
 const description =
-  "A sample fine-dining website: one seasonal tasting menu, twelve seats around an open pass, a room plan, an evening timeline and a working reservation request form. Fictional Paris venue built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای اتاق غذاخوری پاریسی: کارت فصلی، منوی کوتاه، نقشهٔ کارت‌پستالی محله و فرم رزرو میز. رستوران خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=maison-dining",
         width: 1200,
         height: 630,
-        alt: "Maison Dining website preview",
+        alt: "پیش‌نمایش وب‌سایت مزون داینینگ",
       },
     ],
   },

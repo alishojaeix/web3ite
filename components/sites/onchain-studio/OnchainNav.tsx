@@ -20,13 +20,13 @@ export function OnchainNav() {
   return (
     <header className="oc-nav">
       <div className="oc-wrap oc-nav-bar">
-        <a href="#top" className="oc-brand" aria-label="Onchain Studio, back to top">
+        <a href="#top" className="oc-brand" aria-label="آن‌چین استودیو، بازگشت به بالا">
           <BlockMark className="oc-brand-mark" />
-          <span className="oc-brand-word">Onchain</span>
-          <span className="oc-brand-sub">Product studio</span>
+          <span className="oc-brand-word">آن‌چین</span>
+          <span className="oc-brand-sub">استودیوی محصول</span>
         </a>
 
-        <nav aria-label="Primary" className="oc-nav-links">
+        <nav aria-label="پیمایش اصلی" className="oc-nav-links">
           {onchainNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -36,13 +36,13 @@ export function OnchainNav() {
 
         <div className="oc-nav-tail">
           <a href="#contact" className="oc-nav-cta">
-            Start a project
+            آغاز یک پروژه
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="oc-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="oc-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -54,7 +54,7 @@ export function OnchainNav() {
 
       {open ? (
         <div className="oc-mobile-wrap">
-          <nav id="oc-mobile-nav" aria-label="Mobile navigation" className="oc-mobile-nav">
+          <nav id="oc-mobile-nav" aria-label="پیمایش موبایل" className="oc-mobile-nav">
             {onchainNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -62,13 +62,13 @@ export function OnchainNav() {
               </a>
             ))}
             <a href="#contact" className="oc-mobile-cta" onClick={() => setOpen(false)}>
-              Start a project
+              آغاز یک پروژه
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="oc-mobile-note">
-              12 Ledger Lane, London E2
+              کوچهٔ لجر ۱۲، لندن E2
               <br />
-              Project brief · Monday to Friday
+              بریف پروژه · دوشنبه تا جمعه
             </p>
           </nav>
         </div>

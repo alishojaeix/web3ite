@@ -93,7 +93,7 @@
 .at-skip {
   position: fixed;
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   z-index: 120;
   transform: translateY(-180%);
   padding: 12px 18px;
@@ -117,7 +117,7 @@
 .at-display {
   font-family: var(--at-serif);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
   line-height: 0.94;
 }
 
@@ -132,7 +132,6 @@
   font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--at-accent);
 }
 
@@ -141,7 +140,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -242,9 +240,9 @@
 .at-nav-links a::after {
   content: "";
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   bottom: 0;
-  left: 0;
+  inset-inline-start: 0;
   height: 1px;
   background: var(--at-accent);
   transform: scaleX(0);
@@ -271,7 +269,6 @@
   font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
 }
 
@@ -333,9 +330,8 @@
   border-radius: 999px;
   background: var(--at-ink);
   color: var(--at-cream);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 @media (min-width: 900px) {
@@ -376,10 +372,9 @@
   align-items: center;
   gap: 10px;
   margin: 0;
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -395,7 +390,7 @@
   margin: 22px 0 24px;
   font-size: clamp(3.3rem, 8vw, 7rem);
   line-height: 0.87;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-hero h1 em {
@@ -469,7 +464,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -548,7 +542,7 @@
 
 .at-lot-card {
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   bottom: 16px;
   width: min(252px, 71%);
   padding: 19px 20px;
@@ -565,14 +559,13 @@
   font-family: var(--at-serif);
   font-size: 1.9rem;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-lot-origin {
   margin: 0;
   font-size: 9.5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--at-accent);
 }
 
@@ -594,20 +587,18 @@
   padding: 4px 8px;
   border: 1px solid var(--at-line);
   border-radius: 999px;
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
 .at-art-caption {
   position: absolute;
   bottom: 0;
-  left: 2px;
+  inset-inline-start: 2px;
   margin: 0;
   font-size: 9.5px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -622,7 +613,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -694,7 +684,7 @@
   display: inline-flex;
   align-items: center;
   gap: 30px;
-  padding-left: 30px;
+  padding-inline-start: 30px;
   font-family: var(--at-serif);
   font-size: clamp(1.05rem, 1.7vw, 1.4rem);
   font-style: italic;
@@ -768,7 +758,7 @@
   font-family: var(--at-serif);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 1.04;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--at-ink);
 }
 
@@ -778,7 +768,6 @@
   font-size: 9.5px;
   font-style: normal;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -808,7 +797,7 @@
   font-family: var(--at-serif);
   font-size: 1.45rem;
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-story-details p {
@@ -898,17 +887,16 @@
   padding: 0 15px;
   border: 1px solid transparent;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   white-space: nowrap;
   color: var(--at-muted);
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
 .at-tab > span {
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   color: #9a8d7a;
 }
@@ -973,7 +961,7 @@
   font-size: clamp(1.5rem, 2.2vw, 1.9rem);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-pill {
@@ -984,7 +972,6 @@
   font-size: 8.5px;
   font-weight: 500;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--at-accent);
 }
 
@@ -992,7 +979,6 @@
   margin: 7px 0 8px;
   font-size: 9.5px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--at-accent);
 }
 
@@ -1013,7 +999,7 @@
 }
 
 .at-menu-price span {
-  margin-right: 1px;
+  margin-inline-end: 1px;
   font-size: 0.64em;
   color: var(--at-muted);
 }
@@ -1044,14 +1030,13 @@
   font-size: clamp(2.1rem, 3.4vw, 2.9rem);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-lot-panel-origin {
   margin: 0;
   font-size: 9.5px;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: #b9ad9b;
 }
 
@@ -1076,7 +1061,7 @@
 
 .at-lot-panel dd {
   margin: 0;
-  text-align: right;
+  text-align: end;
   color: rgba(243, 237, 225, 0.92);
 }
 
@@ -1095,7 +1080,7 @@
   margin: 24px 0 0;
   padding-top: 16px;
   border-top: 1px solid rgba(243, 237, 225, 0.16);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.04em;
   color: rgba(243, 237, 225, 0.72);
 }
@@ -1194,7 +1179,7 @@
   font-family: var(--at-serif);
   font-size: clamp(1.6rem, 2.6vw, 2.2rem);
   line-height: 1.12;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-brew-stats {
@@ -1209,10 +1194,9 @@
 }
 
 .at-brew-stats dt {
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -1270,7 +1254,7 @@
   font-family: var(--at-serif);
   font-size: clamp(2.3rem, 4vw, 3.1rem);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-timer-controls {
@@ -1289,10 +1273,9 @@
   border-radius: 999px;
   background: var(--at-ink);
   color: var(--at-cream);
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition: background-color 200ms ease;
 }
 
@@ -1339,7 +1322,7 @@
 
 .at-brew-steps li > span {
   padding-top: 4px;
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--at-accent);
 }
@@ -1433,7 +1416,7 @@
 }
 
 .at-room-title span {
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.13em;
   color: var(--at-accent);
 }
@@ -1443,7 +1426,7 @@
   font-family: var(--at-serif);
   font-size: 1.7rem;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-room-card figcaption > p {
@@ -1457,9 +1440,8 @@
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px solid var(--at-line);
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--at-ink-soft);
 }
 
@@ -1521,10 +1503,9 @@
 }
 
 .at-entry-date {
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -1532,7 +1513,7 @@
   font-family: var(--at-serif);
   font-size: clamp(1.6rem, 2.8vw, 2.15rem);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-fa, 0);
   transition: color 200ms ease;
 }
 
@@ -1639,7 +1620,7 @@
   font-family: var(--at-serif);
   font-size: 1.4rem;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-fa, 0);
   color: var(--at-cream);
 }
 
@@ -1722,9 +1703,8 @@
   margin: 0;
   padding: 10px 14px;
   background: #e9dfce;
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: #6b5a45;
 }
 
@@ -1742,7 +1722,7 @@
   font-size: clamp(1.7rem, 2.6vw, 2.15rem);
   font-weight: 400;
   line-height: 1.06;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-form-intro {
@@ -1764,7 +1744,6 @@
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--at-muted);
 }
 
@@ -1827,7 +1806,7 @@
 .at-form-note {
   max-width: 28ch;
   margin: 0;
-  font-size: 10px;
+  font-size: 0.8125rem;
   line-height: 1.55;
   color: var(--at-muted);
 }
@@ -1898,7 +1877,7 @@
   font-family: var(--at-serif);
   font-size: clamp(2.7rem, 5vw, 4.2rem);
   line-height: 0.96;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .at-footer-word em {
@@ -1920,7 +1899,6 @@
   margin-top: 20px;
   font-size: 9.5px;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   color: var(--at-accent-soft) !important;
 }
 
@@ -1931,10 +1909,9 @@
 
 .at-footer-label {
   margin: 0 0 12px;
-  font-size: 9px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: #a49d90;
 }
 

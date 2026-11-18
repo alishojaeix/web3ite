@@ -27,17 +27,17 @@ import {
 
 export function NeuralSite() {
   return (
-    <div className="ns-site" id="top">
+    <div className="ns-site" id="top" dir="rtl">
       <a className="ns-skip" href="#ns-main">
-        Skip to content
+        رفتن به محتوای اصلی
       </a>
 
       <NeuralNav />
 
-      <main id="ns-main">
+      <main id="ns-main" lang="fa" dir="rtl">
         <section className="ns-hero" aria-labelledby="ns-hero-title">
           <div className="ns-wrap ns-hero-top">
-            <p>4 Signal Yard · London E2</p>
+            <p>سیگنال‌یارد ۴ · لندن E2</p>
             <p className="ns-hero-status">
               <span className="ns-status-dot" aria-hidden="true" />
               {hero.status}
@@ -61,11 +61,11 @@ export function NeuralSite() {
 
               <div className="ns-actions">
                 <a className="ns-btn ns-btn--solid" href="#systems">
-                  See the systems
+                  مشاهدهٔ سیستم‌ها
                   <ArrowDown size={15} aria-hidden="true" />
                 </a>
                 <a className="ns-btn ns-btn--line" href="#contact">
-                  Start a conversation
+                  شروع گفت‌وگو
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               </div>
@@ -97,7 +97,7 @@ export function NeuralSite() {
 
           <div className="ns-wrap ns-hero-foot">
             <a className="ns-scroll-cue" href="#systems">
-              Read the systems
+              خواندن سیستم‌ها
               <ArrowDown size={14} aria-hidden="true" />
             </a>
             <p>{hero.footNote}</p>
@@ -188,7 +188,7 @@ export function NeuralSite() {
 
                   <figure className="ns-project-figure">
                     <SystemDiagram variant={project.variant} />
-                    <figcaption>Illustrative system · {project.index}</figcaption>
+                    <figcaption>سیستم نمایشی · {project.index}</figcaption>
                   </figure>
                 </article>
               ))}
@@ -224,7 +224,7 @@ export function NeuralSite() {
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
                   <p className="ns-step-output">
-                    <span>Output</span>
+                    <span>خروجی</span>
                     {step.output}
                   </p>
                 </li>
@@ -262,10 +262,10 @@ export function NeuralSite() {
               </ul>
             </div>
 
-            <aside className="ns-studio-card" aria-label="Studio facts">
+            <aside className="ns-studio-card" aria-label="واقعیت‌های استودیو">
               <div className="ns-studio-card-head">
-                <span>Studio / 04</span>
-                <span>London · E2</span>
+                <span>استودیو / ۰۴</span>
+                <span>لندن · E2</span>
               </div>
 
               <dl className="ns-facts">
@@ -327,7 +327,7 @@ export function NeuralSite() {
               <p className="ns-section-lede">{contact.intro}</p>
 
               <div className="ns-bring">
-                <p className="ns-mini-label">What to bring</p>
+                <p className="ns-mini-label">چه چیزی همراه بیاورید</p>
                 <ul>
                   {contact.bring.map((item) => (
                     <li key={item}>
@@ -375,21 +375,21 @@ export function NeuralSite() {
             <div className="ns-footer-brand">
               <p className="ns-footer-word">
                 <Mark className="ns-footer-mark" />
-                Neural <span>Studio</span>
+                Neural <span>استودیو</span>
               </p>
               <p>
-                Applied AI, built around the interface. Evaluation, provenance
-                and a human route in.
+                هوش مصنوعی کاربردی، ساخته‌شده حول رابط. ارزیابی، منشأ و
+                یک مسیر انسانی برای ورود.
               </p>
               <a href="#top" className="ns-footer-back">
-                Back to top
+                بازگشت به بالا
                 <ArrowUp size={14} aria-hidden="true" />
               </a>
             </div>
 
             <div className="ns-footer-cols">
               <div>
-                <p className="ns-footer-label">Studio</p>
+                <p className="ns-footer-label">استودیو</p>
                 <address>
                   {contact.address.map((line) => (
                     <span key={line}>{line}</span>
@@ -402,7 +402,7 @@ export function NeuralSite() {
               </div>
 
               <div>
-                <p className="ns-footer-label">Explore</p>
+                <p className="ns-footer-label">کاوش</p>
                 {neuralNav.map((item) => (
                   <a key={item.href} href={item.href}>
                     {item.label}
@@ -411,22 +411,21 @@ export function NeuralSite() {
               </div>
 
               <div>
-                <p className="ns-footer-label">Template</p>
-                <Link href="/templates/neural-studio">Template details</Link>
-                <Link href="/checkout/neural-studio">Use this template</Link>
-                <Link href="/templates">All templates</Link>
+                <p className="ns-footer-label">قالب</p>
+                <Link href="/templates/neural-studio">جزئیات قالب</Link>
+                <Link href="/checkout/neural-studio">خرید این قالب</Link>
+                <Link href="/templates">همهٔ قالب‌ها</Link>
               </div>
             </div>
           </div>
 
           <div className="ns-footer-bottom">
             <p>
-              © 2026 Neural Studio (fictional). A demonstration website: the
-              studio, systems and details are illustrative. No project is
-              accepted and no payment is taken.
+              © ۲۰۲۶ استودیوی نیورال (خیالی). یک وب‌سایت نمایشی: استودیو، سیستم‌ها و
+              جزئیات نمایشی‌اند. هیچ پروژه‌ای پذیرفته نمی‌شود و پولی گرفته نمی‌شود.
             </p>
             <p>
-              Template by <Link href="/">Web3ite</Link>.
+              قالب از <Link href="/">Web3ite</Link>.
             </p>
           </div>
         </div>

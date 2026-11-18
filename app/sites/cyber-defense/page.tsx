@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { CyberSite } from "@/components/sites/cyber-defense/CyberSite";
 import "./cyber.css";
+import "@/app/sites/templates-typography.css";
 
-const title = "Cyber Defense — Prepared before impact.";
+const title = "سایبر دیفنس — آماده پیش از ضربه";
 const description =
-  "A sample managed-response website: a faceted shield and scan rings, a four-stage response model, illustrative response clock, three evidence artefacts and a response brief form. Fictional practice built as a Web3ite template.";
+  "یک وب‌سایت نمونه برای شرکت امنیت سایبری: تمرین‌های خشک‌اجرا، خط زمانی رخداد، پنل‌های وضعیت و فرم درخواست ارزیابی. شرکت خیالی، ساخته‌شده به‌عنوان قالب Web3ite.";
 
 export const metadata: Metadata = {
   title,
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/api/og?site=cyber-defense",
         width: 1200,
         height: 630,
-        alt: "Cyber Defense website preview",
+        alt: "پیش‌نمایش وب‌سایت سایبر دیفنس",
       },
     ],
   },

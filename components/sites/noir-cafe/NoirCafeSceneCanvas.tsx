@@ -27,7 +27,7 @@ class Boundary extends Component<
 
   render() {
     if (this.state.error) {
-      return <SceneError theme={noirCafe.theme} label="Noir Café" />;
+      return <SceneError theme={noirCafe.theme} label="نوآر کافه" />;
     }
     return this.props.children;
   }
@@ -60,17 +60,17 @@ export function NoirCafeSceneCanvas() {
 
   if (webgl === false) {
     return (
-      <div className="grid aspect-[4/3] place-items-center border border-white/10 bg-[radial-gradient(ellipse_at_50%_30%,#49341f,#090806_70%)] p-8 text-center" role="img" aria-label="Static Noir Café coffee scene; WebGL is unavailable">
+      <div className="grid aspect-[4/3] place-items-center border border-white/10 bg-[radial-gradient(ellipse_at_50%_30%,#49341f,#090806_70%)] p-8 text-center" role="img" aria-label="صحنهٔ ثابت قهوهٔ Noir Café؛ WebGL در دسترس نیست">
         <div>
-          <p className="font-editorial text-3xl text-[#efe7dc]">The coffee, in stillness.</p>
-          <p className="mt-3 max-w-sm text-sm leading-6 text-[#b8ad9f]">This browser cannot render the optional 3D scene. The rest of the website is available as usual.</p>
+          <p className="font-editorial text-3xl text-[#efe7dc]">قهوه، در آرامش.</p>
+          <p className="mt-3 max-w-sm text-sm leading-6 text-[#b8ad9f]">این مرورگر نمی‌تواند صحنهٔ سه‌بعدی اختیاری را نمایش دهد. بقیهٔ وب‌سایت همیشه در دسترس است.</p>
         </div>
       </div>
     );
   }
 
   if (webgl === null) {
-    return <div className="aspect-[4/3] bg-[#090806]" role="status" aria-label="Checking 3D support" />;
+    return <div className="aspect-[4/3] bg-[#090806]" role="status" aria-label="بررسی پشتیبانی سه‌بعدی" />;
   }
 
   return (
@@ -99,7 +99,7 @@ export function NoirCafeSceneCanvas() {
         </Scene>
       </SceneBoundary>
       <p className="pointer-events-none absolute bottom-4 left-4 rounded-sm bg-black/60 px-3 py-2 text-xs text-white/80">
-        Drag to turn the cup
+        برای چرخاندن فنجان بکشید
       </p>
     </div>
   );

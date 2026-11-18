@@ -20,15 +20,15 @@ export function ElectricNav() {
   return (
     <header className="em-nav">
       <div className="em-wrap em-nav-bar">
-        <a href="#top" className="em-brand" aria-label="Electric Motion, back to top">
+        <a href="#top" className="em-brand" aria-label="الکتریک موشن، بازگشت به بالا">
           <span className="em-brand-badge">
             <PodMark className="em-brand-mark" />
           </span>
-          <span className="em-brand-word">Electric Motion</span>
-          <span className="em-brand-sub">Urban mobility</span>
+          <span className="em-brand-word">الکتریک موشن</span>
+          <span className="em-brand-sub">حمل‌ونقل شهری</span>
         </a>
 
-        <nav aria-label="Primary" className="em-nav-links">
+        <nav aria-label="پیمایش اصلی" className="em-nav-links">
           {electricNav.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -38,13 +38,13 @@ export function ElectricNav() {
 
         <div className="em-nav-tail">
           <a href="#contact" className="em-nav-cta">
-            Book a test drive
+            رزرو آزمایش رانندگی
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>
           <button
             type="button"
             className="em-nav-toggle"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={open ? "بستن پیمایش" : "باز کردن پیمایش"}
             aria-expanded={open}
             aria-controls="em-mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -56,7 +56,7 @@ export function ElectricNav() {
 
       {open ? (
         <div className="em-mobile-wrap">
-          <nav id="em-mobile-nav" aria-label="Mobile navigation" className="em-mobile-nav">
+          <nav id="em-mobile-nav" aria-label="پیمایش موبایل" className="em-mobile-nav">
             {electricNav.map((item, index) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
@@ -64,13 +64,13 @@ export function ElectricNav() {
               </a>
             ))}
             <a href="#contact" className="em-mobile-cta" onClick={() => setOpen(false)}>
-              Book a test drive
+              رزرو آزمایش رانندگی
               <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <p className="em-mobile-note">
-              3 Depot Lane, London SE1 4QT
+              خیابان دیپو ۳، لندن SE1 4QT
               <br />
-              Sample mobility studio &amp; charge network
+              استودیوی حمل‌ونقل نمونه و شبکهٔ شارژ
             </p>
           </nav>
         </div>

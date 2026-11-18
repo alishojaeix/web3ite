@@ -6,8 +6,8 @@
 export function CanisterArt({
   prefix = "ob-hero",
   number = "01",
-  name = "Kenia AA",
-  origin = "Nyeri, Kenya",
+  name = "کنیا AA",
+  origin = "نیِری، کنیا",
   className = "ob-canister-svg",
 }: {
   prefix?: string;
@@ -28,10 +28,10 @@ export function CanisterArt({
       role="img"
       aria-labelledby={`${prefix}-title ${prefix}-desc`}
     >
-      <title id={`${prefix}-title`}>{`The Obsidian canister for ${name}`}</title>
+      <title id={`${prefix}-title`}>{`قوطی Obsidian برای ${name}`}</title>
       <desc id={`${prefix}-desc`}>
-        A matte black coffee canister with a brass seal and a printed paper
-        label, standing on a dark plinth against a ring of warm light.
+        یک قوطی قهوهٔ مشکی مات با مهر برنجی و برچسب کاغذی چاپی، روی سکویی
+        تیره در برابر حلقه‌ای از نور گرم.
       </desc>
       <defs>
         <linearGradient id={body} x1="0" y1="0" x2="1" y2="0">
@@ -159,7 +159,7 @@ export function CanisterArt({
           letterSpacing="2.1"
           fill="#9a9184"
         >
-          SMALL BATCH · 250 G
+          خُرد‌دست · ۲۵۰ گرم
         </text>
         <path d="M232 498 h96" stroke="#4a443a" strokeWidth="1" />
         <text
@@ -171,7 +171,7 @@ export function CanisterArt({
           letterSpacing="1.8"
           fill="#6e665a"
         >
-          ROASTED 08.10.26
+          بوداده ۰۸.۱۰.۲۶
         </text>
 
         <path d="M203 232 v252" stroke="#ffffff" strokeOpacity="0.06" strokeWidth="10" strokeLinecap="round" />
@@ -183,7 +183,7 @@ export function CanisterArt({
         <path d="M464 470 h-44 M464 470 v-54" />
       </g>
       <g fontFamily="var(--font-body), sans-serif" fontSize="8" letterSpacing="2" fill="#8b8275">
-        <text x="96" y="178">SEALED</text>
+        <text x="96" y="178">مُهر و موم</text>
         <text x="388" y="488">250 G</text>
       </g>
     </svg>
@@ -199,11 +199,8 @@ export function CanisterDrawing() {
       role="img"
       aria-labelledby="ob-drawing-title ob-drawing-desc"
     >
-      <title id="ob-drawing-title">Technical drawing of the Obsidian canister</title>
-      <desc id="ob-drawing-desc">
-        A measured line drawing of the canister: 250 millimetres tall, 86
-        millimetres across, with a brass seal and a printed base.
-      </desc>
+      <title id="ob-drawing-title">نقشهٔ فنی قوطی ابسیدین</title>
+      <desc id="ob-drawing-desc"> ترسیم خطی اندازه‌گیری‌شدهٔ قوطی: ۲۵۰ میلی‌متر بلند و ۸۶ میلی‌متر پهنا، با مهر برنجی و پایهٔ چاپی. </desc>
       <defs>
         <pattern id="ob-drawing-grid" width="28" height="28" patternUnits="userSpaceOnUse">
           <path d="M28 0H0V28" fill="none" stroke="#f1ece3" strokeOpacity="0.07" />
@@ -220,9 +217,9 @@ export function CanisterDrawing() {
         <path d="M130 396 h24 M130 118 h24" />
       </g>
       <g fontFamily="var(--font-body), sans-serif" fontSize="8" letterSpacing="1.8" fill="#cbbda9">
-        <text x="92" y="48">86 MM</text>
-        <text x="399" y="48">BRASS SEAL</text>
-        <text x="148" y="112">250 MM</text>
+        <text x="92" y="48">۸۶ میلی‌متر</text>
+        <text x="399" y="48">مهر برنجی</text>
+        <text x="148" y="112">۲۵۰ میلی‌متر</text>
       </g>
 
       <g stroke="#d7cbb9" strokeWidth="1.4" fill="none">
@@ -248,12 +245,12 @@ export function CanisterDrawing() {
         letterSpacing="1.6"
         fill="#cbbda9"
       >
-        REUSABLE
+        قابل استفادهٔ مجدد
       </text>
 
       <g fontFamily="var(--font-body), sans-serif" fontSize="7.5" letterSpacing="1.4" fill="#877d6e">
-        <text x="36" y="440">OBSIDIAN / CANISTER 01</text>
-        <text x="430" y="440">SCALE 1:2</text>
+        <text x="36" y="440">ابسیدین / قوطی ۰۱</text>
+        <text x="430" y="440">مقیاس ۱:۲</text>
       </g>
     </svg>
   );
@@ -268,12 +265,8 @@ export function RoastCurve() {
       role="img"
       aria-labelledby="ob-curve-title ob-curve-desc"
     >
-      <title id="ob-curve-title">Illustrative roast profile</title>
-      <desc id="ob-curve-desc">
-        A line chart showing bean temperature rising from charge at 180 degrees,
-        through first crack at eight minutes, to a drop at 205 degrees at twelve
-        minutes.
-      </desc>
+      <title id="ob-curve-title">پروفایل نمایشی بو دادن</title>
+      <desc id="ob-curve-desc"> نمودار خطی که دمای دانه را از ۱۸۰ درجه در زمان شارژ تا ترک نخست در دقیقهٔ هشت و سپس تخلیه در ۲۰۵ درجه در دقیقهٔ دوازده نشان می‌دهد. </desc>
       <rect width="640" height="320" fill="none" />
       <g stroke="#f1ece3" strokeOpacity="0.09">
         <path d="M54 42 V264 H604" />
@@ -290,7 +283,7 @@ export function RoastCurve() {
         <text x="260" y="288">6</text>
         <text x="366" y="288">9</text>
         <text x="472" y="288">12</text>
-        <text x="568" y="288">MIN</text>
+        <text x="568" y="288">دقیقه</text>
       </g>
 
       <path
@@ -311,9 +304,9 @@ export function RoastCurve() {
         <path d="M404 42 V264" />
       </g>
       <g fontFamily="var(--font-body), sans-serif" fontSize="8" letterSpacing="1.5" fill="#cbbda9">
-        <text x="296" y="56">YELLOWING</text>
-        <text x="412" y="56">FIRST CRACK</text>
-        <text x="512" y="304">DROP</text>
+        <text x="296" y="56">زرد شدن</text>
+        <text x="412" y="56">ترک نخست</text>
+        <text x="512" y="304">تخلیه</text>
       </g>
       <g fill="#b78b55">
         <circle cx="288" cy="118" r="3.5" />
@@ -333,11 +326,8 @@ export function YardPlan() {
       role="img"
       aria-labelledby="ob-yard-title ob-yard-desc"
     >
-      <title id="ob-yard-title">Schematic plan of 8 Kiln Yard</title>
-      <desc id="ob-yard-desc">
-        An illustrative plan showing Kiln Yard off Hackney Road, the roastery
-        entrance, the tasting counter and the nearest bus stop.
-      </desc>
+      <title id="ob-yard-title">طرح شماتیک کیلن‌یارد ۸</title>
+      <desc id="ob-yard-desc"> طرحی نمایشی که کیلن‌یارد را در کنار جادهٔ هاکنی، ورودی رُستری، پیشخوان چشایی و نزدیک‌ترین ایستگاه اتوبوس را نشان می‌دهد. </desc>
       <defs>
         <pattern id="ob-yard-grid" width="32" height="32" patternUnits="userSpaceOnUse">
           <path d="M32 0H0V32" fill="none" stroke="#f1ece3" strokeOpacity="0.06" />
@@ -384,7 +374,7 @@ export function YardPlan() {
         letterSpacing="1.8"
         fill="#c9b89e"
       >
-        ROASTERY / COUNTER
+        رُستری / پیشخوان
       </text>
       <path d="M312 240 h154" stroke="#b78b55" strokeOpacity="0.5" />
 
@@ -400,12 +390,12 @@ export function YardPlan() {
         letterSpacing="1.6"
         fill="#9d9282"
       >
-        ENTRANCE
+        ورودی
       </text>
 
       <g fontFamily="var(--font-body), sans-serif" fontSize="8" letterSpacing="1.7" fill="#7d7466">
-        <text x="28" y="26">KILN YARD</text>
-        <text x="28" y="330">HACKNEY ROAD</text>
+        <text x="28" y="26">کیلن‌یارد</text>
+        <text x="28" y="330">جادهٔ هاکنی</text>
         <text x="404" y="26">E9</text>
       </g>
 
@@ -420,7 +410,7 @@ export function YardPlan() {
           letterSpacing="1.5"
           fill="#cbbda9"
         >
-          BUS 55 · 254
+          اتوبوس ۵۵ · ۲۵۴
         </text>
       </g>
 
@@ -433,7 +423,7 @@ export function YardPlan() {
         letterSpacing="1.4"
         fill="#7d7466"
       >
-        HACKNEY CENTRAL · 5 MIN
+        Hackney Central · ۵ دقیقه
       </text>
       <text
         x="28"
@@ -443,7 +433,7 @@ export function YardPlan() {
         letterSpacing="1.4"
         fill="#5f584d"
       >
-        ILLUSTRATIVE PLAN · NOT TO SCALE
+        طرح نمایشی · بدون مقیاس
       </text>
     </svg>
   );
@@ -455,7 +445,7 @@ export function SealMark({ number }: { number: string }) {  return (
       viewBox="0 0 80 80"
       className="ob-seal"
       role="img"
-      aria-label={`Obsidian seal, roast number ${number}`}
+      aria-label={`مهر ابسیدین، شمارهٔ رُست ${number}`}
     >
       <circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" strokeWidth="1" />
       <circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.6" />

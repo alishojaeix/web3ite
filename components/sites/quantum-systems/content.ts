@@ -7,233 +7,233 @@
  */
 
 export const qsNav = [
-  { label: "Platform", href: "#platform" },
-  { label: "Research", href: "#research" },
-  { label: "Company", href: "#company" },
+  { label: "پلتفرم", href: "#platform" },
+  { label: "پژوهش", href: "#research" },
+  { label: "شرکت", href: "#company" },
 ] as const;
 
 export const hero = {
-  eyebrow: "Quantum Systems / Precision compute",
-  headline: "Measured",
-  headlineAccent: "in microns.",
+  eyebrow: "کوانتوم سیستمز / پردازش دقیق",
+  headline: "سنجیده‌شده",
+  headlineAccent: "در میکرون",
   intro:
-    "A technical product story for teams working at the edge of compute. Exact language, engineered visuals, no mythology.",
-  status: "Platform brief · documented limits",
-  note: "Sample website concept · fictional company and assembly",
+    "روایتی فنی از محصول برای تیم‌هایی که در لبهٔ پردازش کار می‌کنند. زبان دقیق، تصویرسازی مهندسی‌شده، بدون افسانه.",
+  status: "بریف پلتفرم · محدودیت‌های مستند",
+  note: "مفهوم نمایشی وب‌سایت · شرکت و اسمبلی خیالی",
   caption: [
-    "Assembly 03 — control, calibration, readout",
-    "Illustrative drawing · not to scale",
+    "اسمبلی ۰۳ — کنترل، کالیبراسیون، نمایش",
+    "نقشه‌کشی نمایشی · بدون مقیاس",
   ],
-  footNote: "Precision compute · Modular assembly · Published method",
+  footNote: "پردازش دقیق · اسمبلی مدولار · روش منتشرشده",
 } as const;
 
 export const heroMeta = [
-  { label: "Discipline", value: "Precision compute" },
-  { label: "Architecture", value: "Modular" },
-  { label: "Method", value: "Documented" },
+  { label: "رشته", value: "پردازش دقیق" },
+  { label: "معماری", value: "مدولار" },
+  { label: "روش", value: "مستند" },
 ];
 
 export const platform = {
-  label: "01 / The platform",
-  title: "A system, not a black box.",
+  label: "۰۱ / پلتفرم",
+  title: "یک سامانه، نه یک جعبهٔ سیاه",
   intro:
-    "Control, calibration and readout presented as observable parts. The console, the tolerance note and the telemetry describe the same state — in the same language.",
-  note: "Sample platform description. Capabilities shown are illustrative; no product is sold.",
+    "کنترل، کالیبراسیون و نمایش به‌صورت بخش‌های قابل مشاهده ارائه می‌شوند. کنسول، یادداشت تلورانس و تله‌متری همان وضعیت را توصیف می‌کنند — به همان زبان.",
+  note: "توصیف نمایشی پلتفرم. توانمندی‌های shown شده نمایشی‌اند و محصولی فروخته نمی‌شود.",
   items: [
     {
       index: "01",
-      title: "Control plane",
-      body: "One console for the full assembly. State is visible before an action is taken.",
-      outputs: ["Live state", "Run history", "Operator log"],
+      title: "صفحهٔ کنترل",
+      body: "یک کنسول برای تمام اسمبلی. وضعیت پیش از انجام هر کنش دیده می‌شود.",
+      outputs: ["وضعیت زنده", "تاریخچهٔ اجرا", "گزارش اپراتور"],
     },
     {
       index: "02",
-      title: "Calibration",
-      body: "Tolerance notes and repeatable runs. The method is published with the result.",
-      outputs: ["Calibration note", "Repeatable run", "Method record"],
+      title: "کالیبراسیون",
+      body: "یادداشت‌های تلورانس و اجراهای تکرارپذیر. روش همراه نتیجه منتشر می‌شود.",
+      outputs: ["یادداشت کالیبراسیون", "اجرای تکرارپذیر", "سابقهٔ روش"],
     },
     {
       index: "03",
-      title: "Readout",
-      body: "Clear telemetry, no hidden state. What the system knows, the operator knows.",
-      outputs: ["Live telemetry", "Fault states", "Export"],
+      title: "نمایش",
+      body: "تله‌متری روشن، بدون وضعیت پنهان. آنچه سامانه می‌داند، اپراتور هم می‌داند.",
+      outputs: ["تله‌متری زنده", "حالت‌های خطا", "خروجی"],
     },
     {
       index: "04",
-      title: "Research",
-      body: "Published methods, limits and open questions. Precision is a practice, not a claim.",
-      outputs: ["Method note", "Limits", "Open questions"],
+      title: "پژوهش",
+      body: "روش‌های منتشرشده، محدودیت‌ها و پرسش‌های باز. دقت یک تمرین است، نه یک ادعا.",
+      outputs: ["یادداشت روش", "محدودیت‌ها", "پرسش‌های باز"],
     },
   ],
   limits: [
-    "No unlabelled automation",
-    "No hidden state",
-    "No result without its method",
+    "بدون خودکارسازی بی‌برچسب",
+    "بدون وضعیت پنهان",
+    "بدون نتیجه، بدون روش",
   ],
 } as const;
 
 export const method = {
-  label: "02 / The method",
-  title: "Precision is the story.",
+  label: "۰۲ / روش",
+  title: "دقت، همان روایت است",
   intro:
-    "An assembly is only as honest as its documentation. Four habits shape every run — and every page of the technical brief.",
+    "اسمبلی تنها به‌اندازهٔ مستنداتش صادق است. چهار عادت، هر اجرا و هر صفحهٔ بریف فنی را شکل می‌دهد.",
   steps: [
     {
       step: "01",
-      title: "Define the tolerance",
-      body: "Before a run, the tolerance is written down in the same language the operator uses.",
-      output: "Tolerance note",
+      title: "تعریف تلورانس",
+      body: "پیش از اجرا، تلورانس به همان زبانی نوشته می‌شود که اپراتور به کار می‌برد.",
+      output: "یادداشت تلورانس",
     },
     {
       step: "02",
-      title: "Publish the method",
-      body: "The calibration method ships with the result, including the assumptions that shaped it.",
-      output: "Method record",
+      title: "انتشار روش",
+      body: "روش کالیبراسیون همراه نتیجه عرضه می‌شود، از جمله فرض‌هایی که آن را شکل دادند.",
+      output: "سابقهٔ روش",
     },
     {
       step: "03",
-      title: "Show the limit",
-      body: "Where the assembly stops being reliable is documented as clearly as where it works.",
-      output: "Limits note",
+      title: "نمایش محدودیت",
+      body: "جایی که اسمبلی از اعتبار بیرون می‌رود، به‌وضوح جایی که کار می‌کند مستند می‌شود.",
+      output: "یادداشت محدودیت",
     },
     {
       step: "04",
-      title: "Repeat the run",
-      body: "A second operator can repeat the measurement without asking the first. That is the test.",
-      output: "Reproduction check",
+      title: "تکرار اجرا",
+      body: "اپراتور دوم می‌تواند سنجش را بدون پرسیدن از اولی تکرار کند. آزمون همین است.",
+      output: "بررسی بازتولید",
     },
   ],
 } as const;
 
 export const assembly = {
-  label: "03 / The assembly",
-  title: "Observable, by design.",
+  label: "۰۳ / اسمبلی",
+  title: "قابل مشاهده، از طراحی",
   intro:
-    "Three parts, one state. The assembly is modular so a team can inspect a single stage without replacing the whole.",
+    "سه بخش، یک وضعیت. اسمبلی مدولار است تا تیمی بتواند یک مرحله را بدون تعویض کل بازرسی کند.",
   rows: [
-    { label: "Architecture", value: "Modular" },
-    { label: "Deployment", value: "On-prem / cloud" },
-    { label: "Interface", value: "API + console" },
-    { label: "Calibration", value: "Documented per run" },
-    { label: "Telemetry", value: "Operator-visible" },
-    { label: "Limits", value: "Published" },
-    { label: "Method", value: "Ships with result" },
-    { label: "Readout", value: "Glass panel" },
+    { label: "معماری", value: "مدولار" },
+    { label: "استقرار", value: "در محل / ابر" },
+    { label: "رابط", value: "API + کنسول" },
+    { label: "کالیبراسیون", value: "مستند در هر اجرا" },
+    { label: "تله‌متری", value: "قابل دید اپراتور" },
+    { label: "محدودیت‌ها", value: "منتشرشده" },
+    { label: "روش", value: "همراه نتیجه" },
+    { label: "نمایش", value: "صفحهٔ شیشه‌ای" },
   ],
   parts: [
     {
       code: "A",
-      title: "Control plane",
-      body: "State, runs and operator actions in one console.",
+      title: "صفحهٔ کنترل",
+      body: "وضعیت، اجراها و کنش‌های اپراتور در یک کنسول.",
     },
     {
       code: "B",
-      title: "Calibration cell",
-      body: "The reference stage, documented in every run.",
+      title: "سلول کالیبراسیون",
+      body: "مرحلهٔ مرجع، مستند در هر اجرا.",
     },
     {
       code: "C",
-      title: "Readout",
-      body: "Telemetry and fault states on a glass panel.",
+      title: "نمایش",
+      body: "تله‌متری و حالت‌های خطا روی یک صفحهٔ شیشه‌ای.",
     },
   ],
-  note: "Illustrative assembly. No physical product is sold and no certification is claimed.",
+  note: "اسمبلی نمایشی. هیچ محصول فیزیکی فروخته نمی‌شود و هیچ گواهی‌ای ادعا نمی‌شود.",
 } as const;
 
 export const research = {
-  label: "04 / Research",
-  title: "Published, not promised.",
+  label: "۰۴ / پژوهش",
+  title: "منتشرشده، نه وعده‌داده‌شده",
   intro:
-    "A short index of method notes. Each entry describes how a measurement is framed, repeated and questioned — not what it achieved.",
+    "فهرستی کوتاه از یادداشت‌های روش. هر مدخل توصیف می‌کند یک سنجش چطور قاب‌بندی، تکرار و پرسیده می‌شود — نه اینکه چه به دست آورده است.",
   items: [
     {
       index: "R-01",
       year: "2026",
-      title: "Writing a tolerance note another engineer can repeat",
+      title: "نوشتن یادداشت تلورانس، قابل تکرار برای مهندس دیگر",
       abstract:
-        "A short method for stating assumptions, reference conditions and the point at which a measurement should be distrusted.",
-      tags: ["Metrology", "Method"],
+        "روشی کوتاه برای اظهار فرض‌ها، شرایط مرجع و نقطه‌ای که در آن باید به یک سنجش بی‌اعتماد شد.",
+      tags: ["اندازه‌شناسی", "روش"],
     },
     {
       index: "R-02",
       year: "2026",
-      title: "Failure states in a calibration loop",
+      title: "حالت‌های شکست در حلقهٔ کالیبراسیون",
       abstract:
-        "A taxonomy of drift, stall and bad input — and what the operator should see before acting on any of them.",
-      tags: ["Calibration", "Interface"],
+        "دسته‌بندی‌ای از رانش، توقف و ورودی بد — و آنچه اپراتور باید پیش از عمل بر هر کدام ببیند.",
+      tags: ["کالیبراسیون", "رابط"],
     },
     {
       index: "R-03",
       year: "2026",
-      title: "The case for a boring readout",
+      title: "استدلال برای نمایشی خسته‌کننده",
       abstract:
-        "Why an operator-facing display should prefer clarity over spectacle, especially when the system is uncertain.",
-      tags: ["Readout", "Design"],
+        "چرا یک نمایش رو به اپراتور باید روشنی را بر تماشا ترجیح دهد، به‌ویژه وقتی سامانه نامطمئن است.",
+      tags: ["نمایش", "طراحی"],
     },
   ],
-  note: "Illustrative research index. Sample titles; no external papers are linked.",
+  note: "فهرست نمایشی پژوهش. عنوان‌ها نمونه‌اند و هیچ مقاله بیرونی پیوند داده نشده است.",
 } as const;
 
 export const company = {
-  label: "05 / Company",
-  title: "Engineers first.",
+  label: "۰۵ / شرکت",
+  title: "نخست مهندسان",
   paragraphs: [
-    "Quantum Systems is a precision-compute company. The platform is built by engineers who publish their methods and keep the limits visible.",
-    "The work is deliberately unglamorous: fixtures, calibration notes, telemetry and a console that says what it knows. The assembly is modular so a team can inspect one part without replacing the whole.",
+    "کوانتوم سیستمز یک شرکت پردازش دقیق است. پلتفرم را مهندسانی می‌سازند که روش‌هایشان را منتشر می‌کنند و محدودیت‌ها را دیده نگه می‌دارند.",
+    "کار عمداً بی‌زرق‌وبرق است: فیکسچرها، یادداشت‌های کالیبراسیون، تله‌متری و کنسولی که می‌گوید چه می‌داند. اسمبلی مدولار است تا تیمی بتواند یک بخش را بدون تعویض کل بازرسی کند.",
   ],
   principles: [
     {
-      title: "Show the state",
-      body: "No hidden mode, no mystery indicator. The operator can see what the system sees.",
+      title: "نمایش وضعیت",
+      body: "نه حالت پنهان، نه نشانگر مرموز. اپراتور همان را می‌بیند که سامانه می‌بیند.",
     },
     {
-      title: "Publish the method",
-      body: "Every result leaves with the conditions that produced it.",
+      title: "انتشار روش",
+      body: "هر نتیجه با شرایطی که آن را تولید کرد خارج می‌شود.",
     },
     {
-      title: "Respect the limit",
-      body: "A documented boundary is part of the product, not a footnote.",
+      title: "احترام به محدودیت",
+      body: "یک مرز مستند بخشی از محصول است، نه پانویس.",
     },
   ],
   facts: [
-    { label: "Focus", value: "Precision compute" },
-    { label: "Team", value: "Engineers" },
-    { label: "Base", value: "Meridian Works" },
-    { label: "Deployment", value: "On-prem / cloud" },
+    { label: "تمرکز", value: "پردازش دقیق" },
+    { label: "تیم", value: "مهندسان" },
+    { label: "پایگاه", value: "مریکن ورکس" },
+    { label: "استقرار", value: "در محل / ابر" },
   ],
-  quote: "If we cannot explain the tolerance, we do not ship the number.",
-  quoteNote: "Engineering principle · sample copy",
+  quote: "اگر نتوانیم تلورانس را توضیح دهیم، عدد را عرضه نمی‌کنیم.",
+  quoteNote: "اصل مهندسی · متن نمونه",
 } as const;
 
 export const contact = {
-  label: "06 / Technical brief",
-  title: "Request the technical brief.",
+  label: "۰۶ / بریف فنی",
+  title: "بریف فنی را بخواهید",
   intro:
-    "Tell us the measurement, the environment and the constraint. We reply with the method and the limits — not a feature list.",
+    "سنجش، محیط و محدودیت را بگویید. با روش و محدودیت‌ها پاسخ می‌دهیم — نه با فهرست ویژگی‌ها.",
   bring: [
-    "The quantity you need to measure",
-    "The environment and duty cycle",
-    "The interface your team already uses",
+    "کمیتی که باید سنجیده شود",
+    "محیط و چرخهٔ کار",
+    "رابطی که تیم شما همین حالا به کار می‌برد",
   ],
   email: "hello@quantum-systems.demo",
   phone: "+44 20 7946 0002",
-  address: ["Quantum Systems", "1 Meridian Works", "London E2 7JY"],
-  hours: "Monday – Friday · 09:00 – 17:00",
-  note: "Fictional company. The address, telephone number and details are illustrative.",
+  address: ["کوانتوم سیستمز", "مریکن ورکس ۱", "لندن E2 7JY"],
+  hours: "دوشنبه – جمعه · 09:00 – 17:00",
+  note: "شرکت خیالی. نشانی، شمارهٔ تلفن و جزئیات نمایشی‌اند.",
   form: {
-    title: "Technical request",
-    sub: "A short requirement, not a sales call",
+    title: "درخواست فنی",
+    sub: "یک نياز کوتاه، نه تماس فروش",
     applications: [
-      "Platform evaluation",
-      "Calibration method",
-      "Integration review",
-      "Research enquiry",
-      "Something else",
+      "ارزیابی پلتفرم",
+      "روش کالیبراسیون",
+      "بازبینی یکپارچه‌سازی",
+      "پرسش پژوهشی",
+      "چیز دیگری",
     ],
-    note: "Sample request form. Nothing is sent to a real company, no product is supplied and no payment is taken.",
+    note: "فرم درخواست نمونه. چیزی به شرکتی واقعی فرستاده نمی‌شود، محصولی عرضه نمی‌شود و پرداختی گرفته نمی‌شود.",
     confirmation:
-      "Your request has been recorded for this demonstration. No message is sent, no product is supplied and no payment is taken.",
+      "درخواست شما برای این نمایش ثبت شد. پیامی فرستاده نمی‌شود، محصولی عرضه نمی‌شود و پرداختی گرفته نمی‌شود.",
     fallback:
-      "The demo inbox is unavailable right now. Please use the email address on this page.",
+      "صندوق ورودی نمایشی اکنون در دسترس نیست. لطفاً از نشانی ایمیل روی همین صفحه استفاده کنید.",
   },
 } as const;

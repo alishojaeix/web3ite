@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Obsidian Roastery — sample brand content.
  *
  * The roastery, coffees, prices, dates and addresses are fictional. They exist
@@ -23,133 +23,133 @@ export type Roast = {
 };
 
 export const obsidianNav = [
-  { label: "Roasts", href: "#roasts" },
-  { label: "The object", href: "#object" },
-  { label: "Roastery", href: "#roastery" },
-  { label: "Subscribe", href: "#subscribe" },
-  { label: "Visit", href: "#visit" },
+  { label: "رُست‌ها", href: "#roasts" },
+  { label: "قوطی", href: "#object" },
+  { label: "رُستری", href: "#roastery" },
+  { label: "اشتراک", href: "#subscribe" },
+  { label: "بازدید", href: "#visit" },
 ] as const;
 
 export const heroMeta = [
-  { label: "Established", value: "2021" },
-  { label: "Roast day", value: "Thursday" },
-  { label: "Batch", value: "12 kg" },
+  { label: "تأسیس", value: "2021" },
+  { label: "روز رُست", value: "پنجشنبه" },
+  { label: "دسته", value: "12 kg" },
 ];
 
 export const roasts: Roast[] = [
   {
     id: "kenia",
     number: "01",
-    name: "Kenia AA",
-    origin: "Nyeri, Kenya",
-    process: "Washed",
+    name: "کنیا AA",
+    origin: "نیِری، کنیا",
+    process: "شسته",
     varietal: "SL28 · SL34",
-    altitude: "1,750 m",
-    notes: ["Blackcurrant", "Cane sugar", "Clean finish"],
-    roast: "Medium-light",
+    altitude: "۱٬۷۵۰ متر",
+    notes: ["انگور فرنگی سیاه", "شکر نیشکر", "پایان تمیز"],
+    roast: "مدیوم-لایت",
     price: "18",
-    weight: "250 g",
-    lot: "Lot 04 · 2026 harvest",
+    weight: "۲۵۰ گرم",
+    lot: "دسته ۰۴ · برداشت ۲۰۲۶",
     story:
-      "A high-grown washed lot from the Gichathaini factory. We roast it a shade lighter than the other two so the blackcurrant stays sharp and the finish stays clean.",
+      "دسته‌ای شسته و کشت‌مرتفع از کارخانهٔ گیچاتینی. آن را یک پرده روشن‌تر از دو قهوهٔ دیگر رُست می‌کنیم تا انگور فرنگی سیاه تند بماند و پایان کار تمیز.",
   },
   {
     id: "colombia",
     number: "02",
-    name: "Colombia Huila",
-    origin: "Huila, Colombia",
-    process: "Washed",
-    varietal: "Caturra · Castillo",
-    altitude: "1,650 m",
-    notes: ["Cocoa", "Orange peel", "Soft acidity"],
-    roast: "Medium",
+    name: "کلمبیا هویلا",
+    origin: "هویلا، کلمبیا",
+    process: "شسته",
+    varietal: "کاتورا · کاستیلو",
+    altitude: "۱٬۶۵۰ متر",
+    notes: ["کاکائو", "پوست پرتقال", "اسیدیتهٔ نرم"],
+    roast: "مدیوم",
     price: "17",
-    weight: "250 g",
-    lot: "Lot 02 · 2026 harvest",
+    weight: "۲۵۰ گرم",
+    lot: "دسته ۰۲ · برداشت ۲۰۲۶",
     story:
-      "The roundest coffee on the shelf and the one we keep on filter all week. Cocoa first, then a little orange peel, with enough body for oat milk.",
+      "گردترین قهوهٔ قفسه و همان است که تمام هفته روی فیلتر می‌ماند. اول کاکائو، بعد کمی پوست پرتقال، با بدنه‌ای کافی برای شیر جو.",
   },
   {
     id: "guji",
     number: "03",
-    name: "Ethiopia Guji",
-    origin: "Guji, Ethiopia",
-    process: "Natural",
-    varietal: "Heirloom",
-    altitude: "2,050 m",
-    notes: ["Jasmine", "Bergamot", "Stone fruit"],
-    roast: "Light",
+    name: "اتیوپی گوجی",
+    origin: "گوجی، اتیوپی",
+    process: "طبیعی",
+    varietal: "هریلوم",
+    altitude: "۲٬۰۵۰ متر",
+    notes: ["یاس", "برگاموت", "میوهٔ هسته‌دار"],
+    roast: "لایت",
     price: "19",
-    weight: "250 g",
-    lot: "Lot 07 · 2026 harvest",
+    weight: "۲۵۰ گرم",
+    lot: "دسته ۰۷ · برداشت ۲۰۲۶",
     story:
-      "A natural lot with the lights left on. Floral and bright when brewed as filter; syrupy and loud as espresso. We roast it once and let it rest a little longer.",
+      "دسته‌ای طبیعی با چراغ‌های روشن. دَم‌کرده به‌صورت فیلتر، گلی و روشن است؛ به‌صورت اسپرسو، شربتی و پرصدا. یک بار رُست می‌کنیم و کمی بیشتر استراحت می‌دهیم.",
   },
 ];
 
 export const ticker = [
-  "One roast day",
-  "Three coffees",
-  "Roasted to order",
-  "Rest 7–14 days",
-  "Traceable by design",
-  "London E9",
+  "یک روز رُست",
+  "سه قهوه",
+  "رُست به سفارش",
+  "استراحت ۷–۱۴ روز",
+  "قابل ردیابی، از طراحی",
+  "لندن E9",
 ];
 
 export const object = {
-  label: "02 / The object",
-  title: "A canister worth keeping.",
+  label: "۰۲ / قوطی",
+  title: "قوطی‌ای که ارزش نگه داشتن دارد",
   intro:
-    "Matte steel, a brass seal, and one debossed line. The packaging is part of the coffee: reusable, repairable and quiet enough to stay on the counter.",
+    "فولاد مات، مُهر برنجی و یک خط فرو‌رفته. بسته‌بندی بخشی از قهوه است: قابل استفادهٔ دوباره، قابل تعمیر و به‌قدر کافی آرام که روی پیشخوان بماند.",
   specs: [
-    { label: "Body", value: "0.6 mm matte steel" },
-    { label: "Seal", value: "Solid brass, debossed" },
-    { label: "Label", value: "Uncoated paper, foil" },
-    { label: "Base", value: "Roast date, lot, weight" },
-    { label: "Capacity", value: "250 g / 1 kg" },
+    { label: "بدنه", value: "فولاد مات ۰٫۶ میلی‌متری" },
+    { label: "مُهر", value: "برنج توپر، فرو‌رفته" },
+    { label: "برچسب", value: "کاغذ بدون روکش، فویل" },
+    { label: "کف", value: "تاریخ رُست، دسته، وزن" },
+    { label: "ظرفیت", value: "۲۵۰ گرم / ۱ کیلو" },
   ],
   notes: [
-    "The seal is machined in a small workshop in Sheffield. It is not printed: it is pressed into the lid.",
-    "Every base carries the roast date and the rest window. If the coffee is not ready to brew, the canister says so.",
-    "Return an empty canister to the roastery and we will refill it for £1 less. The object is designed to come back.",
+    "مُهر در کارگاهی کوچک در شفیلد ماشین‌کاری می‌شود. چاپی نیست: درِ قوطی فرو می‌رود.",
+    "کف هر قوطی تاریخ رُست و بازهٔ استراحت را دارد. اگر قهوه آمادهٔ دم‌کردن نباشد، قوطی خودش می‌گوید.",
+    "قوطی خالی را به رُستری برگردانید و یک پوند کمتر برای پر کردنش می‌گیریم. این قوطی برای برگشتن طراحی شده است.",
   ],
 };
 
 export const roastery = {
-  label: "03 / The roastery",
-  title: "The rest of the week belongs to the coffee.",
+  label: "۰۳ / رُستری",
+  title: "بقیهٔ هفته به قهوه تعلق دارد",
   paragraphs: [
-    "Obsidian began in a former kiln yard in 2021 with one drum roaster and a stubborn idea: roast less, roast better, and put the date on everything.",
-    "We buy small lots directly and roast them on one day of the week. No blends, no flavourings, no second roast to hide behind. Three coffees at a time is the entire catalogue.",
-    "The roastery opens to the public Thursday to Saturday. Come and taste the week's filter, or bring a home brewer and we will set the grind.",
+    "ابسیدین در ۲۰۲۱ در حیاطِ یک کوره‌پزخانهٔ متروکه با یک رُستر درام و یک ایدهٔ سرسخت شروع شد: کمتر رُست کن، بهتر رُست کن و تاریخ را روی همه چیز بگذار.",
+    "دسته‌های کوچک را مستقیم می‌خریم و در یک روز هفته رُست می‌کنیم. بدون ترکیب، بدون طعم‌افزا و بدون رُست دومی که پشتش پنهان شویم. سه قهوه در هر زمان، تمام فهرست است.",
+    "رُستری پنجشنبه تا شنبه به روی مردم باز است. بیایید فیلتر هفته را بچشید، یا دَم‌آور خانگی‌تان را بیاورید تا آسیاب را تنظیم کنیم.",
   ],
   process: [
     {
       number: "01",
-      title: "Source",
-      body: "One harvest at a time, from producers we can name. Origin and lot are printed on the bag.",
+      title: "منبع",
+      body: "هر بار یک برداشت، از تولیدکننده‌هایی که می‌توانیم نامشان را ببریم. خاستگاه و دسته روی کیسه چاپ می‌شود.",
     },
     {
       number: "02",
-      title: "Roast",
-      body: "A 12 kg drum, one roast day. Every batch is logged and cupped before it goes on the shelf.",
+      title: "رُست",
+      body: "یک درام ۱۲ کیلویی، یک روز رُست. هر دسته ثبت و پیش از رفتن روی قفسه، کاپ می‌شود.",
     },
     {
       number: "03",
-      title: "Rest",
-      body: "Seven to fourteen days, depending on the coffee. The window is written on the base.",
+      title: "استراحت",
+      body: "هفت تا چهارده روز، به‌حسب قهوه. بازه روی کف قوطی نوشته شده است.",
     },
     {
       number: "04",
-      title: "Ship",
-      body: "Fridays, in the canister. Letterbox size, no plastic, no extra packaging.",
+      title: "ارسال",
+      body: "جمعه‌ها، در همان قوطی. اندازهٔ صندوق پست، بدون پلاستیک و بدون بسته‌بندی اضافه.",
     },
   ],
   facts: [
-    { label: "Founded", value: "2021" },
-    { label: "Roaster", value: "12 kg drum" },
-    { label: "Catalogue", value: "3 coffees" },
-    { label: "Roast day", value: "Thursday" },
+    { label: "بنیان", value: "2021" },
+    { label: "رُستر", value: "درام ۱۲ کیلویی" },
+    { label: "فهرست", value: "۳ قهوه" },
+    { label: "روز رُست", value: "پنجشنبه" },
   ],
 };
 
@@ -158,43 +158,43 @@ export type Grind = "whole-bean" | "filter" | "espresso";
 export type BagSize = "250g" | "1kg";
 
 export const subscription = {
-  label: "04 / The roast list",
-  title: "Keep the counter stocked.",
+  label: "۰۴ / فهرست رُست",
+  title: "پیشخوان را پر نگه دارید",
   intro:
-    "One coffee, chosen by us, roasted to order. Skip a delivery whenever you like. The price includes the canister and letterbox shipping.",
+    "یک قهوه، به انتخاب ما، رُست‌شده به سفارش. هر وقت خواستید یک ارسال را رد کنید. قیمت شامل قوطی و ارسال به صندوق پست است.",
   cadences: [
-    { id: "weekly" as Cadence, label: "Weekly", note: "Every Thursday" },
-    { id: "fortnightly" as Cadence, label: "Fortnightly", note: "Every other Thursday" },
+    { id: "weekly" as Cadence, label: "هفتگی", note: "هر پنجشنبه" },
+    { id: "fortnightly" as Cadence, label: "دو هفته یک بار", note: "هر پنجشنبهٔ دیگر" },
   ],
   grinds: [
-    { id: "whole-bean" as Grind, label: "Whole bean", note: "Grind at home" },
-    { id: "filter" as Grind, label: "Filter", note: "V60 / drip" },
-    { id: "espresso" as Grind, label: "Espresso", note: "Fine" },
+    { id: "whole-bean" as Grind, label: "دانهٔ کامل", note: "آسیاب در خانه" },
+    { id: "filter" as Grind, label: "فیلتر", note: "V60 / دِرپ" },
+    { id: "espresso" as Grind, label: "اسپرسو", note: "ریز" },
   ],
   sizes: [
-    { id: "250g" as BagSize, label: "250 g", note: "One canister", price: 15 },
-    { id: "1kg" as BagSize, label: "1 kg", note: "Four refills", price: 48 },
+    { id: "250g" as BagSize, label: "۲۵۰ گرم", note: "یک قوطی", price: 15 },
+    { id: "1kg" as BagSize, label: "۱ کیلو", note: "چهار بار پر کردن", price: 48 },
   ],
   included: [
-    "One 250 g canister or 1 kg refill bag",
-    "Roast date and rest window on the base",
-    "Letterbox shipping included",
-    "Skip, pause or cancel by email",
+    "یک قوطی ۲۵۰ گرمی یا کیسهٔ پرکنندهٔ ۱ کیلویی",
+    "تاریخ رُست و بازهٔ استراحت روی کف",
+    "ارسال به صندوق پست، رایگان",
+    "رد کردن، توقف یا لغو با ایمیل",
   ],
-  note: "Demonstration subscription. No payment is taken and no coffee is shipped.",
+  note: "اشتراک نمایشی. هیچ پرداختی گرفته نمی‌شود و قهوه‌ای ارسال نمی‌شود.",
 };
 
 export const visit = {
-  label: "05 / Visit",
-  title: "Come and taste the week.",
-  address: ["The Roastery", "8 Kiln Yard", "London E9"],
+  label: "۰۵ / بازدید",
+  title: "بیایید و هفته را بچشید",
+  address: ["رُستری", "کیلن‌یارد ۸", "لندن E9"],
   transport:
-    "Five minutes from Hackney Central. The yard entrance is on the left past the black gate. Step-free access to the tasting counter.",
+    "پنج دقیقه از هاکنی سنترال. ورودی حیاط سمت چپ، بعد از دروازهٔ سیاه است. دسترسی بدون پله به پیشخوان چشیدن.",
   hours: [
-    { day: "Thursday – Friday", time: "09:00 – 15:00" },
-    { day: "Saturday", time: "10:00 – 16:00" },
-    { day: "Sunday – Wednesday", time: "Closed" },
+    { day: "پنجشنبه – جمعه", time: "09:00 – 15:00" },
+    { day: "شنبه", time: "10:00 – 16:00" },
+    { day: "یکشنبه – چهارشنبه", time: "بسته" },
   ],
   email: "hello@obsidian-roastery.demo",
-  note: "Tastings are walk-in. Groups of four or more can email ahead.",
+  note: "چشیدن بدون وقت قبلی است. گروه‌های چهار نفر و بیشتر می‌توانند پیش‌تر ایمیل بزنند.",
 };

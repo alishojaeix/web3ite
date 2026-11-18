@@ -29,6 +29,56 @@
     --duration-fast: 150ms;
     --duration-standard: 250ms;
     --duration-slow: 450ms;
+
+    /*
+     * Vazirmatn is the Persian voice of the product. The generated
+     * `next/font/local` module owns `--font-vazirmatn` (a hashed family name
+     * scoped to the <html> class). `--font-fa` wraps it so Persian glyphs lead
+     * every stack whether or not the webfont has loaded: when the generated
+     * variable is absent it degrades to the plain `"Vazirmatn"` family, then to
+     * a system Arabic-capable face. `--font-fallback-persian` is the safety net
+     * used only while custom font data is unavailable.
+     */
+    --font-fa: var(--font-vazirmatn, "Vazirmatn"), var(--font-fallback-persian);
+
+    /* System faces that carry Arabic-script coverage. Used only when the
+       custom face is still loading or is unavailable. */
+    --font-fallback-persian: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Arial",
+      sans-serif;
+
+    --font-display: var(--font-fa), var(--font-latin-display), "Inter",
+      system-ui, sans-serif;
+    --font-body: var(--font-fa), var(--font-latin-body), "Source Sans 3",
+      system-ui, sans-serif;
+    --font-editorial: var(--font-fa), var(--font-latin-editorial),
+      "Iowan Old Style", Georgia, serif;
+
+    /* Readable Persian type scale. Fluid where the layout can breathe, fixed
+       where a control needs a predictable box (buttons, navigation). Sizes are
+       tuned for Persian script, which reads tighter than Latin at a given px
+       and needs a touch more room to breathe. */
+    --type-hero: clamp(2.25rem, 1.35rem + 3.5vw, 3rem); /* 36 → 48px */
+    --type-section: clamp(1.75rem, 1.2rem + 2vw, 2rem); /* 28 → 32px */
+    --type-section-lg: clamp(1.75rem, 1.3rem + 2.1vw, 2.125rem); /* 28 → 34px */
+    --type-subsection: clamp(1.375rem, 1.15rem + 0.9vw, 1.625rem); /* 22 → 26px */
+    --type-card: clamp(1.25rem, 1.12rem + 0.5vw, 1.5rem); /* 20 → 24px */
+    --type-card-sm: clamp(1.125rem, 1.02rem + 0.35vw, 1.375rem); /* 18 → 22px */
+    --type-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem); /* 18 → 20px */
+    --type-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16 → 18px */
+    --type-body-sm: 0.9375rem; /* 15px */
+    --type-secondary: 0.875rem; /* 14px */
+    --type-meta: 0.8125rem; /* 13px */
+    --type-micro: 0.75rem; /* 12px floor */
+    --type-button: 1rem; /* 16px */
+    --type-nav: 0.9375rem; /* 15px */
+
+    --leading-hero: 1.4;
+    --leading-heading: 1.5;
+    --leading-body: 1.85;
+    --leading-tight: 1.65;
+
+    --tracking-fa: 0;
+    --tracking-fa-eyebrow: 0.04em;
   }
 
   * {
@@ -63,12 +113,16 @@
   }
 
   body {
-    font-family: var(--font-body), "Source Sans 3", system-ui, sans-serif;
+    font-family: var(--font-body);
     background: var(--bg-void);
     color: var(--text-primary);
     min-height: 100vh;
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-fa);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   }
 
   body::after {
@@ -106,23 +160,78 @@
 
 @layer components {
   .display-face {
-    font-family: var(--font-display), "Inter", system-ui, sans-serif;
-    font-weight: 300;
-    letter-spacing: -0.045em;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: var(--tracking-fa);
+    line-height: var(--leading-heading);
   }
 
   .editorial-face {
-    font-family: var(--font-editorial), "Iowan Old Style", Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.035em;
+    font-family: var(--font-editorial);
+    font-weight: 600;
+    letter-spacing: var(--tracking-fa);
+    line-height: var(--leading-heading);
   }
 
   .eyebrow {
-    font-size: 10px;
-    line-height: 1.4;
+    font-family: var(--font-body);
+    font-size: var(--type-meta);
+    line-height: 1.5;
     font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    letter-spacing: var(--tracking-fa-eyebrow);
+    color: var(--text-muted);
+  }
+
+  /* Shared Persian headings. Anything that renders a heading should carry one
+     of these so the hierarchy stays identical across pages and templates. */
+  .type-hero {
+    font-family: var(--font-display);
+    font-size: var(--type-hero);
+    line-height: var(--leading-hero);
+    font-weight: 600;
+    letter-spacing: var(--tracking-fa);
+    text-wrap: balance;
+  }
+
+  .type-section {
+    font-family: var(--font-display);
+    font-size: var(--type-section);
+    line-height: var(--leading-heading);
+    font-weight: 600;
+    letter-spacing: var(--tracking-fa);
+    text-wrap: balance;
+  }
+
+  /* Prominent section titles — the only class that reaches into the 28–34px
+     band, so the hierarchy between a normal section heading and a marquee one
+     stays legible. */
+  .type-section-lg {
+    font-family: var(--font-display);
+    font-size: var(--type-section-lg);
+    line-height: var(--leading-heading);
+    font-weight: 600;
+    letter-spacing: var(--tracking-fa);
+    text-wrap: balance;
+  }
+
+  .type-card {
+    font-family: var(--font-display);
+    font-size: var(--type-card);
+    line-height: var(--leading-heading);
+    font-weight: 600;
+    letter-spacing: var(--tracking-fa);
+  }
+
+  .type-lead {
+    font-size: var(--type-lead);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-fa);
+  }
+
+  .type-body-text {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-fa);
   }
 
   .glass-panel {
@@ -154,14 +263,122 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), "Inter", system-ui, sans-serif;
+    font-family: var(--font-display);
   }
 
   .font-editorial {
-    font-family: var(--font-editorial), "Iowan Old Style", Georgia, serif;
+    font-family: var(--font-editorial);
   }
 
   .mask-fade-x {
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
+}
+
+/* -------------------------------------------------------------------------
+   Persian typography and RTL behaviour
+   -------------------------------------------------------------------------
+   The document is a single-locale Persian surface. These rules are the
+   application-level typographic contract, not per-page patches: they keep
+   Arabic-script shaping intact, prevent clipped ascenders, neutralise Latin
+   letter-spacing on Persian words, and mirror only the directional icons whose
+   meaning depends on reading direction.
+   ------------------------------------------------------------------------- */
+
+html[lang="fa"] {
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+
+html[lang="fa"] body {
+  font-family: var(--font-body);
+  line-height: var(--leading-body);
+  letter-spacing: normal;
+}
+
+html[lang="fa"]
+  :is(h1, h2, h3, h4, h5, h6, .display-face, .editorial-face):not(.site-shell *) {
+  line-height: var(--leading-heading);
+}
+
+html[lang="fa"] :is([class*="leading-none"], [class*="leading-["]):not(.site-shell *) {
+  line-height: var(--leading-heading);
+}
+
+/* Persian is not set in italics; emphasis is carried by weight and colour. */
+html[lang="fa"] :is(em, i, .italic):not(.site-shell *) {
+  font-style: normal;
+}
+
+html[lang="fa"] :is(.eyebrow, [class*="tracking-"]):not(.site-shell *) {
+  letter-spacing: var(--tracking-fa-eyebrow);
+}
+
+html[lang="fa"]
+  :is(input, textarea, select, button, optgroup, option) {
+  font-family: inherit;
+  letter-spacing: normal;
+}
+
+html[lang="fa"] ::placeholder {
+  font-family: inherit;
+}
+
+/* Dialogs render in a portal outside their trigger, so they must inherit the
+   Persian face explicitly rather than relying on DOM ancestry. */
+html[lang="fa"] :is([role="dialog"], [role="alertdialog"], [role="menu"], [role="listbox"]) {
+  font-family: var(--font-body);
+}
+
+/* No nested scope may take Persian text off Vazirmatn. The template surfaces
+   declare their own `--font-*` aliases (e.g. `--vs-display`, `--md-serif`), so
+   this guard points every one of them at the same local face. Undeclared
+   templates — `noir-cafe`, and the generated `site-shell` routes — simply
+   inherit the root stack. Latin brand names are unaffected: Vazirmatn leads
+   each stack and the Latin face behind it still receives the ASCII glyphs. */
+html[lang="fa"] :is(.site-shell, .vs-site, [class$="-site"], [class*="-site "]) {
+  --font-body: var(--font-fa), var(--font-latin-body), "Source Sans 3",
+    system-ui, sans-serif;
+  --font-display: var(--font-fa), var(--font-latin-display), "Inter",
+    system-ui, sans-serif;
+  --font-editorial: var(--font-fa), var(--font-latin-editorial),
+    "Iowan Old Style", Georgia, serif;
+}
+
+/* Headings and titles never carry terminal sentence punctuation; body copy and
+   legal text keep full punctuation. The rule is enforced at the content layer —
+   see the heading audit in `lib/i18n/fa.ts` and the template content modules. */
+
+html[lang="fa"] [dir="ltr"],
+html[lang="fa"] .ltr-inline {
+  unicode-bidi: isolate;
+}
+
+/* Mirror arrows that point toward reading direction. `scale` composes with
+   Tailwind transforms (hover lift), so the existing micro-interactions remain. */
+html[dir="rtl"]
+  :is(
+    .lucide-arrow-right,
+    .lucide-arrow-left,
+    .lucide-arrow-up-right,
+    .lucide-arrow-up-left,
+    .lucide-move-right,
+    .lucide-move-left,
+    .lucide-move-up-right,
+    .lucide-move-up-left,
+    .lucide-chevron-right,
+    .lucide-chevron-left,
+    .lucide-chevrons-right,
+    .lucide-chevrons-left,
+    .lucide-corner-up-right,
+    .lucide-corner-up-left,
+    .lucide-trending-up
+  ) {
+  scale: -1 1;
+}
+
+/* Keep decorative scrollbars and the fixed grain from creating a horizontal
+   scrollbar in RTL on Windows. */
+html[dir="rtl"] body {
+  overflow-x: clip;
 }

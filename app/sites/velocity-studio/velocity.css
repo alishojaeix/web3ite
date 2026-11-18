@@ -116,7 +116,7 @@
 .vs-skip {
   position: absolute;
   top: -60px;
-  left: 16px;
+  inset-inline-start: 16px;
   z-index: 100;
   padding: 10px 16px;
   background: var(--vs-accent);
@@ -125,7 +125,6 @@
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   text-decoration: none;
   border-radius: 2px;
   transition: top 140ms ease;
@@ -175,20 +174,18 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .vs-brand-sub {
-  margin-left: 2px;
-  padding-left: 12px;
-  border-left: 1px solid var(--vs-line-strong);
+  margin-inline-start: 2px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid var(--vs-line-strong);
   color: var(--vs-muted);
   font-family: var(--vs-display);
   font-size: 0.64rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-nav-links {
@@ -204,7 +201,6 @@
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
   text-decoration: none;
   padding: 8px 0;
   transition: color 150ms ease;
@@ -213,8 +209,8 @@
 .vs-nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   bottom: 0;
   height: 1px;
   background: var(--vs-accent);
@@ -249,7 +245,6 @@
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   text-decoration: none;
   border: 1px solid var(--vs-accent);
   border-radius: 2px;
@@ -300,7 +295,6 @@
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -349,7 +343,6 @@
   font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-status {
@@ -390,7 +383,6 @@
   font-size: 0.67rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-eyebrow-mark {
@@ -405,8 +397,7 @@
   font-size: clamp(3.3rem, 7vw, 6rem);
   font-weight: 900;
   line-height: 0.86;
-  letter-spacing: -0.035em;
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .vs-h1-word,
@@ -445,7 +436,6 @@
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
   text-decoration: none;
   border-radius: 2px;
   cursor: pointer;
@@ -488,7 +478,6 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
 }
 
 .vs-hero-meta dd {
@@ -532,7 +521,6 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-aero-study {
@@ -553,7 +541,6 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
 }
 
 /* Launch reel rail */
@@ -582,7 +569,6 @@
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .vs-reel-head p svg {
@@ -606,11 +592,11 @@
 .vs-reel-frames li {
   position: relative;
   padding: 18px 20px 20px;
-  border-right: 1px solid var(--vs-line);
+  border-inline-end: 1px solid var(--vs-line);
 }
 
 .vs-reel-frames li:last-child {
-  border-right: 0;
+  border-inline-end: 0;
 }
 
 .vs-reel-time {
@@ -631,7 +617,6 @@
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .vs-reel-note {
@@ -653,7 +638,7 @@
 .vs-reel-track span {
   position: absolute;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   width: 22%;
   height: 100%;
   background: linear-gradient(90deg, transparent, var(--vs-accent), transparent);
@@ -684,11 +669,11 @@
 
 .vs-stats dl > div {
   padding: 24px 24px 26px;
-  border-right: 1px solid var(--vs-line);
+  border-inline-end: 1px solid var(--vs-line);
 }
 
 .vs-stats dl > div:last-child {
-  border-right: 0;
+  border-inline-end: 0;
 }
 
 .vs-stats dt {
@@ -697,7 +682,6 @@
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-stats dd {
@@ -707,17 +691,16 @@
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   font-variant-numeric: tabular-nums;
 }
 
 .vs-stats dd span {
-  margin-left: 7px;
+  margin-inline-start: 7px;
   color: var(--vs-accent-bright);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .vs-stats small {
@@ -775,8 +758,7 @@
   font-size: clamp(2rem, 4.2vw, 3.5rem);
   font-weight: 800;
   line-height: 0.98;
-  letter-spacing: -0.025em;
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .vs-section-head .vs-eyebrow {
@@ -793,8 +775,8 @@
 
 .vs-note-line {
   margin-top: 26px;
-  padding-left: 14px;
-  border-left: 2px solid var(--vs-accent);
+  padding-inline-start: 14px;
+  border-inline-start: 2px solid var(--vs-accent);
   color: var(--vs-dim);
   font-size: 0.76rem;
   line-height: 1.6;
@@ -831,7 +813,6 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .vs-lab-visual-head {
@@ -877,7 +858,6 @@
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-mode-options {
@@ -936,7 +916,6 @@
   font-weight: 800;
   letter-spacing: 0.04em;
   line-height: 1.2;
-  text-transform: uppercase;
 }
 
 .vs-mode-note {
@@ -982,7 +961,6 @@
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .vs-readout-top p:last-child {
@@ -1004,7 +982,6 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .vs-metrics strong {
@@ -1056,7 +1033,6 @@
   font-size: 0.56rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .vs-mode-rows dd {
@@ -1103,8 +1079,7 @@
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
-  text-align: right;
+  text-align: end;
 }
 
 .vs-aero-grid {
@@ -1144,7 +1119,6 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.25;
-  text-transform: uppercase;
 }
 
 .vs-principles p {
@@ -1186,7 +1160,6 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.2;
-  text-transform: uppercase;
 }
 
 .vs-sheet-caption {
@@ -1204,7 +1177,6 @@
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .vs-sheet-rows {
@@ -1226,7 +1198,7 @@
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-fa, 0);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1237,7 +1209,6 @@
   font-size: 0.84rem;
   font-weight: 800;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .vs-sheet-rows p {
@@ -1291,7 +1262,6 @@
   font-size: 0.94rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .vs-spec-group dl {
@@ -1322,7 +1292,7 @@
   font-family: var(--vs-display);
   font-size: 0.82rem;
   font-weight: 700;
-  text-align: right;
+  text-align: end;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1336,7 +1306,7 @@
   background:
     linear-gradient(150deg, rgba(228, 95, 88, 0.1), rgba(9, 8, 9, 0.4));
   border: 1px solid rgba(228, 95, 88, 0.4);
-  border-left: 3px solid var(--vs-accent);
+  border-inline-start: 3px solid var(--vs-accent);
   border-radius: 2px;
 }
 
@@ -1349,7 +1319,6 @@
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .vs-notclaimed ul {
@@ -1376,8 +1345,8 @@
 }
 
 .vs-notclaimed-note {
-  padding-left: 22px;
-  border-left: 1px solid var(--vs-line);
+  padding-inline-start: 22px;
+  border-inline-start: 1px solid var(--vs-line);
   color: var(--vs-muted);
   font-size: 0.82rem;
   line-height: 1.6;
@@ -1419,7 +1388,7 @@
 .vs-swatch-tag {
   position: absolute;
   top: 10px;
-  right: 10px;
+  inset-inline-end: 10px;
   padding: 4px 7px;
   background: rgba(9, 8, 9, 0.84);
   border: 1px solid var(--vs-line-strong);
@@ -1428,7 +1397,6 @@
   font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.13em;
-  text-transform: uppercase;
 }
 
 .vs-material-copy {
@@ -1452,7 +1420,6 @@
   font-size: 1.12rem;
   font-weight: 800;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .vs-material-copy p {
@@ -1477,8 +1444,7 @@
   font-size: clamp(2.2rem, 4.6vw, 3.6rem);
   font-weight: 800;
   line-height: 0.96;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-fa, 0);
 }
 
 .vs-contact-copy > .vs-section-lede {
@@ -1497,12 +1463,12 @@
 
 .vs-contact-facts > div {
   padding: 14px 16px;
-  border-right: 1px solid var(--vs-line);
+  border-inline-end: 1px solid var(--vs-line);
   border-bottom: 1px solid var(--vs-line);
 }
 
 .vs-contact-facts > div:nth-child(2n) {
-  border-right: 0;
+  border-inline-end: 0;
 }
 
 .vs-contact-facts > div:nth-last-child(-n + 2) {
@@ -1515,7 +1481,6 @@
   font-size: 0.56rem;
   font-weight: 600;
   letter-spacing: 0.17em;
-  text-transform: uppercase;
 }
 
 .vs-contact-facts dd {
@@ -1556,8 +1521,8 @@
 
 .vs-quote-block {
   margin-bottom: 24px;
-  padding-left: 18px;
-  border-left: 2px solid var(--vs-accent);
+  padding-inline-start: 18px;
+  border-inline-start: 2px solid var(--vs-accent);
 }
 
 .vs-quote-block p {
@@ -1576,7 +1541,6 @@
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .vs-contact-lines {
@@ -1648,7 +1612,6 @@
   font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .vs-form-sub {
@@ -1690,7 +1653,6 @@
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .vs-form input,
@@ -1782,7 +1744,6 @@
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .vs-success-body {
@@ -1823,7 +1784,6 @@
   font-size: 0.86rem;
   font-weight: 800;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .vs-footer-mark {
@@ -1833,8 +1793,8 @@
 }
 
 .vs-footer-word span {
-  padding-left: 10px;
-  border-left: 1px solid var(--vs-line-strong);
+  padding-inline-start: 10px;
+  border-inline-start: 1px solid var(--vs-line-strong);
   color: var(--vs-dim);
   font-size: 0.6rem;
   letter-spacing: 0.16em;
@@ -1856,7 +1816,6 @@
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -1878,7 +1837,6 @@
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .vs-footer-cols address {
@@ -2039,7 +1997,7 @@
   }
 
   .vs-reel-frames li:nth-child(2) {
-    border-right: 0;
+    border-inline-end: 0;
   }
 
   .vs-reel-frames li:nth-child(-n + 2) {
@@ -2051,7 +2009,7 @@
   }
 
   .vs-stats dl > div:nth-child(2) {
-    border-right: 0;
+    border-inline-end: 0;
   }
 
   .vs-stats dl > div:nth-child(-n + 2) {
@@ -2076,9 +2034,9 @@
   }
 
   .vs-notclaimed-note {
-    padding-left: 0;
+    padding-inline-start: 0;
     padding-top: 16px;
-    border-left: 0;
+    border-inline-start: 0;
     border-top: 1px solid var(--vs-line);
   }
 }
@@ -2112,7 +2070,7 @@
 
   .vs-hero-copy h1 {
     font-size: clamp(2.75rem, 13.5vw, 4.2rem);
-    letter-spacing: -0.03em;
+    letter-spacing: var(--tracking-fa, 0);
   }
 
   .vs-hero-lede {
@@ -2134,7 +2092,7 @@
 
   .vs-reel-frames li,
   .vs-reel-frames li:nth-child(2) {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--vs-line);
   }
 
@@ -2148,7 +2106,7 @@
 
   .vs-stats dl > div,
   .vs-stats dl > div:nth-child(2) {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--vs-line);
     padding: 18px 20px;
   }
@@ -2164,7 +2122,7 @@
   }
 
   .vs-quote-band cite {
-    text-align: left;
+    text-align: start;
   }
 
   .vs-principles li {
@@ -2262,7 +2220,7 @@
   }
 
   .vs-contact-facts > div {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--vs-line);
   }
 

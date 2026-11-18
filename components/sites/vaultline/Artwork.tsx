@@ -38,7 +38,7 @@ export function VaultStack() {
       className="vl-stack"
       viewBox="0 0 640 720"
       role="img"
-      aria-label="A technical drawing of a layered custody vault: three offset steel plates, a combination dial, a violet seam and sealed status."
+      aria-label="نقشهٔ فنی یک گاوصندوق لایه‌ای: سه صفحهٔ فولادی جابه‌جا، صفحهٔ ترکیبی، درز بنفش و وضعیت مُهر و موم."
     >
       <defs>
         <linearGradient id="vl-steel" x1="0" y1="0" x2="0.8" y2="1">
@@ -165,7 +165,7 @@ export function VaultStack() {
           fontSize="8.5"
           letterSpacing="2.2"
         >
-          SEALED · RECORDED
+          مُهر و موم · ثبت‌شده
         </text>
       </g>
 
@@ -177,15 +177,15 @@ export function VaultStack() {
         <path d="M 60 540 H 206" />
       </g>
       <g fill="#aaa3bd" fontFamily="var(--vl-mono), ui-monospace, monospace" fontSize="9.5" letterSpacing="2">
-        <text x="60" y="222">01 / SHELL</text>
-        <text x="60" y="530">04 / LEDGER</text>
-        <text x="580" y="258" textAnchor="end">02 / KEY SEPARATION</text>
-        <text x="580" y="416" textAnchor="end">03 / POLICY</text>
+        <text x="60" y="222">۰۱ / پوسته</text>
+        <text x="60" y="530">۰۴ / دفتر</text>
+        <text x="580" y="258" textAnchor="end">۰۲ / جدایی کلید</text>
+        <text x="580" y="416" textAnchor="end">۰۳ / سیاست</text>
         <text x="580" y="436" textAnchor="end" fontSize="8" fill="#6f6884">
-          NAMED OWNER
+          مالک نام‌برده
         </text>
         <text x="60" y="552" fontSize="8" fill="#6f6884">
-          APPEND-ONLY
+          فقط افزودنی
         </text>
       </g>
 
@@ -203,8 +203,8 @@ export function VaultStack() {
         <path d="M 614 694 H 578 M 614 694 V 658" />
       </g>
       <g fill="#6f6884" fontFamily="var(--vl-mono), ui-monospace, monospace" fontSize="8" letterSpacing="1.6">
-        <text x="26" y="62" dy="10">VAULT 01 / CUSTODY</text>
-        <text x="614" y="62" dy="10" textAnchor="end">ILLUSTRATIVE · NOT TO SCALE</text>
+        <text x="26" y="62" dy="10">گاوصندوق ۰۱ / حضانت</text>
+        <text x="614" y="62" dy="10" textAnchor="end">نمایشی · بدون مقیاس</text>
       </g>
     </svg>
   );

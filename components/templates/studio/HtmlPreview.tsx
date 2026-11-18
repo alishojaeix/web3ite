@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { fa } from "@/lib/i18n/fa";
 
 /**
  * Renders a self-contained static HTML template verbatim inside an iframe.
@@ -19,15 +20,15 @@ export function HtmlPreview({ url }: { url: string }) {
         <div className="absolute inset-0 grid place-items-center">
           <div className="flex flex-col items-center gap-4">
             <span className="h-8 w-8 animate-spin rounded-full border-2 border-white/15 border-t-[#d4af7a]" />
-            <p className="text-[12px] uppercase tracking-[0.18em] text-[#8a847c]">
-              Loading live preview
+            <p className="text-[12px] tracking-[0.18em] text-[#8a847c]">
+              {fa.studio.loadingPreview}
             </p>
           </div>
         </div>
       ) : null}
       <iframe
         src={url}
-        title="Live preview"
+        title="پیش‌نمایش زنده"
         onLoad={() => setLoaded(true)}
         loading="lazy"
         className="absolute inset-0 h-full w-full border-0"

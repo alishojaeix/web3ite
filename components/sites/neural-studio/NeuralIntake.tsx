@@ -70,7 +70,7 @@ export function NeuralIntake() {
         <span className="ns-success-mark" aria-hidden="true">
           <Check size={22} />
         </span>
-        <p className="ns-success-title">Brief recorded</p>
+        <p className="ns-success-title">بریف ثبت شد</p>
         <p className="ns-success-body">{message}</p>
         <button
           type="button"
@@ -81,7 +81,7 @@ export function NeuralIntake() {
           }}
         >
           <RotateCcw size={14} aria-hidden="true" />
-          Send another brief
+          ارسال بریف دیگر
         </button>
       </div>
     );
@@ -97,7 +97,7 @@ export function NeuralIntake() {
       <form className="ns-form" onSubmit={onSubmit}>
         <div className="ns-form-row">
           <label>
-            <span>Name</span>
+            <span>نام</span>
             <input
               name="name"
               type="text"
@@ -105,35 +105,35 @@ export function NeuralIntake() {
               required
               minLength={2}
               maxLength={120}
-              placeholder="Your name"
+              placeholder="نام شما"
             />
           </label>
           <label>
-            <span>Email</span>
+            <span>ایمیل</span>
             <input
               name="email"
               type="email"
               autoComplete="email"
               required
               maxLength={180}
-              placeholder="you@company.com"
+              placeholder="you@company.com" dir="ltr"
             />
           </label>
         </div>
 
         <div className="ns-form-row">
           <label>
-            <span>Company</span>
+            <span>شرکت</span>
             <input
               name="company"
               type="text"
               autoComplete="organization"
               maxLength={90}
-              placeholder="Optional"
+              placeholder="اختیاری"
             />
           </label>
           <label>
-            <span>Project type</span>
+            <span>نوع پروژه</span>
             <select name="projectType" defaultValue={contact.form.projectTypes[0]}>
               {contact.form.projectTypes.map((option) => (
                 <option key={option} value={option}>
@@ -145,14 +145,14 @@ export function NeuralIntake() {
         </div>
 
         <label className="ns-field-full">
-          <span>The brief</span>
+          <span>بریف</span>
           <textarea
             name="message"
             rows={5}
             required
             minLength={5}
             maxLength={1500}
-            placeholder="The decision, the data you have, and what is hard about it."
+            placeholder="تصمیم، داده‌ای که دارید و دشواری آن."
           />
         </label>
 
@@ -161,7 +161,7 @@ export function NeuralIntake() {
           className="ns-btn ns-btn--solid ns-form-submit"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Sending brief…" : "Send the brief"}
+          {status === "sending" ? "در حال ارسال…" : "ارسال بریف"}
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
 
